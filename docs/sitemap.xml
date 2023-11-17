@@ -2,67 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://example.com/blog/firstpost/</loc>
+		<loc>https://example.com/yanndaout/blog/firstpost/</loc>
 		<lastmod>2018-05-01</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/blog/secondpost/</loc>
+		<loc>https://example.com/yanndaout/blog/secondpost/</loc>
 		<lastmod>2018-07-04</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/blog/thirdpost/</loc>
+		<loc>https://example.com/yanndaout/blog/thirdpost/</loc>
 		<lastmod>2018-08-24</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/blog/fourthpost/</loc>
+		<loc>https://example.com/yanndaout/blog/fourthpost/</loc>
 		<lastmod>2018-09-30</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/blog/fifthpost/</loc>
+		<loc>https://example.com/yanndaout/blog/fifthpost/</loc>
 		<lastmod>2023-01-23</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/about/</loc>
+		<loc>https://example.com/yanndaout/about/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/blog/</loc>
+		<loc>https://example.com/yanndaout/blog/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/</loc>
+		<loc>https://example.com/yanndaout/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/tags/</loc>
+		<loc>https://example.com/yanndaout/tags/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/tags/another-tag/</loc>
+		<loc>https://example.com/yanndaout/tags/another-tag/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/tags/number-2/</loc>
+		<loc>https://example.com/yanndaout/tags/number-2/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/tags/second-tag/</loc>
+		<loc>https://example.com/yanndaout/tags/second-tag/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/tags/posts-with-two-tags/</loc>
+		<loc>https://example.com/yanndaout/tags/posts-with-two-tags/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 </urlset>
