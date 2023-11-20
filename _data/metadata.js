@@ -1,6 +1,6 @@
 module.exports = {
 	title: "Traces",
-	url: "https://senestres.github.io/yanndaout/",
+	url: "https://senestres.github.io/traces/",
 	language: "fr",
 	description: "Un site sur le corps, la culture et l'apprentissage",
 	author: {
