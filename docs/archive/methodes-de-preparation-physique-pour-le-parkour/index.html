@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Méthodes de préparation physique pour le Parkour</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>Méthodes de préparation physique pour le Parkour</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2008-09-18">18 septembre 2008</time></li>
+	<li><a href="/yanndaout/tags/archive/" class="post-tag">archive</a>, </li>
+	<li><a href="/yanndaout/tags/archive/" class="post-tag">archive</a>, </li>
+	<li><a href="/yanndaout/tags/entrainement/" class="post-tag">entrainement</a>, </li>
+	<li><a href="/yanndaout/tags/parkour-net/" class="post-tag">parkour-net</a>, </li>
+	<li><a href="/yanndaout/tags/preparation-physique/" class="post-tag">preparation-physique</a>, </li>
+	<li><a href="/yanndaout/tags/renforcement/" class="post-tag">renforcement</a>, </li>
+	<li><a href="/yanndaout/tags/tutoriel/" class="post-tag">tutoriel</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p><strong>Table des matières:</strong></p>
+<ol>
+<li>Avant-propos</li>
+<li>Musculation</li>
+<li>Flexibilité</li>
+</ol>
+<h3 id="1-avant-propos" tabindex="-1">1) Avant-propos <a class="header-anchor" href="#1-avant-propos">#</a></h3>
+<p>Voici une liste assez complète des <strong>exercices de musculation nécessaires/utiles à la pratique du parkour</strong>. Plusieurs exercices travaillent les mêmes muscles, et vous ne devez pas tous les faire. Je vous conseille de <strong>varier</strong>, et c'est pourquoi la liste est longue. Tous les exercices se font <strong>avec son propre poids</strong>, ce qui limite les blessures et les coûts d'entraînement (en fait, ça ne devrait rien coûter). Vous devez aussi voir vos capacités et ce que vous avez besoin pour chaque exercice. Normalement, vous devriez être fatigués à la fin de chaque série, mais encore capables de continuer. Vous ne devez pas être complètement morts à la fin d'une seule série, sauf dans le cas du nombre maximal de répétitions. Lorsque je parle de fois par semaine, voyez-y le nombre de jours où il faudrait faire les exercices choisis en une semaine. Les séries ne comptent pas pour une journée. Par exemple je voudrais dire qu'il faut faire 3 séries de 10 répétition 4 fois par semaine. Cette liste contient aussi des exercices de flexibilité qui auront la même utilité que ceux de musculation. Vous devrez les faire après la musculation, pour détendre vos muscles et conserver leur pleine mobilité et les garder bien souples.</p>
+<h3 id="2-musculation-generale" tabindex="-1">2) Musculation générale <a class="header-anchor" href="#2-musculation-generale">#</a></h3>
+<p><strong>Fléchissement des bras</strong></p>
+<ul>
+<li>Tractions à la barre, les paumes face à nous et les mains à la largeur des épaules.</li>
+<li>Tractions à la barre, le dos de la main face à nous, mains à la largeur des épaules.</li>
+<li>Tractions à la barre, le dos de la main face à nous, mains larges, barre au menton.</li>
+<li>Tractions à la barre, le dos de la main face à nous, mains larges, barre à la nuque.</li>
+<li>Tractions à la barre, en position horizontale, les pieds sur quelque chose et les bras écartés.</li>
+<li>Tractions à une main.</li>
+<li>Répétitions :
+<ul>
+<li>Séries de 10 régulièrement, avec poids si nécessaire (4 séries par jour).</li>
+<li>Séries de 20, une ou deux fois par semaine, augmenter les répétitions si nécessaire (4 séries/jour, prendre le moins de repos possible entre les répétitions).</li>
+<li>Séries de 5, avec poids si nécessaire, deux ou trois fois par semaine (5 séries/jour).</li>
+<li>Séries de répétitions maximales, une fois par semaine (2 séries/jour).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Extension des bras</strong></p>
+<ul>
+<li>Dips aux barres parallèles.</li>
+<li>Dips en sautant aux barres parallèles.</li>
+<li>Dips en balançant aux barres parallèles.</li>
+<li>Pompes mains à la largeur des épaules et mains larges.</li>
+<li>Pompes à une main, les pieds sur un banc ou quelque autre objet.</li>
+<li>Pompes à l'équilibre les mains une à côté de l'autre, largeur des épaules et larges.</li>
+<li>Répétitions :
+<ul>
+<li>Séries de 10 régulièrement, avec poids si nécessaire (4 séries par jour).</li>
+<li>Séries de 30, deux ou trois fois par semaine, augmenter les répétitions si nécessaire (4 séries/jour, prendre le moins de repos possible entre les répétitions).</li>
+<li>Séries de 5, avec poids si nécessaire, une ou deux fois par semaine (5 séries/jour).</li>
+<li>Séries de répétitions maximales, une fois par semaine (2 séries/jour).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Antépulsion des épaules</strong></p>
+<ul>
+<li>Placez vos jambes sur un banc, les pieds loin du rebord. Ensuite, placez-vous en position pour faire des pompes, et approchez vos pieds du bord en gardant la même position. Votre corps doit reter allongé, vos éapules avanceront et vous devrez repousser pour ne pas tomber.</li>
+<li>Répétitions :
+<ul>
+<li>Séries de 10 descentes ensuite remontées. N'allez pas trop loin, sinon vous ne pourrez pas remonter. Aller plus loin si nécessaire, l'extrême étant d'être capable de tenir aux anneaux les bras comme les ailes d'une hirondelle (L'hirondelle est un mouvement de gymnastique aux anneaux. Vous pouvez facilement voir le bulgare Jordan Jovtchev sur des photos en cherchant sur Internet).</li>
+<li>Séries de 5 desentes tenues 3 secondes le plus bas possible. Vous pouvez vous laisser tomber sur le ventre puisque vous n'êtes pas obligés de remonter.</li>
+</ul>
+</li>
+<li>Placez deux banc d'une hauteur égale avec un angle d'environ 35-40 degrés. À la partie ou l'écart entre les deux est le plus petit, vous devez avoir assez d'espace pour que votre tête passe. Appuyez vos épaules sur ces deux extrémités, les bras le long des bancs. Poussez le sol avec vos pieds, de manière à ce que vous vous teniez en équilibre sur les épaules. Gardez le corps tendu, et laissez-le descendre jusqu'à l'horizontal. Ensuite, remontez si vous le pouvez. Sinon, poussez encore le sol avec vos pieds.</li>
+<li>Équilibre en force. Mettez les mains sur le sol, près de vos pieds écartés. Sans pousser avec ceux-ci, avancez les éapules et montez jusqu'à l'équilibre. Si vous avez de la difficulté avec vos équilibres, placez-vous face à un mur sur lequel vous appuyer.</li>
+<li>Répétitions :
+<ul>
+<li>Séries de 5, avec poids si nécessaire.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Fermeture tronc-jambes (abdominaux)</strong></p>
+<ul>
+<li>Redressements assis les mains derrière la tête, les pieds qui ne touchent pas au sol et les coudes qui rejoignent les genoux.</li>
+<li>Redressements assis les mains derrière la tête, en position gainée.</li>
+<li>Vous pouvez alterner en forçant plus d'un bord ou de l'autre.</li>
+<li>Répétitions :
+<ul>
+<li>Séries de 50 ou plus si nécessaire, 5 fois par semaine (4-5 séries/jour).</li>
+</ul>
+</li>
+<li>Levers de jambes à la barre.</li>
+<li>Levers de jambes à la barre les épaules disloquées.</li>
+<li>Levers de jambes le corps droit (la flexion se fait au niveau de l'épaule, et ça travaille aussi les pectoraux).</li>
+<li>Répétions :
+<ul>
+<li>Séries de 10-12, avec poids si nécessaire, quatre fois par semaine (3-4 séries/jour).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Relever du dos (muscles dorsaux)</strong></p>
+<ul>
+<li>
+<p>Redressements dorsaux les jambes à l'horizontal, bloquées sur une table (quelqu'un vous tient les chevilles), le corps commence le mouvement en bas et le termine le plus haut possible, avec une lmite de 90 degrés en hauteur.</p>
+</li>
+<li>
+<p>Vous pouvez alterner en forçant plus d'un bord ou de l'autre.</p>
+</li>
+<li>
+<p>Répétitions :</p>
+<ul>
+<li>Séries de 10-12, avec un poids derrière la tête si nécessaire, quatre fois par semaine (3 séries/jour).</li>
+<li>Séries de 30 ou plus si nécessaire, deux fois par semaine.</li>
+</ul>
+</li>
+<li>
+<p>Sur le ventre, levez vos pieds le plus haut que vous le pouvez en gardant les jambes tendues. Séries de 50 ou plus, deux fois par semaine (3 séries/jour).</p>
+</li>
+</ul>
+<p><strong>Flancs (muscles sur les côtés du corps)</strong></p>
+<ul>
+<li>Tout faire exactement comme pour les abdominaux, sauf pour les levers de jambes, qui pourront être faits en cercles d'un bord et de l'autre.</li>
+<li>Pour les grands dorsaux, les tractions mains larges et barre à la nuque devraient faire, sinon sachez que vous pouvez travailler des croix. Si vous n'êtes pas capables d'en faire, vous pouvez en faire juste la première partie, c'est-à-dire se tenir en appui et descendre au maximum de ses capacités avant de repousser pour revenir à l'appui. Se pratique aux anneaux ou avec des bandes de tissus ayant la forme d'anneaux et étant accrochés. Notez que plus la bande de tissus est longue, plus il vous sera difficile de tenir.</li>
+</ul>
+<p><strong>Extension des jambes</strong></p>
+<ul>
+<li>Squats sur une jambe et sur deux jambes.</li>
+<li>Sauts de grenouille. Répétitions: Séries de 10, trois fois par semaine, si nécessaire avec poids, (3 séries). Séries de 40 (surtout pour les sauts de grenouille), plus si nécessaire, quatre fois par semaine, (3-4 séries).</li>
+<li>Sauts en impulsion par dessus des obstacles placés un à la file de l'autre. Je recommande de placer 10 obstacles ou moins. Répétitions: Sauter par-dessus la série 5-8 fois, augmenter la hauteur et varier la distance des obstacles si nécessaire. Vous devriez vous arranger pour aussi éloigner certains obstacles, afin d'apprendre à sauter loin en plus de haut. Vous pouvez aussi en mettre un très haut tout de suite après un saut en longueur, pour pratiquer le contrôle des jambes et de leurs impulsions. Faire 3 fois par semaine.</li>
+<li>Se placer la pointe des pieds sur des marches, ou sur un banc, les talons le plus bas possible. Ensuite, pousser jusqu'à être sur la pointe des pieds. Répétitions: Séries de 30 chaque jambe, lentement. Augmenter le nombre de répétitions si nécessaire. Séries de 15 chaque jambe, lentement et avec poids sur les épaules. Demandez à un ami de s'assoir sur celles-ci. Vous devriez faire ces deux types d'exercices l'un à la suite de l'autre, quatre fois par semaine (3 séries/jour).</li>
+</ul>
+<p><strong>Course</strong></p>
+<ul>
+<li>Courir en descendant des pentes à pic, pour s'entraîner à aller au-delà de votre vitesse normale et ainsi augmenter le contrôle des jambes.</li>
+<li>Courir en remontant la pente, le plus vite possible.</li>
+<li>Courir en traînant quelque chose de lourd. Le mieux est d'attacher l'objet lourd, par exemple un pneu contenant des pierres, à une corde, et d'attacher cette corde à votre ceinture pour que le pneu traîne quelques mètres derrière vous.</li>
+<li>Courir en sautant par-dessus des obstacles petits et grands, rapprochés ou éloignés, toujours pour apprendre à contrôler les jambes.</li>
+</ul>
+<h3 id="3-flexibilite-generale" tabindex="-1">3) Flexibilité générale <a class="header-anchor" href="#3-flexibilite-generale">#</a></h3>
+<p><strong>Écarts</strong></p>
+<ul>
+<li>Fentes avec la jambe avant pliée et la jambe arrière tendue.</li>
+<li>Fentes avec la jambe arrière pliée et la jambe avant tendue, les orteils tirées vers soi, le tronc se rapprochant de la jambe.</li>
+<li>Fentes en grand écart.</li>
+<li>Mettre un pied sur un banc, l'autre par-terre, et pousser pour descendre, donner de petits rebonds.</li>
+</ul>
+<p><strong>Fermeture tronc-jambes</strong></p>
+<ul>
+<li>Aller toucher les pieds avec les mains (orteils tirées vers soi), descendre le plus possible, coller le tronc contre les jambes si possible, et après pointer les pieds et descendre encore plus.</li>
+<li>Même chose, mais les jambes écartées.</li>
+<li>Vous pouvez poser vos pieds sur un banc, légèrement écartés, et descendre plus loin que les jambes.</li>
+<li>Un ami peut aussi vous pousser doucement dans le dos.</li>
+</ul>
+<p><strong>Épaules</strong></p>
+<ul>
+<li>Suspension les bras disloqués à la barre.</li>
+<li>Suspension les bras presque disloqués à la barre (prendre la barre les doits face au visage, passer les jambes entre les mains et se laisser pendre ainsi, sans forcer).</li>
+<li>Rétropulsions: se mettre à genoux, allonger les bras devant soi, toucher le sol avec les mains et essayer d'aller toucher le sol avec les aisselles.</li>
+</ul>
+<p>[Auteur inconnu]</p>
+
+</article>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/archive/methodes-de-preparation-physique-pour-le-parkour/ -->
+	</body>
+</html>

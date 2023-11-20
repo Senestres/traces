@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>L&#39;enseignement du parkour</title>
+		<meta name="description" content="This is a post">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>L&#39;enseignement du parkour</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2014-06-24">24 juin 2014</time></li>
+	<li><a href="/yanndaout/tags/enseignement/" class="post-tag">enseignement</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p>Ces dernières années, on a pu voir l’augmentation du nombre de « cours » ou entrainements de parkour en tous genres, dans le milieu associatif, scolaire, privé… néanmoins, la plupart des traceurs confirmés d’aujourd’hui, ayant commencé en général il y a plus de cinq ans, ont appris par eux-mêmes, seuls ou en petits groupes, en imitant des films ou des vidéos trouvées sur internet. Parmi eux, on trouve naturellement de ceux qui pensent qu’il est impossible d’enseigner le parkour. Et ils n’ont pas tout à fait tort (pour des raisons que j’aborderais plus loin). Mais il me semble qu’il y a une place pour l’enseignement<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> qu’il ne faut pas négliger, en particulier au vu de l’essor extrêmement rapide de la discipline<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. J’aborderais dans cet article les idées, réflexions et questionnements que j’ai pu avoir sur le sujet. Cela peut vous intéresser en tant qu’enseignant (et pas seulement de parkour), mais également en tant que pratiquant. Si vous avez quelque chose à ajouter ou voulez me contredire, c’est avec plaisir, ma réflexion est loin d’être terminée, d’autant plus que je ne suis pas un spécialiste de la pédagogie.</p>
+<p>Commençons par le dire : je vais m’efforcer d’être neutre, mais il y aura nécessairement ici une part de subjectivité. J’adore enseigner, partager des connaissances. Si selon moi l’altruisme (désintéressé) n’existe pas, cela n’empêche pas les actes égoïstes de pouvoir être également bénéfiques pour autrui, de l’égoïsme utile en somme<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. C’est ce que je m’efforce de faire en général, et en particulier à travers l’enseignement du parkour. Disons que je serais bien triste si l’on me retirait cela, qui est une de mes motivations pour persévérer dans la discipline.</p>
+<p>En vivant le parkour, on a vraiment l’impression de pratiquer une activité à part du reste, et ce ressenti est suffisamment ancré chez les traceurs pour qu’il apparaisse difficile de mettre le parkour en relation avec d’autres pratiques physique (hormis peut-être les arts martiaux, parallèle fait régulièrement). Pourtant, en tant qu’activité physique pure, le parkour ne diffère pas fondamentalement de tout autre activité physique… et donc des sports. On pourra argumenter autant que l’on veut concernant la liberté du mouvement et le fait que dans le parkour, « ce qui est efficace est ce qui est juste »… il n’en reste pas moins qu’il y a des mouvements « justes », et d’autres « faux », et cela à trois niveaux.<br>
+Premièrement, on l’a dit, ce qui est efficace est considéré comme juste, étant donné la finalité<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> du parkour.<br>
+Deuxièmement, et cela est une conséquence du premier point, on peut remarquer l’émergence d’une esthétique fonctionnelle dans le parkour. On entend ainsi souvent chez les traceurs des critiques exprimés sous une forme esthétique : « C’était quoi ce climb-up ? » « Ton atterrissage était dégueulasse ! », « Trop moche ton saut ! », etc. Ce qui est efficace et juste devient également ce qui est beau (sans doute une des raisons pour laquelle un training large est pour certains traceurs, moi le premier, largement plus stylé qu’un costard).<br>
+Troisièmement, en dehors de l’efficacité sur le court terme, il faut tenir compte de l’efficacité sur le long terme. Chaque traceur a sa propre manière de bouger, selon son expérience, ses préférences, sa morphologie… et ce qui est efficace peut être différent pour chacun. Néanmoins, il ne faut jamais oublier qu’en essayant de corriger une mauvaise habitude, une forme de mouvement efficace paraîtra très souvent le contraire (« ça fonctionne pas pour moi »), jusqu’au moment où l’accumulation d’heures d’entrainements permet à cette nouvelle forme de surpasser largement la première, raison pour laquelle la persévérance est importante. La plupart des mouvements du parkour sont assez naturels (parce que le corps humain est tout à fait adapté pour les produire, et qu’ils ont en général tous été expérimentés à partir de notre enfance) et semblent venir très rapidement chez la plupart des débutants. Néanmoins, le problème survient souvent quand une mauvaise habitude est prise. Formellement, on ne nous apprend pas grand-chose des mouvements de base, que ce soit dans le cadre familial, social, scolaire... Comment avoir une bonne posture, comment marcher, courir, sauter, et surtout atterrir correctement ? Une mauvaise technique avec les forces énormes qui sont en jeu dans le parkour représente un bien plus grand danger et risque sur le moyen/long terme qu’une chute.</p>
+<p>Pour déterminer ce qui est juste, et ce qui est faux, il faut donc une personne d’expérience. Beaucoup d’éléments (atterrir sur les pointes, diminuer le bruit des impacts, etc.) sont à la portée de n’importe quel traceur, après quelques entrainements. D’autres nécessitent des connaissances beaucoup plus étendues, d’autant plus que, comme dit plus haut, les règles de la justesse se transmettent beaucoup par l’esthétique, et que le beau n’est pas toujours juste, ou le plus juste, en particulier si l’on tiens compte des divergences morphologiques entre les traceurs<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
+<p>L’activité physique est également source de nombreux aprioris et mythes, et ce n’est malheureusement pas l’éducation physique scolaire (faute d’enseignement formel, on nous fait jouer plus qu’autre chose), ni (de mon expérience vécue) les clubs sportifs, qui vont les dissiper. Si l’on ne peut pas les dissiper, on peut au moins éviter que d’autres se propagent à partir du parkour. Le parkour a donc besoin de personnes qualifiées, et pas seulement en tant que traceurs d’expérience (qui ont leur place également, que j’encourage fortement et notamment à consolider leurs connaissances, que je remercie pour tout ce qui a été fait jusqu’à maintenant).</p>
+<p>Les enseignants peuvent être très utiles pour donner un cadre motivationnel à la pratique. Certaines personnes ont besoin d’une structure temporelle (entrainements réguliers) ou spatiale (salles, lieu habituel), ou tout simplement d’une personne qui leur dise quoi faire. Il me parait douteux, et j’y reviendrai plus loin, de faire dépendre les individus sur de telles structures, c’est pourquoi j’encourage à s’entrainer par soi-même (seul si possible, ou en groupe réduit) le plus vite et le plus régulièrement possible, et cela en extérieur. Mais cela demande peut-être une phase de transition pour quelqu’un habitué au cadre habituel des sports modernes, pour une personne ne se sentant pas à l’aise d’investir les lieux publics de sa présence, etc.</p>
+<p>Les enseignants ont également leur place pour donner un cadre philosophique à la discipline, en rappeler l’origine, etc. même si cela peut à mon sens être fait tout à fait correctement par les traceurs qui s’y intéressent un minimum.</p>
+<p>Il y aurait sans doute bien plus à dire, mais je pense que cela suffit à remettre l’enseignement à la place qui lui est due. Venons-en maintenant aux problèmes que pose l’enseignement du parkour, qui sont loin d’être négligeables.</p>
+<p>Si le parkour ne se distingue pas d’une pratique physique classique au niveau du mouvement même, le sens qu’on lui donne, la philosophie et méthodologie qui lui sont propres font que l’approche doit être différente à certains égards. En effet, avant d’être un moyen de locomotion, le parkour est une méthode d’entrainement consistant à se renforcer physiquement et mentalement en franchissant des obstacles<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>. Le parkour n’est pas une performance objective pouvant être atteinte par des moyens divers mais est constitué en lui-même par ces moyens. Le parkour, c’est le parcours qui y mène. Le parkour consiste en cette confrontation à l’obstacle qui est difficile mais qu’on ne peut pas retirer. Je crois qu’il est assez évident que si on se levait un jour et que toutes les barrières étaient levées, le parkour n’aurait plus de sens, se jouer des obstacles n’ayant d’intérêt que par la présence d’obstacles<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>. En clair, la facette du parkour qui pour moi a le plus d'importance réside dans l’expérience et la recherche que chacun fait pour sa progression, et pas dans la progression elle-même (ou dit autrement, pas dans les résultats de cette progression, qui sont secondaires<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>).</p>
+<p>Le parkour exige de s’adapter à son environnement, chaque situation et chaque obstacle ayant ses spécificités. Il ne peut pas s’enseigner en salle. Au mieux, il est possible de faire une « introduction au parkour », en présenter les mouvements principaux et spécifiques, et cela peut être utile dans certaines conditions ou avec certaines catégories de personnes. Mais dire que cela est du parkour serait dénaturer totalement la pratique et lui retirer tout son sens.</p>
+<p>Le parkour demande d’être autonome, de se connaitre et de pouvoir identifier ce qui est possible et impossible en fonction de la situation et de nos propres capacités afin de pouvoir être compris comme une façon de se déplacer quotidiennement (ou à minima, lors de situations spécifiques<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>) au lieu d’être un simple sport déconnecté de la vie. Il faut être capable de se poser des obstacles à soi-même et de les affronter afin de pouvoir progresser (et surtout s’amuser, créer un jeu en se donnant un certain nombre de règles). L’enseignant doit donc permettre cette prise d’autonomie. Le traceur n’est pas un simple exécuteur de mouvement, c’est à lui de tracer sa route. On a par ailleurs toujours dit que le parkour consistait en un refus des normes, un refus de l’attribution fonctionnelle qui a été faite à l’environnement (« j’utilise ce banc pour autre chose que m’assoir »). Il semblerait bien étrange (et présomptueux peut-être) qu’un enseignant fasse la démarche inverse en déterminant le juste et le faux en lieu et place du traceur lui-même, en dehors des éléments mentionnés plus haut.</p>
+<p>Mettons les choses ainsi : le traceur est rationnel et libre. C’est en théorie à lui de déterminer sa façon de bouger. Il lui manque néanmoins pour faire ses décisions la perfection de l’information, à laquelle pourra contribuer un enseignant expérimenté et compétent. Le choix c’est bien, mais un choix éclairé, c’est mieux. La population des traceurs étant constituée principalement de jeunes, le problème de l’immaturité ne doit pas être négligé : un jeune étant moins capable de se projeter dans l’avenir, il ne lui suffit pas toujours de connaitre des conséquences pour en prendre compte dans sa pratique. Il y a donc des cas où tempérer certaines prises de risque semble important, même si ces cas sont difficiles à définir (qui décide quelle prise de risque en vaut la peine ? qui en est responsable ?).</p>
+<p>Tout cela étant dit, voici quelques guidelines que j’essaie de suivre moi-même, qui me semblent importantes et que j’aurais aimé voir appliquées par les enseignants que j’ai pu avoir jusqu’à maintenant (c’est bien parce que j’ai souvent été déçu que j’essaie d’en faire l’application moi-même) :</p>
+<p><strong>Transmission horizontale du savoir</strong> : il me semble que personne n’a de prérogative sur le savoir. Le savoir est fluctuant, en constante évolution, et cela est particulièrement marqué dans le monde du sport qui reste un sujet d’étude très récent. Tout le monde peut faire des erreurs, tout le monde peut être corrigé. Tout le monde est compétent dans certaines domaines, moins dans d’autres. Pour ces raisons, je dirais qu’il est nécessaire que l’enseignement ne se fasse pas sous forme d’imposition d’autorité. Chacun peut contribuer aux connaissances de l’autre, et même si la transmission d’information se fait de manière asymétrique entre un débutant et un expert, il est important qu’elle se fasse dans les deux sens. Pour contribuer à l’autonomie (et donc diminuer la dépendance, ce qui sera difficile à accepter et mettre en place pour certains…) du traceur ou de l’apprenant en général, il est essentiel de toujours expliquer les raisons ou le raisonnement qu’il y a derrière les informations qu’on lui donne. Ce n’est pas « fais-ceci » qui lui sera utile, mais « fais-ceci parce que [x] ». Cela permet une distance critique, voire de décider que la méthode proposée n’est pas la bonne (notamment si [x] ne fait pas partie des objectifs du pratiquant), permet une meilleure transposition des connaissances à d’autres domaines (plus ou moins proches selon le cas), et contribue au niveau de connaissance en général. Dans mon idéal, enseigner c’est contribuer au développement de la personne en général, pas juste dans un seul domaine précis et restreint. Si en enseignant le parkour on peut faire passer d’autres connaissances avec, pourquoi s’en priver ? Oui ça demande du travail de la part de l’enseignant (qui doit être capable de s’adapter, qui doit vérifier ses informations et réellement comprendre ce qu’il dit au lieu de simplement suivre les recommandations de ses propres enseignants et appliquer dans le vide). Oui, ça demande de l’humilité de refuser une position d’autorité. Ouais ça demande de redonner à l’individu sa propre responsabilité et se mettre en danger dans ce monde où personne n’ose prendre de risque<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup>. Oui, ça brise le cœur et le portemonnaie de rendre l’autre progressivement indépendant de soi. Vous êtes là pour enseigner et voir les gens progresser et s’améliorer ou pour faire une transaction marchande ?</p>
+<p>En dehors de la relation débutant-expert, il m’a toujours semblé que la transmission peut se faire à tous les niveaux, même débutant-débutant<sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup>. Au sein du groupe, l’entraide est non seulement utile pour la progression de tous, mais elle est également extrêmement valorisante pour chacun, et peut être une source de motivation très forte (ce qu’elle a été et est toujours pour moi dans de nombreux domaines), ainsi qu’un facteur de cohésion de la communauté. Favoriser activement ces échanges semble une bonne chose, mais j’ai remarqué que l’auto-organisation et le laisser-faire fonctionne bien dans notre association : j’ai vu des débutants à leur deuxième ou troisième entrainement expliquer de A à Z tout ce qu’ils ont appris jusque-là à leur pote qui venait pour la première fois. Spontanément. Je n’ai pas une seule fois émis un encouragement à l’entraide. Il y a surement un moyen d’instaurer un tel climat, mais puisqu’il s’est toujours imposé sans que je n’aie rien eu à faire, je ne saurais en donner les clés. J’imagine que le fait de ne pas faire de cours structuré et de ne pas avoir une position trop prédominante lors des entrainements joue un rôle permissif. Peut-être qu’il y a quelque chose à ce sujet dans la littérature pédagogique, je suis preneur si tel est le cas.</p>
+<p><strong>Ne pas privilégier la compétition</strong> : beaucoup de gens pensent que la compétition est le principal moteur au niveau sportif (mais aussi social, ou même à l’échelle de l’évolution des espèces), et considèrent que le contraire reviendrait à un nivellement vers le bas. Pourtant, ce n’est pas l’enjeu ici. La compétition n’est pas le seul moyen, et à bien des égards pas le meilleur, de pousser à la performance. Pourquoi privilégier des relations gagnant-perdant alors qu’on peut obtenir des relations gagnant-gagnant ? Dans mon vécu de sportif, j’ai vu de la rage, de la violence physique et verbale, des pleurs, du dégoût, des abandons. Jusqu’à maintenant, je n’ai pas perçu ceci lors des entrainements de parkour. J’ose imaginer que le fait de laisser les gens s’organiser par eux-mêmes, se fixer leurs propres buts, permet d’éviter les conflits. L’entraide se fait naturellement parce que c’est le meilleur moyen de s’auto-organiser lors que le mode de fonctionnement n’est pas imposé avec force par des conditions externes.</p>
+<p>Il est intéressant de noter que d’opter pour un climat de maîtrise (privilégiant « l’apprentissage, les progrès personnels et la valorisation du travail et des efforts »<sup class="footnote-ref"><a href="#fn12" id="fnref12">[12]</a></sup>) au lieu d’un climat de compétition (valorisant la « comparaison sociale, la compétition interpersonnelle, et le résultat final ») conduit à une plus grande motivation et une persistance dans l’activité, pousse moins à des stratégies telles que la tricherie (qui est positive lorsque le but est de gagner, pas lorsqu’il s’agit d’apprendre ou de progresser), provoque moins d’anxiété… bref est, en tout cas en moyenne (certains individus étant sans doute mieux adaptés que d’autres à tel ou tel climat motivationnel) plus profitable que la compétition. La raison la plus valable d’opter pour la compétition à l’entrainement est lorsque le but d’un athlète est la compétition elle-même. Or, cette raison disparait dès lors que l’on considère que la compétition n’a pas lieu d’être. Et étant donné que seulement 16% de la population Suisse comptent la compétition parmi leurs raisons de faire du sport (contre 98% pour la santé, 91% pour penser à autre chose, 70% pour la convivialité…)<sup class="footnote-ref"><a href="#fn13" id="fnref13">[13]</a></sup>, et que ce chiffre serait sans doute moins grand dans un environnement social et sportif moins compétitif, je l’écarte sans trop de remords des modes de fonctionnement que je valorise.</p>
+<p><strong>Structure de cours</strong> : au vu de tous les arguments exposés plus haut, comment organiser un cours de parkour ? C’est une question difficile que je ne cesse de me poser, et je vous invite à la discussion. J’ai quitté le monde des clubs sportifs, principalement parce qu’un modèle strictement structuré ne me convenait en rien. Je me suis juré de ne jamais répéter ce modèle (qui malheureusement est le plus simple et le moins contraignant à mettre en place, raison pour laquelle il est dominant). Je ne sais pas s’il est possible d’avoir un autre mode de fonctionnement efficace au niveau pédagogique, car il est vrai qu’il est très difficile de contrôler et conseiller un grand groupe si ce n’est avec un cours structuré. La transmission horizontale du savoir dont je parlais semble une bonne voie à explorer, mais elle n’est surement pas applicable avec des enfants ou un grand groupe de débutant (j’ai déjà mentionné que l’interaction débutant-débutant n’est pas très efficace pour le développement des connaissances). Il faut donc être constamment prêt à s’adapter. De toute façon cette adaptabilité est essentielle : en effet, la plupart des cours structurés que j’ai pu suivre n’étaient pas suffisamment modulables pour permettre à un sujet faible (faible pour la méthode utilisée) de suivre, ni à un sujet fort de développer son plein potentiel. En général, face à un individu qui éprouvait des problèmes, la méthode consistait à… répéter en boucle la même méthode, entrainement après entrainement, au lieu d’adopter rapidement une approche différente. Telle personne apprend de manière visuelle, telle personne auditivement, une autre préférera le « trial and error » pur et dur…</p>
+<p>Bref, je recommande l’approche structurée avec les enfants (je dirais pour les moins de 12-14 ans, ensuite il est facile d’implémenter une autre méthode, mais je ne suis évidemment pas spécialiste de la pédagogie et j’ai peu d’expérience avec les très jeunes enfants) ou pour les débutants durant leurs premières semaines d’entrainement. L’approche structurée convient également bien lorsque la recherche de performance est importante, mais personne n’est à mon avis actuellement en mesure de pouvoir donner des directives précises concernant une intensité et un nombre de répétitions optimales de mouvements. Les traceurs ne suivent pas les recommandations concernant les méthodes de pliométriques, et pourtant développent une détente impressionnante.</p>
+<p>Peut-être que je me base trop sur mon vécu personnel de la discipline et que l’auto-organisation ne convient pas à tous, mais les performances impressionnantes des traceurs actuels ou les progrès des groupes que je côtoie, ainsi que leur motivation, sont des indices que la pratique autonome fonctionne tout à fait bien et ce pour un panel très large d’individus. De plus, il y a un nombre croissant de gens qui commencent à vouloir rechercher une pratique moins contraignante, plus autonome (d’où l’explosion de la course à pied ou des différentes pratiques urbaines comme le street workout, voire même les salles de fitness), les alternatives au dogme du club sportif ont donc leur importance. Si concilier la pratique autonome avec l’encadrement d’un enseignant est un défi à relever, qui exige beaucoup de concessions de la part de l’enseignant et parfois du pratiquant lui-même, je pense qu’il y a là moyen de changer de paradigme sportif, et à défaut de changer le sport actuel, lui créer une alternative qui non seulement est viable mais me semble potentiellement plus bénéfique pour l’individu et la société.</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>J’entends par enseignement la définition assez générale de « transmission de connaissances et de savoir-faire » <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Qui amène, selon les mots de Blane, une dilution de la mentalité parkour, des valeurs, des connaissances, des techniques, et quelque part de la force des traceurs… sa démocratisation se fait naturellement à un certain prix. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><em>La Morale anarchiste</em>  et <em>L'Entraide, un facteur de l'évolution</em> de Pierre Kropotkine sont assez inspirants à ce sujet. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Être capable de surmonter des obstacles avec un maximum d’efficience (plus précisément, en un minimum de temps et de dépense d’énergie, avec un maximum de certitude et de sécurité). <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Question subsidiaire : le parkour, fortement masculin depuis son origine, privilégie sans doute des formes de mouvements adaptés aux hommes, doit-on en modifier certaines pour les femmes (ou pour les hommes plus frêles, ou d’autres formes encore pour les enfants, la question n’est de toute façon pas ici de savoir ce qui est de l’ordre du naturel ou du social, du sexe ou du genre). <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>Le parkour n’est pas dissociable de cet aspect, c’est ce qui fait sa spécificité, et j’ai déjà argumenté à ce sujet ici : <a href="http://yanndaout.blogspot.ch/2013_11_01_archive.html">http://yanndaout.blogspot.ch/2013_11_01_archive.html</a> <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>J’ai également déjà mentionné que je ne pense pas que l’on retire plus de plaisir à un niveau avancé que lorsque l’on est débutant. Les mouvements sont différents, les obstacles aussi, mais la relation entre les deux ne change pas. L’obstacle est subjectif, il est obstacle par rapport à soi, le bénéfice de le franchir se fait aussi toujours par rapport à soi et nos capacités actuelles. Il est par contre évident que l’on retire du plaisir à progresser, mais cela ne veut pas dire qu’il faut maximiser la performance. <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>Les résultats vont dépendre de tellement de facteurs, dont la morphologie du pratiquant, son sexe, âge, mode de vie, motivation… qu’il est aberrant de vouloir faire de la comparaison objective entre les individus. De plus, on sait très bien que cette progression devra être freinée, stoppée, puis deviendra régression plus ou moins rapide avec le temps. Le dépassement de soi n’a plus de sens sur le long terme, et c’est une autre raison de voir que l’expérience quotidienne et intrinsèque de la discipline est bien plus importante que ses résultats. <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p>Situations d’urgence, mais aussi prendre un raccourci, franchir une barrière, courir après son bus… <a href="#fnref9" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn10" class="footnote-item"><p><a href="https://www.youtube.com/watch?v=uYth3n5-oBM">https://www.youtube.com/watch?v=uYth3n5-oBM</a> <a href="#fnref10" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn11" class="footnote-item"><p>La littérature, notamment <a href="http://www.cairn.info/revue-staps-2006-3-p-25.htm">Darnis-Paraboschi et al, 2006</a>, montre qu’une dysmétrie est plus profitable, surtout pour le sujet faible. Mais on admettra que tout le monde possède ou acquiert rapidement quelques connaissances sur les mouvements simples du parkour qui lui seront suffisantes pour progresser et faire progresser un sujet de niveau similaire ou inférieur. <a href="#fnref11" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn12" class="footnote-item"><p>Sarrazin et al, 2006 <a href="http://rfp.revues.org/463?lang=en">http://rfp.revues.org/463?lang=en</a> <a href="#fnref12" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn13" class="footnote-item"><p><a href="http://www.baspo.admin.ch/internet/baspo/fr/home/dokumentation.parsys.000106.downloadList.11029.DownloadFile.tmp/sportsuisse2014.pdf">http://www.baspo.admin.ch/internet/baspo/fr/home/dokumentation.parsys.000106.downloadList.11029.DownloadFile.tmp/sportsuisse2014.pdf</a> <a href="#fnref13" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+<nav class="pagination-inner" aria-label="Articles next and previous links">
+	<a href="/yanndaout/blog/parkour-en-1930/" data-direction="forwards" class="pagination-previous">
+		<span>← Parkour en &quot;1930&quot; (sic) </span>
+	  </a>
+	
+	<a href="/yanndaout/blog/Des excuses, toujours plus d&#39;excuses./" data-direction="backwards" class="pagination-next">
+		<span>Des excuses, toujours plus d&#39;excuses. →</span>
+	  </a>
+	
+</nav>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/blog/L&#39;enseignement du parkour/ -->
+	</body>
+</html>

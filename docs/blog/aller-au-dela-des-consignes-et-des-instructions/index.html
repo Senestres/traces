@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Aller au-delà des consignes et des instructions</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>Aller au-delà des consignes et des instructions</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2020-02-09">09 février 2020</time></li>
+	<li><a href="/yanndaout/tags/contraintes/" class="post-tag">contraintes</a>, </li>
+	<li><a href="/yanndaout/tags/psychologie-ecologique/" class="post-tag">psychologie écologique</a>, </li>
+	<li><a href="/yanndaout/tags/enseignement/" class="post-tag">enseignement</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p>En éducation physique, la littérature pédagogique repose essentiellement sur des approches cognitivistes, selon lesquelles l’apprentissage consiste à traiter et stocker de l’information, des connaissances, des règles, etc. Avec une telle approche, le mode d’intervention le plus naturel est celui de l’instruction, de la consigne, ou éventuellement du « drill » qui doit permettre d’intérioriser les instructions. Le corps et l’environnement sont largement absents dans ces approches, alors que c’est pourtant un domaine dans lequel ils devraient être prépondérants. Des approches alternatives existent, mais il n’existe presque aucune littérature francophone, et elles sont généralement considérées comme inutiles pour les enseignants. Il existe cependant un court article publié en 2014 dans la revue EP&amp;S <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> qui fait quelques propositions en se revendiquant du courant de l’énaction et de la pédagogie non linéaire. L’article tenant en seulement 3 pages, je vous invite à le parcourir avant de revenir ici <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> . Je propose de le discuter et en particulier de critiquer le point qui me semble problématique. Selon moi, les propositions y manquent de radicalité, en se focalisant les modes d’intervention sur des consignes verbales plutôt que l’interaction entre le corps et l’environnement. Je fais quelques suggestions pour radicaliser l’approche et mieux prendre la matérialité en compte.</p>
+<h2 id="complexite-et-simplification" tabindex="-1">Complexité et simplification <a class="header-anchor" href="#complexite-et-simplification">#</a></h2>
+<p>Dans cet article, Komar et Adé proposent que les compétences sont fortement liées au contexte d'apprentissage, et qu'elles sont donc faiblement transférables à d'autres contextes. Cependant, ils ne précisent pas à quoi tient la spécificité d'une situation, hormis par le terme vague de &quot;contexte de difficulté&quot;. Les théories écologiques ont justement pour avantage d’éviter cet écueil-là, en mettant notamment l’accent sur l'information disponible dans l’environnement pour soutenir une action. Deux situations sont similaires si elles présentent les mêmes affordances (possibilités d’action) et les mêmes sources d'informations pertinentes pour l'action (la couleur de l'herbe n'importe pas ; la présence d’un adversaire dont on peut lire les gestes pour anticiper, si). Peut-être que ces éléments ne sont jamais mentionné parce qu’ils sont supposés évidents. Mais il est essentiel de les discuter pour créer des contextes d’apprentissage représentatifs des situations de performance dans lesquelles les compétences apprises seront utilisées. Si « représentatif » ne veut pas dire « identique », alors il faut pouvoir identifier quelles caractéristiques doivent absolument être conservées, et lesquelles importent peu.</p>
+<p>Les auteurs insistent sur le fait de devoir préserver la complexité de la situation (p.ex. interactions avec d’autres joueurs), ce qui est louable, notamment pour préserver un apprentissage qui fasse sens et qui puisse être transférable au-delà de la situation créée spécifiquement pour l’apprentissage. Mais ils avancent également qu’il faut simplifier la situation, &quot;en diminuant la difficulté de réalisation pour les élèves&quot;. La simplification des tâches est un concept basique de l’enseignement. Cependant, les théories cognitives ne précisent jamais ce qui compte comme une &quot;difficulté&quot;, comme si c'était elle aussi une notion évidente. Ceci amène à des paradoxes, comme des situations qui semblent plus « difficiles » et qui pourtant permettent de meilleures performances et apprentissages que des situations « faciles » (p.ex. en parkour, la technique de passemuraille de novices est généralement largement supérieure avec un obstacle hors de portée, par rapport à un mur à hauteur de tête). Dans le paradigme dynamique, on peut expliquer cela par une réduction du nombre de degrés de liberté à contrôler. Le mouvement est contraint ou guidé dans une direction spécifique, et l'on retire ainsi certaines solutions « faciles » (p.ex. sauter directement contre le mur, sans utiliser le pied ; ne pas utiliser un maximum d’élan ; etc.), qui sont fonctionnelles (répondent à la tâche) mais sont de l’ordre du moindre effort. Il faut donc parfois utiliser des situations (<em>a priori</em>) plus difficiles ou complexes (aller plus vite, ajouter des contraintes, utiliser un obstacle plus haut, faire le mouvement dans une pente, etc.), dans le but de rendre le contrôle plus facile et de rendre certains patterns de mouvements plus attractifs. Simplifier : oui, mais il faut déplier cette notion, qui n’est pas évidente. Pour moi, que « simplifier » soit un mot d’ordre productif, il faut qu’il veuille dire : trouver la situation qui donne de la stabilité aux solutions « expertes » et les rends attractives, tout en rendant indisponibles, en décourageant les coordinations « novices », du « moindre effort ».</p>
+<h2 id="prendre-la-materialite-en-compte" tabindex="-1">Prendre la matérialité en compte <a class="header-anchor" href="#prendre-la-materialite-en-compte">#</a></h2>
+<p>Les auteurs proposent finalement trois actions principales pour l’enseignant : proscrire-amplifier-connecter (PAC).</p>
+<ol>
+<li><strong>Proscrire</strong> signifie « concevoir un dispositif d’apprentissage offrant à tous les élèves […] différentes possibilités de réponses tout en réduisant l’éventail des choix possibles. » En somme, il faut créer une situation à explorer, tout en retirant certaines actions considérées a priori comme « inefficaces ou dangereuses », afin de guider l’exploration. Ceci s’oppose à la prescription, où l’on donne d’emblée un modèle d’action à reproduire.</li>
+<li><strong>Amplifier</strong> signifie que le dispositif d’apprentissage doit « zoomer sur une expérience ». Je comprends cela comme le fait d’accentuer certains éléments de la tâche, afin de les rendre saillants, de focaliser l’attention, etc.</li>
+<li><strong>Connecter</strong> signifie que le dispositif d’apprentissage doit « encourager et guider l’élève pour qu’il reconnaisse entre des contextes différents, [sic] des airs de famille ». En somme il faut lier le contexte d’apprentissage à d’autres contextes afin de faciliter le transfert des compétences.</li>
+</ol>
+<p>Le fait de parler de dispositif est ici essentiel, puisqu’il permet de penser les « arrangements spatiaux, sociaux, matériels et temporels » des situations d’apprentissage. C’est un excellent pas en avant. L’enseignant devrait se penser comme designer de situations d’apprentissage, pas comme instructeur. Les auteurs donnent quelques exemples de leurs trois actions clés se basant sur l’aménagement matériel, comme faire tenir en main un objet coloré ou aller toucher un plot pour amplifier le geste d’un adversaire ou la délimitation du terrain. Malheureusement, comparé à ce que peuvent proposer la pédagogie non-linéaire et la <em>constraint-led approach</em>, on manque ici de radicalité. La quasi-totalité des exemples se réduisent à des consignes : « L’enseignant proscrit en demandant » ; « L’enseignant amplifie à travers l’analogie […] » ; « […]cette analogie pourrait être connectée […] en demandant à l’élève[…] ». Cela ne fait que renforcer l’idée que l’apprentissage est essentiellement un phénomène cognitif, représentationnel, et que le rôle essentiel de l’enseignant est de donner consignes et instructions. Cela dit, louons l’utilisation par les auteurs des analogies : quitte à parler aux élèves, autant parler le langage du mouvement plutôt que de donner des consignes et règles abstraites.</p>
+<p>On pourrait suggérer une ébauche de principes un peu plus radicaux:</p>
+<ol>
+<li><strong>Proscrire</strong> en utilisant des contraintes matérielles appropriées qui canalisent l’exploration et rendent certains mouvements plus ou moins attractifs (rouler en descente, lancer par-dessus un mur…) ;</li>
+<li><strong>Amplifier</strong> par un changement de matériel qui fait mieux ressentir les effets du mouvement (sauter à pieds nus, utiliser une balle plus lourde…);</li>
+<li><strong>Connecter</strong> en créant des situations d'apprentissage représentatives qui permettent de transférer immédiatement l'apprentissage à d’autres situations (utiliser des environnements complexes, préserver les affordances et sources d’information pertinentes, etc.).</li>
+</ol>
+<p>Evidemment, l’enseignant peut encore utiliser des consignes et instructions, ne serait-ce que pour définir le but de la tâche. Mais l’essentiel de l’intervention se trouve dans le design du dispositif d’apprentissage, dont les consignes ne sont qu’une petite partie. Autrement dit, les consignes ne sont qu’un cas particulier des différentes contraintes auxquelles un apprenant fait face, et c’est une erreur que de toujours revenir à ce cas particulier. Si l’on veut vraiment prendre en compte le corps et l’environnement, il faut être radical, et c’est cette même radicalité qui permet de penser à des solutions innovantes plutôt que de ressasser en d’autres termes ce que le cognitivisme nous dit déjà. Il est certes difficile d’être radical dans la pratique de l’enseignement (ne serait-ce que parce qu’il faut se conformer à un rôle, aux attentes des élèves, aux valeurs de l’institution pour laquelle on travaille, etc.) ; il faudrait au moins l’être quand on réfléchit à notre pratique.</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Komar J. et Adé D., « Un PAC pour les compétences en EPS », <em>Revue EP&amp;S</em> 363, 2014, pp. 14‑16.  <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Je vous invite à le consulter en ligne : <a href="https://apprendreeneps.files.wordpress.com/2015/01/2014-komar-adc3a9-pac-compc3a9tences-eps.pdf">https://apprendreeneps.files.wordpress.com/2015/01/2014-komar-adc3a9-pac-compc3a9tences-eps.pdf</a>  <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+<nav class="pagination-inner" aria-label="Articles next and previous links">
+	<a href="/yanndaout/blog/quest-ce-qui-ce-cache-derriere-ipf-wfpf-i/" data-direction="forwards" class="pagination-previous">
+		<span>← Qu’est-ce qui ce cache derrière IPF/WFPF ? - I </span>
+	  </a>
+	
+	<a href="/yanndaout/blog/lutilisation-spectaculaire-du-parkour/" data-direction="backwards" class="pagination-next">
+		<span>La mise en spectacle du parkour →</span>
+	  </a>
+	
+</nav>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/blog/aller-au-dela-des-consignes-et-des-instructions/ -->
+	</body>
+</html>

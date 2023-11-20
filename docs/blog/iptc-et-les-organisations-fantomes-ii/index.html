@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>IPTC et les organisations fantômes - II</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>IPTC et les organisations fantômes - II</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2020-05-10">10 mai 2020</time></li>
+	<li><a href="/yanndaout/tags/organisations-internationales/" class="post-tag">organisations-internationales</a>, </li>
+	<li><a href="/yanndaout/tags/enquete/" class="post-tag">enquête</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p>Récemment, on m'a signalé que IPF liste parmi ses partenaires FederSwiss, une organisation suisse de handisport. Mieux, IPF a émis une licence reconnaissant FederSwiss comme l’organe national de gouvernance pour le Parkour en Suisse<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. J'ai immédiatement trouvé cela étrange : pourquoi pas une organisation spécifique à la discipline, qu’elle soit déjà active ou créée dans ce but ? De plus, je n’avais jamais entendu parler de FederSwiss. Quelles sont ses activités ? s’est-elle déjà rapprochée de pratiquants du parkour dans la région ? La prochaine partie sera dédiée spécifiquement à FederSwiss, mais ce qui m’intéresse ici c’est le réseau d’organisations et d’individus dont font partie IPF et FederSwiss. En effet, les deux organisations sont très fières de leur réseau, et comme je le montrerai, il y a beaucoup d’éléments suspects.</p>
+<h2 id="qu-est-ce-que-iptc" tabindex="-1">Qu'est-ce que IPTC ? <a class="header-anchor" href="#qu-est-ce-que-iptc">#</a></h2>
+<p><img src="images/certificate.jpg" alt=""></p>
+<p>Certificat émis par IPF et IPTC, adressé à FederSwiss</p>
+<p>Sur la licence donnée par IPF figure le logo de International Professional Training Certification (IPTC)<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. Pour explorer un réseau, il faut bien commencer quelque part, et on est un peu obligés de commencer un peu arbitrairement, par le milieu. Commençons donc par là. L’organisation organise des cours à la suite desquels elle délivre des certificats censés être « valides au niveau international »<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. IPTC est une entreprise américaine enregistrée au nom de Arash Salmanpour, mais on peut se demander dans quelle mesure David Thompson et Victor Bevine sont impliqués dans cette organisation, étant donné leur omniprésence sur le site de IPTC. Quoi qu’il en soit, IPTC est chargé de délivrer les certificats pour WFPF<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. [Màj 16.05.2020: le jour de la publication de cet article, M. Salmanpour a été <a href="https://internationalparkourfederation.com/2020/05/mehdi-arash-salman-pour-appointed-as-deputy-secretary-general-of-ipf-international-parkour-federation/">nommé secrétaire général de IPF].</a></p>
+<p>Il y a quelques problèmes avec IPTC, à commencer par les personnes qui représentent l’organisation. Vérification faite, au moins une personne qui apparait sur la page « management board » n’était pas au courant de la position qu’elle était censée occuper dans cette organisation. Il est relativement difficile de vérifier pour chaque individu, étant donné qu’il faut pouvoir les contacter d’une manière indépendante de IPTC, et donc trouver leur contact par un biais différent. Je ne peux donc pas affirmer s’il s’agit là d’une erreur, d’un cas isolé, ou d’un problème plus large ; en tout cas les informations ne sont pas fiables. De plus, certains noms apparaissent régulièrement au sein de la liste des partenaires de IPTC : M. Salmanpour lui-même siège dans au moins 6 organisations (World Dodgeball, Asia Freerunning Parkour Union, Federation International Football Skating…). Cela met en question l’indépendance de ces organisations et risque d’être la source de conflits d’intérêts. Peut-être qu’il s’agit là de quelque chose de tout à fait habituel dans les organisations sportives internationales, avec des managers professionnels qui siègent simultanément dans plusieurs organisations. Mais ce qui intrigue ici, c’est l’amplitude du phénomène : j’ai pu trouver le nom de Marco Tomasini dans plus de 19 organisations ! Selon le site de IPTC, M. Tomasini est responsable de son département International Sport Organisation (ISO). Mais bien que cela n’apparaisse pas sur le site, il a également été nommé vice-président de IPTC<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
+<p><img src="images/IPF-message.jpg" alt=""></p>
+<p>Différents partenaires et membres de IPF ont publié un message identique.</p>
+<p>Là ne s’arrête pas son emprise : M. Tomasini est derrière cinq des partenaires listés par IPF : IPTC, International Sport Network Organization (ISNO), Malta Sport for All, FederSwiss, Italian Air Power Athletics Federation (IAPAF). Ces trois dernières ont reçu le même jour un certificat identique provenant de IPF, accompagnées du même message, annonçant être l’organisation nationale officielle pour le parkour et se terminant par une invitation à rejoindre leur comité en cours de construction<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>. Au moins quatre des fédérations membres de IPF ont également publié le même message, ce qui à nouveau invite à douter que toutes ces organisations soient indépendantes. Le moins qu’on puisse dire, c’est qu’il est presque certain que les mêmes personnes se trouvent derrière la création et/ou l’administration de toutes ces organisations.</p>
+<p><img src="images/Avenue-Henri-Jaspar-113-1.jpg" alt=""></p>
+<p>A gauche, &quot;Sport Academy Headquarters - Bruxelles&quot; selon leur site; à droite le véritable bâtiment, 113 avenue Henri Jaspar, Bruxelle (Google Street View).</p>
+<p>Ne nous arrêtons pas en si bon chemin. Car certaines de ces organisations ressemblent à de simples façades. Ainsi, Marco Tomasini figure également sur le site de SportAcademy Europe, sous le nom de « Dr. Marco Tomasini ». Or, sur son site personnel, Marco Tomasini indique qu’il a obtenu un MBA, mais ne mentionne nulle part un doctorat<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>. Jusqu’à preuve du contraire, cette présentation est donc fausse, ou selon une perspective charitable : une erreur. Mais ma charité n’est pas illimitée. Une photo des bureaux de SportAcademy a été retouchée pour y ajouter le logo. Et l’on peut aisément se rendre virtuellement à l’adresse qui nous est donnée (avenue Henri Jaspar 113, Bruxelle), grâce à Google Street View, pour vérifier ce qu’il en est du siège de SportAcademy. Evidemment, le bâtiment est différent de celui indiqué sur la photo. D’autres organisations sont du même acabit : contenus des sites web copié-collés, pas ou peu d’activité, enregistrement aux mêmes adresses, membres semblent ne pas exister, etc.</p>
+<p><img src="images/forensically2.jpg" alt=""></p>
+<p>Avec un logiciel de détection de photomontages, il est évident que le logo n'est pas peint sur le mur.</p>
+<p>Revenons à deux organisations déjà mentionnées plus haut : ISO et ISNO. Leurs logos sont similaires, le design de leurs sites est identique, les comités sont constitués pour l’essentiel des mêmes personnes. On y trouve notamment Valentina Ognibene et Antonio Trifone. Il se trouve que ces deux personnes ont de nombreuses entreprises enregistrées en Suisse à leur nom. P.ex. Ora Green Media Invest Alex II SA, Platinum Luxury&amp;Business SAGL ou A&amp;B Origine SA. Ces entreprises ne semblent généralement pas disposer d’un site web. De plus, un bon nombre d’entre elles sont enregistrées aux mêmes adresses, probablement des cases postales. A priori, aucun lien avec ce qui nous intéresse… sauf qu’au moins 4 d’entre elles sont enregistrées à la même adresse que ISO… et FederSwiss. Je ne sais pas quelle conclusion en tirer exactement. Mais Antonio Trifone est avocat, et une de ses entreprises (KeyM) offre des services de « management temporaire ». Peut-être que le lien entre ces différentes personnes et organisations réside là : il y a parmi eux des spécialistes de la création d’entreprises, qui ont contribué à fonder ces organisations et ont alors pris place dans les comités d’administration. Et en effet, une partie au moins de ces organisations ressemblent à des sociétés écrans ou à des sociétés « étagères ». Elles n’ont pas nécessairement d’activité actuellement, mais peut-être seront-elles activées plus tard, et à ce moment-là elles auront déjà tout une existence passée derrière elles. Ou peut-être qu’elles ne seront jamais activées, et ne servent qu’à grossir le réseau de celles d’entre elles qui sont déjà actives.</p>
+<p>Jusqu’à maintenant, on est resté essentiellement dans le domaine sportif. Mais il y a encore un élément dont on n’a pas parlé. Sur le site de l’ISO comme sur celui de SportAcademy figurent non seulement des sports, mais également des médecines non conventionnelles, appelées ici « bio-naturelles ». Etrange activité, pour une organisation sportive internationale, que d’organiser des cours de médecines alternatives. ISO a également comme partenaire l’Associazione italiana professionale operatori discipline bio naturali (AIPO), qui regroupe des professionnels des disciplines bio-naturelles<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>. Et bien que cela ne devrait plus guère nous étonner, on peut noter que l’AIPO et FederSwiss ont des membres du comité en commun.</p>
+<p><img src="images/IPTC-1024x640.png" alt=""></p>
+<p>Les organisations proches de IPTC ainsi que les individus membres de leurs comités d'administration. Un certain Marco Tomasini apparait comme personnage central.</p>
+<p>Résumons et tentons de voir plus clair. On a commencé avec IPTC, une organisation qui vend des cours et certificats dans des dizaines de disciplines, dont les certificats pour les coachs WFPF. Les organisations qui entourent IPTC forment un réseau fortement interdépendant. Quelques individus siègent dans les administrations de nombre d’entre elles, et les organisations se renvoient fréquemment les unes aux autres afin d’augmenter leur légitimité. Certaines (mais pas toutes) donnent des informations erronées ou semblent inactives. Il est possible que des professionnels de la création et du management temporaire d’entreprises soient impliqués, et que ces organisations soient de simples façades ou des organisations dormantes qui serviront dans le futur.</p>
+<p>La plupart des sports impliqués sont en voie d’institutionnalisation : parkour, poledance, e-sports, dodgeball, sports d’obstacles, danse sportive… On dirait une sorte de réseau alternatif d’organisations qui se reconnaissent entre elles, en attendant d’être incorporées au système olympique. Cela ne se réduit donc pas au parkour ; l’appropriation du parkour par IPF/WFPF n’est qu’une partie du puzzle. Et cela ne se réduit d’ailleurs pas au sport non plus, puisque des organisations de médecines alternatives sont également impliquées.</p>
+<p><img src="images/orgs-1-1024x600.png" alt=""></p>
+<p>L'interdépendance du réseau IPTC. Deux organisations sont en relation dès qu'un individu ou plus est membre des deux organisations.</p>
+<p>En conclusion, on peut faire quelques hypothèses (mutuellement non exclusives).</p>
+<ol>
+<li>IPTC vend des cours et certificats, et cela se fait plus facilement dans des domaines peu institutionnalisés. On peut d’ailleurs observer que contrairement au système olympique, ce réseau est relativement peu centré sur l’Europe. Dans une perspective charitable, on dirait qu’il s’agit là d’offrir des services dans des domaines et régions qui sont généralement mises de côté. Dans une perspective plus cynique, on dirait qu’il s’agit plutôt de profiter de disciplines et régions qui n’ont pas encore d’institutions stables. Je laisse au lecteur le soin d’en juger, mais ce qui est certain, c’est que la présence des médecines alternatives n’est pas un bon signe : on en connait les dérives prédatrices.</li>
+<li>Ce réseau peut servir également à construire la légitimité et crédibilité d’IPTC ainsi que de leurs certificats. Pour augmenter leur valeur et leur attrait. En effet, afin de pouvoir revendiquer que les certificats sont valables au niveau international, IPTC doit s’entourer d’organismes qui affirment reconnaitre ces certificats. Elle doit également s’appuyer sur des organisations spécialistes des différentes disciplines en question.</li>
+<li>Le réseau a également l’avantage de construire la légitimité de différentes organisations sportives. Plusieurs d’entre elles gravitent en effet non loin du système olympique, que ce soit le parkour, la danse sportive<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup> ou le dodgeball, actuellement membre observateur de GAISF. La multiplication des références circulaires entre elles crée une belle façade de partenariats, qui donne du poids et un vernis officiel à ces organisations.</li>
+<li>Il est également possible qu’un tel réseau serve à d’autres fonctions, comme construire le CV des managers, ou tout simplement de l’offuscation pour cacher l’inactivité de certaines organisations. Mais puisque le réseau implique divers acteurs individuels et institutionnels, il y a probablement divers intérêts et motivations, potentiellement en conflit. Bien qu’il y ait certainement des convergences d’intérêts qui donnent cette allure si étrange à ce réseau, rien ne montre qu’il s’agit d’un bloc monolithique inventé de toute pièce par un petit groupe d’individus.</li>
+</ol>
+<p>Nous sommes partis d’une organisation controversée au sein du milieu du parkour, mais une fois le puzzle assemblé, il semble que le parkour n’en est qu’une petite pièce. Cependant, au terme de cette enquête, on peut revenir brièvement à notre point de départ. Ce qu’on peut affirmer, c’est que IPF s’affiche comme étant entourée d’un certain nombre de membres et de partenaires. Ceci lui permet d’augmenter sa légitimité, de se présenter comme étant une organisation active et reconnue par d’autres. Or, parmi ses partenaires, on peut relever que plus de la moitié sont interdépendants. De plus, on peut avoir des doutes concernant certains de ses membres : plusieurs semblent être interdépendants, et il y a évidemment le cas de USAP, qui n’est pas clairement séparable de IPF/WFPF. Les problèmes que j’ai relevés vont donc bien au-delà du parkour. Mais les traceurs devraient se sentir concernés. Et si toute cette histoire n’est pas une stratégie volontairement instituée par IPF/WFPF, ils devraient donner un bon coup de balais dans leur réseau avant de pouvoir s’affirmer comme une organisation internationale crédible.</p>
+<p>Si vous m’avez suivi jusqu’ici, que vous avez toujours des doutes ou que vous trouvez que je suis resté en surface, continuez votre lecture avec ma <a href="/yanndaout/le-cas-de-federswiss-iii">troisième partie</a>, où j’explore en détails le réseau de FederSwiss, afin de montrer que leurs revendications reposent sur un château de sable.</p>
+<p>Si vous souhaitez vous pouvez directement explorer ma base de données. (Etant donné la quantité de données, il est possible qu'une ou deux erreurs se soient glissées. Merci de me les signaler !)<br>
+Base de donnée excel: <a href="https://drive.google.com/open?id=1vT-0y1Zx0NUIfNkw83jvYrLnM8QQVqtf">https://drive.google.com/open?id=1vT-0y1Zx0NUIfNkw83jvYrLnM8QQVqtf</a><br>
+Visualiser le réseau avec Gephi: <a href="https://drive.google.com/open?id=1eZPV35kkFhn8QP4YCzstpMrhk_hE1UoN">https://drive.google.com/open?id=1eZPV35kkFhn8QP4YCzstpMrhk_hE1UoN</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://www.federswiss.org/">http://www.federswiss.org/</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="http://iptcertification.com/">http://iptcertification.com/</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="http://iptcertification.com/about-us/">http://iptcertification.com/about-us/</a> 27.04.2020 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://www.facebook.com/worldfpf/photos/pcb.10157191063396609/10157191063241609/?type=3&amp;theater">https://www.facebook.com/worldfpf/photos/pcb.10157191063396609/10157191063241609/?type=3&amp;theater</a> 01.05.2020 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="https://www.instagram.com/p/B1WlbCOJBBl/">https://www.instagram.com/p/B1WlbCOJBBl/</a> 01.05.2020 <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>“The official Parkour organization for [country] bringing Parkour into the future. [name] is officially recognized by IPF- InternationalParkourFederation.com and is working in partnership with them to help grow the sport of Parkour in [country] as part of the global Parkour community. [name] is looking to work with other [country] Parkour leaders as well as leaders from other areas of sport who are interested in helping to build the reputation of [country] globally in the sport of Parkour in cooperation with IPF. Please contact us as we are currently assembling an executive board of officers and committee members to be part of our organization. Thank you.” <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p><a href="http://www.marcotomasini.it/">http://www.marcotomasini.it/</a>, 09.05.2020 <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p><a href="https://internationalsportorganization.wordpress.com/">https://internationalsportorganization.wordpress.com/</a> 02.05.20 <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p>La danse sportive s’est appropriée le breakdance, juste à temps pour intégrer les Jeux Olympiques de la Jeunesse de Buenos Aires… <a href="#fnref9" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+<nav class="pagination-inner" aria-label="Articles next and previous links">
+	<a href="/yanndaout/blog/le-cas-de-federswiss-iii/" data-direction="forwards" class="pagination-previous">
+		<span>← Le cas de FederSwiss - III </span>
+	  </a>
+	
+	<a href="/yanndaout/blog/quest-ce-qui-ce-cache-derriere-ipf-wfpf-i/" data-direction="backwards" class="pagination-next">
+		<span>Qu’est-ce qui ce cache derrière IPF/WFPF ? - I →</span>
+	  </a>
+	
+</nav>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/blog/iptc-et-les-organisations-fantomes-ii/ -->
+	</body>
+</html>

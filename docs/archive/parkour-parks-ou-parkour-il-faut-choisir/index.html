@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Parkour-parks ou parkour : il faut choisir</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>Parkour-parks ou parkour : il faut choisir</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2013-02-04">04 février 2013</time></li>
+	<li><a href="/yanndaout/tags/archive/" class="post-tag">archive</a>, </li>
+	<li><a href="/yanndaout/tags/archive/" class="post-tag">archive</a>, </li>
+	<li><a href="/yanndaout/tags/parkour-literally/" class="post-tag">parkour-literally</a>, </li>
+	<li><a href="/yanndaout/tags/parkour-park/" class="post-tag">parkour-park</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<blockquote>
+<p><strong>«</strong> Entre la nature et nous, que dis-je ? entre nous et notre propre conscience, un voile s’interpose, voile épais pour le commun des hommes, voile léger, presque transparent, pour l’artiste et le poète », Henri Bergson, Le Rire.</p>
+</blockquote>
+<p><strong>Introduction</strong></p>
+<p>Face à l’hostilité exprimée par une partie des pratiquants du parkour devant l’inauguration, il y a peu, du premier parkour-park de France, les promoteurs et défenseurs de ce lieu invoquent la <em>liberté individuelle</em>: il faudrait laisser chacun libre de pratiquer là où bon lui semble, personne n’obligeant les pratiquants à venir s’entraîner sur cette nouvelle « aire de parkour » (<strong>1</strong>).</p>
+<p>Le problème est qu’il ne s’agit pas là d’un simple débat d’opinions relevant de positionnements personnels sans autre incidence sur la pratique; ce qui est en question, c’est le sens même de la pratique, sa définition, son essence, et ce qui est en jeu, son devenir et la qualité de sa transmission. C’est tout du moins ce que je vais tenter de montrer ici.</p>
+<p>En effet, pour justifier toute nouveauté dans le parkour, comme les pakour-parks, on cherche systématiquement à modifier, corriger, ou compléter la définition originelle que David Belle en a donnée, laquelle est pourtant très claire. J’analyserai d’abord les enjeux de ces redéfinitions dont le parkour fait constamment l’objet. Derrière ces tentatives de redéfinition se cache en fait une certaine conception du parkour, qui voudrait en faire un sport alors que la définition de David Belle invite selon moi à le concevoir plutôt comme un art. Je tenterai donc de montrer dans un second temps en quoi le parkour est un art, et en quoi cela interdit toute construction de parkour-park. Enfin, je tâcherai d’analyser les conséquences qu’auraient le consentement des pratiquants du parkour à utiliser des parkour-parks. J’invite ainsi chacun à prendre la mesure de ses propres positionnements et pratiques. La question des parkour-parks n’est pas une question secondaire ou inutile, elle révèle au contraire les tensions qui animent aujourd’hui la communauté du parkour.</p>
+<p><strong>1) Essence et obsolescence: le parkour est-il dépassé?</strong></p>
+<p>Le parkour est né il y a une vingtaine d’années à Lisses, en banlieue parisienne, fondé par David Belle, inspiré par son père, Raymond Belle. Le mot « parkour », dérivé de « parcours », désigne en réalité deux choses bien distinctes: premièrement, un moyen de locomotion basé sur le principe d’efficience et ne faisant usage que du corps humain ainsi que des structures et objets se trouvant sur sa route (finalité de la pratique); deuxièmement, une méthode d’entraînement, incluant des exercices techniques, physiques, et mentaux destinés à rendre possible l’usage de ce moyen de locomotion (moyen pour atteindre cette finalité). Ces deux dimensions sont évidemment intrinsèquement liées puisque l’une est la condition rendant possible l’autre. Aussi sont-elles désignées par le même vocable: <em>parkour</em>. L’efficience, maître mot du parkour, se définit comme l’optimisation des moyens mis en oeuvre pour parvenir à un résultat; autrement dit, c’est la capacité de produire le maximum de résultats avec le minimum d’effort, de dépense. Ce concept combine plusieurs dimensions : vitesse, sécurité, économie d’énergie, capacité d’adaptation, fluidité.</p>
+<p>Il y a 8 ans déjà, lorsque je découvris le parkour et commençai à le pratiquer, d’interminables débats occupaient les pages du forum du site Parkour.NET pour savoir si, oui ou non, les acrobaties faisaient -ou pouvaient faire- partie du parkour(<strong>2</strong>). Il y en avait certes qui, nouveaux venus, posaient la question simplement pour savoir à quoi s’en tenir. Mais il y avait à côté de cela une grande majorité de gens qui n’en débattaient que pour justifier a posteriori la présence d’acrobaties dans la vidéo qu’ils venaient de poster sur le forum, et qu’eux-mêmes avaient décrite comme étant une vidéo de parkour. On avait donc déjà à faire à une tentative de redéfinition du parkour : il semblait qu’il faille à tout prix l’enrichir de nouvelles choses, comme si la définition donnée par David Belle n’était pas suffisamment riche par elle-même, comme s’il lui manquait quelque chose.</p>
+<p>C’est à ce même type de dérives définitionnelles que nous avons affaire avec l’inauguration par des membres de la Fédération de Parkour de la première « aire de parkour » de France. En effet, David Belle théorisait le parkour comme « <em>l’art de se déplacer, aussi bien dans le milieu urbain que dans le milieu naturel,</em> <em>[en se servant]</em> <em>en fait de toutes les constructions ou les obstacles</em> <em>qui ne sont pas prévus pour à la base</em> »(<strong>3</strong>).</p>
+<p>Aussi le parkour, selon cette définition, est-il incompatible avec toute structure dédiée. Le parkour est l’<em>effort</em> que fait le pratiquant pour <em>s’adapter à ce qui l’entoure</em>, et non pas l’effort qu’il fait pour adapter ce qui l’entoure à sa volonté. Le parkour est un effort d’imagination, un effort créateur. Le traceur(<strong>4</strong>) modifie au fil de son apprentissage le regard qu’il porte sur son environnement, et affûte une vision inventive de l’espace, qui fait de la ville un « terrain de jeux », selon les mots du même David Belle. Dire que « le monde est un terrain de jeux »(<strong>5</strong>), cela signifie que nous disposons du plus vaste terrain jamais conçu, précisément parce qu’il est le fruit de notre imagination et non de notre agencement de l’espace. Nous, traceurs, n’avons pas de prise sur la façon dont l’espace est conçu ni agencé par les architectes et urbanistes, mais nous avons en revanche le choix de l’usage que nous en faisons. Et les usages que nous en inventons n’ont de limites que notre imagination. Aussi le terrain se suffit-il à lui-même, sans qu’il n’y ait besoin d’y ajouter quoi que ce soit, parce que tout est là. Tout est là <em>pour qui sait regarder autour de lui</em>.</p>
+<p>Ainsi, apprendre à regarder l’espace de cette manière nouvelle fait partie intégrante du processus du parkour comme méthode d’entraînement. La créativité fonctionne comme n’importe quelle autre faculté: elle s’exerce et se cultive. Plus on fait l’effort d’être créatif, plus la créativité nous devient spontanée. En ce sens, le processus d’apprentissage du parkour requiert un entraînement à l’invention, une capacité à répondre de manière créative et appropriée à de nouvelles situations, à détourner le mobilier urbain existant pour en faire un outil; c’est de tous ces besoins que naît la nécessité pour le traceur d’évoluer dans un espace qu’il n’a pas conçu, où les choses n’ont pas été disposées <em>par</em> lui -ou tout autre traceur- ni <em>pour</em> lui, mais où l’agencement des objets obéit à des lois sur lesquelles il n’a pas prise. Si la créativité me semble primordiale dans le parkour, c’est parce que c’est d’elle que dépend directement la capacité d’être efficient dans le déplacement. En effet, imaginer une réponse nouvelle face à une situation nouvelle, réagir de manière appropriée, adopter le geste adéquat, ajuster et modifier la technique apprise pour la faire correspondre à une configuration particulière, en un mot <em>s’adapter</em>, encore et toujours, c’est sur cela que repose l’efficience. David Belle écrit : « Il y avait plein d’autres endroits où j’aimais aller. Le but était de s’adapter à tout, toujours dans ce souci de « s’il se passe quelque chose, comment on fait? ». Forêt d’arbres ou forêt d’immeubles, il n’y a pas de lieu précis, d’endroit imposé pour faire du Parkour. Par exemple, dans une cité, on peut contourner l’objet architectural pour en faire un outil d’entraînement, pour évoluer dans un sens positif. On arrive à s’adapter à notre manière à cette cité. »(<strong>6</strong>) En d’autres termes, celui qui dans le parkour ferait du « par coeur » et n’aurait que des réponses préconçues et figées, celui-là, quand bien même sa technique serait irréprochable, s’expose inévitablement à quelques déconvenues dans un environnement dont les situations ainsi que les obstacles changent constamment.</p>
+<p>Certains traceurs, défenseurs des parkour-parks, objecteront toutefois qu’il reste possible d’être créatif dans un parkour-park, en recherchant l’originalité, et en y faisant autre chose que ce à quoi a pu penser celui qui a conçu l’espace lorsqu’il en a disposé les différents objets. Il est certes indéniable que la créativité peut s’exercer en tous lieux. Mais arrêtons-nous un instant à cette proposition: imaginer des opportunités nouvelles sur un lieu <em>dédié</em>, <em>conçu par des traceurs</em>, <em>pour les traceurs</em>, précisément pour qu’ils viennent y imaginer des opportunités nouvelles, et tout cela dans le cadre d’une pratique qui doit faire usage de tout ce qui n’est pas conçu pour elle: le paradoxe est tout de même de taille. On pourra toujours tâcher d’être créatif, et de trouver des sauts quelque peu originaux, cela n’aura pas grand rapport pour autant avec le fait de le faire dans un environnement sauvage (<em>sauvage</em> au sens où nous ne l’avons pas nous-mêmes aménagé, et qu’il ne l’a pas été à notre intention). Or, le fait que l’espace n’ait pas été conçu <em>par</em> ni <em>pour</em> nous, nous contraint à y détourner l’usage des structures qui nous entourent et à en modifier la fonction. Je reviendrai sur l’intérêt d’un tel détournement plus tard.(<strong>7</strong>)</p>
+<p>Au regard de la définition théorique qu’en a donné David Belle, concepteur de cette pratique, on ne <em>peut</em> donc <em>pas</em> (par définition) pratiquer le parkour dans un parkour-park. On peut éventuellement y sauter, mais c’est loin d’être tout ce que la pratique du parkour exige. L’exercice à la créativité apparaît comme une dimension de l’entraînement dont le traceur, en quête d’efficience, ne peut faire l’économie. Force est de reconnaître cependant que l’importance que je lui accorde découle d’un présupposé implicite qu’il nous faut donc examiner : <em>le parkour est-il</em> vraiment <em>un art</em>, et le traceur un créateur ?</p>
+<p><strong>2) Sport ou art: la question cruciale</strong></p>
+<p>En effet, selon moi le débat que souleva l’inauguration de l’ »aire de parkour » de Bondy révèle en creux deux conceptions opposées du parkour. Comme j’ai tenté de le montrer précédemment, le concept d’ « aire de parkour » évacue de la pratique la dimension du détournement de l’existant. Ainsi, pour envisager l’idée que le parkour puisse se pratiquer dans un parkour-park, il faut d’abord le penser comme une activité exclusivement physique(<strong>8</strong>), qui n’implique pas nécessairement ni l’intellect ni l’imaginaire. Si le parkour est dépourvu de la philosophie qui le sous-tend(<strong>9</strong>), ainsi que de sa dimension créative (utiliser l’existant d’une façon nouvelle et novatrice), alors il est tout-à-fait envisageable qu’il puisse se pratiquer sur des structures dédiées; mais c’est au prix de ces deux renoncements, et seulement à ce prix que cela devient possible. Or le parkour, tel qu’il nous a été transmis par la première génération de pratiquants et notamment par David Belle, est un tout cohérent où cohabitent trois dimensions: philosophie; imagination; prouesses physiques. Le parkour, c’est tout cela à la fois, et c’est dans la cohérence de cet ensemble que chaque dimension prend son sens, et non indépendamment. Aussi, n’y a-t-il pas de sens à en compartimenter les différents aspects. Mais n’est-ce pas pourtant ce que font nombre de pratiquants en classant le parkour dans la catégorie des <em>sports</em> ?</p>
+<p>Le Grand Larousse définit le sport comme « <em>ensemble des exercices physiques se présentant sous formes de jeux individuels ou collectifs donnant généralement lieu à compétition, pratiqués en observant certaines règles précises</em>« (<strong>10</strong>). Nous pouvons également nous référer à la définition d’une institution sportive, le CNOSF (Comité National Olympique du Sport Français), qui déclarait en 1994: <em>« Pour qu’il y ait sport, il faut qu’il y ait un engagement corporel inscrit dans un affrontement ou une compétition instituée […]</em> Est défini comme « sport », la seule pratique compétitive, licenciée, c’est à dire engagée dans l’institution qui fixe les règles du jeu et définit l’éthique sur laquelle celui-ci doit impérativement reposer »(<strong>11</strong>). Enfin, nous pouvons convoquer la définition de sociologues, comme Pierre Parlebas, sociologue et théoricien de l’éducation physique contemporaine, pour qui le sport est un « ensemble de situations motrices codifiées sous forme de compétition et institutionnalisées»(<strong>12</strong>), ou encore Jean-Marie Brohm, sociologue, anthropologue et philosophe, définissant le sport comme «  un système institutionnalisé de pratiques compétitives à dominante physique, délimitées, codifiées, réglées conventionnellement dont l’objectif avoué est, sur la base d’une comparaison de performances, d’exploits, de démonstrations, de prestations physiques, de désigner le meilleur concurrent (le champion) ou d’enregistrer la meilleure performance (record) »(<strong>13</strong>). Toutes ces définitions réunissent les trois mêmes paramètres comme étant <em>constitutifs</em> de la notion de sport :</p>
+<p>1-La pertinence sportive : le sens de l’activité est dans l’engagement moteur.</p>
+<p>2-La codification compétitive : la présence de règles permettant d’attribuer la victoire.</p>
+<p>3-L’institutionnalisation : présence d’une instance nationale, internationale qui organise les compétitions.</p>
+<p>Quelle que soit la définition à laquelle on se réfère, le sport a donc cette particularité d’être un jeu <em>institutionnalisé</em> auquel il ne s’agit pas uniquement de <em>jouer</em>, mais aussi -et surtout- de <em>gagner</em>.</p>
+<p>Or, si le parkour remplit certainement la première condition, celle d’ »engagement moteur » ou encore d’  »exercice physique », il exclut en revanche par essence toute forme compétitive(<strong>14</strong>), et ne remplit donc pas le second critère nécessaire à l’obtention du statut de « sport ». Quant au troisième et dernier critère, celui d’une pratique institutionnalisée dont l’institution définit les règles du jeu et organise les compétitions, le parkour pose là encore problème. D’abord, ce dernier critère suppose qu’il y ait des règles, or nous verrons que nous avons, dans le cas du parkour, davantage affaire à des principes philosophiques. Ensuite, cela suppose que ces règles soient conçues en vue de l’organisation de compétitions, or nous venons de voir que le parkour exclut par nature toute compétition. Enfin, au jour d’aujourd’hui aucune institution n’est reconnue par l’ensemble des pratiquants comme les représentant. Il y a bien des associations de pratiquants qui souvent transmettent également la pratique aux débutants, des « fédérations » diverses et variées, chacune reconnue par certains pratiquants et pas par d’autres: certaines, ressemblant davantage à des organisations commerciales, vendent des paires de chaussures prétendument « faites pour le parkour » comme la World Freerunning Parkour Federation (WFPF)(<strong>15</strong>), d’autres sont des regroupements d’associations comme la Fédération de Parkour (FPK)(<strong>16</strong>). Le fait est qu’aucune institution, nationale ou internationale, ne fait pour l’instant l’unanimité auprès des pratiquants au sens où elle ferait autorité sur les questions ayant trait à la pratique du parkour. Il n’y a pas dans le parkour d’autorité institutionnelle suprême édictant des règles, et stipulant ce qui est permis ou interdit.</p>
+<p>C’est à chacun de faire son propre cheminement intellectuel dans la pratique, de trouver sa propre voie. Cela ne se fait pas pour autant à partir de rien : il y a de nombreux matériaux éducatifs. D’abord, les traces écrites et orales de David Belle(<strong>17</strong>). Ensuite, les 5 tomes de <em>L’éducation physique virile et morale par la méthode naturelle</em> de Georges Hébert qui, s’ils ne relèvent pas directement du parkour, lui apportent de précieux éclairages: Enfin, il y a des ressources en ligne comme par exemple le blog <em>Power is nothing without control</em>(<strong>18</strong>) de Chris Rowat, mettant en partage idées d’exercices et <em>training routines</em> ainsi que réflexions critiques au sujet du parkour. Il y a également les archives du site Parkour.net, disponibles sur le site de la Fédération de Parkour, qui renferment autant des articles retraçant l’histoire de la discipline, que des articles pédagogiques sur certaines des techniques utilisées, ou bien encore des articles de réflexion sur le parkour. Tout cela constitue un bagage théorique conséquent qui, certes, nous accompagne le long du chemin, mais ne remplace pas pour autant la nécessité d’une recherche personnelle en tant que pratiquant, son orientation, les choix qu’elle détermine, les enjeux qu’elle pose, les questions qu’elle soulève, et les éléments de réponse qu’on y apporte au fil de l’entraînement. Dépourvu de <em>règles</em> au sens de critères permettant de désigner un « vainqueur », le parkour n’en est pas moins pourvu de principes philosophiques, de « mots d’ordre » transmis par voie orale ou écrite, en premier lieu par son fondateur David Belle: « se servir de tout ce qui n’est pas prévu pour à la base », « toujours aller de l’avant », « être fort pour être utile », « être et durer », etc. C’est ensuite au traceur de trouver comment mettre ces principes en pratique dans la situation qui est la sienne propre. Ce mode de transmission et d’entraînement rompt là encore avec une possible logique compétitive en cela qu’il prive de fait le parkour de critères stables et universels pouvant servir à l’attribution de la victoire lors d’une confrontation entre pratiquants. Sur les trois critères permettant de définir une activité comme <em>sport</em>, le parkour ne respecte en définitive que le premier, celui d’engagement moteur. Et cela sans compter qu’il n’y a rien qui nous permette d’affirmer que <em>le sens de l’activité est dans l’engagement moteur</em> ni que cette dimension motrice prévaut sur les dimensions philosophique et créative de la pratique, quand bien même c’en serait la dimension la plus manifeste.</p>
+<p>Pas de règles, pas de compétitions, pas de trophées ni médailles, pas d’homologation ni d’institution faisant autorité, pas de licences, pas de clubs, pas de terrain délimité, pas de tenue réglementaire: quel genre de <em>sport</em> le parkour pourrait-il donc bien être ?</p>
+<p>Certes, le parkour conduit à un usage du corps qu’on pourrait être tenté de qualifier, par abus de langage, de « sportif », le corps devenant l’unique outil de déplacement du pratiquant. Mais, s’il y a usage, il n’y a pas nécessairement usure. Au contraire du « sport de la performance » ou « sport-spectacle », le parkour met l’accent sur la conservation et la préservation du corps, ce notamment par une connaissance et une écoute accrues de son propre corps, qui permettent de définir des techniques de réception épargnant les articulations, en sollicitant les muscles appropriés, en calculant les angles de pliage au dessus desquels il y aurait traumatisme articulaire, et en absorbant la force de l’impact à travers un circuit musculaire bien précis, ainsi qu’avec différentes techniques d’absorption du choc, comme la roulade. Le parkour inclut d’ailleurs dans sa méthode d’entraînement des pratiques à usage thérapeutique reconnu comme la quadrupédie et a, pour qui en a compris le sens, davantage la caractéristique de faire prendre soin du corps et de le maintenir en forme et en bonne santé – nécessité absolue de celui qui en fait l’usage quotidien d’outil de déplacement- , que de le négliger, de le malmener, ou de le détruire. Les apparences sont donc trompeuses, puisqu’une pratique telle que le parkour sera souvent qualifiée, par ceux qui y sont étrangers, de « pratique sauvage » ou « dangereuse », de « sport extrême », alors que le sport homologué sert, croit-on, à se « maintenir en forme » et à « garder la santé » (mythe du sportif). Il n’en demeure pas moins que derrière la façade rassurante de l’homologation, la réalité à laquelle est confrontée l’athlète compétiteur est tout autre : pressions, humiliations, menaces, nécessité d’accomplir toujours davantage, de faire toujours mieux, d’être toujours (le) meilleur, et leurs conséquences : blessures, dopage, dépression, état de santé critique conduisant parfois au pire.(<strong>19</strong>)</p>
+<p>Mais si l’on renonce à cette conception <em>sportive</em> du parkour, comment qualifier cette activité si particulière?</p>
+<p>En dépit de l’apparence sportive que peut revêtir tout corps en mouvement, que fait le traceur lorsque, précisément par le mouvement de son corps, il dessine à travers la ville des chemins à travers les structures architecturales qui l’environnent? Il <em>crée</em>. Que fait-il lorsqu’il s’adapte à de nouvelles situations, avec de nouveaux obstacles, configurés d’une manière inhabituelle à laquelle aucune des techniques qu’il connaît ne correspond parfaitement? Il <em>invente</em>. Le traceur ne fait pas que reproduire, mais a pour charge de produire constamment du « nouveau », de se renouveler sans cesse pour faire face à l’imprévu: de son aptitude à imaginer et à créer dépend l’efficience de son déplacement. Le pratiquant du parkour se doit d’être un créateur imaginatif, un inventeur hors-pair pour être à même de faire face à la multitude des possibles qu’il rencontre. Or, il convient alors de se demander, pour qualifier ce qu’il fait, quel est l’objet de ses créations: il invente <em>des chemins</em>, dessine avec élégance <em>des itinéraires</em> à travers la ville, crée <em>des mouvements</em> nouveaux ajustés aux situations qu’il rencontre, <em>les dispose et les combine d’une certaine façon</em>. En somme, le traceur est un créateur dont le corps est le pinceau, la ville la toile sur laquelle il peint avec ses propres mouvements, ouvrant des possibles, et questionnant le réel. Mais alors, pourrions-nous dire que le traceur est un <em>artiste</em> ?Encore faudrait-il montrer spécifiquement en quoi il y a <em>œuvre d’art</em> lorsqu’un pratiquant du parkour s’entraîne.</p>
+<p>Ainsi, la première question à se poser pourrait être celle de la visibilité de l’oeuvre. Comment l’observateur(<strong>20</strong>) peut-il la voir ? L’art peut prendre des formes diverses. Il en est une, l’<em>art éphémère</em>, qui se définit comme toute « forme artistique, présente surtout dans l’art contemporain (mais pas exclusivement) et qui joue non pas sur la pérennité de l’œuvre d’art, ce qui est la règle générale, mais sur la brièveté, son caractère provisoire et souvent la mise en scène de l’artiste lui-même dans l’œuvre »(<strong>21</strong>). Aussi, d’une part l’oeuvre d’art peut-elle ne pas être visible en permanence mais au contraire le temps d’un instant, et disparaître le suivant ; cela ne lui enlève en rien sa dimension artistique. D’autre part, l’oeuvre peut consister dans la mise en scène de l’artiste lui-même, sans impliquer qu’un objet tiers soit nécessairement produit par l’artiste. Selon ces modalités, le déplacement du traceur dans l’espace peut donc bien être considéré comme une œuvre d’art, ayant entre autres caractéristiques de ne durer qu’un temps et de mettre en scène l’artiste lui-même.</p>
+<p>Une seconde question pourrait être celle du <em>beau</em>. En effet, la conception traditionnelle de l’art, largement remise en cause par l’art contemporain, attribue comme critère principal à l’art la beauté. Il conviendrait alors de montrer en quoi les œuvres produites par le traceur sont <em>belles</em>. La première objection qui nous vient à l’esprit est que le parkour s’occupe d’efficience, et non de beauté esthétique. Cet argument se fonde sur le présupposé théorique suivant: il n’y a de dimension esthétique <em>qu’intentionnelle</em>. En d’autres termes, le beau ne peut être atteint <em>que</em> par celui qui le recherche. Or le traceur ne recherche pas la beauté mais l’efficacité du mouvement. Faisons un détour par les animaux non-humains afin d’examiner la pertinence de cet argument. Pourquoi un chat saute-t-il ou grimpe-t-il aux arbres? Nous pourrions bien trouver la réponse à cette question dans ces quelques mots: « Il ne faut pas chercher à faire le mouvement pour qu’il soit beau. C’est à force que tu aies de l’aisance, le mouvement devient beau. Comme un singe, ou un puma qui va passer une rivière, on se dit: « C’est joli ». Mais lui, quand il saute la rivière, il ne se dit pas: « J’essaie d’être joli ». Il essaie d’être le plus juste […] possible »(<strong>22</strong>). Notons qu’à deux reprises d’ailleurs dans cette même interview David Belle qualifie le parkour d’ »art ». Nous avons en effet de bonnes raisons de croire par exemple que le chat qui saute ne cherche pas à ce que son mouvement soit « beau », simplement parce qu’il est peu probable que le chat maîtrise et utilise le concept de <em>beau</em>, à priori en inadéquation avec ses préoccupations vitales. Là où nous voyons nous de la grâce et de la beauté, il est pour lui plutôt question de justesse: justesse du mouvement, de la puissance musculaire mobilisée, détermination précise du point d’atterrissage, réactivité. C’est la parfaite mise en adéquation entre d’une part ses capacités corporelles, d’autre part son projet (attraper un rongeur ou un oiseau), et enfin avec la configuration précise dans laquelle il se trouve à ce moment-là, qui suscite chez son observateur humain le sentiment de beauté. C’est dans cette même situation que le pratiquant du parkour se trouve: il cherche lui la justesse, et c’est de sa capacité à l’atteindre que dépend le sentiment de beauté chez ses observateurs potentiels. Il semble donc qu’on puisse bien atteindre le beau -et avec cela s’adresser aux sens des observateurs- sans nécessairement le chercher. Or, les pratiquants en font l’expérience : de nombreux témoignages d’observateurs occasionnels semblent le confirmer. <em>Beauté</em>, <em>réenchantement des zones sinistrées de l’urbanisme des années soixante</em>, <em>dimension chorégraphique</em>, <em>ballet avec les obstacles</em>, <em>danse avec les murs</em> : tels sont les mots et expressions utilisés par des passants pour évoquer ce qu’ils voient.</p>
+<p>Mais les traceurs ne rencontrent pas non plus que des réactions positives. En effet, parce qu’il investit l’espace public dont il fait un usage tout-à-fait inhabituel, il arrive fréquemment que le parkour <em>dérange</em>. Il dérange parce qu’il surprend, parce qu’il s’invite sans qu’on l’ait convié, parce qu’il bouscule les habitudes, parce qu’il détourne le mobilier urbain et joue avec, parce qu’il prend d’autres chemins que les chemins usuels, parce qu’il introduit de la nouveauté dans les usages et du mouvement dans l’espace, parce qu’il évoque l’animalité par ces corps qui se meuvent dans la ville. En faisant tout cela, le parkour donne à voir l’urbanité sous un jour nouveau, il renvoie une image de l’espace commun qui ne correspond pas aux représentations que ses usagers en ont. En d’autres termes, le regard décalé que le traceur porte sur la ville amène à son tour un décalage sur la manière dont elle apparaît à ses autres usagers. Or, c’est là une autre fonction -ou tout du moins une qualité- que l’on pourrait attribuer à l’art en général : donner à voir ou à percevoir le réel d’une façon nouvelle mais aussi plus profonde, créer un décalage dans le point de vue de l’observateur susceptible d’éclairer ce qu’il observe. Le philosophe Henri Bergson écrit à ce sujet : « Il y a, en effet, depuis des siècles, des hommes dont la fonction est justement de voir et de nous faire voir ce que nous n’apercevons pas naturellement. Ce sont les artistes »(<strong>23</strong>). Le traceur, par le biais de ses œuvres, fait certes voir l’urbanisme et l’architecture des villes, mais il fait également voir une réalité bien moins manifeste : l’<em>espace public</em>. C’est par l’usage détourné qu’il en fait que le pratiquant du parkour met en exergue l’espace public dans lequel il crée, parce qu’en remettant en cause les codes et conventions qui y ont cours, il les rend visibles. Bergson nous dit encore : « L’art n’a d’autre objet que d’écarter les symboles pratiquement utiles, les généralités conventionnellement et socialement acceptées, enfin tout ce qui nous masque la réalité »(<strong>24</strong>). N’est-ce pas précisément cela que fait le parkour dans l’espace urbain ?</p>
+<p>Pour résumer, nous pouvons dire que le parkour inclut certes un usage physique et intense du corps humain, mais pas uniquement. Envisager que le parkour puisse se pratiquer sur une structure dédiée implique qu’on le réduise à sa dimension physique, en laissant de côté ses dimensions intellectuelle et imaginative, autrement dit, qu’on en fasse un sport. Or, nous avons vu qu’il ne remplissait pas deux des trois conditions à l’obtention du statut de <em>sport</em>. Si le parkour ne consistait que dans le fait de sauter, le plus loin possible par exemple, alors seulement il pourrait se pratiquer sur un parkour-park -ou encore sur un stade d’athlétisme, et nous pourrions baptiser cette activité le « saut en longueur » par exemple-. Mais aussitôt que l’on considère que les dimensions intellectuelle et philosophique, ainsi que sensible et imaginative, en sont constitutives -et cela pas moins que ne l’est la maîtrise des différentes techniques de saut utilisées-, la pratique passe inévitablement du statut de <em>sport</em> à celui d’<em>art</em>, excluant du même coup la compétition et les parkour-parks de son champ d’activités.</p>
+<p><strong>3) Les conséquences du consentement</strong></p>
+<p>On pourrait penser que le problème n’en est pas un, que chacun étant libre de ses agissements, ceux qui conçoivent le parkour comme un sport pourront aller s’entraîner sur l’aire de parkour de Bondy à leur guise, et que rien n’empêche ceux qui le conçoivent comme un art de le pratiquer à leur manière.</p>
+<p>Il faut toutefois prendre conscience du rapport de force qui oppose ces deux conceptions antagonistes du parkour pour comprendre ce qui se joue là. Ce n’est pas dans ces termes –<em>art</em> contre <em>sport</em>– que le conflit s’exprime <em>explicitement</em>, mais c’est bien de cela qu’il s’agit, notamment dans le débat qui oppose pro et anti-parkour-parks. L’enjeu est toujours celui d’une conception du parkour, d’une façon de le <em>penser</em>, laquelle aboutit en conséquence à une façon de le <em>pratiquer</em>: si l’on conçoit le parkour comme art alors on ne <em>peut</em> pas admettre ni compétitions ni parkour-parks, si en revanche on le conçoit comme sport alors on n’a aucune raison d’y voir quelque inconvénient que ce soit. Or, il faut bien avoir à l’esprit que dans un rapport de forces il ne peut y avoir d’éternelle égalité: il y a toujours une force qui l’emporte sur l’autre. Dans le cas présent, la conception sportive du parkour semble de fait majoritaire et dominante de nos jours. A l’inverse, la conception à partir de laquelle le parkour fut fondé est aujourd’hui minoritaire -pour ne pas dire qu’elle est le fait d’exceptions-. La conception artistique du parkour recule ainsi de jour en jour et menace de disparaître dans l’oubli si personne ne se soucie plus de la défendre et de la transmettre. A travers cela, c’est l’héritage d’une vingtaine d’années, de recherche et d’entraînement, de pensée et de création, qui risque d’être perdu. Car le parkour pensé comme sport ne conserve de son ancêtre que l’apparence (les sauts et performances physiques) tout en évacuant ses dimensions philosophique, intellectuelle, et créative. Dès lors, que restera-t-il du parkour? Probablement des compétitions et des shows, des performances et des records, des publicités et des sponsors ; il ne restera probablement <em>rien d’autre que du</em> <em>spectacle</em>.</p>
+<p>Les débats qui eurent lieu, sur les réseaux sociaux notamment, à propos de l’inauguration de l’aire de parkour de Bondy, mirent d’ailleurs en lumière cette inversion conceptuelle dans le cours des choses: les rares traceurs qui avaient le malheur de critiquer cette aire de parkour et d’en remettre en cause le bien-fondé se voyaient immédiatement qualifiés d’ »extrémistes » par leurs adversaires. Aujourd’hui, défendre une approche non-sportive du parkour, et de ce fait critiquer les compétitions et les parkour-parks, c’est donc être <em>extrémiste</em>. Il y a pourtant encore quelques années, adopter une telle attitude eut simplement relevé du statut de « puriste ». Et encore quelques années auparavant, lorsque j’ai débuté, cela relevait du statut de « traceur », ni plus ni moins -de <em>pratiquant</em>, qui pense et défend la pratique qui est la sienne contre son travestissement-. Le glissement sémantique s’opère lentement, insidieusement.</p>
+<p>Au regard de tout cela, déclarer qu’on est favorables à l’installation de parkour-parks, ou encore qu’on s’en moque et qu’on est bien partout pour pratiquer le parkour, cela revient finalement au même: c’est accepter et favoriser le triomphe d’une conception sportive du parkour sur toute autre. Ne pas prendre parti, c’est <em>déjà</em> prendre parti en disant qu’on ne prend pas parti ; en ce sens, l’apparente neutralité revient en fait à favoriser le camp dominant et la conception du parkour qu’il défend. Désapprouver, en revanche, c’est penser que l’enjeu est suffisamment important pour manifester les raisons de son mécontentement et alerter de ce fait l’opinion publique parmi les pratiquants. Si j’utilise le terme d’ « opinion publique », c’est qu’il me semble que la question relève ici moins d’une addition de choix individuels que d’un positionnement politique. En effet, en donnant notre bénédiction -ou à défaut notre soutien tacite- à la construction de ce type de lieux, nous prenons de fait une part de responsabilité dans de possibles dérives à venir.</p>
+<p>Nous incitons, par exemple, les institutions, municipales notamment, à renouveler l’expérience en sollicitant des traceurs peu scrupuleux pour qu’ils leur dessinent des lieux circonscrits et « sécurisés » où confiner la jeunesse désoeuvrée plutôt que de la laisser sillonner dangereusement les rues de la ville. L’institution peut ainsi redorer son blason à peu de frais, en donnant l’impression qu’elle se soucie de la population qui vit sur son territoire, et qu’avec le parkour elle est même au fait des dernières tendances en vogue chez la jeunesse. Les élus de la ville de Bondy peuvent désormais se pavaner, se vantant de ce nouvel équipement qu’ils ont construit « pour » les jeunes, en balayant du même coup d’un revers de la main les vraies questions sociales sur leur territoire.</p>
+<p>Le traceur qui a conçu cette aire de parkour(<strong>25</strong>) s’est en effet défendu des critiques qui furent émises à ce sujet en précisant qu’il s’agissait là d’une commande de la ville de Bondy via un appel d’offres, commande qui elle-même entendait « répondre aux besoins des populations locales ». Afin de le vérifier, je me suis rendu sur place avec un ami, lui aussi traceur, au coeur de la cité de La Noue Caillet où l’aire de parkour a été construite, et nous avons questionné les quelques habitants du quartier que nous avons rencontrés. Pas un, jeune ou moins jeune, n’avait la moindre idée de ce à quoi pouvait servir ce « truc qu’ils ont construit ». Ils ne connaissaient d’ailleurs ni le terme « parkour », ni « parkour-park », ni « aire de parkour ». « Répondre aux besoins des populations locales », disait la ville de Bondy? Force est de constater que les « populations locales » semblent en tous cas ne pas bien voir auxquels de leurs <em>besoins</em> la construction de cette aire de parkour entend <em>répondre</em>. Est-ce bien utile de préciser que malgré ce que la mairie de Bondy peut raconter(<strong>26</strong>), je n’ai pas vu une seule personne, de quelque âge que ce soit, faire quelque usage que ce soit de l’aire Parkour Roule durant toutes les journées que j’ai passées à proximité ? Les populations locales manquent manifestement de discernement, et ne le comprennent pas toujours lorsqu’on « répond » à leurs « besoins ».</p>
+<p>En participant à de telles opérations, qui n’ont d’autre but que d’assurer le maintien au pouvoir des élus qui les supervisent, non seulement nous nous rendons complices du mépris institutionnel envers celles et ceux qui peuplent ces territoires, mais en plus nous aidons l’institution à vider la pratique du parkour de son contenu potentiellement subversif.</p>
+<p>Si la pratique est subversive, c’est précisément parce qu’elle prend place dans l’espace public et non sur des structures dédiées, qu’elle le fait d’une façon nouvelle, qui ne prend ni la forme de compétitions ni de spectacle, et qu’elle y fait des choses nouvelles, en utilisant par exemple un banc pour sauter plutôt que pour s’asseoir. De ce point de vue, le parkour procède d’une réappropriation créative et novatrice de l’espace public, qui, par son renouvellement des usages et sa remise en cause des habitudes, lui redonne une consistance en interrogeant ses usagers sur cette notion, et notamment sur sa nature et sa fonction. En cela, le parkour est politique, non pas dans le sens où il conduirait à voter pour untel ou untel, mais plutôt dans celui où il réinvestit l’espace de la cité (<em>polis</em>) d’une manière nouvelle, et en fait un usage qui conduit autant le pratiquant que les usagers qu’il rencontre à se poser des questions. L’intérêt du parkour, c’est qu’il <em>pose problème</em>. Et s’il pose problème, c’est justement parce qu’il s’invite dans l’espace du commun, dans la rue, dans la ville, et qu’il y détourne le mobilier urbain à des fins créatives. C’est aussi tout cela qui fait du parkour un art: le fait qu’il revisite la ville et la donne à penser, qu’il interroge la notion d’<em>espace</em> public dans une société où les intérêts privés et les processus de marchandisation en envahissent les moindres recoins, qu’il interpelle ses usagers anesthésiés en innovant, en détournant l’objet architectural. Il déroute et dérange. Ce sont là aussi, à mon sens tout du moins, les fonctions de l’art.</p>
+<p>Si le parkour se pratiquait dans des salles de sport ou des gymnases, ou encore sur des lieux dédiés construits à son intention tels les parkour-parks et autres « aires de parkour », s’il désertait l’espace public et laissait ses usagers « tranquilles », alors il répondrait positivement à l’injonction qui lui est faite par la société de se conformer à ses normes, de rentrer dans ses cases, et perdrait pour ainsi dire tout pouvoir de subversion, c’est-à-dire de renversement des habitudes et de transformation sociale. Or, de nos jours, les villes sont conçues comme des temples de la consommation, dont les espaces de circulation servent presque exclusivement à se rendre du domicile au travail, du travail à l’hypermarché, et de l’hypermarché au domicile. Aussi, les pratiquants du parkour, en s’y arrêtant, en allant à contresens, en changeant de niveaux par rapport au sol, en utilisant tout ce qui s’y trouve pour se déplacer et s’entraîner, amènent une part de jeu et de créativité dans des espaces à l’origine utilitaires et entièrement normés. C’est d’ailleurs ce qui explique que les pratiquants se heurtent parfois à des réactions si vives(<strong>27</strong>) de la part des autres usagers de l’espace. Dès lors, pratiquer le parkour sur un lieu dédié, c’est renoncer non seulement à sa dimension artistique, mais aussi à sa dimension politique; c’est faire du parkour -qui est à l’origine un outil d’émancipation individuelle- un simple sport, un <em>loisir</em>, tel que les prodigue la société de consommation pour <em>occuper</em> -et contrôler- les masses(<strong>28</strong>). C’est, autrement dit, faire du parkour le contraire de ce qu’il était, du moins pour celui qui l’a conçu.</p>
+<p>Hélas, si les pratiquants du parkour laissent la ville de Bondy installer un parkour-park sans opposition aucune, les institutions pourraient l’interpréter comme un accord de principe pour renouveler l’expérience, sachant que cela leur permet d’une part d’encadrer la pratique en lui ôtant sa dimension subversive, et d’autre part d’encadrer la jeunesse des villes en l’enfermant dans des <em>parcs de loisirs</em>. Si les pratiquants se taisent, ils leur donnent tacitement leur bénédiction. Et l’on risque de voir fleurir un peu partout des parkour-parks et autres aires de loisirs. Or ce n’est une solution ni pour les traceurs, ni pour les jeunes de la ville, et ça n’est bénéfique ni aux uns ni aux autres. Les premiers voient leur pratique vidée de son sens, et les seconds se voient sommés d’aller <em>se divertir</em> dans des aires de loisirs, or nous sommes en droit de douter que ce soit là leur besoin premier au vu du contenu des quelques discussions que nous avons eues avec certains d’entre eux.</p>
+<p>J’émettrai pour ma part l’hypothèse, et j’en assume l’entière subjectivité, qu’une transformation sociale leur -et nous- serait plus profitable que du divertissement. Or, il semble qu’il faille <em>déranger</em> l’ordre établi pour le conduire à se modifier. A cet égard, des jeunes pratiquant sagement leur « sport » dans une aire de loisirs ne dérangent personne. Ils sont comme des enfants en bas-âge dans un bac à sable ou des adolescents dans un skate-park: ils peuvent bien faire ce qu’ils veulent dans le périmètre qui leur est imparti, pourvu qu’ils n’en débordent pas. Et c’est bien là l’enjeu: il <em>faut</em> déborder, gêner, si l’on escompte quelque transformation que ce soit. Et c’est aussi cette gêne, ce dérangement qu’occasionnent le parkour qui en font l’intérêt. Ses dimensions philosophique et artistique en font une pratique viscéralement politique. De ce point de vue, le parkour n’est plus seulement une méthode de « développement personnel » comme se plaisent à le qualifier certains de ses pratiquants, mais un véritable outil de transformation sociale.</p>
+<p>En attendant, il y a fort à parier que si des parkour-parks sont construits un peu partout en France, l’attitude des usagers de l’espace public qui consiste aujourd’hui déjà majoritairement à en chasser les pratiquants risque à la fois de se généraliser et de se radicaliser. Lorsque de nos jours certains nous disent que « ce n’est pas fait pour ça, qu’on n’a qu’à aller faire ça dans un gymnase ou sur un terrain dédié », nous pouvons leur répondre qu’il n’y a pas de terrains ni de structures dédiés, que le parkour se pratique dehors et partout. Nous pouvons ajouter que le parkour ne peut <em>par définition</em> pas se pratiquer dans un lieu dédié puisqu’il doit faire usage de toutes les structures qui ne sont à la base pas prévues pour lui. Mais si demain chaque municipalité fait construire son parkour-park, alors les usagers hostiles à la pratique du parkour dans l’espace public auront un argument de poids: ils diront vrai désormais lorsqu’ils prétendront qu’ »il y a des lieux pour ça », et conséquemment auront d’une certaine façon raison de réclamer des pratiquants qu’ils y aillent. Nous pourrons toujours refuser de partir -comme nous le faisons déjà- mais ils seront probablement d’autant plus virulents qu’ils sauront désormais qu’il existe un lieu construit à notre intention, et que par ailleurs ce dernier l’aura été avec l’argent du contribuable, donc avec le leur. Ignorants de la philosophie qui sous-tend la pratique du parkour, ils auront donc à priori de bonnes raisons d’être en colère. Comme pour les skateurs, impitoyablement chassés de l’espace public depuis l’apparition des skate-parks -et malgré la résistance de certains-, la situation menace de mettre en péril la pratique même.</p>
+<p>Pour finir, en consentant à l’utilisation de parkour-parks nous inciterions inévitablement les plus jeunes et les moins expérimentés à se tourner d’abord -et parfois exclusivement- vers ce genre de structures pour pratiquer. En effet, si des lieux de ce type venaient à se multiplier, ils disposeraient d’un niveau de visibilité accru, apparaissant notamment dans les vidéos des pratiquants, ainsi les débutants pourraient être conduits à penser que le parkour-park est <em>le</em> lieu du parkour, et que c’est dans ces lieux -et uniquement dans ces lieux, ou en tous cas préférentiellement dans ces lieux- qu’il leur faut s’entraîner. Peut-être penseront-ils que c’est plus adapté, plus sécurisé, puisque c’est <em>fait pour</em>. Or, non seulement, ce n’est pas plus adapté puisque c’est <em>inadapté</em> (nous avons montré précédemment pourquoi), mais en plus ça n’est en rien plus sécurisé, et le fait de le croire pourrait induire les jeunes pratiquants en erreur et provoquer des accidents. Effectivement, la sécurité est envisagée dans le parkour sous la forme d’un accompagnement des débutants et des plus jeunes par des traceurs plus expérimentés, et la transmission par ces derniers de principes à respecter et de précautions à prendre. Ainsi, l’une des premières distinctions conceptuelles à enseigner au nouveau pratiquant est la distinction entre risque et danger : le <em>risque</em> est la possibilité d’échouer lorsqu’on tente quelque chose, et le <em>danger</em> la nature d’une situation dans laquelle on encourt de graves blessures, voire la mort. Le pratiquant apprend donc à prendre des risques dans des situations sans danger, afin d’apprendre les différentes techniques de base notamment, et à l’inverse à sauter dans des situations véritablement dangereuses uniquement si le risque d’échec est nul. Le pratiquant apprend également à décomposer les sauts en un certain nombre d’étapes, ce qui lui permet d’y aller progressivement, et de franchir les étapes vers la réussite du saut une à une plutôt que d’un coup. Il acquiert également différents outils de mesure des distances qu’il peut sauter pour chaque technique, il a ainsi de la possibilité de procéder aux vérifications nécessaires avant de se lancer. Il apprend aussi à tester systématiquement les obstacles dont il s’apprête à faire usage : le matériau dont ils sont faits, son accroche, sa solidité, sa capacité à supporter l’atterrissage d’un corps humain, l’éventuelle présence de bouts de verre ou d’objets saillants, etc. Pour tous types de sauts, les nouveaux pratiquants doivent également apprendre qu’ils disposent d’ « éducatifs »(<strong>29</strong>), c’est-à-dire de sauts du même type mais dans des conditions moins dangereuses, ou de taille plus petite, voire les deux. Enfin, le pratiquant apprend au fil du temps à connaître son propre corps, ses possibilités ainsi que ses limites, et dispose donc d’une capacité d’auto-évaluation considérablement accrue, ce qui minimise corrélativement les risques d’erreurs d’appréciation. Tout cela est pour le traceur le fruit d’un apprentissage, et n’est lié en aucune façon à la nature du lieu où l’on pratique. Un parkour-park, quel que soit le matériau dans lequel il est construit et les normes de sécurité auxquelles il répond, n’évitera pas l’accident à celui qui, ignorant ces principes, sautera de manière imprudente et inconsidérée.</p>
+<p>Mais au-delà même de la sécurité, le débutant ne s’entraînant que sur un parkour-park pensera, du fait de la similitude des techniques utilisées, qu’il pratique le parkour, alors que -nous l’avons vu- ce ne sera pas véritablement le cas. Cela pourrait bien mener à la naissance d’une génération nouvelle de pratiquants, tous persuadés de faire du parkour alors qu’aucun d’entre eux n’aura la moindre idée de ce que cela signifie ni de ce en quoi l’entraînement au parkour consiste véritablement.</p>
+<p><strong>Conclusion</strong></p>
+<p>Comme nous avons tenté de le montrer précédemment, le parkour n’est pas un sport. C’est un art, un moyen de locomotion, une méthode d’entraînement, et une discipline philosophique. De par son essence comme de par sa fonction, le parkour n’a pas -et <em>ne peut pas avoir</em>– de lieu dédié. <em>Le monde est un terrain de jeux</em>, dont l’imagination seule fixe les limites.</p>
+<p>Si David Belle utilise cette expression, c’est probablement qu’il a éprouvé combien le défrichage urbain, combien l’inventivité situationnelle, combien la capacité de s’adapter à un environnement donné et de s’y frayer un chemin, combien tout cela compte dans le cadre d’une « méthode d’entraînement » qui se veut préparatoire à tout type d’éventualité. Or, il semble que ce soit là la base même du parkour: « C’est une arme qu’on aiguise: on s’entraîne, et si un jour il y a un problème, on sait qu’on peut s’en servir »(<strong>30</strong>). Pour s’en servir, encore faut-il l’avoir « aiguisée », autrement dit l’avoir mise à l’épreuve de différents lieux et situations, avec différents revêtements et structures, agencés de différentes manières, dans différentes conditions météorologiques, ainsi que de luminosité, et d’adhérence, différents niveaux de fatigue corporelle, etc.</p>
+<p>Les parkour-parks, outils sur mesure généralement conçus par et pour les pratiquants du parkour, relèguent au second plan une partie de ces altérations nécessaires du cadre idéal d’entraînement, et évacuent tout bonnement la nécessité d’apprendre à s’adapter à ce qui n’a pas été conçu <em>pour</em> nous.</p>
+<p>Si le parkour-park peut, dans certains cas, répondre à des problématiques locales (comme par exemple une période hivernale particulièrement rude en Russie), son usage ne saurait être généralisé à tous pays et tous types de lieux sans occasionner de graves dégâts dans la transmission et la pratique du parkour. La richesse de l’architecture et la clémence du climat en France par exemple, rendent ce type de lieux tout à fait dispensables pour la pratique. D’autant plus dispensables qu’ils lui seraient nuisibles.</p>
+<p>Le parkour-park n’est un potentiel terrain de jeux que pour celui qui manque d’imagination; à celui qui, imaginatif, a comme terrain de jeux le monde, le parkour-park est une prison. Tout est question de point de vue, et s’explique donc en partie par la position qu’occupe celui qui commente les choses qu’il observe. Et c’est précisément ce changement de point de vue que le parkour entend opérer chez celui qui le pratique: non point seulement regarder le monde depuis d’autres positions, mais aussi et surtout le regarder <em>différemment</em>.</p>
+<p><strong>Naïm B.</strong></p>
+<p><strong>1</strong>**.** C’est ainsi que la Fédération de Parkour (FPK) l’appelle dans l’article promotionnel qu’elle lui a consacré sur son site web: <a href="https://web.archive.org/web/20160229123406/http://www.fedeparkour.fr/index.php?option=com_content&amp;view=article&amp;id=126:bondy&amp;catid=36:newssite&amp;Itemid=61">http://www.fedeparkour.fr/index.php?option=com_content&amp;view=article&amp;id=126:bondy&amp;catid=36:newssite&amp;Itemid=61</a></p>
+<p><strong>2.</strong> Voir article qui précise la distinction entre parkour et freerunning ici : <a href="http://tracesblog.net/freerunning-et-parkour/">http://tracesblog.net/freerunning-et-parkour/</a></p>
+<p><strong>3.</strong> Voir la présentation complète ici: <a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=pST2mC3oTTY">http://www.youtube.com/watch?v=pST2mC3oTTY</a></p>
+<p><strong>4.</strong> Traceur : pratiquant du parkour</p>
+<p><strong>5.</strong>  Voir interview complète ici: <a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=XWneBIz6ATg">http://www.youtube.com/watch?v=XWneBIz6ATg</a></p>
+<p><strong>6.</strong> <em>p</em>.63, <em>Parkour</em> de David Belle, Editions Intervista, 2009.</p>
+<p><strong>7.</strong> Voir pages 8, 9, 11 et 12 de cet article.</p>
+<p><strong>8.</strong> Voir le 1er article de la Charte de la Fédération de Parkour (FPK) ici : <a href="https://web.archive.org/web/20160229123406/http://www.fedeparkour.fr/index.php?option=com_content&amp;view=article&amp;id=46&amp;Itemid=54">http://www.fedeparkour.fr/index.php?option=com_content&amp;view=article&amp;id=46&amp;Itemid=54</a></p>
+<p><strong>9.</strong> Pour mieux appréhender cette philosophie, se référer à <em>Parkour,</em> David Belle, Intervista, 2009.</p>
+<p><strong>10.</strong> <a href="https://web.archive.org/web/20160229123406/http://www.larousse.fr/dictionnaires/francais/sport/74327">http://www.larousse.fr/dictionnaires/francais/sport/74327</a></p>
+<p><strong>11.</strong> <a href="https://web.archive.org/web/20160229123406/http://www.staps.univ-avignon.fr/S1/UE3/Sociologie/SociologieS1.pdf">http://www.staps.univ-avignon.fr/S1/UE3/Sociologie/SociologieS1.pdf</a></p>
+<p><strong>12.</strong> Pierre Parlebas , <em>Contribution à un lexique commenté en science de l’action motrice</em>, INSEP, 1981.</p>
+<p><strong>13.</strong> Jean-Maire Brohm, <em>Sociologie politique du sport</em>, P.U.N., 1992.</p>
+<p><strong>14.</strong> <a href="http://tracesblog.net/manifeste-contre-lorganisation-de-comp%C3%A9titions-de-parkour/">http://tracesblog.net/manifeste-contre-lorganisation-de-compétitions-de-parkour/</a></p>
+<p>Il me paraît utile de préciser que ce manifeste a été lu et approuvé par David Belle, fondateur du parkour, qui a déclaré publiquement s’y associer sans réserve.</p>
+<p><strong>15.</strong> <a href="https://web.archive.org/web/20160229123406/http://wfpf.com/">http://wfpf.com/</a></p>
+<p><strong>16.</strong> <a href="https://web.archive.org/web/20160229123406/http://www.fedeparkour.fr/">http://www.fedeparkour.fr/</a></p>
+<p><strong>17.</strong> Traces écrites : <em>Parkour</em> de David Belle, Editions Intervista, 2009.</p>
+<p>Traces orales : <a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=r1UPZf1zd0c">http://www.youtube.com/watch?v=r1UPZf1zd0c</a></p>
+<p><a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=rlWNR2pU624">http://www.youtube.com/watch?v=rlWNR2pU624</a></p>
+<p><a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=DN6_b6dLbVY">http://www.youtube.com/watch?v=DN6_b6dLbVY</a></p>
+<p><a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=-jpkM97k9xg">http://www.youtube.com/watch?v=-jpkM97k9xg</a></p>
+<p><a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=cXTldQKLRh4">http://www.youtube.com/watch?v=cXTldQKLRh4</a></p>
+<p><a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=Qylo_5_Jpm0">http://www.youtube.com/watch?v=Qylo_5_Jpm0</a></p>
+<p><a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=_v7rLfV8lUA">http://www.youtube.com/watch?v=_v7rLfV8lUA</a></p>
+<p><a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=mEbJBJDS9vk">http://www.youtube.com/watch?v=mEbJBJDS9vk</a></p>
+<p><a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=ijDdrtI2aJI">http://www.youtube.com/watch?v=ijDdrtI2aJI</a></p>
+<p><a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=Gdyp5l9cNGs">http://www.youtube.com/watch?v=Gdyp5l9cNGs</a></p>
+<p><strong>18</strong>**.** <a href="https://web.archive.org/web/20160229123406/http://blane-parkour.blogspot.fr/">http://blane-parkour.blogspot.fr/</a></p>
+<p><strong>19.</strong> Lire à ce sujet l’interview « Compétition : la vraie toxicomanie » de Jean-Marie Brohm : <a href="https://web.archive.org/web/20160229123406/http://1libertaire.free.fr/Brohm08.html">http://1libertaire.free.fr/Brohm08.html</a></p>
+<p><strong>20.</strong> Il me semble dans le cas du parkour plus pertinent de parler d’<em>observateur</em> que de <em>spectateur</em>, au sens où le pratiquant ne cherche pas à se donner en spectacle, mais simplement à s’entraîner.</p>
+<p><strong>21</strong>**.** <a href="https://web.archive.org/web/20160229123406/http://fr.wikipedia.org/wiki/Art_%C3%A9ph%C3%A9m%C3%A8re">http://fr.wikipedia.org/wiki/Art_éphémère</a></p>
+<p><strong>22.</strong> Interview de David Belle par Mathieu Kassovitz disponible en ligne: <a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=rlWNR2pU624">http://www.youtube.com/watch?v=rlWNR2pU624</a></p>
+<p><strong>23.</strong> <em>La Pensée et le Mouvant</em>, Henri Bergson, p.148, PUF Quadrige, 2009 (réédition).</p>
+<p><strong>24.</strong> <em>Le Rire</em>, Henri Bergson, p.117, PUF Quadrige, 2012 (réédition).</p>
+<p><strong>25</strong>**.** Thomas Bencteux, via RECREATION URBAINE, entreprise de « création de mobiliers et d’espaces sports et loisirs ». A noter que Thomas Bencteux est par ailleurs vice-président de la Fédération de Parkour, laquelle a assuré la promotion de l’aire de parkour de Bondy par différents moyens : elle en a assuré l’inauguration, elle héberge sur son compte Youtube la vidéo qui a été tournée à cette occasion (vidéo incluant d’ailleurs le logo de la FPK), elle a fait un article promotionnel à ce sujet sur son site web, qu’elle a également publié sur les réseaux sociaux. Pour voir la vidéo: <a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=xoLQqDae068">http://www.youtube.com/watch?v=xoLQqDae068</a> Pour lire l’article promotionnel: <a href="https://web.archive.org/web/20160229123406/http://www.fedeparkour.fr/index.php?option=com_content&amp;view=article&amp;id=126:bondy&amp;catid=36:newssite&amp;Itemid=61">http://www.fedeparkour.fr/index.php?option=com_content&amp;view=article&amp;id=126:bondy&amp;catid=36:newssite&amp;Itemid=61</a></p>
+<p><strong>26.</strong> « Le parkour Roule, […] skate-park d’un nouveau genre, […] fait déjà le bonheur des plus jeunes dans des conditions vraiment optimales », <a href="https://web.archive.org/web/20160229123406/http://renovation-urbaine.ville-bondy.fr/fileadmin/user_upload/Renovation_urbaine/Bondy_demain/BondyDemain21.pdf">http://renovation-urbaine.ville-bondy.fr/fileadmin/user_upload/Renovation_urbaine/Bondy_demain/BondyDemain21.pdf</a></p>
+<p><strong>27.</strong> Cela va de l’agression verbale, voire même parfois physique, aux applaudissements et autres témoignages d’enthousiasme.</p>
+<p><strong>28.</strong> « La théorie critique du sport est fondée sur trois axes principaux : 1) Le sport n’est pas simplement du sport, c’est un moyen de gouvernement, un moyen de pression vis-à-vis de l’opinion publique et une manière d’encadrement idéologique des populations et d’une partie de la jeunesse, et ceci dans tous les pays du monde, dans les pays totalitaires comme dans les pays dits démocratiques. On a pu s’en apercevoir au cours de ces grands évènements politiques qu’ont constitué les jeux olympiques de Moscou, les championnats du monde de football en Argentine et, plus récemment, en France. 2) Le sport est devenu un secteur d’accumulation de richesse, d’argent, et donc de capital. Le sport draine des sommes considérables, je dirais même, qu’aujourd’hui, c’est la vitrine la plus spectaculaire de la société marchande mondialisée. Le sport est devenu une marchandise-clé de cette société. 3) Dernier point, l’aspect proprement idéologique. Le sport constitue un corps politique, un lieu d’investissement idéologique sur les gestes, les mouvements. On le voit par exemple pour les sports de combat. C’est aussi une valorisation idéologique de l’effort à travers l’ascèse, l’entraînement, le renoncement, le sportif étant présenté comme un modèle idéologique. Par ailleurs, le sport institue un ordre corporel fondé sur la gestion des pulsions sexuelles, des pulsions agressives, dans la mesure où, paraît-il, le sport serait un apaiseur social, un intégrateur social, réduirait la violence, permettrait la fraternité, tout ce discours qui me semble un fatras invraisemblable d’illusions et de mystifications. Nous avons donc radiographié le sport à partir de ses trois angles : politique, économique, idéologique. », Jean-Marie Brohm, interviewé par Michel Gandilhon dans « <em>Compétition : la vraie toxicomanie</em> » : <a href="https://web.archive.org/web/20160229123406/http://1libertaire.free.fr/Brohm08.html">http://1libertaire.free.fr/Brohm08.html</a></p>
+<p><strong>29.</strong> <a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=ijDdrtI2aJI">http://www.youtube.com/watch?v=ijDdrtI2aJI</a></p>
+<p><strong>30.</strong> <a href="https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=r1UPZf1zd0c">http://www.youtube.com/watch?v=r1UPZf1zd0c</a></p>
+
+</article>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/archive/parkour-parks-ou-parkour-il-faut-choisir/ -->
+	</body>
+</html>

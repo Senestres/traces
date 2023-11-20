@@ -1,5 +1,7 @@
 const { DateTime } = require("luxon");
 const markdownItAnchor = require("markdown-it-anchor");
+const markdownIt = require("markdown-it");
+const markdownItFootnote = require('markdown-it-footnote');
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -9,6 +11,9 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
+const { execSync } = require('child_process')
+
+
 
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
@@ -37,10 +42,17 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(pluginBundle);
 
+/* 	eleventyConfig.addNunjucksFilter("date", function(date, format, locale) {
+		locale = "fr";
+		moment.locale(locale);
+		return moment(date).format(format);
+		var dt = DateTime.fromISO("2017-09-24", { locale: "fr" });
+	  }); */
+
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");
+		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).setLocale("fr").toFormat(format || "dd LLLL yyyy");
 	});
 
 	eleventyConfig.addFilter('htmlDateString', (dateObj) => {
@@ -90,8 +102,23 @@ module.exports = function(eleventyConfig) {
 			level: [1,2,3,4],
 			slugify: eleventyConfig.getFilter("slugify")
 		});
+		mdLib.use(markdownItFootnote); 	// add markdown footnotes
 	});
 
+	// add excerpt
+	// use with <p>{{ post.templateContent | excerpt }}</p>
+	eleventyConfig.addFilter("excerpt", (post) => {
+		const content = post.replace(/(<([^>]+)>)|#/gi, "");
+		return content.substr(0, content.lastIndexOf(" ", 250)) + "...";
+	  });
+
+	// add search
+	// if it crashes, do pagefind command after your Eleventy site build script has finished instead of in the after event.
+	eleventyConfig.on('eleventy.after', () => {
+		execSync(`npx pagefind --glob \"**/*.html\"`, { encoding: 'utf-8' })
+	})
+
+	
 	// Features to make your build faster (when you need them)
 
 	// If your passthrough copy gets heavy and cumbersome, add this line

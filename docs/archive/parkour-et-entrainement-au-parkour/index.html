@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Parkour et entrainement au Parkour</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>Parkour et entrainement au Parkour</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2008-09-18">18 septembre 2008</time></li>
+	<li><a href="/yanndaout/tags/archive/" class="post-tag">archive</a>, </li>
+	<li><a href="/yanndaout/tags/archive/" class="post-tag">archive</a>, </li>
+	<li><a href="/yanndaout/tags/definition/" class="post-tag">definition</a>, </li>
+	<li><a href="/yanndaout/tags/entrainement/" class="post-tag">entrainement</a>, </li>
+	<li><a href="/yanndaout/tags/parkour-net/" class="post-tag">parkour-net</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p><strong>I] Au fait, qu'est-ce que le Parkour ?</strong> Pour reprendre la définition dans l'article correspondant: Le Parkour répond à une fonction première de l'être humain : se déplacer. C'est un art qui sollicite un véritable esprit de combattant et propose de l'action pure à ses pratiquants.</p>
+<p>L'idée de départ est un homme qui court et que rien n'arrête. Le parkour c'est aussi le fait d'aller d'un point A à un point B de la manière la plus rapide et la plus efficace possible.</p>
+<p>Un paradoxe subsite alors, quand nous nous entrainons (répétitions de sauts, physique pur, etc.), on nous pose souvent la question qu'est-ce que l'on fait et on répond souvent du Parkour, pourtant majoritairement nous ne faisons pas ce qui est défini plus haut, lorsque l'on sort s'entrainer.</p>
+<p><strong>II] Que faisons-nous alors la majorité du temps ?</strong> Concrètement, et pour faire simple, nous nous entrainons au Parkour. C'est à peu près la même chose, mais il faut néanmoins bien saisir la nuance entre FAIRE du Parkour, et S'ENTRAINER AU Parkour. Cette nuance permet de définir une chose: on devrait ne jamais dire que l'on fait du Parkour, puisque nous n'avons réellement jamais utilisé le Parkour ou que très rarement.</p>
+<p>Il faut quand même l'avouer, c'est jouer quelque peu sur les mots mais c'est fondamentalement différent. En fait, nous ne faisons qu'exceptionnelement du Parkour, dans le vrai sens du terme.</p>
+<p>Nous verrons dans la prochaine partie, la différence fondamentale entre les deux qui amène plusieurs approches et façons de s'entrainer.</p>
+<p><strong>III] La différence fondamentale entre Entrainement au Parkour et le Parkour</strong> Nous avons saisi cette différence, en trouvant le paradoxe. La différence fondamentale entre le Parkour et l'Entrainement au Parkour, est que durant du VRAI Parkour, on n'a pas le temps d'examiner les surfaces(glissant? ya quoi derrière le mur? où je vais continuer? etc.). Il faut alors, que lorsque l'on est en train de passer un obstacle, penser à regarder devant soi le prochain obstacle, ou l'issue prochaine possible.</p>
+<p>Alors que dans la vraie pratique de Parkour, on fait tout à l'instinct, sous l'adrenaline et donc le manque d'analyse de l'environnement, on a tout notre temps pour réfléchir lors de l'Entrainement au Parkour</p>
+<p>Cela nous fait donc penser à quelque chose de plutôt important, il faudrait parfois s'entrainer à faire des &quot;rush&quot;, c'est à dire des parcours en courant sans vraiment être bien définis, mais par exemple courir longtemps et passer par moments les obstacles qui se trouvent sur votre chemin, sans les avoir examiné au préalable... Cela va sans dire qu'il faut un niveau un peu confirmé pour faire ce genre d'entrainement qui diffère de d'habitude, car on doit prendre l'obstacle tel qu'il nous vient, et l'erreur serait plus grave que si on était vraiment posé sur l'endroit où est l'obstacle en s'entrainant bien précisement dessus.</p>
+<p>Il ne faut pas non plus, sous prétexte que l'on s'entraine au Parkour, faire uniquement des &quot;rushs&quot;, car votre maitrise des sauts, l'application que vous metterez dans un mouvement et l'approche est différente.</p>
+<p>Le Parkour est aussi un art d'imagination dans la plupart des cas, on doit sans cesse s'imaginer que l'on doit passer de là à là sans alternative, que ce rebord au sol est en fait perché à 30m de hauteur, ou carrément s'imaginer que quelqu'un ou un groupe de personne nous poursuit pour se motiver. En général, sauf si le tracé est forcé (encore l'imagination) courir en sprint à côté des obstacles est plus rapide que de passer les obstacles qui nous font faire quelques petits détours, il faut l'avouer. Cependant passer un obstacle permet parfois d'accèder à d'autres &quot;chemins&quot; et vous permet d'échapper clairement à vos poursuivants.</p>
+<p>C'est là que l'entrainement au Parkour est primordial: ON SE PREPARE A CHAQUE SITUATION POSSIBLE, en imaginant mais surtout en examinant chaque parcelle d'un spot (endroit où il y a quelque chose à faire), chaque recoin d'un arbre etc. L'entrainement au Parkour passe donc par la vision, en fait cette &quot;vision&quot; augmente au fur et à mesure que vous vous entrainerez. C'est logique: plus votre niveau augmente et plus vous vous verrez et serez et capable de faire tel et tel chose en plus, jusqu'alors un mouvement ou saut pas envisagé. C'est avec cette vision que l'on s'entraine, aller de là à là-bas. Elle est essentielle en vue d'une pratique du Parkour proprement dit: si vous êtes poursuivi, il faut analyser tous les chemins possibles.</p>
+<p>Se préparer à chaque situation possible nécéssite l'apprentissage du geste parfait. Les Traceurs sont sans cesse en quête du geste parfait.</p>
+<p><strong>IV] Conclusion: Apprentissage du Parkour</strong></p>
+<p>Le mot fut laché: parfait. En effet, chaque Traceur qui mérite ce nom est à la recherche du mouvement parfait, de la technique parfaite: du saut parfait par exemple; tout comme le pratiquant d'un art martial qui est à la recherche du coup parfait tant dans la forme que dans l'efficacité. Un saut parfait est un saut qui ne fait pas de bruit, qui ne procure pas d'effort particulièrementdur à fournir dans l'amorti, où l'arrivée se fait bien droite sans aucune perte d'équilibre, un saut le plus innofensif pour le corps et avec la plus longue distance possible, bref vous m'avez compris.</p>
+<p>Pour arriver à ce geste parfait, il faut répéter inlassablement les techniques. Essayez, sur des répétitions de les faire du mieux possible (exemple: 100 fois le même saut de précision d'affilé), même s'ils ne sont pas forcément longs en distance, ils permettent de valider votre capacité à le faire même en étant fatigué mentalement et physiquement, à controler cette distance, ce saut, cet impact. Selon une étude scientifique, un mouvement est bien assimilé lorsqu’il est répété autour de 1000 fois, mais vu qu’il y a des critères différents sur chaque sauts différents que l’on peut prendre comme un mouvement à part entière, vous savez alor combien la répétition est importante pour qu’une technique soit bien assimilée Si la répétition de mouvement peut aussi être voisin à du renforcement musculaire, il ne faut pas oublier qu’un saut est toujours plus néfaste qu’une flexion, soyez donc préparés</p>
+<p>Il ne faut donc pas négliger le renforcement musculaire. C’est indispensable et je recommenderais pour les débutants de donner une part de 90% au physique et 10% à la technique seulement. Pour les plus confirmés les pourcentages peuvent se traduire par 80-20 ou 70-30, de toute façon il ne faut pas forcément chiffrer mais juste être conscient que le physique est essentiel.</p>
+<p>N’oubliez pas aussi la règle de 3 : Faire / Faire Bien / Faire vite et bien. Apprenez à bien analyser un mouvement pour bien l’executer et enfin le faire avec vitesse et maitrise.</p>
+<p>En somme, l’apprentissage du Parkour se fait par étapes qui pourront paraître lassantes pour certains mais pourtant indispensables : travail physique, travail de répétitions de technique afin de se parfaire et d’être prêt au moment venu.</p>
+<p>Bien-sûr il ne faut pas se figer dans un seul type d’entrainement, car cela deviendrait réellement lassant et sans interêt.</p>
+<p>[Auteur inconnu]</p>
+
+</article>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/archive/parkour-et-entrainement-au-parkour/ -->
+	</body>
+</html>

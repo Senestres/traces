@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>De l’absurdité des parkour-parks</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>De l’absurdité des parkour-parks</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2011-05-27">27 mai 2011</time></li>
+	<li><a href="/yanndaout/tags/archive/" class="post-tag">archive</a>, </li>
+	<li><a href="/yanndaout/tags/archive/" class="post-tag">archive</a>, </li>
+	<li><a href="/yanndaout/tags/parkour-literally/" class="post-tag">parkour-literally</a>, </li>
+	<li><a href="/yanndaout/tags/parkour-park/" class="post-tag">parkour-park</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p>Cette démonstration aura l’avantage de se contenter de peu de mots dans la mesure où les arguments qui la motivent relèvent davantage du bon sens que d’un quelconque débat intellectuel.</p>
+<p>En effet, pour constater l’incompatibilité des parkour-parks avec la pratique du parkour, il suffit de se reférer à la définition de ce dernier.</p>
+<p><strong>1-Définition du parkour</strong></p>
+<blockquote>
+<p>« Le parkour, c’est l’art de se déplacer, aussi bien dans le milieu urbain que dans le milieu naturel, et c’est se servir en fait de toutes les constructions ou les obstacles qui ne sont pas prévus pour à la base » (David Belle, fondateur du parkour)</p>
+</blockquote>
+<p><strong>2-Voie de conséquence</strong></p>
+<p>« Le monde est un terrain de jeux », disait David Belle. Si le monde est un terrain de jeux, nul besoin d’en construire! Tout est déjà là, partout autour. Encore faut-il savoir regarder autour de soi.</p>
+<p>Se servir de tout ce qui n’est pas prévu pour à la base. Ce n’est pas là un point de détail de la définition, mais bien son coeur, ce qui caractérise cette pratique, c’en est l’essence. Aussi, le débat de savoir si un tel préfère pratiquer sur les parkour-parks plutôt qu’avec ce qui l’entoure est à replacer dans son contexte: il ne s’agit pas là d’une voie, d’une manière de pratiquer qu’on pourrait opposer à une autre, d’une « école »; non, il s’agit tout bonnement d’une autre activité. Celui qui pratique sur un parkour-park ne pratique de fait pas le parkour. Il ne le peut pas parce que les mots qui définissent cette pratique l’en excluent avec la plus grande fermeté. Il n’y a pas de possibilité de dérogation à cette règle: le parkour, c’est se déplacer avec ce qui vous entoure et n’est pas prévu pour. C’est précisément ce travail de recherche, de créativité, d’imagination, et d’adaptation qui fait l’intérêt de la discipline. Il y a là une différence fondamentale d’avec le skateboard qui, à la base, ne revendique pas dans sa définition propre l’usage exclusif des structures non-dédiées. Aussi, les skateparks peuvent être des lieux de pratique, d’apprentissage et de perfectionnement des mouvements, de rencontre avec les autres pratiquants. Il en va tout autrement du cas du parkour. Le mot « parkour » définissant l’activité qui prend pour objet de se déplacer avec toutes les structures qui ne sont pas prévues pour, il ne peut y avoir <em>pratique du parkour</em> sur une structure dédiée.</p>
+<p>Cette question n’est donc pas en débat; elle trouve sa réponse dans la définition même de la pratique qu’elle questionne. C’est pourquoi le rejet pur et simple des parkour-parks ne relève en aucun cas de l’adoption d’une position extrêmiste, mais du pur bon sens. On vise à mettre en conformité théorie et pratique, les deux se définissant réciproquement: la théorie définit le pratique par les mots, la pratique la théorie par les actes. A partir du moment où, au sujet d’une même chose, les mots disent une chose, et les actes en disent une autre, il y a perte du sens. Or c’est bien le sens qui précède les moyens, pas le contraire. On ne se demande pas ce qu’on va faire d’un parkour-park une fois qu’on en a construit un; on se demande plutôt préalablement s’il est utile et pertinent d’en construire un. Mais ce n’est pas parce qu’il y en a maintenant quelques-uns qu’il faut se sentir obligés de les utiliser. Au contraire, il faut garder le sens de la pratique, et, nous l’avons vu, cela passe par le fait de s’adapter à un environnement qu’on n’a pas choisi et qui n’a pas été bâti pour qu’on s’y déplace de cette façon. C’est là que réside le « challenge ». C’est donc de désertion, et rien d’autre, dont nous avons besoin; il faut massivement déserter les parkour-parks et autres structures dédiées à la pratique du parkour, et s’opposer le plus fermement du monde à la construction de nouveaux lieux de ce type. Il ne fait aucun doute que les parkour-parks tomberont en désuétude avant l’essence du parkour. Parce que c’est dans l’essence qu’est le sens, et pas ailleurs.</p>
+<p><strong>3-Mauvaises excuses</strong></p>
+<p><em>*Il n’y a rien pour pratiquer là où j’habite.</em></p>
+<p>Vu sous cet angle, c’est sûr, ça commence mal. Il y a toujours tout ce qu’il faut autour de soi pour pratiquer. Dans la mesure où le parkour est l’art de se déplacer dans un environnement donné (généralement le sien propre), et donc, dans un premier temps, de s’y adapter, quel qu’il soit.</p>
+<p>Aussi, celui qui n’a pas de murs n’est pas dépourvu, il doit simplement apprendre à se déplacer avec ce qu’il a, chercher l’harmonie, l’adéquation, entre les techniques qu’il développe et les objets auxquels elles s’appliquent. Cela peut très bien être des buttes de terre et des racines, comme dans ces vieilles vidéos de Teige Matthews-Palmer (Angleterre).</p>
+<p>Ensuite, les gens ont souvent autour d’eux bien plus de choses qu’il ne croient – ou qu’ils ne voient-. Le problème réside généralement dans une paresse imaginative, dans un cruel manque d’imagination et de créativité, et parfois même simplement d’attention.</p>
+<p>Dans un premier temps, il faut apprendre à regarder autour de soi. Cela, le parkour nous l’enseigne peu à peu, au fil des années.</p>
+<p>Dans un deuxième temps, il faut savoir être patient, et prendre le temps de contempler ce qui nous environne. Combien de fois ai-je entendu des traceurs me dire: « Bon, on change de spot?! » 5 minutes après être arrivés sur le spot en question. Pourtant, je me souviens avoir passé des journées entières, des semaines, parfois des mois sur un seul spot, à chercher la moindre chose, le moindre saut qui m’aurait échappé, la moindre possibilité inexploitée, le moindre chemin inexploré. Et c’est de cette façon, je crois, qu’on aiguise son regard, lequel est indispensable pour pouvoir voir ce que l’on se cache à soi-même.</p>
+<p>Dans un troisième temps, il faut faire travailler son imaginaire. Il faut s’attarder, chercher, se poser, réfléchir…avant d’essayer, et, peut-être, de trouver. Il faut chercher toutes les choses qui nous entourent et que nous n’aurions pas encore vues. Il faut chercher toutes les possibilitées cachées dont ces choses pourraient disposer. En faire l’inventaire. Il faut inventer de nouveaux usages aux mêmes choses, et de nouveaux chemins aux mêmes lieux. C’est un peu ça, le parkour.</p>
+<p><em>*Il vaut mieux pratiquer en intérieur et/ou sur des structures dédiées car c’est plus sécurisé.</em></p>
+<p>C’est fondamentalement faux. Le parkour a été inventé dehors, sur les murs des banlieues parisiennes. C’est là que les techniques sont nées, qu’elles se sont perfectionnées, et ont ensuite été transmises. Ceux qui bougent depuis plus de 20 ans sur les murs de ces villes sont aujourd’hui encore, à presque 40 ans, en parfaite santé, et, pour la plupart, pratiquent toujours.</p>
+<p>Il n’y pas de corrélation entre extérieur et dangerosité, pas plus qu’entre structure dédiée et sécurité. Le parkour est, du fait du cadre dans lequel il est né et continue à être pratiqué, une discipline du corps et de l’esprit qui exige à la fois de bien se connaître, de bien connaître son corps et ses capacités, ses potentialités, ainsi que ses limites, et à la fois de bien connaître l’environnement dans lequel on évolue, de vérifier la présence de voitures avant de traverser une rue en courant (ce qui ne s’applique d’ailleurs pas qu’au parkour), de vérifier systématiquement la solidité d’un obstacle avant d’y sauter, d’en connaître la texture, de savoir si ça glisse, ou au contraire si ça rappe, s’il y a des bouts de verre sur la surface d’aterrissage, etc. Mais le parkour exige aussi, et pour les mêmes raisons, un apprentissage très progressif et très lent, par étapes successives, et dans lequel les techniques dont est pas encore suffisamment sûr sont travaillées dans des conditions de sécurité maximales (pas de hauteur, pas de matériau glissant, pas de pluie, pas de nuit, pas de saut dans une configuration dangereuse), et répétées des centaines, des milliers de fois, avant d’être, un jour, considérées comme acquises, et pouvant dès lors être utilisées de manière plus intuitive. Il faut bien savoir distinguer entre risque et danger.</p>
+<p>Une situation à risque est une situation dans laquelle il y a un certain nombre de probabilités pour qu’on échoue.</p>
+<p>Une situation dangereuse est une situation dans laquelle la configuration des lieux ou du saut pourrait rendre l’échec potentiellement mortel, ou du moins très dangereux.</p>
+<p>Ainsi, il y a des situations dans lesquelles on peut se permettre de rater un saut, où l’on sait que ça n’aura pas d’incidence sur notre corps, où l’on ne peut pas se faire mal. C’est dans ces situations-là qu’un pratiquant travaille les techniques qu’il ne maîtrise pas encore.</p>
+<p>Et puis, il y a des situations dans lesquelles on sait qu’un échec pourrait nous être fatal, mais où l’on sait aussi qu’il y a une probabilité d’échec égale à zéro, parce qu’on connaît parfaitement et le lieu, et son corps, et la technique qu’on utilise, et qu’on l’applique à une distance dont on sait qu’on qu’elle se trouve en-dessous de ce que nos capacités nous autorisent à faire.</p>
+<p>Pour résumer, on peut tolérer le risque là où il n’y a pas de danger, et tolérer le danger là où il n’y a pas de risque, mais jamais les deux dans une même situation.</p>
+<p>Et c’est tout cela qui, appliqué avec sérieux et au quotidien, crée des conditions de sécurité plus efficaces que n’importe quel filet de rattrapage ou matelas. La présence de ces derniers nous pousserait à éxecuter des mouvements que nous ne maîtrisons pas, simplement parce qu’on sait qu’on pourra se rattraper ou qu’il y a un matelas en-dessous, bref à sous-estimer le danger qui, certes minoré, existe toujours en intérieur, même avec des matelas, et d’autant plus que nous le prenons d’autant moins en compte. Alors que lorsqu’on sait qu’il n’y a ni matelas ni filet de sécurité, ni personne pour nous rattraper, on ne se donne pas le droit à l’erreur sur l’analyse qu’on fait de la situation, et on n’éxecute un saut risqué que parce qu’il est sans danger, et un saut dangereux que parce qu’il sans risque. En ce sens, il n’y a pas meilleure sécurité qu’une parfaite connaissance de soi et de son environnement, doublée d’une analyse précise et juste sur les situations rencontrées. Ce n’est pas de matelas ou de structures dédiées qu’a besoin le traceur pour s’entraîner en sécurité, mais de patience et de sagesse.</p>
+<p><em>*C’est nous qui avons conçu le lieu, du coup il y a plein de choses à faire, c’est génial!</em></p>
+<p>C’est génial, mais ça n’est pas du parkour. C’est une activité autre qui fait certes usage d’un certain nombre des techniques de base du parkour. Mais les structures auxquelles elles sont appliquées n’ont rien d’un environnement alléatoire ou hasardeux, rien qui ne demande quelque faculté d’adaptation que ce soit, rien qui ne fasse fonctionner l’imagination et la recherche créative propres au parkour, rien qui ne ressemble de près ou de loin à quelque chose <em>qui ne serait pas prévu pour à la base</em>. Aussi, ce peut être « génial » pour cette autre activité alors pratiquée, mais il n’en demeure pas moins que pour le parkour, c’est aussi inutile qu’inutilisable.</p>
+<p>Quant au fait que le lieu ait été conçu en partenariat avec des traceurs, voire par eux seuls, c’est précisément là que se trouve le problème. Si c’est nous qui concevons les lieux dédiés à la pratique du parkour qui est la notre, on tombe alors dans la pire des dérives: non seulement nous pratiquons sur des structures conçues pour (ce qui pose un problème insoluble par rapport à la définition de la pratique), mais en plus nous sommes à l’origine de leur conception (ce qui opère un renversement des termes impossible à assumer: nous ne nous adaptons plus à ce qui nous environne, mais adaptons ce qui nous environne aux techniques dont on fait usage). Nous ne saurions nous trouver plus éloignés que cela de la philosophie sur laquelle la pratique du parkour s’appuie, de ce qui en énonce les fondements et l’essence.</p>
+<p><em>*Je m’entraîne quasiment tout le temps en ville, mais de temps en temps le parkour-park (ou le gymnase), c’est pratique pour travailler certains mouvements.</em></p>
+<p>Ce qu’il y a autour de nous, que ce soit en ville ou en milieu naturel, est largement suffisant à travailler tous les mouvements dont nous avons besoin – puisque c’est sur cet environnement donné que s’appuie l’élaboration et la modification des techniques de manière à les y adapter -. Autrement dit, si nous n’avons vraiment pas, dans notre environnement, de saut de bras même hauteur par exemple, ce n’est pas un problème que nous ne maîtrisions pas cette technique puisqu’elle nous serait parfaitement inutile dans <em>notre environnement</em>. Et si nous devions un jour évoluer dans un environnement différent où cette technique se montrerait utile, voire indispensable, et bien alors nous pourrions nous y entraîner pour l’apprendre et la perfectionner. Mais nul besoin de savoir nager sur une planète où il n’y a pas d’eau. En tous cas, ce n’est pas le propos du parkour que de maîtriser de manière exhaustive le plus grand nombre de techniques possibles, mais bien de savoir se déplacer dans l’environnement qui nous est donné, et donc d’adapter les techniques et les mouvements dont nous faisons usage aux structures auxquelles elles s’appliquent. Un peu à la manière des animaux en définitive. Apprendre à faire un passe-muraille serait bien inutile dans un endroit où il n’y aurait de toutes façons pas de murs.</p>
+
+</article>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/archive/de-labsurdite-des-parkour-parks/ -->
+	</body>
+</html>

@@ -1,50 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Eleventy Base Blog v8</title>
-		<meta name="description" content="I write things so I can stop thinking them">
-		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Eleventy Base Blog v8">
-		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Eleventy Base Blog v8">
+		<title>Traces</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
 		
-		<style>/* Message Box */
-.message-box {
-	--color-message-box: #ffc;
-
-	display: block;
-	background-color: var(--color-message-box);
-	color: var(--color-gray-90);
-	padding: 1em 0.625em; /* 16px 10px /16 */
-}
-.message-box ol {
-	margin-top: 0;
-}
-
-@media (prefers-color-scheme: dark) {
-	.message-box {
-		--color-message-box: #082840;
-	}
-}
-* { box-sizing: border-box; }
+		<style>* { box-sizing: border-box; }
 /* Defaults */
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
-	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
 }
 
 /* Theme colors */
 :root {
 	--color-gray-20: #e0e0e0;
-	--color-gray-50: #C0C0C0;
+	--color-gray-50: #c0c0c0;
 	--color-gray-90: #333;
 
 	--background-color: #fff;
 
 	--text-color: var(--color-gray-90);
 	--text-color-link: #082840;
-	--text-color-link-active: #5f2b48;
-	--text-color-link-visited: #17050F;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
 
 	--syntax-tab-size: 2;
 }
@@ -52,7 +41,7 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		--color-gray-20: #e0e0e0;
-		--color-gray-50: #C0C0C0;
+		--color-gray-50: #c0c0c0;
 		--color-gray-90: #dad8d8;
 
 		/* --text-color is assigned to --color-gray-_ above */
@@ -63,7 +52,6 @@
 		--background-color: #15202b;
 	}
 }
-
 
 /* Global stylesheet */
 * {
@@ -77,12 +65,18 @@ body {
 	font-family: var(--font-family);
 	color: var(--text-color);
 	background-color: var(--background-color);
+	height: 100%;
 }
 html {
 	overflow-y: scroll;
 }
 body {
-	max-width: 40em;
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -127,6 +121,8 @@ main :first-child {
 
 header {
 	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
 }
 header:after {
 	content: "";
@@ -153,7 +149,7 @@ code {
 	font-family: var(--font-family-monospace);
 }
 pre:not([class*="language-"]) {
-	margin: .5em 0;
+	margin: 0.5em 0;
 	line-height: 1.375; /* 22px /16 */
 	-moz-tab-size: var(--syntax-tab-size);
 	-o-tab-size: var(--syntax-tab-size);
@@ -174,18 +170,45 @@ code {
 /* Header */
 header {
 	display: flex;
-	gap: 1em .5em;
 	flex-wrap: wrap;
 	align-items: center;
+	justify-content: space-evenly;
 	padding: 1em;
 }
-.home-link {
-	font-size: 1em; /* 16px /16 */
-	font-weight: 700;
-	margin-right: 2em;
+.logo {
+	display: flex;
+	align-items: center;
 }
-.home-link:link:not(:hover) {
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
 	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
 }
 
 /* Nav */
@@ -222,7 +245,7 @@ header {
 .postlist-item:before {
 	display: inline-block;
 	pointer-events: none;
-	content: "" counter(start-from, decimal-leading-zero) ". ";
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
 	line-height: 100%;
 	text-align: right;
 	margin-left: -1.5rem;
@@ -239,8 +262,8 @@ header {
 	font-size: 1.1875em; /* 19px /16 */
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
-	padding-left: .25em;
-	padding-right: .5em;
+	padding-left: 0.25em;
+	padding-right: 0.5em;
 	text-underline-position: from-font;
 	text-underline-offset: 0;
 	text-decoration-thickness: 1px;
@@ -265,7 +288,7 @@ header {
 .post-metadata {
 	display: inline-flex;
 	flex-wrap: wrap;
-	gap: .5em;
+	gap: 0.5em;
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -279,7 +302,7 @@ header {
 	text-decoration: none;
 	font-style: normal;
 	font-size: 1em;
-	margin-left: .1em;
+	margin-left: 0.1em;
 }
 a[href].header-anchor,
 a[href].header-anchor:visited {
@@ -291,62 +314,495 @@ a[href].header-anchor:hover {
 }
 a[href].header-anchor:focus,
 :hover > a[href].header-anchor {
-	color: #aaa;
+	color: var(--text-color-link-visited);
 }
 
 h2 + .header-anchor {
 	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
 }</style>
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
 		<header>
-			<a href="/yanndaout/" class="home-link">Eleventy Base Blog v8</a>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
 			<nav>
 				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav">
-					<li class="nav-item"><a href="/yanndaout/">Home</a></li>
-					<li class="nav-item"><a href="/yanndaout/blog/">Archive</a></li>
-					<li class="nav-item"><a href="/yanndaout/about/">About Me</a></li>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/" aria-current="page">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
 				</ul>
 			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
 		</header>
 
 		<main id="skip">
-			<!-- Delete this message, it will also remove the component CSS from the bundle -->
-<div class="message-box">
-	<ol>
-		<li>Edit the <code>_data/metadata.js</code> with your blog’s information.</li>
-		<li>(Optional) Edit <code>eleventy.config.js</code> with your <a href="https://www.11ty.dev/docs/config/">configuration preferences</a>.</li>
-		<li>Delete this message from <code>_includes/layouts/home.njk</code>.</li>
-	</ol>
-	<p><em>This is an <a href="https://www.11ty.dev/">Eleventy project</a> created from the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> repo</a>.</em></p>
+			<div class="container-tag-list">
+  <ul class="all-tags-list">
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/philosophie/" class="all-tags-link">philosophie</a>
+        <span class="all-tags-post-count">3 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/entrainement/" class="all-tags-link">entrainement</a>
+        <span class="all-tags-post-count">13 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/enseignement/" class="all-tags-link">enseignement</a>
+        <span class="all-tags-post-count">3 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/histoire/" class="all-tags-link">histoire</a>
+        <span class="all-tags-post-count">4 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/urbanisme/" class="all-tags-link">urbanisme</a>
+        <span class="all-tags-post-count">2 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/institutions-internationales/" class="all-tags-link">institutions internationales</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/fig/" class="all-tags-link">FIG</a>
+        <span class="all-tags-post-count">6 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/news/" class="all-tags-link">news</a>
+        <span class="all-tags-post-count">4 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/sport/" class="all-tags-link">sport</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/stoicisme/" class="all-tags-link">stoicisme</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/apprentissage/" class="all-tags-link">apprentissage</a>
+        <span class="all-tags-post-count">2 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/competition/" class="all-tags-link">compétition</a>
+        <span class="all-tags-post-count">7 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/ethique/" class="all-tags-link">éthique</a>
+        <span class="all-tags-post-count">3 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/parkour/" class="all-tags-link">parkour</a>
+        <span class="all-tags-post-count">14 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/pedagogie/" class="all-tags-link">pedagogie</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/valeurs/" class="all-tags-link">valeurs</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/ama/" class="all-tags-link">ama</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/dopage/" class="all-tags-link">dopage</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/genetique/" class="all-tags-link">génétique</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/precarite/" class="all-tags-link">précarité</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/wada/" class="all-tags-link">wada</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/creativite/" class="all-tags-link">créativité</a>
+        <span class="all-tags-post-count">2 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/feedback/" class="all-tags-link">feedback</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/motivation/" class="all-tags-link">motivation</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/affordances/" class="all-tags-link">affordances</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/anarchisme/" class="all-tags-link">anarchisme</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/tactique/" class="all-tags-link">tactique</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/alternative/" class="all-tags-link">alternative</a>
+        <span class="all-tags-post-count">2 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/manifeste/" class="all-tags-link">manifeste</a>
+        <span class="all-tags-post-count">3 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/organisation/" class="all-tags-link">organisation</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/traduction/" class="all-tags-link">traduction</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/communaute/" class="all-tags-link">communauté</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/conflit/" class="all-tags-link">conflit</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/critique/" class="all-tags-link">critique</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/fsg/" class="all-tags-link">FSG</a>
+        <span class="all-tags-post-count">3 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/controle-moteur/" class="all-tags-link">contrôle-moteur</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/attention/" class="all-tags-link">attention</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/feminisme/" class="all-tags-link">féminisme</a>
+        <span class="all-tags-post-count">2 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/politique/" class="all-tags-link">politique</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/cio/" class="all-tags-link">cio</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/publicite/" class="all-tags-link">publicité</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/spectacle/" class="all-tags-link">spectacle</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/contraintes/" class="all-tags-link">contraintes</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/psychologie-ecologique/" class="all-tags-link">psychologie écologique</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/enquete/" class="all-tags-link">enquête</a>
+        <span class="all-tags-post-count">3 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/organisations-internationales/" class="all-tags-link">organisations-internationales</a>
+        <span class="all-tags-post-count">3 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/anthropologie/" class="all-tags-link">anthropologie</a>
+        <span class="all-tags-post-count">2 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/ordalie/" class="all-tags-link">ordalie</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/psychologie/" class="all-tags-link">psychologie</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/risque/" class="all-tags-link">risque</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/homosociabilite/" class="all-tags-link">homosociabilité</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/humour/" class="all-tags-link">humour</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+      
+      <li class="all-tags-item">
+        <a href="/yanndaout/tags/masculinite/" class="all-tags-link">masculinité</a>
+        <span class="all-tags-post-count">1 posts</span>
+      </li>
+    
+  </ul>
 </div>
-<!-- Stop deleting -->
-
-<h1>Tags</h1>
-
-<ul>
-
-	
-	<li><a href="/yanndaout/tags/another-tag/" class="post-tag">another tag</a></li>
-
-	
-	<li><a href="/yanndaout/tags/number-2/" class="post-tag">number 2</a></li>
-
-	
-	<li><a href="/yanndaout/tags/second-tag/" class="post-tag">second tag</a></li>
-
-	
-	<li><a href="/yanndaout/tags/posts-with-two-tags/" class="post-tag">posts with two tags</a></li>
-
-</ul>
-
-
 		</main>
 
-		<footer></footer>
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
 
 		<!-- Current page: /yanndaout/tags/ -->
 	</body>

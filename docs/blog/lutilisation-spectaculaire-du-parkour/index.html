@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>La mise en spectacle du parkour</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>La mise en spectacle du parkour</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2019-12-20">20 décembre 2019</time></li>
+	<li><a href="/yanndaout/tags/cio/" class="post-tag">cio</a>, </li>
+	<li><a href="/yanndaout/tags/parkour/" class="post-tag">parkour</a>, </li>
+	<li><a href="/yanndaout/tags/publicite/" class="post-tag">publicité</a>, </li>
+	<li><a href="/yanndaout/tags/spectacle/" class="post-tag">spectacle</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p>Dans cet article, je veux m’intéresser à la mise en spectacle du parkour par des acteurs qui ne sont pas eux-mêmes des pratiquants. Certes, on connait bien la mise en spectacle par les pratiquant.e.s eux-mêmes. Cette mise en spectacle a toujours posé des questions, notamment parce qu’il y a une tension entre les aspects viraux qui font que le parkour se diffuse (penser à l’image donnée du parkour dans les films qui l’ont diffusé dans le monde) et des aspects plus terre à terre qui font que le parkour peut être enseigné et pratiqué en sécurité, est toléré par les habitants, est considéré comme une activité légitime, etc.</p>
+<p>Cependant, à mon avis le problème prend une ampleur différente et pose de nouvelles questions dès lors qu’il s’agit d’une mise en spectacle par des acteurs externes. Tandis que les traceurs.euses doivent se débrouiller avec l’image qu’ils donnent eux-mêmes de la discipline, des acteurs externes ont une responsabilité relativement faible, peuvent aisément se désolidariser de la discipline le cas échant, et ne sont jamais confrontés à la question de la transmission et de l’enseignement de la discipline. En un sens, ils peuvent donc modeler une image spectaculaire, profiter des éventuelles retombées positives sans pour autant avoir à assumer les aspects négatifs. Dans sa thèse<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>, Julie Angel mentionne le cas de l’entreprise Shell, dont les abords du siège à Londres sont devenus un spot de parkour. L’entreprise interdit la pratique sur ce spot, alors qu’elle a utilisé le parkour pour sa publicité notamment en invitant Sébastien Foucan à participer à une performance dans ce lieu. C’est à des situations de ce type auxquelles je veux m’intéresser ici.</p>
+<h2 id="trois-exemples-d-utilisation-spectaculaire-du-parkour" tabindex="-1">Trois exemples d’utilisation spectaculaire du parkour <a class="header-anchor" href="#trois-exemples-d-utilisation-spectaculaire-du-parkour">#</a></h2>
+<p>Je propose de discuter trois cas provenant de la ville de Lausanne. Dans le premier cas, la ville avait utilisé une installation lumineuse (<em>Run</em> <em>Beyond</em>) représentant manifestement le parkour, avec un traceur sautant de toit en toit. Cette installation se trouvait entre deux bâtiments, dans le quartier du Flon. Ce quartier est un quartier commercial privé, et les traceurs avaient l’habitude de se faire chasser par des agents de sécurité. Plus récemment, le quartier s’est gentrifié et une partie du spot le plus important du Flon a été démoli pour laisser place à un nouveau bâtiment. La même installation artistique a été présentée à Amsterdam, et le site du festival la décrit ainsi : « 'Run Beyond' is a work that focuses on the leap that we all have to make, sooner or later: the leap to freedom. Which freedom that is, [the artist] doesn’t specify, that is up to the spectator to decide. »<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> Visiblement, tout le monde ne l’a pas interprété comme la liberté de s’approprier l’espace urbain et d’en faire un usage ludique.</p>
+<p><img src="images/16395613_1195396527195786_1773016678_n.jpg" alt=""></p>
+<p>Run Beyond, 2016</p>
+<p>Dans un second cas, le service des sports de la ville a utilisé du parkour dans un clip promotionnel <sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. A ce moment-là, aucune des deux associations de parkour de la ville n’apparaissait dans l’offre sportive du service. Ce n’est pourtant pas faute d’avoir essayé : pour ce qui est de Parkour Lausanne, l’association dont je suis président, cela faisait déjà plusieurs mois que nous insistions pour apparaitre sur leur site parmi les autres clubs proposant des activités physiques. Plusieurs mois après notre première demande, le service n’avait même pas daigné nous répondre. Ce n’est qu’après avoir rendu la chose publique, créé un mini scandale, harcelé le service par des mails et appels téléphoniques, ainsi qu’avec l'appui de plusieurs personnes indépendantes, que le service s’est enfin plié à notre demande.</p>
+<p>Finalement, prenons le cas du Comité International Olympique. Le CIO a récemment rasé son siège pour construire un bâtiment neuf. Voyant la construction terminée, j’ai voulu aller m’entraîner aux abords du bâtiment, en l’occurrence dans un petit parc apparemment ouvert au public ainsi que sur des murs en béton servant probablement de sortie de secours. Pour m’y rendre, je n’ai pas dû franchir de barrière, de haie ni vu de panneau. Un agent de sécurité m’a demandé de partir après une dizaine de minutes à peine. L’ironie du sort, c’est qu’à peine une semaine plus tard sortait une vidéo promotionnelle pour les Jeux Olympiques de la Jeunesse <sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>, qui auront lieu à Lausanne en janvier 2020. Dans cette vidéo, on voit un traceur pratiquer exactement dans les mêmes espaces que moi. Je suis retourné sur place quelques jours plus tard, où j’ai été interpellé par trois gardes différents en l’espace d’une heure. Suivant la suggestion d’un des gardes, j’ai adressé une demande d’autorisation de pratique ; celle-ci n’a encore reçu aucune réponse.</p>
+<p>On pourrait d’ailleurs généraliser l’exemple au-delà du parkour. En 2015 une station du métro lausannois a été renommée « Ouchy-Olympique » à l’occasion des 100 ans de présence du CIO à Lausanne. Dans le métro, un bruitage sonore rappelant un départ de course a été ajouté pour signaler l'arrivée à la station. Le design de la station elle-même a également été revu, avec l'intégration de nombreux éléments relevant de l’univers Olympique. Au sol, un marquage a été fait pour imiter des terrains sportifs, dont une piste de 100m le long du quai de métro. Lors d’un échauffement, nous avons effectué un sprint sur cette piste. Le personnel des transports publics n’a pas manqué de nous chasser, avec l’argument classique, mais dont l’utilisation ici ne manque pas de sel : « ce n’est pas fait pour ça ». Mentionnons que la station était vide, et qu’il s’agit d’une station avec des quais fermés : il n’y aucun risque de tomber sur les voies.</p>
+<h2 id="le-cout-du-spectacle" tabindex="-1">Le coût du spectacle <a class="header-anchor" href="#le-cout-du-spectacle">#</a></h2>
+<p>Le parkour peut être utilisé pour symboliser beaucoup de choses : la puissance, la masculinité, la jeunesse, le dynamisme, mais aussi la subversion, l’écart à la norme, ou comme on l’a vu, la liberté. Dans les cas qui nous occupent, utiliser l’image du parkour permet aux institutions en question de signifier qu’elles savent s’adapter à l’air du temps, qu’elles ne sont pas déconnectées des pratiques contemporaines, qu’elles sont ouvertes au changement, qu’elles tolèrent ou même embrassent et encouragent les activités « alternatives ». Il permet également de montrer qu’elles sont proches des jeunes et encouragent plus généralement le mouvement et la santé. Mais bien plus que cela, le parkour permet de mettre en valeur la ville elle-même. C’est là un élément essentiel : tandis que d’autres pratiques sont reléguées à des espaces standardisés, prédéfinis, voire tout simplement se pratiquent en intérieur, et que les transférer en extérieur demande des adaptations, le parkour peut au contraire occuper d’autres espaces. Le parkour permet de faire vivre des espaces, d’y créer une trame narrative, en bref de les mettre en valeur.</p>
+<p>On peut se demander combien de temps il sera possible de maintenir cette image d’une pratique « urbaine », « alternative », « outdoor ». Il est intéressant de remarquer que c’est ainsi que la pratique est toujours présentée, rarement dans ses versions sportifiées, dans des espaces intérieurs standardisés. Pourtant, ce sont souvent les mêmes acteurs qui essaient de faire tenir les deux bouts. Des traceurs qui construisent des parkour parks et y enseignent, mais retournent en milieu urbain lorsqu’il s’agit de faire de la publicité. Des institutions qui encouragent la sportivisation et la standardisation, régulent et policent la pratique extérieure, refusent d’entrer en matière lorsqu’il s’agit de donner des autorisations, mais apprécient tout particulièrement de pouvoir mettre en spectacle l’utilisation ludique et subversive des espaces dont elles sont propriétaires. Probablement que d’ici quelques années, lorsque le parkour aura perdu son aura alternative et subversive, une autre pratique sera utilisée à sa place.</p>
+<p>En passant de la pratique à l’image, de l’activité au spectacle, un certain déphasage se crée. Evidemment, tous ceux qui profitent de l’image ne souhaitent pas voir l’activité elle-même se dérouler sous leurs yeux. Du moins, ils voudraient la réserver aux espaces et aux moments qu’ils estiment, pour des raisons plus ou moins recevables, être les bons espaces-temps pour ce genre d’activité. On peut hésiter à parler ici d’hypocrisie. Généralement ce ne sont pas exactement les mêmes acteurs qui d’une part profitent des images ou incitent à la pratique, et qui d’autre part tentent de la cloisonner ou de l’interdire. Dans le cas de l’installation artistique, le message de l’artiste est partiellement repris par la ville, mais certainement pas par les agents de sécurité ou de la police travaillant dans le quartier. Dans le cas du CIO, le comité d’organisation des JOJ, l’équipe média de celui-ci, les agents de sécurité du bâtiment et le CIO lui-même ne sont pas identiques. Il y a donc une question d’action et de responsabilité collective qui se pose. Et les institutions ne sont pas nécessairement homogènes, elles peuvent abriter du conflit, de la pluralité, des factions opposées, etc. Mais il serait étrange de dire que le CIO n’a aucune responsabilité dans les actions de son équipe de sécurité. Je pense qu’on peut donc bien parler d’hypocrisie dans le cas de ces institutions qui d’une main donnent du rêve, du possible, de la liberté, du ludique et de la subversion, pour les reprendre de l’autre.</p>
+<p><img src="images/Screenshot_2019-12-20-Discover-the-programme-of-the-En-Jeux-festival-.jpg" alt=""></p>
+<p>Capture d'écran du site des JOJ 2020</p>
+<p>Avec cela, il devrait être évident que certains individus et institutions profitent de l’image spectaculaire du parkour, sans pour autant partager certains coûts de la pratique elle-même. Ces coûts sont divers, que ce soit dépenser de l’énergie et du temps, encourir un risque de blessure, s’entrainer dans le froid et la pluie, être chassé de spots, et éventuellement payer des amendes. A priori, certains de ces coûts sont d’autant plus élevés que la pratique se rapproche du pôle spectaculaire (risqué, en extérieur, subversive, etc.). De plus, la mise en spectacle de la discipline engendre des coûts supplémentaires qui sont entièrement supportés par les pratiquants. Je pense là à des efforts à faire en termes de prévention, d’explicitation et de légitimation de la pratique. En tant qu’enseignant, il faut passer son temps à expliquer ce qu’est le parkour, pourquoi cela ne consiste pas essentiellement à faire des backflips ou grimper sur des toits, etc. Ceci consiste parfois à tout bonnement décourager certains néophytes : ils sont attirés par un aspect, et sont découragés lorsqu’ils se rendent compte que la pratique diffère de l’image, que le processus n’est pas équivalent au produit final qu’on leur a présenté. C’est un poids à porter, c’est un véritable travail. Quand une institution choisit de profiter de l’image, c’est aux pratiquants que revient la responsabilité de gérer celle-ci par la suite. Lorsque les JOJ choisissent de mettre en avant une image de traceurs sautant entre des toits<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>, c’est aux associations de parkour de montrer patte blanche, d’expliquer pourquoi leur pratique n’est pas dangereuse, de rassurer les parents, de décourager les casse-cous, etc. On pourrait même voir là des coûts en termes de préservation d’un patrimoine culturel. Face aux aspects spectaculaires, les traceurs doivent faire un travail supplémentaire pour s’assurer que les autres aspects de la pratique soient également transmis, de sorte à préserver le parkour pour les générations futures.</p>
+<p>Evidemment, je n’ai pas de solutions à cette situation. Je ne peux que mettre en visibilité et dénoncer l’hypocrisie, et inciter les traceurs à faire plus attention lorsqu’ils prêtent leur corps pour la façade médiatique d’autres institutions. Il est une chose d’utiliser des images spectaculaires dont on payera le coût soi-même. Il en est une autre de laisser autrui en bénéficier sans en partager les coûts.</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p> Angel Julie, <em>Ciné Parkour: A cinematic and theoretical contribution to the understanding of the practice of parkour</em>, Thesis, Brunel University School of Arts PhD Theses, 201 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p> <a href="https://amsterdamlightfestival.com/en/artworks/run-beyond">https://amsterdamlightfestival.com/en/artworks/run-beyond</a>  <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://www.facebook.com/watch/?v=222000222031747">https://www.facebook.com/watch/?v=222000222031747</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p><a href="https://www.youtube.com/watch?v=4Eh0HyEDWqQ">https://www.youtube.com/watch?v=4Eh0HyEDWqQ</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p><a href="https://www.lausanne2020.sport/fr/news/festival/decouvrez-le-programme-du-festival-en-jeux">https://www.lausanne2020.sport/fr/news/festival/decouvrez-le-programme-du-festival-en-jeux</a> <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+<nav class="pagination-inner" aria-label="Articles next and previous links">
+	<a href="/yanndaout/blog/aller-au-dela-des-consignes-et-des-instructions/" data-direction="forwards" class="pagination-previous">
+		<span>← Aller au-delà des consignes et des instructions </span>
+	  </a>
+	
+	<a href="/yanndaout/blog/psychologie-de-lattention-phenomenologie-et-feminisme/" data-direction="backwards" class="pagination-next">
+		<span>Psychologie de l&#39;attention, phénoménologie et féminisme →</span>
+	  </a>
+	
+</nav>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/blog/lutilisation-spectaculaire-du-parkour/ -->
+	</body>
+</html>

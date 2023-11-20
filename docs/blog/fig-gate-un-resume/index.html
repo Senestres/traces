@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>FIG-Gate: un résumé</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>FIG-Gate: un résumé</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2017-05-25">25 mai 2017</time></li>
+	<li><a href="/yanndaout/tags/institutions-internationales/" class="post-tag">institutions internationales</a>, </li>
+	<li><a href="/yanndaout/tags/fig/" class="post-tag">FIG</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p><strong>Résumé des évènements concernant la controverse actuelle liée à la FIG (Fédération Internationale de Gymnastique)</strong></p>
+<p><em>Ceci représente les faits selon les informations connues  de notre part au</em> <em>28 juillet 2017</em>_. Nous sommes ouverts à toute information venant compléter ou corriger ce résumé._</p>
+<p>24.02.2017: La FIG (dont le siège est à Lausanne) annonce dans un <a href="http://campaign.r20.constantcontact.com/render?m=1104002974775&amp;ca=3514ded5-82cd-4788-8249-b3807e822f52">communiqué de presse</a> vouloir créer une discipline inspirée par le parkour.</p>
+<p>31.03: Parkour UK (fédération nationale britannique), <a href="http://parkour.uk/parkour-uk-issues-open-letter-to-federation-internationale-de-gymnastique-fig-re-the-encroachment-and-misappropriation-of-parkourfreerunning/">accuse</a> la FIG de vouloir s’approprier le parkour, et menace de saisir le TAS (Tribunal Arbitral du Sport, Lausanne également).</p>
+<p>18.04: la FPK (fédération française) <a href="http://www.fedeparkour.fr/news/la-fpk-et-parkour-uk-face-a-la-federation-internationale-de-gymnastique-les-traceurs-ne-sont-pas-des-gymnastes">s’associe</a> à cette démarche.</p>
+<p>21.04: La FIADD <a href="https://www.facebook.com/FedIntADD/posts/1447853231934089">annonce son support</a> à cette démarche.</p>
+<p>04.05: APEX Movement, entreprise de Parkour américaine, <a href="https://www.facebook.com/ApexMovement/videos/10154424394171471/">annonce</a> une compétition de parcours d’obstacle sprint (OCS) à Montpellier avec la <a href="http://www.fise.fr/fr">FISE</a> et l'appui de la FIG, <a href="http://www.jumpfreerun.com/">JUMP Freerun</a>, ainsi que <a href="http://themouvement.org/">The Mouvement</a>. Cette discipline est censée se distinguer du parkour, pourtant tout y ressemble : organisé par des organisations de parkour, avec des participants tous traceurs et traceuses, vidéo d’annonce contenant essentiellement des extraits de vidéos de parkour... APEX estime pouvoir se prévenir d'une confusion entre leur évènement et le parkour. Cela dit, de nombreux pratiquants doutent de leur capacité à contrôler et conserver cette distinction. La FPK n’avait pas été prévenue, pas plus que les pratiquants de Montpellier. Tout le processus semble donc peu transparent.</p>
+<p>05.05: il <a href="http://www.insidethegames.biz/articles/1050020/exclusive-international-gymnastics-federation-present-parkour-for-olympic-inclusion-at-tokyo-2020">semble</a> que la FIG a proposé le parkour comme discipline pour les JO de Tokyo 2020. Dans un entretien (maintenant retiré), le secrétaire général de la FIG dit que &quot;<a href="http://vestnikkavkaza.net/interviews/Andre-Gueisbuhler-Azerbaijan-is-helping-the-world-gymnastics.html">les groupes de Parkour ne sont pas organisés. Leur esprit est de rester non-organisé. Mais ils veulent la compétition. Je suis persuadé que la FIG est la fédération internationale la plus qualifiée pour développer le Parkour.</a>&quot; Au mépris des (nombreuses) organisations qui existent déjà, et de la multitude (peut-être une majorité) des pratiquants qui <a href="http://www.fedeparkour.fr/news/les-resultats-du-sondage-sur-la-competition">ne veulent pas de la compétition</a>.</p>
+<p>06.05: le magazine International Gymnast <a href="https://www.facebook.com/InternationalGymnast/posts/10154800057678138">estime dommage</a> de promouvoir le parkour au lieu des disciplines qui font partie de manière légitime et depuis longtemps de la FIG.</p>
+<p>10.05: Selon son <a href="http://campaign.r20.constantcontact.com/render?m=1104002974775&amp;ca=6c45ff92-d986-4b10-b37c-271c25b581cd">communiqué de presse</a>, la FIG prévoit d’organiser également des Coupes du Monde dès 2018 et Championnats du Monde dès 2020. Il est également annoncé que la FIG développera des pratiques non-compétitives.</p>
+<p>11.05: Parkour NZ, la fédération néo-zélandaise <a href="http://nzparkour.co.nz/wp-content/uploads/2015/05/Parkour-NZ-Open-Letter-to-FIG.pdf">s'associe</a> à la démarche de Parkour UK. Parkour Generations <a href="https://www.facebook.com/parkourgenerations/posts/10154631566788366">montre son support</a> avec le #notgymnastics.</p>
+<p>12.05: APA (Australian Parkour Association, équivalent d'une fédération nationale) <a href="http://parkour.asn.au/open-letter-to-the-federation-internationale-de-gymnastique-on-the-encroachment-and-misappropriation-of-parkour/">s'associe</a> à la démarche. Malik Diouf, pourtant membre de The Mouvement, <a href="https://www.facebook.com/magicmalik.diouf/posts/10154822581317933">affirme</a> ne pas avoir été tenu au courant des évènements, et ne pas avoir pris part aux décisions.</p>
+<p>13.05: Face à la controverse, APEX <a href="http://apexmovement.com/blog/apex-intl-canceled/">annule sa participation</a> à l’évènement de Montpellier. L'ADD Academy <a href="https://www.facebook.com/addacademy/posts/10154572906921966">prends position</a> contre la FIG, avec le #wearenotgymnastics.</p>
+<p>15.05: Malik Diouf adresse <a href="https://www.facebook.com/photo.php?fbid=10154830275582933&amp;set=a.10150594908592933.390257.598217932&amp;type=3&amp;theater">une lettre</a> à la FIG.</p>
+<p>16.05: Charles Perrière et Florian Busi <a href="https://www.facebook.com/parkourinternational/posts/1318038268251383">communiquent</a> via la page facebook Parkour International</p>
+<p>18.05: l'ADD Academy et Chau Belle <a href="https://www.facebook.com/addacademy/posts/10154589058041966">prennent position</a> contre la FIG. La WFPF/IPF <a href="https://www.facebook.com/worldfpf/posts/10155065407701609">prennent position</a> contre la FIG.</p>
+<p>19.05: Laurent Piemontesi <a href="https://www.facebook.com/permalink.php?story_fbid=1532121816799497&amp;id=229538037057888">prend position</a> contre la FIG. Une <a href="https://www.facebook.com/parkourone/posts/10154898023314177">lettre ouverte</a> signée par des organisations allemandes est adressée à la FIG.</p>
+<p>20.05: les athlètes censés participer à la compétition se retirent et <a href="https://www.facebook.com/josephjameshenderson/posts/364529173945045">prennent position</a> contre la FIG.</p>
+<p>21.05: Parkour South Africa <a href="https://www.facebook.com/ParkourSA/photos/a.117960708690.104675.8626778690/10154712397433691/?type=3&amp;theater">prend position</a> contre la FIG.</p>
+<p>22.05: une <a href="https://www.facebook.com/parkourone/posts/10154906849369177">lettre ouverte</a> signée par des organisations suisses est adressée à la FIG. Une <a href="http://muvmag.com/fightthefig/">pétition</a> est lancée par MÜV Mag. Une <a href="https://www.change.org/p/fig-contre-l-appropriation-du-parkour-par-la-f%C3%A9d%C3%A9ration-internationale-de-gymnastique?recruiter=76685679&amp;utm_source=share_petition&amp;utm_medium=facebook&amp;utm_campaign=autopublish&amp;utm_term=des-lg-share_petition-reason_msg">pétition francophone</a> est également publiée sur change.org.</p>
+<p>24.05: selon MÜV Mag, JUMP Freerun <a href="http://muvmag.com/jump-freerun-no-fig-involvement/">ne serait pas directement en contact</a> avec la FIG, mais est sous contrat pour l'évènement.</p>
+<p>25.05: Yann Hnautra <a href="https://www.facebook.com/yann.hnautra/posts/10210094806389130">prend position</a> contre la FIG.</p>
+<p>26.05: l'association finlandaise <a href="https://www.facebook.com/SuomenParkourRY/photos/a.10152520560510665.1073741827.118814590664/10154635857725665/?type=3&amp;theater">prend position</a> contre la FIG. Des organisations suédoises <a href="https://www.facebook.com/qualitymovement/posts/1416679288390471">prennent position</a> également.</p>
+<p>27.05: ParkourUK adresse <a href="http://parkour.uk/parkour-uk-issues-further-letter-to-federation-internationale-de-gymnastique-fig-re-the-encroachment-and-misappropriation-of-parkourfreerunning/">une seconde lettre</a> à la FIG.</p>
+<p>28.05: L’évènement FISE a été maintenu malgré tout. Peu d'informations sont disponibles. Les résultats n'ont pas été publiés, et la FISE n'a partagé aucune photo ou vidéo de l'évènement. Eugene Minogue (Parkour UK) publie <a href="https://www.facebook.com/EugeneMinogue/posts/10154410711276691">un document</a>  indiquant très précisément l'intention d'ajouter le parkour à la FIG, notamment en dissolvant The Mouvement pour que tout soit rassemblé sous la FIG. Parkour Singapore <a href="https://www.facebook.com/photo.php?fbid=10154411633301691&amp;set=a.271976846690.153324.557676690">prend position</a> contre la FIG.</p>
+<p>29.05: La communauté Argentine <a href="https://www.facebook.com/EugeneMinogue/posts/10154414275146691">prend position</a> contre la FIG. Les premières <a href="https://www.facebook.com/iocrunion/posts/1529046633795145">photos</a> de l'évènement FISE sont publiées, et sont cible de moquerie de nombreux pratiquants.</p>
+<p>30.05: <a href="https://www.youtube.com/watch?v=5WJxzyM-fmM">Vidéo de l'évènement FISE</a> publiée sur la chaîne youtube et la page facebook de la FIG. Elle sont rapidement retirées. Une nouvelle version est disponible <a href="https://www.facebook.com/fig.gym/videos/10154915832498277/">ici</a>. <a href="http://www.fig-gymnastics.com/site/figNews/view?id=1803">Article</a> de la FIG  annonçant un grand succès de l'évènement, et prétendant être engagée dans la communication avec ceux &quot;prêts à collaborer&quot;.</p>
+<p>31.05: Des organisations espagnoles <a href="https://www.facebook.com/groups/471861436159159/permalink/1715710848440872/">prennent position</a> contre la FIG. <a href="https://www.facebook.com/EugeneMinogue/posts/10154419852706691">Idem</a> pour la communauté danoise. Correspondance entre la FIG et Parkour UK <a href="http://parkour.uk/parkour-uk-issues-further-correspondence-following-fig-response/">rendue publique</a> par Parkour UK.</p>
+<p>02.06: Malik Diouf <a href="https://www.facebook.com/magicmalik.diouf/posts/10154882643802933">donne des informations</a> sur The Mouvement. Parkour International <a href="https://www.facebook.com/parkourinternational/posts/1334961733225703">annonce</a> l'ouverture d'une plateforme destinée à promouvoir le débat démocratique au sein du parkour.</p>
+<p>05.06: la fédération Polonaise <a href="https://www.facebook.com/federacjaparkour/posts/801149103392808">prend position</a> contre la FIG.</p>
+<p>07:06: Parkour International <a href="https://forum.parkourinternational.org/">ouvre un forum</a> pour le débat &quot;démocratique.</p>
+<p>08.06: des organisations italiennes <a href="https://www.facebook.com/parkourwave/posts/1455023117854318">prennent position</a> contre la FIG.</p>
+<p>09.06: <a href="http://campaign.r20.constantcontact.com/render?m=1104002974775&amp;ca=77ac77be-f553-451a-949c-8e5b461c8f44">communiqué de presse</a> de la FIG. L'organisation israélienne <a href="https://www.parkourisrael.org/single-post/2017/06/09/%D7%A4%D7%90%D7%A8%D7%A7%D7%95%D7%A8-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%91%D7%9E%D7%9B%D7%AA%D7%91-%D7%A4%D7%AA%D7%95%D7%97-%D7%9C%D7%94%D7%AA%D7%90%D7%97%D7%93%D7%95%D7%AA-%D7%94%D7%94%D7%AA%D7%A2%D7%9E%D7%9C%D7%95%D7%AA-%D7%94%D7%A2%D7%95%D7%9C%D7%9E%D7%99%D7%AA">prend position</a> contre la FIG.</p>
+<p>15.06: la communauté mexicaine <a href="https://www.facebook.com/EugeneMinogue/posts/10154459837786691">prend position</a> contre la FIG. La communauté colombienne <a href="https://www.facebook.com/EugeneMinogue/posts/10154460947441691">prend position</a> contre la FIG.</p>
+<p>16.06: La communauté autrichienne <a href="https://www.facebook.com/EugeneMinogue/posts/10154463172936691">prend position</a> contre la FIG.</p>
+<p>21.06: la communauté indonésienne <a href="https://www.facebook.com/photo.php?fbid=10154476154731691&amp;set=a.271976846690.153324.557676690&amp;type=3&amp;theater">prend position</a> contre la FIG.</p>
+<p>28.07: Parkour International <a href="https://www.facebook.com/parkourinternational/posts/1390570187664857">annonce</a> une série de &quot;consultations&quot; &quot;continentales&quot; de la FIG avec des représentants du parkour.</p>
+<p>The Mouvement, organisation qui représente (représentait) le parkour auprès de la FIG, est une organisation qui manque de transparence. Composée à l’origine de plusieurs fondateurs du parkour, Sébastien Foucan, Chau Belle et Williams Belle s’en distancient rapidement. Il semble qu’actuellement les membres actifs sont David Belle, Charles Perrière, Mark Cooper et Florian Busi. The Mouvement n’a pas publiquement donné signe de vie depuis la controverse. Parkour International a depuis pris le relais, mais même leur forum demeure inutilisé, et sans réponses. La FIG n’a pas directement répondu publiquement aux critiques et allégations, seulement posté une « news » sur leur site montrant David Belle, Charles Perrière et le président de la FIG ensembles, « sur la même longueur d’ondes ». Le 09.06 elle a simplement annoncé que ce n'était jamais dans son intention de s'approprier unilatéralement le parkour; que les réactions négatives étaient largement infondées; que ses portes restent ouvertes à celleux qui &quot;souhaiteraient collaborer&quot;.</p>
+<p>Les enjeux de cette controverse sont vastes, peu certains, difficiles à résumer, et souvent dépendront des sensibilités et intérêts de chacun. Il n'en sera donc pas question ici, du moins tant qu'il n'y a pas plus d'informations disponibles. Vous pouvez vous faire votre propre avis en consultant les liens ci-dessous. En tous les cas, au vu du manque de transparence et de communication des institutions et individus concernés, la méfiance est de mise. Les opposants leur sont nombreux, s'unissant malgré leurs différences d'une manière assez unique dans l'histoire du parkour. S'il n'est pas tenu compte de ce mécontentement, on peut fortement douter de la légitimité et de la capacité de la FIG et de The Mouvement à organiser le monde du parkour.</p>
+<h1 id="references" tabindex="-1">Références <a class="header-anchor" href="#references">#</a></h1>
+<h3 id="fig" tabindex="-1">FIG <a class="header-anchor" href="#fig">#</a></h3>
+<p><a href="http://campaign.r20.constantcontact.com/render?m=1104002974775&amp;ca=3514ded5-82cd-4788-8249-b3807e822f52">Communiqué de presse du 24.02.17</a></p>
+<p><a href="http://campaign.r20.constantcontact.com/render?m=1104002974775&amp;ca=6c45ff92-d986-4b10-b37c-271c25b581cd">Communiqué de presse du 10.05.17</a></p>
+<p><a href="http://campaign.r20.constantcontact.com/render?m=1104002974775&amp;ca=77ac77be-f553-451a-949c-8e5b461c8f44">Communiqué de presse du 09.06.17</a></p>
+<p><a href="http://www.fig-gymnastics.com/site/figNews/view?id=1799"><em>FIG President and Parkour founders on the same wavelength</em>, 20.05.17</a></p>
+<p><a href="http://www.fig-gymnastics.com/site/figNews/view?id=1803"><em>FIG Obstacle Course Cup a huge success</em></a>, 30.05.17</p>
+<p><a href="https://www.youtube.com/watch?v=5WJxzyM-fmM">Vidéo de l'évènement FISE sur la chaîne de la FIG</a> (retirée après critique des traceurs). <a href="https://www.facebook.com/fig.gym/videos/10154915832498277/">Nouvelle version</a>.</p>
+<h3 id="apex-movement" tabindex="-1">APEX Movement <a class="header-anchor" href="#apex-movement">#</a></h3>
+<p><a href="http://apexmovement.com/blog/on-competition-collaboration/">On competition and collaboration</a></p>
+<p><a href="http://apexmovement.com/blog/apex-intl-canceled/">APEX Ends Collaboration with FIG &amp; Cancels APEX INTL</a></p>
+<h3 id="parkour-uk" tabindex="-1">Parkour UK <a class="header-anchor" href="#parkour-uk">#</a></h3>
+<p><a href="http://parkour.uk/parkour-uk-issues-open-letter-to-federation-internationale-de-gymnastique-fig-re-the-encroachment-and-misappropriation-of-parkourfreerunning/">Première prise de position</a>, 31.03.17 <a href="http://parkour.uk/parkour-uk-issues-further-letter-to-federation-internationale-de-gymnastique-fig-re-the-encroachment-and-misappropriation-of-parkourfreerunning/">Seconde lettre et annexes</a>, 26.05.17 <a href="http://parkour.uk/parkour-uk-issues-further-correspondence-following-fig-response/">Correspondances</a>, 31.05.17</p>
+<h3 id="prises-de-position-contre-la-fig" tabindex="-1">Prises de position contre la FIG <a class="header-anchor" href="#prises-de-position-contre-la-fig">#</a></h3>
+<p><a href="http://www.fedeparkour.fr/news/la-fpk-et-parkour-uk-face-a-la-federation-internationale-de-gymnastique-les-traceurs-ne-sont-pas-des-gymnastes">FPK</a></p>
+<p><a href="http://nzparkour.co.nz/wp-content/uploads/2015/05/Parkour-NZ-Open-Letter-to-FIG.pdf">Nouvelle-Zélande</a></p>
+<p><a href="http://parkour.asn.au/open-letter-to-the-federation-internationale-de-gymnastique-on-the-encroachment-and-misappropriation-of-parkour/">Australie</a></p>
+<p><a href="https://www.facebook.com/photo.php?fbid=10154385992461691&amp;set=a.271976846690.153324.557676690&amp;type=3&amp;theater">Afrique du Sud</a></p>
+<p><a href="https://www.facebook.com/parkourone/posts/10154898023314177">Allemagne</a></p>
+<p><a href="https://www.facebook.com/parkourone/posts/10154906849369177">Suisse</a></p>
+<p><a href="https://www.facebook.com/SuomenParkourRY/photos/a.10152520560510665.1073741827.118814590664/10154635857725665/?type=3&amp;theater">Finlande</a></p>
+<p><a href="https://www.facebook.com/qualitymovement/posts/1416679288390471">Suède</a></p>
+<p><a href="https://www.facebook.com/photo.php?fbid=10154411633301691&amp;set=a.271976846690.153324.557676690">Singapour</a></p>
+<p><a href="https://www.facebook.com/EugeneMinogue/posts/10154414275146691">Argentine</a></p>
+<p><a href="https://www.facebook.com/groups/471861436159159/permalink/1715710848440872/">Espagne</a></p>
+<p><a href="https://www.facebook.com/EugeneMinogue/posts/10154419852706691">Danemark</a></p>
+<p><a href="https://www.facebook.com/federacjaparkour/posts/801149103392808">Pologne</a></p>
+<p><a href="https://www.facebook.com/parkourwave/posts/1455023117854318">Italie</a></p>
+<p><a href="https://www.parkourisrael.org/single-post/2017/06/09/%D7%A4%D7%90%D7%A8%D7%A7%D7%95%D7%A8-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%91%D7%9E%D7%9B%D7%AA%D7%91-%D7%A4%D7%AA%D7%95%D7%97-%D7%9C%D7%94%D7%AA%D7%90%D7%97%D7%93%D7%95%D7%AA-%D7%94%D7%94%D7%AA%D7%A2%D7%9E%D7%9C%D7%95%D7%AA-%D7%94%D7%A2%D7%95%D7%9C%D7%9E%D7%99%D7%AA">Israël</a></p>
+<p><a href="https://www.facebook.com/EugeneMinogue/posts/10154459837786691">Mexique</a></p>
+<p><a href="https://www.facebook.com/EugeneMinogue/posts/10154460947441691">Colombie</a></p>
+<p><a href="https://www.facebook.com/EugeneMinogue/posts/10154463172936691">Autriche</a></p>
+<p><a href="https://www.facebook.com/photo.php?fbid=10154476154731691&amp;set=a.271976846690.153324.557676690&amp;type=3&amp;theater">Indonésie</a></p>
+<p><a href="https://www.facebook.com/worldfpf/posts/10155065407701609">IPF/WFPF</a></p>
+<p><a href="https://www.facebook.com/josephjameshenderson/posts/364529173945045?pnref=story">Athlètes devant participer à l’évènement FISE</a></p>
+<p><a href="https://www.facebook.com/addacademy/posts/10154589058041966">ADD Academy / Chau Belle</a></p>
+<p><a href="https://www.facebook.com/photo.php?fbid=10154830275582933&amp;set=a.10150594908592933.390257.598217932&amp;type=3&amp;theater">Malik Diouf</a></p>
+<p><a href="https://www.facebook.com/permalink.php?story_fbid=1532121816799497&amp;id=229538037057888">Laurent Piemontesi</a></p>
+<p><a href="https://www.facebook.com/yann.hnautra/posts/10210094806389130">Yann Hnautra</a></p>
+<h3 id="photos-de-la-fise" tabindex="-1">Photos de la FISE <a class="header-anchor" href="#photos-de-la-fise">#</a></h3>
+<p><a href="https://www.facebook.com/muvmag/posts/1389580827787039">Photos</a></p>
+<h3 id="resumes-et-opinions" tabindex="-1">Résumés et opinions <a class="header-anchor" href="#resumes-et-opinions">#</a></h3>
+<p>FPK, <a href="http://www.fedeparkour.fr/news/la-communaute-parkour-se-mobilise-pour-conserver-son-independance-etat-des-lieux"><em>La communauté se mobilise pour conserver son indépendance</em></a></p>
+<p>Access Parkour, <a href="http://www.accessparkour.com/is-the-international-gymnastics-federation-trying-to-steal-parkour/"><em>Is the FIG trying to steal parkour ?</em></a></p>
+<p>Access Parkour, <a href="http://www.accessparkour.com/fig-gate-the-story-so-far/"><em>FIG-Gate the story so far</em></a></p>
+<p>Access Parkour, <a href="http://www.accessparkour.com/how-to-save-parkour-a-beginners-guide/"><em>How to save parkour a beginners guide</em></a></p>
+<p>AlwaysOnTheMove, <a href="https://www.facebook.com/alwaysonthemove1/photos/a.145848605863898.1073741828.144281462687279/296857617429662/?type=3&amp;theater">Concernant le lien avec le CIO</a></p>
+<p>Move Free, <a href="https://www.facebook.com/notes/move-free/parkour-traceurs-and-fig-gate/793387994154373/"><em>Parkour, traceurs and the FIG-gate</em></a></p>
+<p>Valentin Dubois, <a href="https://www.facebook.com/ValentinDuboisAthlete/videos/1429371670455281/?fref=mentions">Résumé (Vidéo)</a></p>
+<p>Damien Puddle, <a href="http://damienpuddle.com/2017/05/28/why-we-need-to-fight-fig-lessons-from-other-action-sports/">Lessons from other action sports</a></p>
+
+</article>
+<nav class="pagination-inner" aria-label="Articles next and previous links">
+	<a href="/yanndaout/blog/lancement/" data-direction="forwards" class="pagination-previous">
+		<span>← Lancement ! </span>
+	  </a>
+	
+	<a href="/yanndaout/blog/pkenvironnement/" data-direction="backwards" class="pagination-next">
+		<span>Parkour et environnement →</span>
+	  </a>
+	
+</nav>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/blog/fig-gate-un-resume/ -->
+	</body>
+</html>

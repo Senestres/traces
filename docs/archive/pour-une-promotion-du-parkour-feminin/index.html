@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Pour une promotion du parkour féminin</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>Pour une promotion du parkour féminin</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2017-01-04">04 janvier 2017</time></li>
+	<li><a href="/yanndaout/tags/archive/" class="post-tag">archive</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p>Le parkour est une discipline ouverte à tous types de pratiquant.e.s. L’entrainement est adaptable pour les enfants comme adultes, femmes comme hommes. En effet, il s’agit d’un entrainement qui a pour but une amélioration personnelle physique comme mentale. Mais le parkour, pour un non-initié, est souvent perçu comme un sport extrême, comportant des risques et demandant une condition physique hors du commun. Cette image est intimidante pour les novices, n’osant pas forcément s’exposer à de tels risques, ou ne voulant pas se voir échouer par manque de condition physique. Ceci est particulièrement un obstacle à la pratique féminine, et c'est un constat dans la plupart des régions du monde que les femmes sont quasi-absentes du parkour. Or pour une femme, la pratique du parkour a de réels impacts sur soi, ainsi que sur la discipline et la place de la femme dans la société. Nous verrons ici quels sont les obstacles majeurs à la pratique féminine du parkour, pourquoi il semble nécessaire de faire la promotion du parkour féminin, puis quelles solutions peuvent être mises en place pour faciliter l’initiation des femmes à cette discipline. Je cite ici des exemples d’associations qui travaillent activement à la promotion du parkour féminin, à Londres et à Lausanne car ce sont ceux que j’ai pu rencontrer dans ma pratique personnelle.</p>
+<h2 id="pourquoi-il-est-necessaire-de-developper-le-parkour-feminin" tabindex="-1">Pourquoi il est nécessaire de développer le parkour féminin <a class="header-anchor" href="#pourquoi-il-est-necessaire-de-developper-le-parkour-feminin">#</a></h2>
+<p>En proposant à <a href="http://www.parkourlausanne.ch/wp-content/uploads/2017/01/IMG_17982.jpg"><img src="images/IMG_17982.jpg" alt=""></a>certaines femmes de mon entourage de s’essayer à un entrainement de parkour, j’ai pu constater qu’il y a une réelle appréhension de leur part due premièrement à un manque de condition physique. Les réponses comme « je n’ai pas assez de force », « je ne suis vraiment pas sportive », ou « mais il faut être super fort pour faire ce genre de choses » sont extrêmement courantes de la part des femmes (comme des hommes d’ailleurs). Un premier obstacle rendant l’appréhension particulièrement prononcée chez les femmes est l’image des traceurs dans les médias<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. En effet, ils montrent des pratiquants extrêmement avancés, principalement des hommes, démontrant leurs capacités physiques et mentales avec une aisance déconcertante. Il est donc difficile pour une femme de s’imaginer pratiquer le parkour. Les femmes ont commencé à pratiquer le parkour en moyenne plus tard que les hommes. Alors que la discipline existe depuis le début des années 90, très peu de femmes la pratiquent depuis plus de 10 ans<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. Il est donc difficile de trouver des femmes dans les médias démontrant des capacités similaires à celles des hommes. Les femmes ont non seulement un statut de minorité dans la discipline, mais manquent également de modèles auxquels s’identifier.</p>
+<p>Ceci explique en partie le deuxième obstacle à la pratique féminine qu’est la croyance qu’elles ne seront jamais capables de développer la même force physique que les hommes. Il est vrai qu’un corps féminin est statistiquement différent d’un corps d’homme, aux niveaux anatomique et hormonal, et que les femmes pratiquent plus rarement des sports de puissance, de force et de vitesse, ce qui creuse encore l’écart entre les genres. Une grande partie de cette différence n’est pas innée ou naturelle, mais simplement due à des expériences différentes de l’activité physique. Cela n’empêche qu’il sera souvent plus difficile pour une femme de développer les mêmes capacités physiques en termes de puissance dans les jambes ou dans les bras. Un exemple typique de ceci est le « climb-up » qui est un mouvement nécessaire pour se hisser en haut d’un mur. Il demande beaucoup de force dans les bras, mais aussi de coordination et de technique. La force requise sera acquise à travers l’entrainement et un manque de force peut être en partie compensé par une meilleure application de la technique et une bonne coordination. La force est effectivement un aspect important de la pratique, mais elle s’acquiert peu à peu et elle n’est pas la seule qualité qui entre dans la pratique du parkour.</p>
+<p>Troisièmement, et peut être l’obstacle le plus répandu et difficile à surmonter, les regards extérieurs sont une source d’appréhension pour beaucoup de pratiquantes (débutantes ou non). Le corps des femmes dans le sport est souvent sexualisé, que ce soit à travers certaines marques de vêtements proposant des tenues plus courtes ou décolletées (et peut être moins bien adapté aux demandes du sport), jusqu’aux commentaires sur les athlètes qui concernent bien plus leur apparence physique que leurs performances. De ce fait, pratiquer un sport dans la rue, sous les yeux de tous, est aussi potentiellement une source d’anxiété. Les traceuses de Glasgow notent qu’à cause du harcèlement de rue, il devient stressant pour les femmes d’être visible dans l’espace public, spécialement en faisant du sport<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. Pour les femmes pratiquant déjà la discipline, il est aussi commun d’avoir peur du regard d’autres traceurs ou traceuses plus expérimentés. Il est donc important de prendre en compte le fait que la peur du jugement est extrêmement difficile à surmonter, et est lié à l’idée précédemment expliquée de faiblesse physique ou mentale. Les regards extérieurs, qu’ils viennent de pratiquant/es du parkour ou de passants, sont donc un obstacle non négligeable pour beaucoup de femmes.</p>
+<p>Il semble donc nécessaire de faire la promotion du parkour féminin dans le but de faire évoluer la façon dont les femmes font l’expérience des espaces publics. En effet, les femmes pratiquant le parkour créeront des liens affectifs avec certains endroits qui étaient source de peur, ou avaient une mauvaise connotation<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. L’entrainement donne une raison d’être visible dans des endroits dans lesquels les femmes n’iraient pas habituellement et de créer des liens positifs avec ceux-ci. C’est une façon pour elles de s’approprier les espaces publiques et de contrôler la façon dont elles les habitent. Pour les regards extérieurs, l’image d’une femme se déplaçant dans la ville de façon subversive et avec confiance est très puissante. Elle peut signifier qu’elles maitrisent leur utilisation de l’espace et donc leur place dans la ville<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
+<p>La pratique du parkour féminin peut être une façon pour les femmes de ne pas subir les stéréotypes féminins. Puisque la discipline demande des attributs traditionnellement masculins, les femmes la pratiquant peuvent sembler ne plus rentrer dans les conventions sociales dictant que les femmes sont fragiles, émotives et sensibles. Les traceuses développent des caractéristiques qui sont généralement associées aux hommes comme la force, le courage, la détermination… et s’éloignent de certaines caractéristiques stéréotypiquement féminines que sont la fragilité, la douceur, la faible tolérance à la douleur. Cela a pour effet d’émanciper les pratiquantes de certaines idées préconçues sur les femmes. Or ce peut être également perturbant pour la société puisque beaucoup d’attributs définissant les femmes ne sont plus systématiquement applicables aux traceuses. Certaines sont confrontées à des commentaires du type « tu n’es pas une vraie femme ». Il est donc particulièrement intéressant pour les femmes de pratiquer le parkour, ne serait-ce que pour faire évoluer les stéréotypes et les constructions sociales des genres, en particulier le concept de féminité<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>.</p>
+<p>Le parkour a des effets positifs sur le corps et l’esprit de tous ses pratiquants. L’entrainement étant à la fois physique et mental, il aide à construire une personne solide, capable de se confronter à divers obstacles. L’augmentation des performances physiques et la confrontation aux risques que peut comporter la discipline donnent aux pratiquantes comme aux pratiquants beaucoup de confiance en soi et de satisfaction. En se focalisant sur leur progrès, les appréhensions mentionnées plus haut sur leur supposé manque de force et les regards extérieurs se dissipent petit à petit. Le parkour permet aux femmes de prendre confiance en leurs capacités physiques et mentales, tout en augmentant leur sens d’estime de soi.</p>
+<p>La pratique féminine peut être également très bénéfique pour la communauté du parkour. En effet, les femmes ont une sensibilité différente aux espaces publics et donc auront une interprétation et une façon de bouger différente de celle des hommes. Elles peuvent donc influencer ou ouvrir la pratique de la communauté à plus de possibilités et apporter une diversité dans la façon de voir les espaces et de s’y mouvoir. Il est par exemple intéressant de constater que certaines femmes travaillent plus souvent des enchainements dans les structures de barres, en travaillant non pas en force ou en puissance, mais plutôt avec des subtilités techniques et du « flow ». Il est important ici que les traceurs s’intéressent aux particularités de la pratique féminine. Ainsi, les traceuses peuvent être une source de créativité, et peuvent s’entrainer avec les hommes de façon à s’influencer les uns les autres. Le but n’étant pas de créer un parkour masculin et un parkour féminin, mais plutôt d’amener de la diversité dans la pratique.</p>
+<h2 id="comment-promouvoir-le-parkour-feminin" tabindex="-1">Comment promouvoir le parkour féminin ? <a class="header-anchor" href="#comment-promouvoir-le-parkour-feminin">#</a></h2>
+<p>La promotion du parkour <a href="http://www.parkourlausanne.ch/wp-content/uploads/2017/01/IMG_12911.jpg"><img src="images/IMG_12911.jpg" alt=""></a>féminin passe en premier lieu par la mise à disposition d’un environnement sécurisant. En effet, il est important que les femmes osent se lancer, et venir à un premier entrainement<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>. Pour cela, il est possible de créer un entrainement pour les débutants, qui a l’avantage de ne pas séparer les femmes des hommes, et de faciliter l’intégration de nombreuses catégories (individus plus âgés, peu sportifs, etc.), pas seulement celle des femmes. Les entrainements pour débutants sont moins intimidants pour toutes les personnes ayant des appréhensions à commencer le parkour et il sera donc beaucoup plus facile de s’essayer à la discipline avec d’autres débutants, plutôt que dans un entrainement « tous niveaux »<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>. « Tous niveaux » implique que les débutants sont les bienvenus, autant que les traceurs confirmés, mais la peur du jugement mentionnée précédemment devient l’obstacle principal à surmonter. Cependant, cet obstacle se dissipe si l’entrainement est labellisé pour débutants. Même si certains participants progressent et ne sont plus des débutants, cela crée un environnement dans lequel une femme débutante se sentira plus à l’aise. Un inconvénient d’un entrainement pour débutant est qu’il doit être beaucoup plus structuré avec des exercices fixes et déterminés par un coach, qui devient un professeur. Il semble important que les débutants puissent avoir une structure dans leur entrainement, mais aussi qu’ils développent leur sens de créativité et de curiosité vis-à-vis de l’environnement. J’ai personnellement choisi pour commencer à pratiquer le parkour de me rendre à un cours pour débutants en extérieur avec <a href="http://parkourgenerations.com/">Parkour Generations</a> à Londres. Je me sentais plus en sécurité de penser que l’entrainement était adapté aux débutants, même si certains participants à ce cours avaient déjà de l’expérience. Ces cours étaient en effet très structurés ce qui m’était utile au début, pour apprendre les techniques, mais après quelques mois, je souhaitais plus d’autonomie dans mon entrainement pour pouvoir explorer par moi-même mes capacités et mon environnement.</p>
+<p>Une deuxième option serait de créer des entrainements féminins. Dans ce cas-là, les femmes débutantes s’entrainent avec des traceuses de tous niveaux. Un avantage de ce système est que les regards des hommes sont écartés<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>. De plus, les femmes ont souvent des appréhensions similaires et c’est plus rassurant de recevoir des conseils de traceuses plus expérimentées, qui ont déjà vécu ces peurs et appréhensions. Les entrainements féminins permettent aux débutantes d’apprendre d’autres femmes, qui ont expérimenté certaines difficultés auxquelles les hommes ne sont pas confrontés. Il est aussi important que les débutantes puissent avoir l’exemple de traceuses expérimentées auxquelles elles peuvent s’identifier. Ces entrainements permettent également de donner une visibilité à la pratique féminine, puisque les femmes n’y ont alors pas le statut de minorité, qui risque de les rendre invisibles ou de leur donner un statut d’exception (« cette fille fait du parkour, mais c’est une exception » ; « elle est forte, mais ce n’est pas une fille comme les autres (ou pas vraiment une fille) »). Les réticences à appliquer cette option sont principalement dues à la peur de diviser la communauté et de séparer les femmes des hommes<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup>. En effet cela aurait l’effet inverse de celui recherché, qui est d’apporter de la diversité et de la mixité dans la discipline. C’est pourtant cette option qu’a choisi d’adopter Parkour Lausanne pour encourager les femmes à rejoindre la discipline. Un an et demi après l’ouverture de cet entrainement, la population féminine de l’association a beaucoup grandi. Il y avait alors que trois ou quatre femmes dans l’association (soit moins de 10%), alors qu’elles sont aujourd’hui une vingtaine et représentent un tiers de l’association. Pour beaucoup d’entre elles, l’entrainement féminin était moins intimidant pour débuter, mais une fois à l’aise, presque toutes s’entrainent également aux entrainements mixtes. En effet, les entrainements féminins et mixtes sont identiques dans leur contenu (échauffement collectif, apprentissage des techniques, entrainement personnel) ce qui signifie que les femmes s’entrainent comme les hommes le feraient sans que le cours soit plus facile. Il parait important que les entrainements ne soient pas adaptés au sexe des pratiquants, mais plutôt que chacun puisse progresser à son rythme. L’organisation de session féminines ponctuelles, comme le <a href="http://parkourgenerations.com/60803-2/">International Women’s Parkour Weekend</a> à Londres est aussi une bonne façon de permettre aux pratiquantes novices et confirmées de différents horizons de se rencontrer et de partager des idées sur l’entrainement, ainsi qu’au sujet de la place des femmes dans le parkour, la promotion de la pratique féminine et ce qu’elle implique pour la communauté du parkour.</p>
+<p>Comme dit plus haut, le contenu des entrainements féminins et masculins peut être généralement identique. Il peut tout à fait avoir lieu en extérieur, ainsi qu’être exigeant physiquement et techniquement. Les femmes qui veulent tracer peuvent avoir un intérêt pour des pratiques masculines, cela ne sert donc à rien de vouloir féminiser la pratique ou de les surprotéger. Il faut néanmoins faire attention aux caractéristiques des pratiquantes. Il est nécessaire de les focaliser sur leurs atouts (pour les motiver) sans pour autant négliger leurs points faibles. Les femmes ont tendance à se reposer plus sur leurs os et articulations et moins sur leur musculature que les hommes, étant donné qu’elles ont en moyenne moins de force et d’expérience dans ce genre d’activité physique. Il faut donc sans doute prendre plus de temps pour développer leurs points faibles, et notamment apprendre de bons amortis. Elles sont également plus à risque de genou valgum (genoux qui rentrent vers l’intérieur notamment lors des sauts), ce qui nécessite une attention particulière étant donné les risques de déchirure ligamentaire qui s’y joignent. Généralement, cela se corrige avec le développement de la force et l’apprentissage de bonnes techniques.</p>
+<p>Il est également important pour promouvoir la pratique féminine du parkour de la rendre visible, notamment dans les médias. Publier et partager des vidéos de qualité de traceuses contribue à rendre visible les femmes de la discipline, et d’inspirer d’autres femmes à s’y essayer. Il n’est pas nécessaire d’être une traceuse confirmée pour publier des vidéos ou photos. Au contraire, il semble important de montrer la progression des pratiquantes et que toutes les étapes du développement physique et mental des traceuses soient valorisées. De même, pour permettre à toutes de trouver des modèles auxquelles s’identifier, il serait bien de montrer la diversité de morphologies ou de styles vestimentaires, <a href="http://www.parkourlausanne.ch/wp-content/uploads/2017/01/IMG_18113.jpg"><img src="images/IMG_18113.jpg" alt=""></a>par exemple. À Londres, Parkour Generations a mis en place <a href="http://shecantrace.com/">She Can Trace</a> dans le but de promouvoir le parkour féminin, et plus largement, apporter du soutien et de la visibilité aux traceuses. She Can Trace encourage les femmes de tous horizons et de tous niveaux à partager leurs progrès grâce a un hashtag (#shecanTRACE) ce qui a pour but d’encourager les femmes à bouger sans avoir peur du jugement ou de l’échec.</p>
+<p>Il s’agit aussi de faire attention aux éventuelles attitudes sexistes ou virilistes, qui risquent d’être excluantes non seulement pour les femmes, mais plus généralement pour tous ceux qui ne se reconnaissent pas dans une telle forme de masculinité. Par exemple, pourquoi ne pas faire porter les commentaires sur une traceuse sur ses mouvements (et non sa tenue, son corps, ou sa situation amoureuse) dans le but de mettre en avant ses performances physiques<sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup>, autant que face à un homme ?</p>
+<p>Finalement, donner des responsabilités aux femmes, par exemple pour donner des échauffements et entrainements, coacher les débutant(e)s, ou intégrer le comité des associations ou l’organisation des groupes a également son intérêt. Il convient également d’encourager leur auto-organisation. Non seulement cela contribue à leur motivation, au développement de certaines compétences et à la création d’une communauté féminine, mais cela permet de les intégrer plus largement à la communauté du parkour, et d’éviter des attitudes paternalistes à leur égard...</p>
+<h2 id="conclusion" tabindex="-1">Conclusion <a class="header-anchor" href="#conclusion">#</a></h2>
+<p>Les obstacles à la pratique féminine du parkour et les solutions proposées ici ne sont évidemment pas les seuls valables, mais elles semblent être les plus communes. On peut rappeler brièvement ces solutions pour promouvoir le parkour féminin :</p>
+<ul>
+<li>Créer un environnement de pratique régulier et sécurisant pour permettre une entrée facilitée dans la discipline.</li>
+<li>Ne pas créer des formes de parkour spéciales pour les femmes, mais ne pas non plus négliger les spécificités, besoins et envies de chacun et chacune.</li>
+<li>Il est important de montrer des modèles féminins et de donner des responsabilités aux femmes, mais l’enseignant peut être un homme, en particulier si aucune femme ne peut encore remplir ce rôle.</li>
+<li>Parler de manière directe et personnelle aux intéressées : étant donné que tout le monde a des idées préconçues sur le parkour, il ne suffit pas d’écrire que l’entrainement est ouvert à tous et à toutes. Il faut prendre le temps de décrire les méthodes d’entrainement que l’on utilise, en quoi il n’est pas nécessairement dangereux, ce que le parkour peut leur apporter...</li>
+<li>Mettre en avant la présence féminine dans le parkour via des évènements, des photos, vidéos, etc. Vous pouvez notamment trouver d’excellents exemples dans <a href="https://www.youtube.com/watch?v=U22S6cblSpo&amp;list=PLT3NQy7U-aF3mEZDTzLDUYoW6-Lpqcoay">cette playlist</a>.</li>
+</ul>
+<p>Il ne reste plus qu’à encourager tout traceur, groupe ou association à faire les premiers pas pour encourager la pratique féminine. Un engagement même minimal dans ce sens peut avoir des effets positifs immédiats, et notre discipline en a grand besoin.</p>
+<p><strong>Léonie Brodmann</strong></p>
+<h2 id="notes" tabindex="-1">Notes <a class="header-anchor" href="#notes">#</a></h2>
+<h2 id="bibliographie" tabindex="-1">Bibliographie <a class="header-anchor" href="#bibliographie">#</a></h2>
+<ul>
+<li>Angel Julie, « <a href="http://julieangel.com/quickresponse/">Manhood parkour, a quick response to parkour, masculinity and the city, by Jeffrey L. Kidder</a> », 6 Juin 2013. Consulté le 27.10.2016.</li>
+<li>Angel Julie, « <a href="http://www.see-do.com/participation/">Turning up and taking part</a> ». Consulté le 27.10.2016.</li>
+<li>Beecroft, Brianne, « <a href="https://parkouredu.org/5-ways-to-support-female-parkour-athletes/">5 ways to support female athletes</a> », 25 octobre 2016. Consulté le 27.10.2016.</li>
+<li>Fiona B, « <a href="https://glasgowparkourgirls.wordpress.com/2013/09/11/whose-city-our-city/">Who’s city? Our city!</a> », 11 septembre 2013. Consulté le 1.11.2016.</li>
+<li>Fiona B, « <a href="https://glasgowparkourgirls.wordpress.com/2014/01/11/why-no-boys/">Why no boys? (sometimes)</a> », 11 janvier 2014. Consulté le 31.10.2016.</li>
+<li>Henry Max, « <a href="https://maxhenryparkour.wordpress.com/2014/11/11/6-things-parkour-girls-wish-guys-would-stop-doing/">6 things parkour girls wish guys would stop doing</a> », 11 novembre 2014. Consulté le 31.10.2016.</li>
+<li>Robinson Tara, « <a href="http://www.see-do.com/expectations-tara-robinson/">Expectations…  by Tara Robinson</a> ». Consulté le 31.10.2016.</li>
+<li><a href="http://shecantrace.com/">She can trace</a>. Consulté le 20.12.2016.</li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Angel Julie, « <a href="http://www.see-do.com/participation/">Turning up and taking part</a> » <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Beecroft Brianne, « <a href="https://parkouredu.org/5-ways-to-support-female-parkour-athletes/">5 ways to support female athletes</a> » <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Fiona B, « <a href="https://glasgowparkourgirls.wordpress.com/2013/09/11/whose-city-our-city/">Who’s city? Our city!</a> » <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Ibid. <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Ibid. <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>Angel Julie, « <a href="http://julieangel.com/quickresponse/">Manhood parkour, a quick response to parkour, masculinity and the city, by Jeffrey L. Kidder</a> », 2013. <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Angel Julie, « <a href="http://www.see-do.com/participation/">Turning up and taking part</a> » <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>Ibid. <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p>Fiona B, « <a href="https://glasgowparkourgirls.wordpress.com/2014/01/11/why-no-boys/">Why no boys? (sometimes)</a> » <a href="#fnref9" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn10" class="footnote-item"><p>Ibid. <a href="#fnref10" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn11" class="footnote-item"><p>Henry Max, « <a href="https://maxhenryparkour.wordpress.com/2014/11/11/6-things-parkour-girls-wish-guys-would-stop-doing/">6 things parkour girls wish guys would stop doing</a> » <a href="#fnref11" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/archive/pour-une-promotion-du-parkour-feminin/ -->
+	</body>
+</html>

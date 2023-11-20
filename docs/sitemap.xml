@@ -2,67 +2,977 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://example.com/yanndaout/blog/firstpost/</loc>
-		<lastmod>2018-05-01</lastmod>
+		<loc>https://senestres.github.io/yanndaout/archive/la-planche/</loc>
+		<lastmod>2008-09-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/yanndaout/blog/secondpost/</loc>
-		<lastmod>2018-07-04</lastmod>
+		<loc>https://senestres.github.io/yanndaout/archive/la-roulade/</loc>
+		<lastmod>2008-09-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/yanndaout/blog/thirdpost/</loc>
-		<lastmod>2018-08-24</lastmod>
+		<loc>https://senestres.github.io/yanndaout/archive/le-lache/</loc>
+		<lastmod>2008-09-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/yanndaout/blog/fourthpost/</loc>
-		<lastmod>2018-09-30</lastmod>
+		<loc>https://senestres.github.io/yanndaout/archive/le-tic-tac/</loc>
+		<lastmod>2008-09-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/yanndaout/blog/fifthpost/</loc>
-		<lastmod>2023-01-23</lastmod>
+		<loc>https://senestres.github.io/yanndaout/archive/saut-de-bras/</loc>
+		<lastmod>2008-09-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/yanndaout/about/</loc>
+		<loc>https://senestres.github.io/yanndaout/archive/saut-de-chat/</loc>
+		<lastmod>2008-09-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/saut-de-detente/</loc>
+		<lastmod>2008-09-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/saut-de-fond/</loc>
+		<lastmod>2008-09-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/saut-de-precision/</loc>
+		<lastmod>2008-09-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/comment-commencer-le-parkour/</loc>
+		<lastmod>2008-09-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/courbatures-et-frequences-dentrainement/</loc>
+		<lastmod>2008-09-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/david-belle/</loc>
+		<lastmod>2008-09-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/dilution/</loc>
+		<lastmod>2008-09-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/entrainez-votre-esprit/</loc>
+		<lastmod>2008-09-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/ethique-de-lentrainement/</loc>
+		<lastmod>2008-09-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/freerunning-et-parkour/</loc>
+		<lastmod>2008-09-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/la-traceuse-vision-et-conseils-dune-femme-sur-le-parkour/</loc>
+		<lastmod>2008-09-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/le-parkour-definition/</loc>
+		<lastmod>2008-09-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/le-vocabulaire-du-parkour/</loc>
+		<lastmod>2008-09-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/les-benefices-du-parkour/</loc>
+		<lastmod>2008-09-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/methodes-de-preparation-physique-pour-le-parkour/</loc>
+		<lastmod>2008-09-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/parkour-et-entrainement-au-parkour/</loc>
+		<lastmod>2008-09-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/raymond-belle/</loc>
+		<lastmod>2008-09-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/parkour-lart-de-subvertir-le-rapport-a-lespace-public/</loc>
+		<lastmod>2008-10-03</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/fiche-experimentation-pratiques-creatives-des-espaces/</loc>
+		<lastmod>2010-09-27</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/5-bonnes-raisons-de-ne-jamais-participer-a-aucune-competition-de-parkour-ou-de-freerunning/</loc>
+		<lastmod>2011-05-27</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/de-labsurdite-des-parkour-parks/</loc>
+		<lastmod>2011-05-27</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/manifeste-contre-lorganisation-de-competitions-de-parkour/</loc>
+		<lastmod>2013-02-04</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/parkour-parks-ou-parkour-il-faut-choisir/</loc>
+		<lastmod>2013-02-04</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/Etre%20fort%20pour%20%C3%AAtre%20utile,%20et%20de%20fausses%20conceptions%20du%20Parkour/</loc>
+		<lastmod>2013-08-10</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/parkour-literally-bibliographie/</loc>
+		<lastmod>2013-09-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/pourquoi-parkour-literally/</loc>
+		<lastmod>2013-09-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/Parkour%20et%20entrainement/</loc>
+		<lastmod>2013-11-20</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/Des%20excuses,%20toujours%20plus%20d&amp;#39;excuses./</loc>
+		<lastmod>2013-12-23</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/L&amp;#39;enseignement%20du%20parkour/</loc>
+		<lastmod>2014-06-24</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/parkour-en-1930/</loc>
+		<lastmod>2015-05-21</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/climb-up/</loc>
+		<lastmod>2015-05-26</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/les-effets-du-parkour-sur-le-corps/</loc>
+		<lastmod>2015-06-02</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/pkenvironnement/</loc>
+		<lastmod>2016-01-28</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/nouvel-album-de-l1consolable/</loc>
+		<lastmod>2016-10-14</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/pour-une-promotion-du-parkour-feminin/</loc>
+		<lastmod>2017-01-04</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/fig-gate-un-resume/</loc>
+		<lastmod>2017-05-25</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/lancement/</loc>
+		<lastmod>2017-09-03</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/le-parkour-la-vie/</loc>
+		<lastmod>2017-09-20</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/mais-pourquoi-ils-font-ca/</loc>
+		<lastmod>2017-09-20</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/parkour-semiotique-et-perception-des-espaces-urbains/</loc>
+		<lastmod>2017-09-29</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/reflexion-sur-les-strides-enjambees-foulees/</loc>
+		<lastmod>2017-09-29</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/philosophie-et-pratique-sportive/</loc>
+		<lastmod>2017-09-29</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/a-propos-de-la-non-mixite-dans-le-milieu-du-parkour-constats-questionnements-et-perspectives/</loc>
+		<lastmod>2017-10-03</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/competition%20et%20le%20parkour/</loc>
+		<lastmod>2017-10-13</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/interdire-le-dopage-genetique-est-ce-ethique/</loc>
+		<lastmod>2017-10-19</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/sentrainer-au-parkour/</loc>
+		<lastmod>2017-11-15</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/notre-nouvelle-page-facebook-est-en-ligne/</loc>
+		<lastmod>2017-11-15</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/lines/</loc>
+		<lastmod>2017-11-27</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/raportage-4-extreme-gravite/</loc>
+		<lastmod>2017-11-27</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/la-video-comme-methode-dentrainement/</loc>
+		<lastmod>2017-12-13</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/archive/lancement-du-press/</loc>
+		<lastmod>2018-02-07</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/des-traces-strategies-et-tactiques/</loc>
+		<lastmod>2018-04-08</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/manifeste-pour-que-le-parkour-reste-une-alternative/</loc>
+		<lastmod>2018-06-29</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/parkour-should-remain-an-alternative/</loc>
+		<lastmod>2018-07-02</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/brotherhood-spirit-une-critique/</loc>
+		<lastmod>2018-11-10</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/lettre-ouverte-a-la-federation-suisse-de-gymnastique-stv-fsg/</loc>
+		<lastmod>2018-11-28</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/pour-une-conception-dynamique-du-controle-moteur/</loc>
+		<lastmod>2018-12-13</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/psychologie-de-lattention-phenomenologie-et-feminisme/</loc>
+		<lastmod>2019-03-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/lutilisation-spectaculaire-du-parkour/</loc>
+		<lastmod>2019-12-20</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/aller-au-dela-des-consignes-et-des-instructions/</loc>
+		<lastmod>2020-02-09</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/quest-ce-qui-ce-cache-derriere-ipf-wfpf-i/</loc>
+		<lastmod>2020-05-09</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/iptc-et-les-organisations-fantomes-ii/</loc>
+		<lastmod>2020-05-10</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/le-cas-de-federswiss-iii/</loc>
+		<lastmod>2020-05-11</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/sport-dimanche-reponse-fsg/</loc>
+		<lastmod>2020-11-19</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/note-critique-sur-lordalie/</loc>
+		<lastmod>2021-06-25</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/le-parkour-est-il-competitif/</loc>
+		<lastmod>2021-07-28</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/homoerotisme-et-sports-masculins/</loc>
+		<lastmod>2022-10-30</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/reportage-radio-chablais-sur-vevey-trace-lettre-ouverte/</loc>
+		<lastmod>2023-07-25</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/about/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/yanndaout/blog/</loc>
+		<loc>https://senestres.github.io/yanndaout/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/yanndaout/</loc>
+		<loc>https://senestres.github.io/yanndaout/tags/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/yanndaout/tags/</loc>
+		<loc>https://senestres.github.io/yanndaout/tags/entrainement/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/yanndaout/tags/another-tag/</loc>
+		<loc>https://senestres.github.io/yanndaout/tags/enseignement/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/yanndaout/tags/number-2/</loc>
+		<loc>https://senestres.github.io/yanndaout/tags/philosophie/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/yanndaout/tags/second-tag/</loc>
+		<loc>https://senestres.github.io/yanndaout/tags/news/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://example.com/yanndaout/tags/posts-with-two-tags/</loc>
+		<loc>https://senestres.github.io/yanndaout/tags/archive/</loc>
 		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/feminisme/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/non-mixite/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/parkour/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/sexisme/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/parkour-net/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/tuto/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/parkour-literally/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/parkour-park/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/competition/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/courbatures/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/histoire/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/blane/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/dilution/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/ethique/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/creativite/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/espace-public/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/definition/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/freerunning/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/climb-up/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/planche/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/technique/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/tutoriel/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/press/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/recherche/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/feminin/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/traceuse/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/lache/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/roulade/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/lexique/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/tic-tac/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/article/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/ecrits/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/fpk/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/free-running/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/freerun/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/vie/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/cadrages/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/composition/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/environnement/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/lenteur/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/lignes/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/observation/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/perception/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/urbain/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/bete/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/con/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/idiot/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/pourquoi/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/raisons/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/stupide/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/manifeste/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/preparation-physique/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/renforcement/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/bibliographie/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/filmographie/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/subversion/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/embodiment/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/semiologie/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/edito/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/course/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/impact/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/sprint/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/stride/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/saut-de-detente/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/saut-de-chat/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/saut-de-fond/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/rap/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/saut-de-bras/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/contraintes/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/psychologie-ecologique/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/communaute/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/conflit/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/critique/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/saut-de-precision/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/affordances/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/anarchisme/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/urbanisme/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/tactique/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/ama/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/dopage/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/genetique/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/precarite/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/wada/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/homosociabilite/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/humour/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/masculinite/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/apprentissage/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/pedagogie/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/valeurs/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/institutions-internationales/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/fig/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/feedback/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/motivation/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/organisations-internationales/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/enquete/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/cio/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/publicite/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/spectacle/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/anthropologie/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/fsg/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/ordalie/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/psychologie/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/risque/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/alternative/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/organisation/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/attention/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/politique/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/traduction/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/sport/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/stoicisme/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/tags/controle-moteur/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/search/</loc>
+		<lastmod>2023-11-18</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/yanndaout/blog/Traces%20v2/</loc>
+		<lastmod>2023-11-20</lastmod>
 	</url>
 </urlset>

@@ -1,28 +1,32 @@
 ---
 layout: layouts/home.njk
 eleventyNavigation:
-  key: Home
+  key: Accueil
   order: 1
-numberOfLatestPostsToShow: 3
+pagination:
+  data: collections.posts
+  size: 6
+  reverse: true
+permalink: '{% if pagination.pageNumber > 0 %}blog/page/{{ pagination.pageNumber }}{% endif %}/index.html'
+paginationPrevText: '← Précédent '
+paginationNextText: 'Suivant →'
+paginationAnchor: '#post-list'
 ---
-{% set postsCount = collections.posts | length %}
-{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+{% set postslist = pagination.items %}
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
-
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
+  {% include "postslist.njk" %}
+{# Only renders this section if there are links to render #}
+{% if pagination.href.next or pagination.href.previous %}
+      <nav class="pagination-inner" aria-label="Pagination links">
+        {% if pagination.href.previous %}
+          <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards" class="pagination-previous">
+            <span>{{ paginationPrevText if paginationPrevText else "Précédent" }}</span>
+          </a>
+        {% endif %}
+        {% if pagination.href.next %}
+          <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards" class="pagination-next">
+            <span>{{ paginationNextText if paginationNextText else "Suivant" }}</span>
+          </a>
+        {% endif %}
+      </nav>
 {% endif %}
-
-{# List every content page in the project #}
-{#
-<ul>
-	{%- for entry in collections.all %}
-	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
-	{%- endfor %}
-</ul>
-#}

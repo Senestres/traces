@@ -1,9 +1,13 @@
 ---
 layout: layouts/base.njk
+paginationPrevText: '← Précédent '
+paginationNextText: 'Suivant →'
 ---
 {# Only include the syntax highlighter CSS on blog posts #}
 {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %}
 {%- css %}{% include "public/css/prism-diff.css" %}{%- endcss %}
+
+<div class="content">
 <h1>{{ title }}</h1>
 
 <ul class="post-metadata">
@@ -14,15 +18,27 @@ layout: layouts/base.njk
 	{%- endfor %}
 </ul>
 
+<article data-pagefind-body>
 {{ content | safe }}
+</article>
 
 {%- if collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
 {%- set nextPost = collections.posts | getNextCollectionItem %}
 {%- if nextPost or previousPost %}
-<ul class="links-nextprev">
-	{%- if previousPost %}<li>Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-	{%- if nextPost %}<li>Next: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-</ul>
+<nav class="pagination-inner" aria-label="Articles next and previous links">
+	{%- if nextPost %}
+	<a href="{{ nextPost.url }}" data-direction="forwards" class="pagination-previous">
+		<span>← {{ nextPost.data.title if nextPost.data.title else "Précédent" }} </span>
+	  </a>
+	{% endif %}
+	{%- if previousPost %}
+	<a href="{{ previousPost.url }}" data-direction="backwards" class="pagination-next">
+		<span>{{ previousPost.data.title if previousPost.data.title else "Suivant" }} →</span>
+	  </a>
+	{% endif %}
+</nav>
 {%- endif %}
 {%- endif %}
+
+</div>

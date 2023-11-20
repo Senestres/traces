@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Homoérotisme et sports &quot;masculins&quot;</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>Homoérotisme et sports &quot;masculins&quot;</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2022-10-30">30 octobre 2022</time></li>
+	<li><a href="/yanndaout/tags/homosociabilite/" class="post-tag">homosociabilité</a>, </li>
+	<li><a href="/yanndaout/tags/humour/" class="post-tag">humour</a>, </li>
+	<li><a href="/yanndaout/tags/masculinite/" class="post-tag">masculinité</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p>Dans la littérature sociologique, l’homosexualité est généralement conçue comme n’étant présente dans les espaces de sociabilité masculine qu’en tant que cible d’injures ou de violence. Deux situations observées m’ont toujours interrogé : un groupe d’hétéros utilisants des qualificatifs relatifs à l’homosexualité de manière positive ; des comportements à teneur homoérotique, bien que sous une forme ironique.</p>
+<h2 id="homosocialite" tabindex="-1">Homosocialité <a class="header-anchor" href="#homosocialite">#</a></h2>
+<p>Le sport a été historiquement un lieu de sociabilité et de socialisation masculine, le fameux « bastion de la masculinité »<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Même si ce « bastion » tend à faiblir, il reste que les sportifs s’engagent dans une pratique en bonne partie pour la sociabilité qu’elle offre, et que cette sociabilité repose souvent sur un entre-soi, qu’il soit de genre, de classe ou d’âge.</p>
+<p>Je soutiens que le manque d’inclusivité du parkour ne vient pas tant du fait d’exclusions explicites, que du fait qu’il s’agit d’un tel espace d’homosociabilité masculine. Mettons qu’un groupe soit formé par des ados masculins. Ils ont en commun des intérêts, des valeurs, ils peuvent se rattacher ensemble à des expériences similaires vécues en dehors de leur pratique. Leur sociabilité s’étend potentiellement au-delà du parkour : ils fréquentent la même école, ont des amis en commun, sortent ensemble le soir. Sans même qu’il y ait d’exclusion explicite, il sera difficile d’intégrer ce groupe de pairs et d’y former le même type de relations pour un adulte plus âgé ou pour une femme. Ou dit autrement : une femme peut plus difficilement assouvir un désir d’homosociabilité dans une pratique très masculine. Il s’agit pour moi d’un argument supplémentaire pour la non-mixité choisie : si les hommes ont leur espace de sociabilité masculine, il n’y a pas de raison que les femmes ne puissent pas avoir leur propre espace de sociabilité féminine. Jusqu’au moment où un nombre suffisant de femmes participent, rendant alors possible une homosociabilité féminine au sein d’un groupe mixte, la non-mixité choisie reste selon moi l’outil le plus efficace pour améliorer l’inclusivité en termes de genre.</p>
+<p>Je profite de cet aparté pour mentionner qu’en me focalisant sur la masculinité dans le reste de l’article, je ferai comme si aucune femme ne faisait du parkour. Or, ce n’est pas le cas, et comme le souligne Angel avec justesse, en parlant de la masculinité, on évacue l’expérience de ces femmes<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. Elles prennent des risques, occupent l’espace public, se renforcent, mais on ne leur demande pas si elles font cela pour construire leur masculinité. En tout connaissance de cause, je met cette question de côté pour le reste de l’article.</p>
+<h2 id="masculinite-et-homophobie" tabindex="-1">Masculinité et homophobie <a class="header-anchor" href="#masculinite-et-homophobie">#</a></h2>
+<p>Evidemment, je ne nie pas que des espaces d’homosociabilité peuvent produire des exclusions explicites, ou développer une atmosphère insupportable pour les non-membres, par exemple au travers de blagues sexistes récurrentes. En fait, il s’agirait d’un fait structurant de la plupart des espaces sportifs masculins<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. Et il y a une raison bien simple à cela : ces espaces deviennent des espaces de socialisation à, et de construction de la masculinité. Or, la masculinité hégémonique, la forme « dominante » de masculinité, est largement construite sur la capacité à se moquer comme à s’endurcir pour supporter la moquerie<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> ; sur l’objectification des femmes et la narration d’exploits sexuels<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> ; sur l’hétérosexualité et son revers, le rejet de l’homosexualité<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>.</p>
+<p>Du point de vue de la masculinité hégémonique, le genre et la sexualité sont intrinsèquement liés. Ainsi le terme « pédé » est fréquemment utilisé lorsqu’un garçon se comporte de manière non masculine, qu’il présente de la faiblesse, qu’il échoue à effectuer un prouesse. Comme le dit Pascoe:</p>
+<blockquote>
+<p>« Lorsqu’un garçon appelle un autre garçon « pédé », cela signifie qu’il n’est pas un homme, pas nécessairement qu’il est un homosexuel. »<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup></p>
+</blockquote>
+<p>Hormis quelques exceptions que je vais citer plus loin, la sociologie donne l’impression que tout homoérotisme sera évacué des relations homosociales masculines. Les études se focalisent ainsi sur les insultes à caractère homophobes, utilisées comme une forme de violence et de discrédit de l’homosexualité<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>. Les relations homosociales seraient ainsi le lieu d’une tension entre le « désir homosocial » qui pousse les hommes à focaliser leur attention sur d’autres hommes, et la « panique homosexuelle » qu’est la peur que cette attention se transforme en désir homosexuel<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>. Cette tension semble être particulièrement tangible dans le milieu du sport : les corps partiellement dénudés et exposés à la vue de tous, la proximité dans les vestiaires, voire les contacts physiques dans certaines disciplines semblent propices pour pousser cette tension à son maximum. Dans le cas du parkour, l’exposition du corps à torse nu, voire en slip, est relativement fréquente et, comme le remarque Kidder, ne se fait pas nécessairement avec une considération pour la température ambiante<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup>. J’ai déjà entendu des pratiquants utiliser le terme « gay » pour qualifier ces pratiques, qui de toute évidence peuvent donner des prises à une forme d’homoérotisme. De manière générale il semble y avoir des données suggérant que cette tension est effectivement plus marquée dans le sport qu’ailleurs. Ainsi, des étudiants en STAPS interrogés étaient 83% à affirmer qu’ils n’éprouveraient aucune gêne à apprendre l’homosexualité d’un·e amie… mais seulement 52% lorsque la question concernait un·e partenaire sportif·ve<sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup>. Considéré comme gênant, aberrant ou dégradant, l’homoérotisme ne devrait pas avoir sa place dans ces relations. Les insultes homophobes peuvent devenir la condition de possibilité pour accepter la proximité et l’intimité de l’homosociabilité sportive<sup class="footnote-ref"><a href="#fn12" id="fnref12">[12]</a></sup>.</p>
+<h2 id="des-cas-de-non-panique-homosexuelle" tabindex="-1">Des cas de non-panique homosexuelle ? <a class="header-anchor" href="#des-cas-de-non-panique-homosexuelle">#</a></h2>
+<p>Mais dans le cas du parkour, j’ai rencontré deux types de situations qui semblent plus étranges, et qui sont quasi absentes de la littérature sociologique :</p>
+<ol>
+<li>L’utilisation de termes relatifs à l’homosexualité, mais utilisés de manière non dérogatoire (sans pour autant relever d’un retournement du stigmate) ;</li>
+<li>La présence de comportements homoérotiques ironiques.</li>
+</ol>
+<p>Il y a quelques années, un groupe de traceurs utilisait fréquemment le terme « pédé » ou des variations phonétiques telles que « peiideii » pour s’appeler entre eux. Or, contrairement à l’utilisation habituelle du terme, il ne s’agissait pas à proprement parler d’un terme dérogatoire. Il ne servait pas à caractériser des comportements efféminés, ni des moments de vulnérabilité, ni le refus de prendre des risques. Le terme remplaçait souvent un qualificatif positif. Dans une large mesure, le fait d’être membre à part entière du groupe revenait à mériter le qualificatif. Des expressions telles que « c’est tellement gay » étaient également utilisées à titre de compliment. Cependant, cette utilisation un peu étrange (et assez insupportable) avait peu à voir avec un retournement du stigmate. Elle avait pour contexte une utilisation plus large d’insultes à caractère homophobe, raciste ou sexiste. Ces utilisations positives et dérogatoires ont toutes deux disparues ensemble après que j’en aie fait la critique, ou du moins sur les canaux de communication semi-publics utilisés par le groupe. Que je sois ou non la cause de leur disparition, je suppose donc qu’elles étaient liées.</p>
+<p>La seconde situation correspond à divers petits comportements sexualisés tels qu’un toucher volontairement sensuel, une petite caresse, une tape sur les fesses répondue par un « oh oui » langoureux, entre hommes présumés hétéros. La littérature sur ce type de comportements semble tellement pauvre<sup class="footnote-ref"><a href="#fn13" id="fnref13">[13]</a></sup>, que je ne sais pas comment les qualifier. Le terme « homosensualité » pourrait peut-être convenir, mais est inusité dans la littérature francophone. Saouter parle de relations « homosexuées »<sup class="footnote-ref"><a href="#fn14" id="fnref14">[14]</a></sup>, mais je ne suis pas certain que son concept colle aux cas qui m’intéressent. Je choisis donc de parler d’homoérotisme, même s’il s’agit d’un homoérotisme ne présupposant pas de désir, voire d’un homoérotisme ironique. Ce qu’il y a de surprenant dans ces comportements, c’est que parmi les réponses que j’ai observées, il y a certes du rire, ou des individus qui se prennent au jeu et répondent de manière symétrique ; mais jamais d’insultes, de rejet, de dégoût, de scandale, contrairement à ce que l’idée de « panique homosexuelle » semble suggérer. Un autre point surprenant est qu’il s’agit de cas de sexualisation voire d’objectification d’hommes, en leur présence, alors que ce sont typiquement les femmes qui se retrouvent sexualisées dans ce genre de cas<sup class="footnote-ref"><a href="#fn15" id="fnref15">[15]</a></sup>, souvent en leur absence.</p>
+<h2 id="des-strategies-de-renforcement-de-la-masculinite" tabindex="-1">Des stratégies de renforcement de la masculinité ? <a class="header-anchor" href="#des-strategies-de-renforcement-de-la-masculinite">#</a></h2>
+<p>Comment expliquer ces situations ? J’avoue ne pas avoir fait une enquête ethnographique approfondie, et la pauvreté de la littérature ne me permet que de faire quelques vagues hypothèses.</p>
+<p>La première situation semble être un cas où les insultes homophobes étaient banalisées au point où elles pouvaient prendre n’importe quel sens. C’est sans doute une radicalisation de ce que Pascoe a pu observer : 1/3 des garçons qu’elle a étudiés lui ont affirmé qu’ils utilisaient le terme « pédé » uniquement pour qualifier des hétéros, et s’abstenaient de l’utiliser en présence de personnes gay<sup class="footnote-ref"><a href="#fn16" id="fnref16">[16]</a></sup>. Dans le cas des traceurs, la valence positive permettait d’effectuer des compliments tout en s’en distanciant par une couche d’ironie et d’ambiguïté. Et comme mentionné ci-dessus, le fait de manier les insultes et de les supporter de manière stoïque fait partie de la construction de la masculinité hégémonique ; de là à leur attribuer une valence positive, il n’y a peut-être qu’un pas.</p>
+<p>Ce qu’il y a de similaire entre les deux situations, c’est qu’elles peuvent en fait servir à renforcer la masculinité et l’hétérosexualité. Se permettre de faire des blagues, c’est montrer que l’hétérosexualité n’est pas à mettre en doute (sinon une caresse ne serait pas une blague, mais une avance). L’humour permet de créer un « autre »<sup class="footnote-ref"><a href="#fn17" id="fnref17">[17]</a></sup>, et dans le même coup de marquer une distance avec ce qui ne peut pas être pris au sérieux (l’homoérotisme) et créer une image de ce qui doit être pris au sérieux (l’hétérosexualité). Comme le dit Pascoe :</p>
+<blockquote>
+<p>« En imitant le pédé, les garçons assurent les autres qu’ils ne sont pas un pédé en redevenant immédiatement masculins après leur performance. Ils se moquent de leur propre féminité et/ou désir homosexuel, s’assurant et assurant les autres qu’une telle identité mérite un rire moqueur. »<sup class="footnote-ref"><a href="#fn18" id="fnref18">[18]</a></sup></p>
+</blockquote>
+<p>Dans les cas qui m’occupent, le rire suscité me semble plus ambigu que ce que le terme « moqueur » évoque ; mais le reste du commentaire de Pascoe est pertinent.</p>
+<p>Il s’agit là d’une épreuve : la masculinité est mise en jeu, et ressort grandie par le fait qu’elle n’est pas mise en doute. Ceci suggère cependant que cette épreuve n’est pas également accessible à tous : certains ne peuvent pas la mettre en jeu s’ils pensent qu’elle risque d’être mise en doute. L’avantage d’une pratique masculine comme le parkour est que les pratiquants sont toujours déjà présupposés avoir les attributs de la masculinité, puisqu’ils ont adopté une pratique stéréotypiquement masculine, et l’épreuve est sans doute accessible pour beaucoup de pratiquants : leur masculinité ne risque pas d’être immédiatement mise en danger par l’humour et l’auto-dérision. Saouter estime que ce type de comportement relève d’une « homosexualité ritualisée, dans la mesure où elle est socialisante et débouche sur une hétérosexualité. »<sup class="footnote-ref"><a href="#fn19" id="fnref19">[19]</a></sup> Cela donne l’impression qu’elle parle de comportements fortement ritualisés, tels que des bizutages. Mais dans les cas que je décris, les comportements ne semblent pas plus ritualisés que n’importe quel autre comportement social, ils sont banals, anodins.</p>
+<h2 id="conclusion" tabindex="-1">Conclusion <a class="header-anchor" href="#conclusion">#</a></h2>
+<p>Je me suis demandé pourquoi de tels comportements sont quasi absents de la littérature (le contraire m’aurait facilité la tâche). Peut-être est-ce dû à cette banalité. Est-ce que les chercheurs ne les ont pas remarqués, se focalisant sur les insultes et les cas de violence explicites ? Ou sont-ils tout simplement rares ? Je n’ai aucune idée de leur prévalence. Je ne veux pas donner l’impression qu’ils sont très fréquents dans le parkour. Sans pouvoir les chiffrer, ils ne semblent pas si fréquents, et ne surviennent pas dans tous les groupes de parkour avec lesquels je me suis entraîné. Est-ce qu’ils surviennent seulement dans des groupes homosociaux très spécifiques ? Les traceurs représentent une population jeune, où la tolérance pour l’homophobie explicite est peut-être plus faible que dans des groupes de sportifs étudiés dans le passé. Kidder a lui aussi remarqué que l’objectification des femmes et la narration d’exploits sexuels étaient moins fréquents dans le parkour que ce que la littérature sur le sport laisserait supposer<sup class="footnote-ref"><a href="#fn20" id="fnref20">[20]</a></sup>. Le rejet de l’homosexualité par le biais de l’ironie et du second degré est peut-être la seule stratégie socialement acceptable.</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Dunning E.G. et Sheard K.G., « The Rugby Football Club as a Type of “Male Preserve”: Some Sociological Notes », <em>International Review of Sport Sociology</em> 8 (3), SAGE Publications, 1973, pp. 5‑24. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Angel, « Manhood Parkour, a Quick Response to Parkour, Masculinity, and the City by Jeffrey L. Kidder », <em>JulieAngel.com</em>, <a href="https://julieangel.com/quickresponse/">https://julieangel.com/quickresponse/</a>, consulté le 30.10.2022. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Kidder Jeffrey L., « Parkour, Masculinity, and the City », <em>Sociology of Sport Journal</em> 30 (1), 2013, pp. 1‑23. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Dominic McCann Pol, Plummer David et Minichiello Victor, « Being the butt of the joke: Homophobic humour, male identity, and its connection to emotional and physical violence for men », <em>Health Sociology Review</em> 19 (4), Taylor &amp; Francis, 2010, pp. 505‑521. <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Gregory Michele Rene, « Inside the Locker Room: Male Homosociability in the Advertising Industry », <em>Gender, Work &amp; Organization</em> 16 (3), 2009, pp. 323‑347. <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>Pascoe C. J., « ‘Dude, You’re a Fag’: Adolescent Masculinity and the Fag Discourse », <em>Sexualities</em> 8 (3), SAGE Publications Ltd, 2005, pp. 329‑346. <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Ibid., p. 342. <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>Héas Stéphane, Ferez Sylvain, Kergoat Ronan <em>et al.</em>, « Violences sexistes et sexuelles dans les sports : exemples de l’humour et de l’insulte », <em>Genre, sexualité et société</em> (1), 2009. <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p>Hammarén Nils et Johansson Thomas, « The transformation of homosociality », in: <em>Routledge International Handbook of Masculinity Studies</em>, Routledge, 2019. <a href="#fnref9" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn10" class="footnote-item"><p>Kidder, « Parkour, Masculinity, and the City », <em>art. cit.</em>, 2013. <a href="#fnref10" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn11" class="footnote-item"><p>Drivet Noémie, Champely Stéphane et Ottogalli-Mazzacavallo Cécile, « Regard sur l’hétéronormativité au sein d’une UFR STAPS : la normalisation des corps en jeu », <em>Staps</em> 124 (2), De Boeck Supérieur, Louvain-la-Neuve, 2019, pp. 43‑58. <a href="#fnref11" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn12" class="footnote-item"><p>Saouter Anne, <em>Être rugby: jeux du masculin et du féminin</em>, Paris, Éditions de la Maison des sciences de l’homme, 2000 (Ethnologie de la France 21). <a href="#fnref12" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn13" class="footnote-item"><p>Peut-être à cause de ma propre ignorance de la littérature pertinente. <a href="#fnref13" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn14" class="footnote-item"><p>Saouter, <em>Être rugby</em>, <em>op. cit.</em>, 2000. <a href="#fnref14" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn15" class="footnote-item"><p>Gregory, « Inside the Locker Room », <em>art. cit.</em>, 2009. <a href="#fnref15" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn16" class="footnote-item"><p>Pascoe, « ‘Dude, You’re a Fag’ », <em>art. cit.</em>, 2005. <a href="#fnref16" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn17" class="footnote-item"><p>Dominic McCann, Plummer et Minichiello, « Being the butt of the joke », <em>art. cit.</em>, 2010. <a href="#fnref17" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn18" class="footnote-item"><p>Pascoe, « ‘Dude, You’re a Fag’ », <em>art. cit.</em>, 2005, p. 339. <a href="#fnref18" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn19" class="footnote-item"><p>Saouter, <em>Être rugby</em>, <em>op. cit.</em>, 2000. <a href="#fnref19" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn20" class="footnote-item"><p>Kidder, « Parkour, Masculinity, and the City », <em>art. cit.</em>, 2013. <a href="#fnref20" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+<nav class="pagination-inner" aria-label="Articles next and previous links">
+	<a href="/yanndaout/blog/reportage-radio-chablais-sur-vevey-trace-lettre-ouverte/" data-direction="forwards" class="pagination-previous">
+		<span>← Reportage Radio Chablais sur Vevey Trace - Lettre ouverte </span>
+	  </a>
+	
+	<a href="/yanndaout/blog/le-parkour-est-il-competitif/" data-direction="backwards" class="pagination-next">
+		<span>Le parkour est-il compétitif ? →</span>
+	  </a>
+	
+</nav>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/blog/homoerotisme-et-sports-masculins/ -->
+	</body>
+</html>

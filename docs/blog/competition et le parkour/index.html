@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>La compétition et le parkour</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>La compétition et le parkour</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2017-10-13">13 octobre 2017</time></li>
+	<li><a href="/yanndaout/tags/apprentissage/" class="post-tag">apprentissage</a>, </li>
+	<li><a href="/yanndaout/tags/competition/" class="post-tag">compétition</a>, </li>
+	<li><a href="/yanndaout/tags/ethique/" class="post-tag">éthique</a>, </li>
+	<li><a href="/yanndaout/tags/parkour/" class="post-tag">parkour</a>, </li>
+	<li><a href="/yanndaout/tags/pedagogie/" class="post-tag">pedagogie</a>, </li>
+	<li><a href="/yanndaout/tags/valeurs/" class="post-tag">valeurs</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p>Ce texte s’intéresse à la question de la compétition en parkour, vise à clarifier la position « anti-compétition », à poser et critiquer des arguments fréquents, cela dans le but d'établir des bases afin de pouvoir élever le débat.</p>
+<p>Commençons par relever 3 éléments, une fois pour toutes :</p>
+<ol>
+<li>Nous ne craignons pas pour notre pratique individuelle. Nous savons très bien que personne ne va nous forcer à faire de la compétition. Nous savons que, <em>a priori</em>, une pratique alternative est possible, même sous un modèle dominant (n’est-ce pas ce qu’est déjà le parkour, par rapport au monde sportif « traditionnel » ?).</li>
+<li>Nous ne sommes pas là pour imposer par la force notre modèle. Personne de sensé ne parle d’interdire la compétition. Néanmoins, nous considérons que le modèle non compétitif comme meilleur, et voulons donc le privilégier, en exposant de manière discursive les désavantages du modèle compétitif mais surtout en ne faisant pas la promotion des valeurs compétitives dans notre pratique personnelle (on pense ici principalement aux interactions avec les débutants ou le public, que ce soit entre amis, au sein d’une association, à travers les médias, etc.). On considère que la compétition est un phénomène social, et que le simple fait de donner un cadre social non compétitif suffit à diminuer par la suite son importance au niveau personnel et interpersonnel.</li>
+<li>Nous sommes parfaitement conscients qu’une bonne partie des compétiteurs actuels n’ont pas un esprit de compétition. Ils sont pour la plupart issus du milieu majoritairement non compétitif qu’est le parkour actuellement (ce qui peut changer<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>), et conservent certainement leur vision durant les compétitions. La participation des compétiteurs se fait sur un mode de sélection bien différent du modèle traditionnel (compétitions locales → régionales → nationales → internationales), qui permet de manière (relativement) objective d’établir le « meilleur », le « champion ». En effet, ce sont le plus souvent les traceurs renommés, déjà médiatisés, et en règle générale ceux qui se connaissent entre eux, qui y participent, les compétiteurs se retrouvent alors essentiellement entre amis, bref cette forme de compétition n’en a pour l’instant que le nom et l’aspect extérieur (dans ce cas, pourquoi tenir absolument à la forme compétitive ?). Cependant, certains pratiquants participent aux compétitions dans l’intention de gagner, avec l’« esprit de compétition », focalisent leur entrainement en ce but, et cela ne va pas aller en diminuant<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. Mais ces motivations personnelles ne nous intéressent pas, et ne sont pas de notre ressort. S’inquiéter pour « l’esprit » qui règne durant les compétitions, c’est avoir une vision très étroite de la problématique.</li>
+</ol>
+<p>Ce que nous craignons principalement c’est : dès aujourd’hui l’image de la discipline que présente la compétition médiatisée au public non averti (qui, lui, n’est pas au courant que c’est un rendez-vous entre potes et pas une compétition, et ne sait ce qu’est le parkour qu’à partir de ce qu’on lui montre), et dans le futur les effets du développement de la compétition (qui ne va certainement pas rester ce qu’elle est aujourd’hui). Ces aspects seront développés plus loin.</p>
+<h4 id="la-competition-n-est-pas-une-necessite-pour-la-progression" tabindex="-1">La compétition n’est pas une nécessité pour la progression <a class="header-anchor" href="#la-competition-n-est-pas-une-necessite-pour-la-progression">#</a></h4>
+<p>Souvent, des arguments (néo-)darwinistes sont posés, affirmant plus ou moins explicitement que la compétition est une nécessité pour le progrès, l’évolution, pour l’espèce humaine tout court. Or rien ne permet de l’affirmer, la compétition n’étant pas le seul moteur de l’évolution<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> ni de la progression. Et elle n’est d’ailleurs sûrement pas le meilleur outil dans ce but. Se baser sur un climat de maîtrise (privilégiant « l’apprentissage, les progrès personnels et la valorisation du travail et des efforts ») plutôt que sur un climat de compétition (valorisant la « comparaison sociale, la compétition interpersonnelle, et le résultat final ») semble obtenir des résultats plus positifs (en termes de motivation, de persistance dans la pratique, et donc de progrès général d’un groupe, sur le long terme), et moins d’éléments négatifs (anxiété, abandon, tricherie, <em>schadenfreude</em>…)<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. Des travaux en psychologie sociale montrent que la compétition « entraîne des processus cognitifs de focalisation qui sont hautement nuisibles à l’apprentissage »<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
+<p>Un fonctionnement basé sur l’entraide permet non seulement à tout le monde de progresser, mais ce qui est plus important, à tout le monde d’être content de sa progression. Les performances souvent qualifiées de surhumaines qu’ont montré les traceurs et ce depuis le début de la discipline suffisent à prouver que la compétition n’est pas nécessaire. De plus, le parkour n’a pas besoin de la compétition pour se diversifier. La concurrence ne génère pas forcément l’originalité et la diversité, mais bien souvent l’uniformité entre les pratiquants via, comme le relève Pierre Bourdieu, « l’emprunt des instruments supposés de leur réussite »<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>. Il n’y a qu’à regarder les vidéos soumises pour les concours d’entrée au compétitions (telles que les « AOM submission »), pour se rendre compte de la faible diversité de manières de se mouvoir. Par contre, les diverses architectures de par le monde, les différentes modes locales, la diversité des morphologies de pratiquants et bien d’autres facteurs ont fait qu’il y a de nombreuses manières de pratiquer le parkour et YouTube nous présente continuellement des surprises une fois que l’on s’éloigne de la masse des vidéos uniformes<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>.</p>
+<h4 id="la-competition-n-est-pas-un-element-motivationnel-necessaire" tabindex="-1">La compétition n’est pas un élément motivationnel nécessaire <a class="header-anchor" href="#la-competition-n-est-pas-un-element-motivationnel-necessaire">#</a></h4>
+<p>Qui donc désire la compétition ? Pas la population, en tout cas, puisque selon les dernières statistiques de l’OFSPO<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup> seulement 16% de la population suisse compte la compétition parmi ses raisons de faire du sport (contre 98% pour la santé, 91% pour « penser à autre chose », 70% pour la convivialité…). Les médias en profitent, les grandes entreprises en profitent, les acteurs qui ont un intérêt marchand en profitent (parmi eux, les rares athlètes qui peuvent réellement en vivre<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>, et les nombreux qui espèrent en vivre). Comme le dit Jean-Marie Brohm : « les athées ou mécréants du sport sont finalement plus nombreux que les croyants »<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup>. Le modèle alternatif est donc non seulement viable (pour quiconque ne le considère pas comme un objet marchandisable…), mais est ce que la population recherche aujourd’hui en grande majorité. A noter que certaines catégories de personnes, notamment les femmes, sont fortement rebutées par la compétition sportive, qui risque de rendre leur inclusion encore plus difficile.</p>
+<p>On relèvera au passage que si leur médiatisation leur donne une certaine importance, les compétiteurs ne représentent en fait qu’une (très) petite minorité de la communauté. La fédération française de parkour a lancé un sondage dont les résultats sont évocateurs : 90% des traceurs ne participeraient pas à des compétitions, et 71% se déclarent radicalement contre<sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup>.</p>
+<h4 id="la-competition-a-des-problemes-internes-non-negligeables" tabindex="-1">La compétition a des problèmes internes non négligeables <a class="header-anchor" href="#la-competition-a-des-problemes-internes-non-negligeables">#</a></h4>
+<p>Citons rapidement quelques problèmes classiques du sport-compétition : la violence (physique ou verbale, mais surtout en terme d’exclusions<sup class="footnote-ref"><a href="#fn12" id="fnref12">[12]</a></sup>), la corruption, le surentrainement, la tricherie, et le dopage (qui sont bien plus que des dérives : ce sont des hyper conformités à la logique compétitive<sup class="footnote-ref"><a href="#fn13" id="fnref13">[13]</a></sup> ou des déviances positives<sup class="footnote-ref"><a href="#fn14" id="fnref14">[14]</a></sup>). Ces problèmes sont aujourd’hui suffisamment bien documentés pour que l’on ne puisse les nier et touchent toutes les disciplines. Peut-être existe-t-il des moyens de diminuer ou contrebalancer les effets négatifs du monde compétitif, mais déclarer la compétition exempte de ces problèmes relève aujourd’hui de la mauvaise foi. De plus, ne croyez pas que seul le sport professionnel est confronté à ces problèmes : même le dopage est un phénomène qui prend de l’ampleur dans le monde amateur<sup class="footnote-ref"><a href="#fn15" id="fnref15">[15]</a></sup>, ce qui a de quoi étonner. Il n’y a absolument aucune raison qui laisserait penser que la compétition en parkour suivra un chemin différent lorsque son institutionnalisation sera effective<sup class="footnote-ref"><a href="#fn16" id="fnref16">[16]</a></sup>.</p>
+<h4 id="les-rencontres-entre-traceurs-se-font-tres-bien-sans-competition" tabindex="-1">Les rencontres entre traceurs se font très bien sans compétition <a class="header-anchor" href="#les-rencontres-entre-traceurs-se-font-tres-bien-sans-competition">#</a></h4>
+<p>Il y a toujours eu et on peut espérer qu’il y aura toujours des rassemblements de pratiquants. Que ce soit à un niveau local entre amis ou membre d’un groupe ou association, ou à plus large échelle via divers évènements comme les « parkour days », les workshops, ou tout simplement à travers les différents voyages que les pratiquants font (que ce soit spécifiquement pour le parkour ou pour d’autres raisons personnelles), sans même compter les discussions qui se font sur le net, les échanges au sein de la communauté sont déjà innombrables. Ces échanges sont au moins potentiellement plus égalitaires que des compétitions qui par définition font une distinction entre participants et non-participants, forts et faibles (et une fois institutionnalisée, entre hommes et femmes, jeunes et moins jeunes, valides et handicapés, voire même entre classes de taille, de poids...). Que peuvent nous apporter de plus les compétions ?</p>
+<p>Trouver du financement pour l’organisation d’évènements, si nécessaire, est tout à fait possible. Selon le type d’évènement, être subventionné par les politiques socioculturelles aurait peut-être plus de sens que par le monde sportif/compétitif. De toute manière, la compétition n’aide financièrement qu’une fraction négligeable de la communauté. Une compétition de parkour a-t-elle déjà réuni plus de 400 participants<sup class="footnote-ref"><a href="#fn17" id="fnref17">[17]</a></sup> ? Je ne crois pas.</p>
+<h4 id="la-competition-permet-de-faire-vivre-quelques-athletes-mais-a-quel-prix" tabindex="-1">La compétition permet de faire vivre quelques athlètes, mais à quel prix ? <a class="header-anchor" href="#la-competition-permet-de-faire-vivre-quelques-athletes-mais-a-quel-prix">#</a></h4>
+<p>Le nombre de traceurs qui gagnent de l’argent grâce à la compétition est difficile à estimer, mais sans aucun doute, ce nombre est ridiculement restreint en comparaison à la communauté internationale. Parmi ceux-ci, aucun ne pourrait actuellement vivre exclusivement de la compétition (qu’on me signale si je me trompe). Combien pourraient vivre sans la compétition, en se centrant sur leur travail de démonstrations, workshops, cours, tournages de vidéos, etc. ? Ce n’est pas la compétition qui va faire vivre les gens de leur art (sans compter que la compétition est aliénante pour beaucoup, sinon pour tous, et que ce n’est donc plus vivre de son art, mais le transformer -et se transformer- en simple outil). Être économiquement indépendant de son art (ce qui ne veut pas dire qu’on ne peut pas absolument en retirer un bénéfice économique) me semble une meilleure voie.</p>
+<p>Même dans les pratiques sportives les plus institutionnalisées, la majorité des pratiquants ne gagnent par leur vie par leurs performances. Parmi la minorité dont c’est le cas, ce sont essentiellement des travailleurs précaires, à la carrière courte, l’avenir toujours incertain, devant accepter n’importe quel contrat et se plier à des conditions de travail difficiles<sup class="footnote-ref"><a href="#fn18" id="fnref18">[18]</a></sup>.</p>
+<p>De plus, l’argument peut sembler extrêmement égoïste. Quelle est l’utilité d’un athlète d’élite pour la société ou la communauté<sup class="footnote-ref"><a href="#fn19" id="fnref19">[19]</a></sup> ? Hormis faire office d’affiche publicitaire pour des multinationales, la réponse à cette question est assez floue. On pourrait donc très bien considérer que l’athlète ne mérite pas son salaire (mais évidemment, c’est la multinationale qui postule son utilité, il a effectivement une valeur privée). Il semble faux de penser que la mercantilisation de la discipline permet de reverser de l’argent à la communauté. Je dirais qu’au contraire, la mercantilisation pousse l’ensemble des traceurs à payer (via des vêtements, des évènements, etc.) bien plus qu’il ne leur faudrait, pour une activité qui ne coûte en fait que le prix d’une paire de chaussures (et encore…), tout ça pour subvenir aux besoins de quelques rares personnes.</p>
+<h4 id="le-parkour-n-a-pas-besoin-de-la-competition-pour-sa-mediatisation" tabindex="-1">Le parkour n’a pas besoin de la compétition pour sa médiatisation <a class="header-anchor" href="#le-parkour-n-a-pas-besoin-de-la-competition-pour-sa-mediatisation">#</a></h4>
+<p>Le volume de recherche sur Google pour le mot « parkour » augmente en continu depuis des années, jusqu’à dépasser le skate et se rapprocher du surf en terme de popularité sur le net<sup class="footnote-ref"><a href="#fn20" id="fnref20">[20]</a></sup>. Le nombre de pratiquants actuels est difficile à estimer, mais se compte probablement en millions à travers le monde. Aucun pays n’est épargné par la présence de traceurs. Popularisé par des films et via internet, je n’ai jamais entendu quelqu’un me dire avoir voulu commencer après vu une compétition. La compétition est par essence élitiste, et c’est encore une des raisons qui fait qu’elle ne promet selon moi pas d’être un bon moteur de développement pour le parkour. Les gens sont nombreux à vouloir commencer le parkour depuis qu’ils se rendent compte que la discipline est accessible à tous, pas juste à une élite surentrainée et casse-cou ! Néanmoins, cette image de casse-cous nous colle toujours à la peau. S’il faut absolument médiatiser et démocratiser le parkour (ce qui n’est pas une nécessité dans l’absolu, et ne doit en tout cas, selon moi, pas se faire au prix du sens de la discipline), alors ce qu’il reste à faire est de montrer son accessibilité et les aspects de l’entrainement, de la communauté, ou de sa philosophie. Le présenter comme un sport « xtreme » de plus n’a aucune utilité. Bien au contraire, cela porte préjudice à la discipline et surtout au long travail que certains traceurs ont fait durant des années pour expliquer le parkour, montrer en quoi il est exceptionnel, lui donner une bonne image. Je citerai ici encore une fois Pierre Bourdieu : « Ce qui me parait difficile à justifier, c’est que l’on s’autorise de l’extension de l’audience pour abaisser le droit d’entrée dans le champ »<sup class="footnote-ref"><a href="#fn21" id="fnref21">[21]</a></sup>. Ce qu’il nous faut faire c’est permettre au public de s’élever pour accéder au parkour, pas abaisser le parkour pour le mettre à la hauteur du public… La médiatisation ne doit donc pas se faire n’importe comment, et il vaut selon moi mieux qu’il n’y ait pas de médiatisation plutôt qu’une médiatisation dans les mauvaises conditions. Il serait temps de privilégier la qualité à la quantité.</p>
+<p>On a de toute évidence besoin de héros du parkour, pour faire rêver les observateurs, leur donner envie de commencer. Mais nul besoin de compétition pour cela : les films d’action, les vidéos de pratiquants, les documentaires, les rencontres, et tout simplement la présence de plus en plus marquée des traceurs dans les rues font leur effet. Le parkour est suffisamment intéressant, unique, intriguant pour que l’on n’ait pas à le vendre de manière trompeuse. De plus, s’il nous faut des héros, c’est selon moi des modèles bien différents que ceux qui nous sont proposés dans l’élite sportive. Des exemples d’intégrité morale, d’entraide, de vie aventureuse semblent (par exemple et à titre personnel) à privilégier. Il suffit de leur donner la visibilité qu’ils n’ont pas.</p>
+<p>De plus, ce pour quoi beaucoup d’entre nous nous battons, c’est l’avènement d’une alternative, et pas pour son intégration dans le reste du système sportif. Si l’on a tous l’intuition que le parkour est quelque chose d’unique, qui mérite d’être partagé, c’est bien parce qu’il se situe en marge du cadre de ce qui existe déjà. Et si le parkour veut rester ce qu’il a été jusqu’à maintenant, quelque chose de subversif et donc capable de provoquer de grands changements chez les pratiquants, il faut qu’il reste une alternative (fut-elle minoritaire) et pas qu’il s’intègre aux valeurs dominantes du sport compétitif.</p>
+<h4 id="la-competition-ne-permet-pas-de-montrer-qui-a-le-plus-de-merite-ou-s-est-le-mieux-entraine" tabindex="-1">La compétition ne permet pas de montrer qui a le plus de mérite ou s’est le mieux entraîné <a class="header-anchor" href="#la-competition-ne-permet-pas-de-montrer-qui-a-le-plus-de-merite-ou-s-est-le-mieux-entraine">#</a></h4>
+<p>Les compétiteurs de haut niveau dédient corps et âme à leur discipline. Mais cela ne veut pas dire pour autant que ce sont les seuls à le faire. Ceux qui sont en haut de l’échelle ont probablement bénéficié d’un climat (situation économique, sociale, géographique…) qui leur a permis de s’entrainer plus et dans des conditions plus favorables à la performance. Ils ont peut-être commencé plus jeunes, poussé par leurs parents (ou par leur gouvernement ou toute autre instance faisant autorité). Ils ont évolué dans un environnement qui les poussait à la performance objective, éphémère et compétitive quand d’autres pratiquaient d’une autre manière, s’intéressant avant tout à leur plaisir, leur progrès personnel, leur bien-être. Ils se sont spécialisés quand d’autres papillonnaient. Ils sont génétiquement, morphologiquement, physiologiquement conçus<sup class="footnote-ref"><a href="#fn22" id="fnref22">[22]</a></sup> (et potentiellement sélectionnés<sup class="footnote-ref"><a href="#fn23" id="fnref23">[23]</a></sup>) pour supporter de grandes charges d’entrainement, récupérer rapidement, progresser très vite, faire des performances impossibles pour le commun des mortels, si bien que certaines études montreraient que le statut d’athlète de haut niveau peut être attribuée majoritairement (dans cette étude<sup class="footnote-ref"><a href="#fn24" id="fnref24">[24]</a></sup>, à 66%) à des caractéristiques innées. Le dopage vient ensuite s’ajouter à cette liste pour achever un mythe. Je ne suis pas en train de dire que les athlètes d’élite ne se trouvent pas sur une voie extrêmement difficile, exigeante et méritante. Mais on voit très bien les différences interindividuelles dans le parkour, où après seulement quelques mois d’entrainement par nécessairement sérieux ni régulier certains parviennent à dépasser des vétérans. En venir à penser que le mérite ou le sérieux de l’entrainement se mesurent à la longueur du saut, la vitesse sur un parkour d’obstacle ou toute autre performance quantitative à un moment précis est absurde. La seule chose que la compétition peut faire, c’est montrer quel pratiquant réalise la meilleure performance objective, quantifiée, dans un domaine précis ou pour un mouvement spécifique, à un certain moment et dans un contexte donné.</p>
+<p>Bon, il y a ça, et le fait que les croyances en l'idéologie méritocratique ont le désavantage notoire d'induire des discriminations, causer des oppositions à des pratiques égalitaires, et justifier les inégalités<sup class="footnote-ref"><a href="#fn25" id="fnref25">[25]</a></sup>.</p>
+<h4 id="la-competition-n-est-pas-une-mise-en-situation-reelle-du-parkour" tabindex="-1">La compétition n’est pas une mise en situation réelle du parkour <a class="header-anchor" href="#la-competition-n-est-pas-une-mise-en-situation-reelle-du-parkour">#</a></h4>
+<p>Certains imaginent que la compétition est un moyen de tester sa mise en application du parkour en dehors d’une situation d’entrainement. Premièrement, si la compétition présente bien une dose de stress que l’on pourrait rapprocher de la situation réelle idéalisée, une utilisation du parkour en situation réelle ne se fait pas nécessairement sous stress. La probabilité de se retrouver dans une situation de haut stress nécessitant une utilisation du parkour est faible<sup class="footnote-ref"><a href="#fn26" id="fnref26">[26]</a></sup>. Deuxièmement, vouloir comparer une situation où l’on est volontairement prêt à effectuer une performance, avec un échauffement préalable, un terrain d’obstacles connu à l’avance, une pression qui ne provient que du chrono, du public et du jury, avec une situation réelle qui forcerait à se mettre en mode parkour en un seul instant sans flancher, sans pouvoir s’échauffer, se déplacer dans un environnement probablement inconnu et dans des conditions potentiellement adverses (nuit, brouillard, froid, pluie…), sous une pression qui pourrait être celle d’une question de vie ou de mort, vouloir cette comparaison donc, me semble assez risible. On se donne suffisamment d’obstacles et de challenges dans notre pratique pour qu’il soit nécessaire ou bénéfique d’ajouter celui de la compétition. Néanmoins si votre intention est effectivement de vous préparer pour une situation d’urgence, je vous laisse lire l’article <em>Parkour Randori</em> d’Amos Rendao<sup class="footnote-ref"><a href="#fn27" id="fnref27">[27]</a></sup>.</p>
+<h4 id="la-competition-en-parkour-est-potentiellement-tres-dangereuse" tabindex="-1">La compétition en parkour est potentiellement très dangereuse <a class="header-anchor" href="#la-competition-en-parkour-est-potentiellement-tres-dangereuse">#</a></h4>
+<p>Je cite le _Manifeste contre l'organisation de compétitions dans le parkour[28], dont c’est un des arguments principaux : « Les compétitions de parkour et de freerunning, dans la mesure où elles poussent l’athlète 1- à faire le plus de choses possibles dans un temps très court et limité, et 2- à faire des choses difficiles et dangereuses pour impressionner le public et les juges, plutôt qu’utiliser des techniques simples et sûres, placent l’athlète dans une situation de grand danger, et ce, quel que soit son niveau d’aptitudes ». Les hauteurs, les distances, les forces en jeu dans le parkour ne pardonnent pas les erreurs. Si le nombre de blessés est encore faible, c’est sans doute parce qu’il y a peu de facteurs externes au pratiquant qui entrent en jeu (contrairement aux sports où l’environnement est rendu imprévisible, notamment par la présence de partenaires ou d’adversaires). Mais les critères de la compétition, la pression sociale (des pairs, des adversaires, du jury, du public…), celle du temps (si la compétition est chronométrée), mais aussi la pression économique (afin de pouvoir vivre du parkour, il faut gagner, il faut balancer du lourd pour gagner en notoriété, etc.) sont des facteurs externes qui poussent (consciemment ou non) le pratiquant à se focaliser sur certains éléments de sa pratique et donc à en abandonner d’autres. Parmi eux, le point substantiel et pourtant souvent oublié du parkour : la sécurité<sup class="footnote-ref"><a href="#fn28" id="fnref28">[28]</a></sup>. Par exemple, le critère d’un speedrun est la vitesse ; mais une situation réelle ne se réduit pas qu’à cela et ralentir pour observer les alentours, vérifier les obstacles, prendre le temps de calculer les distances, se concentrer, privilégier un chemin sûr à un chemin rapide, etc. sont non seulement possibles, mais conseillés, et, somme toute, logiques. Arriver au point B rapidement, c’est bien, mais pas si cela se fait au prix d’un membre. Doit-on alors adapter le terrain et les obstacles pour diminuer les risques de blessures ? Mettre de la matière synthétique sur les prises d’élan, des matelas sous et derrière les obstacles, des filets de sécurité ? À ce moment-là, on aura complètement oublié ce qu’est le parkour.</p>
+<h4 id="la-competition-n-est-pas-compatible-avec-les-principes-du-parkour" tabindex="-1">La compétition n’est pas compatible avec les principes du parkour <a class="header-anchor" href="#la-competition-n-est-pas-compatible-avec-les-principes-du-parkour">#</a></h4>
+<p>Le parkour est défini comme une méthode d’entrainement<sup class="footnote-ref"><a href="#fn29" id="fnref29">[29]</a></sup>, visant à se renforcer physiquement et mentalement pour et par le franchissement d’obstacles. On ne peut pas faire une compétition d’une méthode d’entrainement, mais seulement sur les résultats de cette méthode. Le parkour n’étant pas la méthode la plus efficace pour obtenir des résultats objectifs, quantifiables et spécifiques, ce sont d'autres méthodes qui vont être utilisées pour obtenir des résultats en compétition<sup class="footnote-ref"><a href="#fn30" id="fnref30">[30]</a></sup>. On ne peut donc pas faire de compétition de parkour, c’est une impossibilité de principe. Une autre question se pose : va-t-on voir les recalés de l’athlétisme, par exemple, participer aux compétitions de parkour (speedrun, saut-de-chat-en-longueur…) pour gagner ce qui est inaccessible dans leur propre domaine<sup class="footnote-ref"><a href="#fn31" id="fnref31">[31]</a></sup> (le pool d’athlètes d’élite surentrainés y étant trop large pour une bonne probabilité de victoire), lorsque les enjeux de la compétition de parkour seront suffisamment importants ? Comment se situera le traceur par rapport à ces athlètes spécialisés ?</p>
+<p>Le parkour demande de s’adapter à l’environnement et à ses obstacles et s’est toujours placé en opposition à la spécialisation, notamment parce qu’il est issu de la tradition hébertiste, dont le parkour semble être le dernier représentant à ne pas être moribond… pour l’instant. Le parkour, utilitaire par essence, comme un art martial, demande d’être prêt qu’importe le moment (« traceur, toujours prêt ! », « être fort pour être utile », « être et durer »). Il ne s’accorde donc pas avec la périodisation de l’entrainement, qui vise à atteindre la performance maximale à un moment donné de l’année, celui de la compétition. Le parkour vise à l’augmentation de son potentiel, pas dans le but de réaliser trois compétitions puis partir à la retraite, mais en tant qu’« arme qu’on aiguise, on s’entraine et si un jour y’a un problème on sait qu’on peut s’en servir»<sup class="footnote-ref"><a href="#fn32" id="fnref32">[32]</a></sup>. La compétition s’oppose donc fondamentalement au parkour, en fonctionnant par universalisation des normes, spécialisation des athlètes et performances quantitatives éphémères.</p>
+<p>La normalisation commence par l’uniformisation des champs d’obstacles : il est clair que les terrains d’obstacles pour la compétition seront pensés, comme pour les parkour-parks, en vue d’un certain nombre de mouvements spécifiques (ici un passemuraille, là un saut de chat, on adapte l’environnement au parkour et pas le contraire). Il y a une forte probabilité pour qu’une manière spécifique de surmonter chaque obstacle soit définie<sup class="footnote-ref"><a href="#fn33" id="fnref33">[33]</a></sup> (c’est ce que l’on fait dans toutes les compétitions, on ne peut pas lancer un javelot à deux mains, on ne peut pas sauter en hauteur à pieds joints, on ne peut pas sauter en longueur avec un périlleux avant…). De plus, va-t-on voir des terrains identiques à chaque compétition ? Après tout, c’est le cas de tous les sports compétitifs, l’universalité de la norme étant là pour «garantir que les compétitions à venir seront ce que chacun anticipe»<sup class="footnote-ref"><a href="#fn34" id="fnref34">[34]</a></sup>. L’uniformisation se fera également en fonction des critères de jugement de la compétition : système de pointage<sup class="footnote-ref"><a href="#fn35" id="fnref35">[35]</a></sup> comme en gymnastique qui amènera à abandonner certaines formes de mouvements, voir certains mouvements tout court ; ou système métrique/chronométrique qui amènera à privilégier certaines manières de tracer (mieux vaut que j’abandonne l’économie d’énergie pour la vitesse, mieux vaut sauter le plus haut possible que de tout faire pour protéger mon intégrité physique…). La compétition a besoin de critères objectifs (et d’autant plus précis que les enjeux économiques, politiques et personnels sont grands) pour départager les participants. On obtiendra donc progressivement des spécialistes de certains mouvements ou d’ensembles réduits de mouvements, et si on imagine une évolution sur le long terme, quelque chose qui pourrait terminer par être très similaire à l’athlétisme (ou à la gymnastique aux agrès pour ce qui est du freerunning). Citons encore une fois Brohm : « La sportivisation mondiale a laminé tout ce qui était spécifique et original ; il ne reste plus que le modèle Adidas »<sup class="footnote-ref"><a href="#fn36" id="fnref36">[36]</a></sup> ainsi que Pascal Chantelat : «La balance des pouvoirs s’est déplacée en faveur des patrons de la branche du spectacle, ce qui a contraint diverses organisations sportives à s’aligner sur leurs valeurs et leurs méthodes de management»<sup class="footnote-ref"><a href="#fn37" id="fnref37">[37]</a></sup>.</p>
+<p>Ayant pratiqué le judo durant de nombreuses années, je sais que l’on enseigne beaucoup moins facilement les formes qui sont interdites ou inefficaces en compétition. C’est ce que l’on peut craindre pour le futur du parkour. Si Jigoro Kano (fondateur du judo) désirait utiliser la compétition pour permettre à son art de se répandre, il ne voulait évidemment pas qu’il se résume à cela. Il me paraît clair que c’était là une erreur stratégique : même si j’espère qu’il existe encore des manières alternatives de le pratiquer, ce n’est pas à cela qu’à accès la majorité des gens.</p>
+<p>Peut-être que ce qui est bon avec le parkour, c’est que les gens n’ont pas encore le choix d’opter pour un club compétitif ou non compétitif, mais bon gré, mal gré, les traceurs se retrouvent d’office plongés dans un milieu non compétitif, où règne l’entraide, l’absence de règles formelles, etc. qui non seulement se constitue en pratique alternative au reste du monde sportif, mais permet également une acculturation qui laisse espérer à plus ou moins grande échelle des changements sociaux et dans les modalités de pratique d’activité physique en dehors du parkour<sup class="footnote-ref"><a href="#fn38" id="fnref38">[38]</a></sup>. À la longue, on peut craindre la perte de ce qui fait du parkour une discipline à part, une perte de profondeur, au profit de la superficialité, du spectaculaire, mais une perte de sens également, l’oubli de ce qui fait du parkour une discipline subversive. Si vous ne respectez pas les « principes » du parkour, demandez-vous au moins ce qui a fait que vous avez choisi le parkour (et que, très probablement, vous le pratiquez d’une manière différente aux autres sports que vous avez pratiqués auparavant). Il y a de fortes chances que ce soit justement parce que sa logique interne se distingue du reste du monde sportif et compétitif.</p>
+<h4 id="le-parkour-n-est-pas-toujours-deja-competitif" tabindex="-1">Le parkour n’est pas « toujours déjà » compétitif <a class="header-anchor" href="#le-parkour-n-est-pas-toujours-deja-competitif">#</a></h4>
+<p>Dire que le parkour est une discipline non-compétitive ne revient pas à dire que les traceurs ne se comparent jamais entre eux, qu’il n’y a pas des rivalités. Cependant, la rivalité auto-organisée localement entre pratiquants (p.ex. qui sera le premier à réussir x ?), reste semble-t-il relativement rare (est-ce la manière dont vous pratiquez généralement ?). Par ailleurs, les modalités de l’affrontement n’y ont pas besoin d’être fixées (ni même explicitées), peuvent rester floues etc. et cela n’a donc rien de comparable avec une compétition institutionnalisée, avec ses règlements, arbitres, enjeux financiers, politiques, écologiques, sa médiatisation, ses autorités se portant garantes du respect des règles et de sa légitimé en tant que « vraie pratique »…</p>
+<p>Il me semble importer également d’établir une distinction entre situations d’interdépendance négative (plus l’un gagne, plus l’autre perd) des situations à interdépendance positive (plus l’un gagne, plus l’autre gagne) ou en indépendance (la performance de l’un n'implique rien pour la performance de l’autre). Les situations d'interdépendance négative sont généralement les plus néfastes (pour l'apprentissage, la motivation, la confiance en soi, les relations interpersonnelles...). Ceci permet de penser le fait qu’il peut y avoir des rivalités, comparaisons, émulations entre des pratiquants, sans pour autant être des compétitions au sens strict.</p>
+<h4 id="conclusion-oui-mais" tabindex="-1">Conclusion : oui, mais… <a class="header-anchor" href="#conclusion-oui-mais">#</a></h4>
+<p>Soyons pragmatiques : on n’empêchera pas les compétitions. Il y en a déjà, et elles vont poursuivre leur développement. Cela ne nous empêche pas de continuer à montrer notre désapprobation tout en expliquant notre raisonnement, continuer à pratiquer à notre manière et faire la promotion des valeurs qui nous sont propres. On a tendance à l’oublier à cause de leur forte médiatisation, mais les compétiteurs ne représentent qu’une faible minorité de la communauté. Si les traceurs s’attachent à faire des projets à leur manière, et ne se laissent pas conduire par la minorité (qui est plus forte, économiquement et médiatiquement parlant), on a la possibilité de choisir ce que l’on veut faire de la discipline qui nous est chère. S’il vous semble que la compétition est importante, rien ne vous empêche d’organiser des compétitions entre potes. Mais l’institution de la compétition est une autre affaire, en particulier si cela se fait sous l’influence de sponsors plus que douteux<sup class="footnote-ref"><a href="#fn39" id="fnref39">[39]</a></sup>.</p>
+<p>Quelques voies à discuter et explorer :</p>
+<ul>
+<li>Faire la promotion de valeurs non-compétitives</li>
+<li>Propager les arguments contre la compétition (ceux dont j’ai parlé dans cet article, ou d’autres)</li>
+<li>Trouver des sponsors avec qui l’on peut avoir une relation de mutualisme (et pas seulement une relation asymétrique « je donne mon corps, tu donnes de l’argent »<sup class="footnote-ref"><a href="#fn40" id="fnref40">[40]</a></sup>. Il y a des gens qui ont des buts en commun avec les traceurs, supportons-les.</li>
+<li>Se rendre indépendant économiquement de la discipline. Cela ne veut pas dire que l’on ne peut pas gagner de l’argent avec le parkour. Mais en être indépendant permet dans une certaine mesure d’éviter les concessions dommageables pour soi (éviter que la discipline et son propre corps ne deviennent de simples outils de travail) et pour la discipline (pouvoir choisir ce que l’on veut montrer au public).</li>
+<li>Si des spectacles marchandisables sont essentiels ou inévitables, trouver des formes de spectacle qui soient moins dommageables. Le parkour est quelque chose de suffisamment beau, surprenant et spectaculaire à regarder pour que l’on n’ait pas besoin d’orchestrer des affrontements par-dessus le marché. Des formes démonstratives (démontrer un savoir-faire plutôt qu’une simple performance), artistiques ou présentant un aspect coopératif plutôt que compétitif méritent réflexion.</li>
+<li>Se rapprocher des politiques socioculturelles plutôt que des institutions sportives.</li>
+</ul>
+<p>Il existe certainement d’autres solutions : l’important est maintenant d’essayer d’aller au-delà de la simple problématique « pour ou contre la compétition ».</p>
+<p>La mise à jour et la republication de cet article me semblaient nécessaires, au vu de la forte diffusion du modèle sportif/compétitif du parkour et de l’émoussement du discours alternatif (qui était de l’ordre de l’évidence il y a peu, rappelons-le). De plus, le grand public va être d’autant plus confronté à la vision du parkour donnée par les institutions comme la FIG, qui organisent déjà leurs championnats du monde, et ont déjà fait une première proposition d’intégration du parkour aux Jeux Olympiques. Si ce n’est pas eux, ça sera la WFPF<sup class="footnote-ref"><a href="#fn41" id="fnref41">[41]</a></sup>, ou toute autre organisation qui entrera dans les bonnes grâces du CIO.</p>
+<p><a href="http://www.letemps.ch/Page/Uuid/3a29433c-82c9-11de-b862-1da59cea4061/Le_dopage_amateur_est_assez_voire_tr%C3%A8s__important">http://www.letemps.ch/Page/Uuid/3a29433c-82c9-11de-b862-1da59cea4061/Le_dopage_amateur_est_assez_voire_tr%C3%A8s__important</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>On peut se demander si on peut toujours considérer le parkour comme étant non compétitif. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Si cette remarque n’était pas aussi évidente, on aurait pu la qualifier de prophétique, puisque depuis 2014 des vidéos, conseils, commentaires concernant la préparation physique, technique etc. dans le but spécifique de produire des résultats en compétition se sont mis à émerger, et vont sans doute foisonner ces prochaines années. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Darwin, ou plutôt ses successeurs l’ayant mal lu, ont quelque chose à voir là-dedans. <em>L’entraide, un facteur de l’évolution</em> de Pierre Kropotkine, est éclairant à ce sujet. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Sarrazin, Philippe <em>et al.</em>, « Climat motivationnel instauré par l’enseignant et implication des élèves en classe : l’état des recherches », <em>Revue française de pédagogie</em> [<a href="http://rfp.revues.org/463">http://rfp.revues.org/463</a>]. Evidemment, il y a peut-être certains individus auxquels le climat compétitif convient. Il est possible que le climat compétitif permette à certains de s’élever à un très haut niveau tandis que la majorité s’écrase. Loin de vouloir niveler vers le bas, notre but est l’élévation, mais de l’<em>entier du groupe</em>, pas seulement de certains individus. <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Butera, Fabrizio <em>et al.</em> Les méfaits de la compétition : de la comparaison sociale et de la focalisation dans l'apprentissage. In: R.-V. Joule &amp; P. Huguet (Ed.). <em>Bilans et perspectives en psychologie sociale. Vol. 1</em>. Grenoble : Presses Universitaires de Grenoble, 2006. p. 15-44. <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>Pierre Bourdieu, <em>Sur la télévision</em>, Raisons d’Agir, 2008 (1996). <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Les plus grosses surprises que j’ai pu avoir n’ont pas été provoquées par les traceurs compétiteurs et sponsorisés, mais bien par des gens qui ne sont pas en concurrence sur le même plan, n’essaient pas simplement de rivaliser en termes de distance, de nombre de rotations, ou à se montrer sur les spots connus en ajoutant un petit détail « j’ai fait le saut que tous les plus grands ont fait, mais de mon mauvais pied », mais pratiquent simplement à leur façon. Ils ont donc quelque chose de <em>différent</em> au lieu de faire <em>la même chose avec un truc en plus.</em> <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p><a href="http://www.baspo.admin.ch/internet/baspo/fr/home/dokumentation.parsys.000106.downloadList.11029.DownloadFile.tmp/sportsuisse2014.pdf">http://www.baspo.admin.ch/internet/baspo/fr/home/dokumentation.parsys.000106.downloadList.11029.DownloadFile.tmp/sportsuisse2014.pdf</a> <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p>Selon Jesse Peveril, en 2014 personne ne vivait de la compétition en parkour. Même dans les sports où la compétition est fortement institutionnalisée, comme le cyclisme, les rares athlètes qui vivent de leur performance sont généralement l’équivalent de travailleurs précaires. <a href="#fnref9" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn10" class="footnote-item"><p><a href="http://1libertaire.free.fr/Brohm05.html">http://1libertaire.free.fr/Brohm05.html</a> <a href="#fnref10" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn11" class="footnote-item"><p><a href="http://www.fedeparkour.fr/news/les-resultats-du-sondage-sur-la-comp%C3%A9tition">http://www.fedeparkour.fr/news/les-resultats-du-sondage-sur-la-compétition</a> <a href="#fnref11" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn12" class="footnote-item"><p><a href="http://1libertaire.free.fr/Brohm05.html">http://1libertaire.free.fr/Brohm05.html</a> <a href="#fnref12" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn13" class="footnote-item"><p>Bourg, Jean-François, « Le sportif et le marché : le cas du dopage », <em>Revue internationale de Psychosociologie</em>, 2003/20 Vol. IX, p. 73-90 <a href="#fnref13" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn14" class="footnote-item"><p>Hughes, R., &amp; Coakley, J. (1991). Positive deviance among athletes: The implications of overconformity to the sport ethic. <em>Sociology of sport journal</em>, <em>8</em>(4), 307-325. <a href="#fnref14" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn15" class="footnote-item"><p>En fait, un rapport de la Commission d'enquête sur la lutte contre le dopage (<a href="http://www.senat.fr/rap/r12-782-1/r12-782-14.html">http://www.senat.fr/rap/r12-782-1/r12-782-14.html</a>) fait état de 5% de contrôles positifs chez des cyclistes amateurs, alors même que le test se faisait sur une quantité limitée de substances et était volontaire. A titre indicatif (pour diverses raisons dont certaines explicitées dans ce rapport, ces valeurs sont difficilement comparables et les statistiques ne font pas état de la réalité) le taux de contrôles positifs chez les cyclistes professionnels serait de 13.7%. Voir aussi «Le dopage amateur est assez, voire très important», <em>Le Temps</em>, 07.08.09 <a href="#fnref15" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn16" class="footnote-item"><p>Au pire, appliquons le principe de précaution. <a href="#fnref16" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn17" class="footnote-item"><p>Contrairement au week-end FPK 2014, par exemple. <a href="#fnref17" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn18" class="footnote-item"><p>Aubel, O., &amp; Ohl, F. (2015). De la précarité des coureurs cyclistes professionnels aux pratiques de dopage. <em>Actes de la recherche en sciences sociales</em>, (4), 28-41. <a href="#fnref18" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn19" class="footnote-item"><p>Il y a des domaines liés au parkour qui sont encore aujourd’hui, semble-t-il, relativement inexplorés. Le développement de progressions pour les différents mouvements du parkour, les méthodes pédagogiques, les approches du parkour pour les enfants ou les personnes âgées, la recherche sur la performance, la biomécanique ou l’entrainement… Sans compter les domaines qui sont déjà exploités aujourd’hui. Evidemment, pas tout le monde ne pourra vivre de sa pratique, mais c’est le cas avec ou sans compétition. Pourtant beaucoup de travail reste à faire, ayant une utilité pour la communauté du parkour ou la société en général ! <a href="#fnref19" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn20" class="footnote-item"><p><a href="http://www.apexmovement.com/blog/is-parkour-a-fad/">http://www.apexmovement.com/blog/is-parkour-a-fad/</a> <a href="#fnref20" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn21" class="footnote-item"><p>Pierre Bourdieu, <em>Sur la télévision</em>, Raisons d’Agir, 2008 (1996). <a href="#fnref21" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn22" class="footnote-item"><p>On pourrait citer l’exemple de Donald Thomas qui, issu du monde du basket et après seulement 8mois d’entrainement remportait le Championnat du Monde en saut en hauteur en 2007. Cette performance serait expliquée en grande partie par la longueur anormale de son tendon d’Achille, qui lui permettait une performance incroyable malgré son manque flagrant de technique. <a href="#fnref22" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn23" class="footnote-item"><p>On recherche par exemple le taux relatif de fibres musculaires rapides et lentes chez les jeunes athlètes afin de déterminer le sport dans lequel ils ont le meilleur potentiel. On pourrait commencer aujourd’hui à faire du dépistage génétique pour trouver les athlètes qui possèdent des gènes réputés être utiles pour la performance. Et évidemment, cette sélection se fait indirectement via les résultats compétitif ou à l’entrainement. <a href="#fnref23" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn24" class="footnote-item"><p>De Moor, <em>et al.</em>, Genome-wide linkage scan for athlete status in 700 British female DZ twin pairs, <em>Twin Research and Human Genetics</em> 10.6, 2007. <a href="#fnref24" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn25" class="footnote-item"><p>Castilla, Emilio J., and Stephen Benard. “The Paradox of Meritocracy in Organizations.” Administrative Science Quarterly 55, 2010, p.543-576; Bobocel, D. R., Son Hing, L. S., Davey, L. M., Stanley, D. J., &amp; Zanna, M. P, Justice-based opposition to social policies: Is it genuine? Journal of Personality and Social Psychology, 75, 1998, p.653– 669; Bourdieu, Pierre, et Jean Claude Passeron, &quot;La reproduction éléments pour une théorie du système d'enseignement&quot;, 1970; Croizet, Jean-Claude. &quot;The pernicious relationship between merit assessment and discrimination in education.&quot;, 2008. <a href="#fnref25" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn26" class="footnote-item"><p>Cela dépend évidemment de votre profession, lieu d’habitation, etc. <a href="#fnref26" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn27" class="footnote-item"><p><a href="https://amosrendao.squarespace.com/written-work/2014/2/5/parkour-randori-putting-it-to-the-test-in-real-life-emergency-situations">https://amosrendao.squarespace.com/written-work/2014/2/5/parkour-randori-putting-it-to-the-test-in-real-life-emergency-situations</a> <a href="#fnref27" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn28" class="footnote-item"><p>On a tendance à définir le parkour comme « se mouvoir avec efficience » ou « aller du point A au point B le plus rapidement possible ». N’oublions pas que le fait de garantir son intégrité corporelle jusqu’au point B mérite souvent de sacrifier un peu de l’efficience ou de la vitesse. <a href="#fnref28" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn29" class="footnote-item"><p>Notamment par David Belle : <a href="https://www.youtube.com/watch?v=iEbhFs3HjEs">https://www.youtube.com/watch?v=iEbhFs3HjEs</a> <a href="#fnref29" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn30" class="footnote-item"><p>Cette logique est valable pour n’importe quel sport. Un exemple similaire au parkour peut se trouver dans le Crossfit. On remarque que les athlètes qui gagnent les compétitions de CrossFit (une méthode d’entrainement) utilisent en fait d’autres méthodes pour s’entrainer. Voir <a href="http://blog.moncoach.com/les-avantages-les-inconvenients-du-crossfit/">http://blog.moncoach.com/les-avantages-les-inconvenients-du-crossfit/</a> et <a href="http://www.t-nation.com/training/crossfit-the-good-bad-and-the-ugly">http://www.t-nation.com/training/crossfit-the-good-bad-and-the-ugly</a> <a href="#fnref30" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn31" class="footnote-item"><p>Tout comme la gymnastique (et le tricking) se mêle déjà au freerunning ou au street-workout <a href="#fnref31" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn32" class="footnote-item"><p><a href="https://www.youtube.com/watch?v=iEbhFs3HjEs">https://www.youtube.com/watch?v=iEbhFs3HjEs</a> <a href="#fnref32" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn33" class="footnote-item"><p>Sauf erreur, c’était déjà le cas pour les speedruns de Xtrem Gravity. <a href="#fnref33" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn34" class="footnote-item"><p>Jacques Defrance, <em>Sociologie du sport</em>, La Découverte, 2011. <a href="#fnref34" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn35" class="footnote-item"><p>Vouloir juger un art, ou l’esthétique des mouvements, quelque chose de fondamentalement qualitatif et subjectif, est absurde. Le seul moyen est de tenter de quantifier cette performance qualitative, ce qui revient à se limiter à quelques critères, et à s’éloigner de la performance qualitative. C’est une des raisons pour laquelle Tim Shieff, par exemple, ne participe plus aux Red Bull Art of Motion et autres compétitions « freestyle ». <a href="#fnref35" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn36" class="footnote-item"><p><a href="http://1libertaire.free.fr/Brohm05.html">http://1libertaire.free.fr/Brohm05.html</a> <a href="#fnref36" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn37" class="footnote-item"><p>Pascal Chantelat, <em>La Professionnalisation des organisations sportives. Nouveaux enjeux, nouveaux débats</em>, 2001 in <em>Sociologie du sport</em>, Jacques Defrance. <a href="#fnref37" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn38" class="footnote-item"><p>Puisque le parkour est souvent considéré comme une philosophie de vie. Pour citer un exemple documenté, on remarque que les pratiquants de l’aïkido (non- compétitif) sont par exemple plus permissifs sur les questions morales que les judokas (discipline compétitive) notamment « à l’égard de l’homosexualité, de la peine de mort, de l’usage des drogues douces ». Les pratiquants de l’aïkido sont également plus nombreux à vouloir « éviter la radicalisation des conflits » et « une distance critique à l’égard des institutions ». Jacques Defrance, <em>Sociologie du sport</em>. Difficile de dire ce qui est la cause et ce qui est l’effet, mais il s’agit probablement un peu des deux. <a href="#fnref38" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn39" class="footnote-item"><p>Soyez responsables : si vous êtes utilisé en tant que vitrine publicitaire, assurez-vous au moins que vous n’avez pas un impact néfaste et que vous ne supportez pas un produit ou une entreprise qui soit à l’exact opposé de vos valeurs. Beaucoup sous-estiment l’influence qu’ils ont, à la fois sur le parkour, les traceurs, et le grand public. <a href="#fnref39" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn40" class="footnote-item"><p>Cela permet d’éviter l’hypocrisie et la contre-productivité, quelque part. Faire la promotion de l’activité physique ET du fast-food (pour ne citer aucune organisation précise) paraît en effet aberrant. <a href="#fnref40" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn41" class="footnote-item"><p>Vous pouvez admirer leur apologie de la compétition dans un article dont le titre semblait indiquer qu’ils allaient parler des effets du parkour sur la santé des enfants… <a href="https://www.wfpf.com/how-healthy-is-the-parkour-freerunning-lifestyle-for-kids/">https://www.wfpf.com/how-healthy-is-the-parkour-freerunning-lifestyle-for-kids/</a> <a href="#fnref41" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+<nav class="pagination-inner" aria-label="Articles next and previous links">
+	<a href="/yanndaout/blog/interdire-le-dopage-genetique-est-ce-ethique/" data-direction="forwards" class="pagination-previous">
+		<span>← Interdire le dopage génétique, est-ce éthique ? </span>
+	  </a>
+	
+	<a href="/yanndaout/blog/philosophie-et-pratique-sportive/" data-direction="backwards" class="pagination-next">
+		<span>Philosophie et pratique sportive →</span>
+	  </a>
+	
+</nav>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/blog/competition et le parkour/ -->
+	</body>
+</html>

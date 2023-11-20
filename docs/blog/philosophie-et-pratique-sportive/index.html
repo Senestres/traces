@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Philosophie et pratique sportive</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>Philosophie et pratique sportive</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2017-09-29">29 septembre 2017</time></li>
+	<li><a href="/yanndaout/tags/histoire/" class="post-tag">histoire</a>, </li>
+	<li><a href="/yanndaout/tags/philosophie/" class="post-tag">philosophie</a>, </li>
+	<li><a href="/yanndaout/tags/sport/" class="post-tag">sport</a>, </li>
+	<li><a href="/yanndaout/tags/stoicisme/" class="post-tag">stoicisme</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p>[caption id=&quot;attachment_2897&quot; align=&quot;alignright&quot; width=&quot;144&quot;]<img src="images/Young_boxers_fresco_Akrotiri_Greece-176x300.jpg" alt="Fresque des jeunes boxeurs, Akrotiri"> Fresque des jeunes boxeurs, Akrotiri, v. 1500 av. JC[/caption]</p>
+<p>A la suite de Pierre Hadot et de Michel Foucault, la philosophie antique peut être conçue comme <a href="https://biospraktikos.hypotheses.org/tag/exercices-spirituels">exercice spirituel</a>, c’est-à-dire comme une “discipline dont l’enjeu est de transformer la manière de vivre, d’appréhender le monde”<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Il s’agissait indissociablement d’un discours et d’une mise en œuvre pratique, y compris corporelle. Or le discours et la pratique, l’intellect et le corps sont aujourd’hui le plus souvent séparés et même régulièrement montés en opposition. Dans le milieu scolaire par exemple, le sport est souvent perçu comme une perte de temps, limitant les activités intellectuelles. On argumentera ici au contraire le besoin d’une unité. Or, il me semble que l’on peut s’inspirer de la philosophie antique pour penser une telle unité et concevoir un mode de vie philosophique (ou une philosophie comme art de vivre) adapté à notre époque. Comment doit-on alors y penser la place du sport ?</p>
+<p>Dans le langage courant, le mot sport est utilisé de manière peu spécifique, regroupant les jeux antiques et modernes, les pratiques physiques, qu’elles soient hygiéniques, compétitives, ludiques ou d’entrainement. Ceci a pour conséquence que le terme recouvre de multiples modalités et finalités de pratique et qu’il implique donc des rapports à soi et à notre corps fort divers. La gymnastique destinée à l’entrainement des militaires n’est pas le vélo en salle de fitness, qui n’est pas le football joué par des enfants dans la rue, lui-même n’étant pas celui pratiqué par les professionnels. Pourtant toute activité physique n’est pas du sport : une dépense énergétique similaire à une pratique sportive légère peut être faite en jardinant. Nager pour sauver un enfant de la noyade ou courir après son bus ne sont habituellement pas considérés comme des pratiques sportives même si les gestes effectués sont identiques à des gestes sportifs. Et on ne peut non plus affirmer que tout sport est une activité physique puisque le bridge comme les échecs sont reconnus comme sports par le Comité International Olympique. On voit à quel point le terme est nébuleux puisque ces exemples ont tendance à s’opposer au sens commun : lorsque l’on demande à quelqu’un s’il est sportif, on ne s’attend pas à ce qu’il réponde qu’il joue régulièrement aux cartes.</p>
+<p>[caption id=&quot;&quot; align=&quot;alignnone&quot; width=&quot;782&quot;]<img src="images/1280px-Damgymnastik._Gymnastiska_centralinstitutet%2C_Hamngatan_19%2C_Norrmalm%2C_Stockholm_-_Nordiska_Museet_-_NMA.0034300.jpg" alt=""> La gymnastique est-elle un sport ?[/caption]</p>
+<p>Ceci invite à la prudence lorsque l’on parle de sport, et cela pour deux raisons. Premièrement parce que l’on a tendance à penser le sport comme un phénomène universel et plus ou moins uniforme, et à assimiler les pratiques physiques de l’antiquité à notre expérience contemporaine du sport. Or le terme même de sport (dérivé de <em>desport</em>, « plaisir, divertissement »<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> date du 19ème siècle, et c’est donc rétrospectivement qu’on l’applique aux pratiques antiques. Réunir des pratiques aussi distantes dans le temps dans une même catégorie peut masquer leurs profondes différences, peut-être au risque de tomber dans l’anachronisme. Ainsi de nombreux historiens et sociologues<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> considèrent qu’il n’y a pas de continuité directe entre les jeux antiques et les sports modernes.</p>
+<p>Parmi leurs différences, on peut relever que la vertu (<em>aretê</em>) guerrière n’est pas l’adresse sportive ; que les jeux antiques étaient extrêmement violents tandis que les sports modernes sont fortement régulés. Les notions de performance, de record ou d’égalité des chances entre les adversaires, fondamentales dans le sport moderne, ne peuvent pas être appliquées en tous temps et en tous lieux. Les jeux antiques étaient empreints de tradition religieuse (ils débutaient ainsi par des processions, prières et sacrifices), étaient calqués sur le calendrier des fêtes religieuses, et étaient dédiées aux dieux (les jeux Olympiques étant dédiés à Zeus). Ils servaient également à pacifier les rapports entre les Cités grecques, l’<em>agôn</em> des jeux se substituant aux guerres de la même manière qu’ils servaient aux nobles, leur permettant de montrer leur valeur autrement que par le combat, ou à maintenir un savoir-faire guerrier en temps de paix. Si les sports modernes ne sont pas totalement exempts de religion, de politique ni de considérations militaires<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>, on peut affirmer que le sport a une certaine autonomie, fonctionnant selon sa propre logique. Le sport a son propre calendrier de compétitions, sans lien avec les fêtes religieuses ; les pratiquants sont sélectionnés sur leur mérite sportif et non pas selon leur appartenance à la noblesse ; les lanceurs de javelot ne s’entrainent pas pour chasser ou tuer mais pour la compétition sportive. L’athlète des Olympiades antiques n’est donc pas celui des J.O. modernes.</p>
+<p>[caption id=&quot;attachment_617&quot; align=&quot;alignnone&quot; width=&quot;1024&quot;]<img src="images/pugiliste-1024x718.jpg" alt=""> Mains du « pugiliste des Thermes », entourées de lanières de cuir dures et tranchantes.[/caption]</p>
+<p>Deuxièmement, les différentes formes sportives ne sont pas totalement interchangeables, toutes n’ont pas les mêmes qualités (ou défauts). Par ailleurs on ne peut en juger sans prendre en compte le contexte ainsi que les pratiquants eux-mêmes. On parlera ci-dessous de sport en général et au sens large, mais une observation au cas par cas reste nécessaire. De même, il ne faut pas oublier que les qualités qu’on prête au sport ne lui sont pas exclusives : elles peuvent être présentes pour des activités physiques non sportives, ou des activités qui ne reposent pas essentiellement sur la dépense d’énergie. On abordera donc maintenant une liste non exhaustive d’éléments que le sport peut apporter au philosophe, en gardant à l’esprit que le sport est un moyen parmi d’autres, et non pas une fin en soi, <a href="https://biospraktikos.hypotheses.org/2822">comme le rappellent Platon, Aristote et les stoïciens</a>.</p>
+<p>Les apports du sport sont extrêmement variés. Il peut répondre au souci de soi (<em>epimeleia heautou</em>), qui exige de se maintenir en santé et d’avoir une certaine hygiène de vie. Il peut permettre de répondre au « connais-toi toi-même » (<em>gnothi seauton)</em> : connaitre le soi psychologique, soumis à l’épreuve en même temps que le corps, mais également au soi somatique, qui nécessite une expérience vécue plus que des connaissances théoriques seules. Le sport est une rencontre avec soi-même, avec nos limites mais également nos potentialités.</p>
+<p>Il peut également être vécu comme une méditation, permettant un certain rapport à soi, libérant la pensée et l’intellect. L’activité physique est ainsi recommandée à cet effet par Rousseau ou Nietzsche, ainsi que des philosophes contemporains tels que Jean-François Balaudé<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> ou Frédéric Gros[^6]. Dans ce sens, l’activité physique ne devrait pas être opposée à l’activité intellectuelle. Il a été montré expérimentalement qu’ajouter des heures de sport à l’école permet d’améliorer les résultats scolaires des enfants, même lorsque cela demande de supprimer des heures aux autres disciplines<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>. On sait également que l’activité physique permet de préserver les fonctions cognitives chez les adultes<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>.</p>
+<p>[caption id=&quot;&quot; align=&quot;alignleft&quot; width=&quot;207&quot;]<img src="images/Zeno_of_Citium_-_Museo_archeologico_nazionale_di_Napoli.jpg" alt=""> Zénon de Citium, fondateur du stoïcisme.[/caption]</p>
+<p>D’une certaine manière, le sport peut même répondre aux philosophes voulant se “libérer” de leur corps. La pratique sportive permet parfois d’entrer dans un état mental appelé en psychologie « expérience optimale », « zone », ou « <em>flow</em> » en anglais. Cet état est caractérisé par une concentration et une absorption totale dans l’activité, une unité ou harmonie sujet/objet, corps/esprit, avec un corps rendu « léger », ses besoins passant en arrière-plan. Le sport est également un moyen ou une technique pour se développer, se transformer ou se dépasser, autant physiquement que psychologiquement, le soi transformé pouvant ainsi devenir un moindre fardeau.</p>
+<p>Cela peut être mis au service de nombreux objectifs, dont l’<em>apatheia</em>, cet idéal du sage imperturbable :</p>
+<blockquote>
+<p>« […] apprendre le sang-froid, la résistance, le sérieux, la présence d’esprit, la dignité, etc. La principale utilité que je vois à mon alpinisme d’autrefois fut cette éducation de mon sang-froid qui me permit de dormir debout sur le moindre replat au bord de l’abîme. »[^9] Marcel Mauss</p>
+</blockquote>
+<p>Il s’agirait alors de se rendre indépendant des évènements extérieurs, en se mettant volontairement à l’épreuve. On peut considérer cela comme une préparation aux évènements qui peuvent survenir et pour lesquels il faut s’entrainer. Comme le dit Marc-Aurèle : « l’art de vivre est plus semblable à la lutte qu’à la danse : il faut se tenir en garde et prêt à parer les coups même imprévus »<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>. Le contrôle, la discipline, la préparation, l’effort de l’esprit sur le corps sont la cible de multiples comparaisons entre athlètes et philosophes également chez Epictète ou Sénèque. De fait, les points communs entre l’athlète et l’idéal du sage antique sont nombreux : modifications du régime alimentaire ainsi que des habitudes sociales, transformations du rapport au travail, au sommeil, au corps…</p>
+<p>Pour autant, la comparaison a ses limites et afin d’obtenir les bénéfices du sport sans en accumuler les risques, les extrêmes sont à éviter. Pour le pratiquant, l’idéal antique tout à fait applicable aujourd’hui est d’être soucieux de son corps sans anxiété, d’en jouir sans s’en faire l’esclave. En outre, Epictète a également un conseil pour le spectateur sportif, vous, par exemple, qui regardez en ce moment les Jeux Olympiques de Rio :</p>
+<blockquote>
+<p>« Quel est donc celui que je veux voir vainqueur? Celui qui le sera. De cette façon celui qui vaincra sera toujours celui que j’aurai voulu. — Mais je veux, dis-tu, que la couronne soit à Sophron! Fais célébrer alors dans ta maison tous les jeux que tu voudras, et proclame le vainqueur aux jeux Néméens, aux Pythiens, aux Isthmiques et aux Olympiques. Mais en public pas d’empiétements : ne t’arroge pas ce qui appartient à tous. Sinon, supporte les injures; car, lorsque tu agis comme la multitude, tu te mets toi-même à son niveau. »[^11]</p>
+</blockquote>
+<p>Par ailleurs, de nombreux « excès » du sport (dopage, surentrainement, focalisation à outrance sur la performance…) sont sans doute mieux appréhendés comme des hyper-conformités à la logique sportive ou compétitive. Le sport n’est donc pas sans problèmes, et il convient de se pencher également sur ces activités physiques qui ne sont pas du sport <em>stricto-sensu</em>, ou qui gravitent aux marges du système sportif, parfois qualifiées de sports « alternatifs » ou de « post-sports ». Ces pratiques se proposent généralement de sortir du culte de la performance, et prônent des valeurs non compétitives, permettant de se centrer sur soi sans pour autant exclure la pratique en groupe. Elles substituent parfois la découverte, le soin ou le développement du corps (et de l’esprit) ainsi que le plaisir aux buts externes (temps, distances, scores…). Certaines revendiquent également un rapport plus étroit à la nature, se focalisant sur l’exploration de l’environnement, le « droit à la ville » ou l’utilisation des espaces verts plutôt que la création de lieux destinés spécifiquement au sport, et cela en partie en réaction au consumérisme sportif. Cela permet une pratique autonome, ne dépendant pas des horaires des clubs.</p>
+<p>[caption id=&quot;&quot; align=&quot;alignnone&quot; width=&quot;2048&quot;]<img src="images/Saut-de-bras1.jpg" alt=""> Le parkour... vous connaissez.[/caption]</p>
+<p>La diversité est aujourd’hui telle que chacun peut trouver une activité adaptée à ses désirs et besoins. Sans compter qu’éviter de prendre l’ascenseur peut être aussi bénéfique pour la santé que suer dans une salle de sport.</p>
+<p>Sources: Arrien, <a href="http://remacle.org/bloodwolf/philosophes/epictete/table.htm"><em>Les entretiens d’Epictète</em></a>, Traduction de V. Courdaveaux. Arrien, <em>Manuel d’Epictète</em>, Librairie générale française, 2000. Balaudé Jean-François, <a href="http://www.terraeco.net/Le-velo-prepare-a-la-reverie-et,49020.html">“Le vélo prépare à la rêverie et libère la pensée”</a>, <em>Terra eco</em>, 2013. Bancel Nicolas &amp; Gayman Jean-Marc, <em>Du guerrier à l’athlète : Eléments d’histoire des pratiques corporelles</em>, PUF, 2002. Csikszentmihalyi Mihaly, <em>Optimal Experience: Psychological Studies of Flow in Consciousness</em>, Cambridge University Press, 1992. Hamer M. &amp; Chida Y., <a href="http://journals.cambridge.org/action/displayAbstract?fromPage=online&amp;aid=2942856&amp;fileId=S0033291708003681">“Physical activity and risk of neurodegenerative disease: a systematic review of prospective evidence”</a>, <em>Psychological Medicine,</em> (39:1), 2009, p.3-11. Marc-Aurèle, <em><a href="https://fr.wikisource.org/wiki/Pens%C3%A9es_pour_moi-m%C3%AAme">Pensées pour moi-même</a></em>, Traduction de J. Barthélemy-Saint-Hilaire. Mauss Marcel, “Les techniques du corps”, in Andrieu, <em>Philosophie du corps</em>, Vrin, 2010. Pavie Xavier, <a href="https://www.cairn.info/revue-societes-2014-3-page-69.htm">“Le corps, matière d’exercices spirituels”</a>, <em>Sociétés</em>, 2014/3 (125). Pigliucci Massimo, <a href="https://howtobeastoic.wordpress.com/2015/10/15/what-would-a-stoic-do-on-entertainment/">“What would a stoic do ? on entertainement”</a>, <em>How to be a stoic</em>, 2015. Trudeau François, <a href="http://ijbnpa.biomedcentral.com/articles/10.1186/1479-5868-5-10">“Physical education, school physical activity, school sports and academic performance”</a>, <em>International Journal of Behavioral Nutrition and Physical Activity</em> 5:10, 2008. Truong Nicolas, <a href="http://www.lemonde.fr/idees/article/2011/06/24/frederic-gros-philosophe-la-marche-est-un-authentique-exercice-spirituel_1540510_3232.html">“La marche est un authentique exercice spirituel”</a>, Le Monde, 2011.</p>
+<p>Crédits photographiques: <a href="https://de.wikipedia.org/wiki/Sport_im_antiken_Griechenland#/media/File:Young_boxers_fresco,_Akrotiri,_Greece.jpg">Fresque des jeunes boxeurs</a>, par Yann Forget, Domaine Public; <a href="https://en.wikipedia.org/wiki/Gymnastics#/media/File:Damgymnastik._Gymnastiska_centralinstitutet,_Hamngatan_19,_Norrmalm,_Stockholm_-_Nordiska_Museet_-_NMA.0034300.jpg">Gymnastique</a>, anonyme, Domaine Public; <a href="https://fr.wikipedia.org/wiki/Pugiliste_des_Thermes#/media/File:Thermae_boxer_Massimo_Inv1055_n7.jpg">Pugiliste</a>, <a href="https://commons.wikimedia.org/wiki/User:Jastrow">Marie-Lan Nguyen</a>, <a href="https://creativecommons.org/licenses/by/2.5/">Licence CC BY</a>; <a href="https://commons.wikimedia.org/wiki/File:Zeno_of_Citium_-_Museo_archeologico_nazionale_di_Napoli.jpg">Zénon</a>, <a href="http://www.flickr.com/people/73542590@N00">Jeremy Weate</a>, <a href="https://creativecommons.org/licenses/by/2.0/deed.en">Licence CC BY</a>; Parkour, copyright Pablo Delpédro.</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Pavie Xavier, <a href="https://www.cairn.info/revue-societes-2014-3-page-69.htm">“Le corps, matière d’exercices spirituels”</a>, <em>Sociétés</em>, 2014/3 (125). <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Elias Norbert &amp; Dunning Eric, Sport et civilisation : la violence maîtrisée, Fayard, 1994, p.171-173. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Notamment Richard Holt, George Vigarello, Nicolas Bancel, Norbert Elias, Patrick Clastres, Allen Guttmann, et bien d’autres. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>En Suisse, le sport est sous l’égide du Département fédéral de la défense, de la protection de la population et des sports (DDPS). <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Balaudé Jean-François, <a href="http://www.terraeco.net/Le-velo-prepare-a-la-reverie-et,49020.html">“Le vélo prépare à la rêverie et libère la pensée”</a>, <em>Terra eco</em>, 2013.
+[^6] Truong Nicolas, <a href="http://www.lemonde.fr/idees/article/2011/06/24/frederic-gros-philosophe-la-marche-est-un-authentique-exercice-spirituel_1540510_3232.html">“La marche est un authentique exercice spirituel”</a>, Le Monde, 2011. <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>Trudeau François, <a href="http://ijbnpa.biomedcentral.com/articles/10.1186/1479-5868-5-10">“Physical education, school physical activity, school sports and academic performance”</a>, <em>International Journal of Behavioral Nutrition and Physical Activity</em> 5:10, 2008. <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Hamer M. &amp; Chida Y., <a href="http://journals.cambridge.org/action/displayAbstract?fromPage=online&amp;aid=2942856&amp;fileId=S0033291708003681">“Physical activity and risk of neurodegenerative disease: a systematic review of prospective evidence”</a>, <em>Psychological Medicine,</em> (39:1), 2009, p.3-11. [^9] Mauss Marcel, “Les techniques du corps”, in Andrieu, Philosophie du corps, Vrin, 2010 p.195 <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>Marc-Aurèle, <em>Pensées pour moi-même</em>, VII.XXI [^11]: Arrien, <em>Les entretiens d’Epictète</em>, III.IV <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+<nav class="pagination-inner" aria-label="Articles next and previous links">
+	<a href="/yanndaout/blog/competition et le parkour/" data-direction="forwards" class="pagination-previous">
+		<span>← La compétition et le parkour </span>
+	  </a>
+	
+	<a href="/yanndaout/blog/lancement/" data-direction="backwards" class="pagination-next">
+		<span>Lancement ! →</span>
+	  </a>
+	
+</nav>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/blog/philosophie-et-pratique-sportive/ -->
+	</body>
+</html>

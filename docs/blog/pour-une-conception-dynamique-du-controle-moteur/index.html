@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Pour une conception dynamique du contrôle moteur</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>Pour une conception dynamique du contrôle moteur</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2018-12-13">13 décembre 2018</time></li>
+	<li><a href="/yanndaout/tags/apprentissage/" class="post-tag">apprentissage</a>, </li>
+	<li><a href="/yanndaout/tags/controle-moteur/" class="post-tag">contrôle-moteur</a>, </li>
+	<li><a href="/yanndaout/tags/enseignement/" class="post-tag">enseignement</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p>Les théories du contrôle moteur (à savoir, le contrôle des mouvements et des postures) devraient être à la base de toute réflexion sur l’enseignement et l’apprentissage de mouvements. Quoi de plus fondamental en effet pour un traceur ou un enseignant que de comprendre les processus qui se cachent derrière la capacité à contrôler finement nos gestes, à apprendre de nouvelles techniques et à les améliorer ?</p>
+<p>Cependant, il me semble que c’est un sujet relativement peu discuté dans le monde du parkour. On préfère parler des méthodes d’entrainement de la force pour améliorer la détente, ou des caractéristiques techniques d’un bon saut de chat. Le contrôle moteur, qui évidemment sous-tends tout mouvement, est généralement laissé à l’état d’implicite. Cet article vise à mettre en avant la question du contrôle moteur, et en particulier s’attachera à proposer un modèle dynamique du contrôle moteur, avec des exemples pratiques pour l’apprentissage ou l’enseignement du parkour.</p>
+<p>Dans la littérature scientifique, les théories sont grossièrement regroupées en deux courants, les approches prescriptives ou cognitives, et les approches dynamiques<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.</p>
+<h2 id="les-approches-cognitives-prescriptives" tabindex="-1">Les approches cognitives/prescriptives <a class="header-anchor" href="#les-approches-cognitives-prescriptives">#</a></h2>
+<p>Les approches cognitives/prescriptives sont certainement les plus intuitives. J’imagine que la plupart d’entre vous y retrouveront la manière dont ils comprennent habituellement le contrôle moteur. Ces approches se basent sur l’analogie de l’ordinateur. Comme le résume Didier Delignières, « le comportement du système moteur est prescrit [écrit à l’avance], déterminé de manière exhaustive par des représentations symboliques, comme les programmes moteurs. Le système nerveux central est supposé au cours de l'apprentissage construire et stocker des modèles de l'action, décrivant les commandes à adresser au système effecteur [les muscles]. Le comportement moteur, dans cette optique, ne constitue que le reflet fidèle des représentations construites au niveau cognitif »<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>. Autrement dit, ces théories envisagent le contrôle de l’action comme un processus de traitement, de stockage et d’utilisation de l’information. Ces modèles sont hiérarchiques (top-down), et le mouvement est piloté par une unité de contrôle centrale (cerveau, système nerveux central) qui stocke des connaissances, modèles et règles d’action. On retrouve la tendance assez intuitive à mettre l’accent sur le fait d’acquérir des connaissances, de comprendre, se représenter le mouvement à exécuter, le planifier, puis de tenter de mettre en exécution ces plans.</p>
+<h2 id="les-approches-dynamiques" tabindex="-1">Les approches dynamiques <a class="header-anchor" href="#les-approches-dynamiques">#</a></h2>
+<p>Les approches dynamiques sont en bonne partie une réponse au problème des degrés de liberté soulevé par Bernstein<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>. Le nombre de degrés de liberté (c’est-à-dire de paramètres « susceptibles de varier indépendamment des autres »<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>) du corps est pratiquement infini. Le corps contient des centaines d’articulations qui peuvent être mobilisées de différentes manières par des centaines de muscles, qui eux-mêmes peuvent se contracter indépendamment les uns des autres<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>. Ceci est un véritable défi pour les théories prescriptives. Même une tâche en apparence très simple, comme tendre le bras pour saisir un objet, est trop complexe et coûteuse à gérer par une unité centrale de contrôle.</p>
+<p>Pour pouvoir contrôler le mouvement, il faut réduire le nombre de variables pour diminuer la complexité de la tâche. La première étape de l’apprentissage serait donc un « gel » des degrés de liberté. Les segments a priori indépendants (p.ex. le bras gauche et le bras droit) sont regroupés en unités fonctionnelles plus larges (les deux bras font le même mouvement), réduisant le nombre d’éléments à contrôler. Cela expliquerait aussi pourquoi les débutants ont souvent l’air crispés. Au fil de l’expérience, certains degrés de liberté seront dégelés, afin d’obtenir des mouvements plus efficaces ou flexibles.</p>
+<p>Il y a donc l’apparition d’une forme d’ordre qui n’est pas expliquée par l’application d’une planification ou d’un programme moteur. Tandis que les perspectives cognitives utilisent la métaphore de l’ordinateur, les théories dynamiques reposent sur la métaphore de la termitière. Il n’y a pas de termite architecte, qui donnerait des plans à appliquer par les autres termites. La termitière est le résultat émergent de toutes les actions et interactions des termites, sans planification préalable. Selon les théories dynamiques, l’organisation du mouvement émerge en fonction des contraintes qui pèsent sur l’action. Ces contraintes proviennent de l’environnement (le mur devant moi), de l’organisme (la force et la longueur de mes jambes) ainsi que de la tâche (je dois franchir ce mur en utilisant seulement les pieds et les mains).</p>
+<p>[caption id=&quot;attachment_954&quot; align=&quot;alignright&quot; width=&quot;285&quot;]<img src="images/stable-states-285x300.png" alt=""> Fig.1: Paysage d'attracteurs. Adapté de Sheffer et al., Catastrophic shifts in ecosystems, Nature (413), 2001.[/caption]</p>
+<p>Les diverses solutions motrices à un problème donné seront plus ou moins stables selon les contraintes. Par exemple, à faible vitesse la coordination la plus stable est la marche. Si j’augmente la vitesse cependant, marcher exigera de plus en plus d’effort, de concentration, et d’énergie. Tôt ou tard, si je continue à accélérer, la course deviendra la solution la plus stable. Les solutions stables, préférentielles, faciles à mettre en place, exigeant moins d’effort, en bref vers lesquelles on est attiré naturellement sont appelées des attracteurs<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>. Les repoussoirs sont au contraire les solutions instables, difficiles à maintenir.</p>
+<p>Les perspectives dynamiques invitent à concevoir la motricité comme un paysage d’attracteurs, qui peut être modélisé comme la figure 1. En fonction des contraintes, la coordination sera attirée vers une certaine solution motrice (1). Lorsque la situation et les contraintes se modifient, des attracteurs peuvent apparaitre ou disparaitre (2 et 3). Si la situation se modifie suffisamment, les attracteurs précédents pourront devenir des repoussoirs, et les repoussoirs précédents devenir des attracteurs. Le mode de coordination change alors brutalement (4).</p>
+<h2 id="un-apprentissage-non-lineaire" tabindex="-1">Un apprentissage non-linéaire <a class="header-anchor" href="#un-apprentissage-non-lineaire">#</a></h2>
+<p>Le modèle dynamique permet de voir que l’apprentissage est non-linéaire. Des changements de contraintes, des modifications de la situation peuvent avoir des effets brutaux et immédiats sur la coordination. Et apprendre ne se résume pas à accumuler des connaissances. Apprendre, c’est transformer le paysage des attracteurs. Avec l’augmentation de la force, les adaptations du système nerveux, des changements d’intention et de confiance en soi (etc.), certains attracteurs vont se creuser, d’autres vont se combler. L’augmentation de la détente par exemple va permettre de rendre attractifs à vitesse lente des modes de coordination (p.ex. le saut de chat) qui auparavant nécessitaient une vitesse élevée. Cette conception permet également de comprendre qu’il ne s’agit autant de stabiliser des modes de coordination experts que de déstabiliser les modes de coordination débutants. Si un débutant a des « mauvais réflexes », comme le fait de commencer son saut de chat à pieds joints, ou qu’il passe l’obstacle de côté, c’est qu’il y a des raisons. S’il continue le faire tout en ayant compris son erreur, c’est qu’il est contraint par la situation. La question devient alors : comment transformer la situation pour rendre sa coordination débutante moins attractive, et la coordination experte plus attractive ? Dans certains cas, une consigne (contrainte de la tâche) peut suffire. Dans d’autres, il faudra modifier les contraintes externes (modifier la hauteur de l’obstacle) ou internes (entraînement de la force). Cela ne signifie pas nécessairement qu’il faille toujours simplifier la tâche. Dans certains cas, il est possible de déstabiliser les coordination débutantes en rendant la tâche plus « difficile ». P.ex. le saut de chat est une coordination plus attractive avec une vitesse élevée qu’au ralenti ; la précision d’un atterrissage augmentera lorsqu’il s’agit d’atterrir sur un mur plutôt que sur une ligne tracée au sol.</p>
+<h2 id="role-de-la-variabilite" tabindex="-1">Rôle de la variabilité <a class="header-anchor" href="#role-de-la-variabilite">#</a></h2>
+<p>Delignières considère « généralement que l’apprentissage des habiletés complexes est avant tout affaire de pratique, et que l’intervention de processus représentatifs sophistiqués [explications détaillées sur les principes qui sous-tendent le mouvement, démonstration sur la forme que le mouvement doit avoir, etc.] tend en quelque sorte à ‘dénaturer’ leur mode spontané d’acquisition »<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>. Il ne faudrait pas guider trop fortement le mouvement, mais créer des situations qui permettent l’exploration active de différentes possibilités.</p>
+<p>Les théories dynamiques parlent volontiers de « répétition sans répétition »<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>, parce qu’en répétant une même tâche, chaque essai sera légèrement différent. Chaque fois que je répète un saut, la longueur de mes pas durant la course d’élan sera un peu différente. On pourrait considérer que cette variabilité<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup> du mouvement survient à cause d’un contrôle imparfait ou à cause d’erreurs: tant que je ne suis pas capable d’effectuer précisément le même geste à chaque tentative, c’est que je dois améliorer mon contrôle du mouvement. En fait, on est capable d’atteindre nos objectifs avec efficacité, précision et certitude tout en utilisant des mouvements variables. Forcer les apprenants à utiliser des patterns de mouvements stéréotypés, invariants, limite leur performance. Les théories dynamiques invitent alors plutôt à voir la variabilité du mouvement comme étant une stratégie optimale de contrôle.</p>
+<p>[caption id=&quot;attachment_955&quot; align=&quot;alignright&quot; width=&quot;195&quot;]<img src="images/mod%C3%A8le-variabilit%C3%A9-195x300.jpg" alt=""> Fig.2: deux modèles de contrôle de la variabilité[/caption]</p>
+<p>La variabilité du mouvement lui permet d’être flexible et adaptable. A chaque fois que je prends mon élan pour un saut, mes muscles se contractent différemment,ma vitesse n’est pas identique. Si je garde la même longueur de pas à chaque essai, il me sera impossible d’être précis. Mon dernier pas sera parfois trop court, parfois trop long ; arriver juste relève du hasard. C’est le fait d’adapter la longueur des pas qui me permet d’être précis. On peut parler de variabilité compensatoire : pour pouvoir atteindre un résultat constant (précis, peu variable) à un point du mouvement, dans des conditions toujours légèrement différentes, il doit y avoir de la variabilité ailleurs dans le mouvement. On peut appeler cela le modèle de l’entonnoir<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup> (fig.2) : la relativement grande variabilité au début du mouvement (durant la course) permet d’atteindre un point terminal avec précision (le mur sur lequel je prends appui).</p>
+<p>Vouloir corriger les déviations durant le mouvement (p.ex.une consigne spécifiant le mode de coordination à utiliser), revient à ajouter des sous-objectifs qui fonctionnent comme des contraintes sur le mouvement<sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup>. Des ressources seront utilisées pour atteindre ce sous-objectifs, plutôt que de mettre toutes les ressources pour l’atteinte du but principal. La variabilité diminuera au niveau de ce sous-objectif, ce qui nécessite une variabilité compensatoire ailleurs, risquant de ce fait de limiter la précision dans des paramètres plus pertinents pour le succès de la tâche. C’est ce que j’appelle le modèle de la passoire (fig.2) : se focaliser sur une longueur de pas constante durant la course peut limiter la précision au moment de l’appel du saut.</p>
+<p>Plutôt que de chercher à corriger la variabilité par rapport à des patterns de mouvement stéréotypés, il faut identifier les paramètres pertinents pour le succès de la tâche et ne corriger que ceux-ci. Par exemple un amorti a pour but principal de dissiper efficacement le choc de l’atterrissage. Il ne faudrait pas fixer de sous-but tel que « plies les jambes à 90° », mais focaliser l’apprenant sur le but principal. Ceci peut notamment être fait en focalisant sur le bruit de l’atterrissage :« essaies d’atterrir silencieusement ».</p>
+<h2 id="role-des-consignes-et-des-intentions" tabindex="-1">Rôle des consignes et des intentions <a class="header-anchor" href="#role-des-consignes-et-des-intentions">#</a></h2>
+<p>Or cela rejoint la littérature scientifique qui affirme que la focalisation interne (sur le corps, le mouvement, la technique) est généralement moins bénéfique pour l’apprentissage et la performance que la focalisation externe (sur des indices perceptibles dans l’environnement)<sup class="footnote-ref"><a href="#fn12" id="fnref12">[12]</a></sup>. En se focalisant sur un but externe, le système s’organise automatiquement pour atteindre le résultat voulu de manière optimale. Se focaliser sur son propre corps ajoute des contraintes, limite l’optimisation, perturbe le contrôle automatique, nécessite plus d’attention. Des expériences comparant focalisation interne et externe montrent une augmentation de la force et une diminution de l’activité musculaire à la fois, suggérant un mouvement plus efficient, avec la focalisation externe<sup class="footnote-ref"><a href="#fn13" id="fnref13">[13]</a></sup>. D’autres ont montré une augmentation de la vitesse, de l’endurance, et une diminution de la consommation d’oxygène<sup class="footnote-ref"><a href="#fn14" id="fnref14">[14]</a></sup>. Pertinent pour les traceurs : des expériences ont également montré une augmentation de la hauteur des sauts verticaux<sup class="footnote-ref"><a href="#fn15" id="fnref15">[15]</a></sup>. La focalisation externe permet également de mieux maintenir la performance face au stress<sup class="footnote-ref"><a href="#fn16" id="fnref16">[16]</a></sup>. A noter qu’il est toujours mieux de fixer des objectifs tangibles,potentiellement difficiles à atteindre (« essaies d’atterrir ici »plutôt que « sautes les plus loin possible »).</p>
+<p>Les consignes sont des formes de contraintes douces : si elles interfèrent dans l’atteinte du but, elles ne seront pas appliquées strictement. Il semble donc plus efficace d’utiliser des consignes qui fixent des objectifs tangibles et focalisent les apprenants sur les paramètres externes pertinents, plutôt que d’offrir seulement des modèles de coordination à reproduire. On peut alors parler de consigne non spécifiante : p.ex.« atterris en silence » ne spécifie pas directement le mode de coordination à utiliser (plier les jambes à 90°), mais aura tout de même des effets sur la coordination utilisée. Cela revient à distinguer la finalité (la coordination qu’on peut observer chez des pratiquants experts) et les moyens à utiliser pour l’atteindre (cette coordination n’est pas atteinte simplement en appliquant la description des mouvements experts)<sup class="footnote-ref"><a href="#fn17" id="fnref17">[17]</a></sup>.</p>
+<p>La consignes et démonstrations spécifiant le mouvement ne sont pas totalement à jeter. Une consigne peut permettre de bifurquer entre plusieurs solutions, lorsque plusieurs attracteurs sont disponibles (p.ex.préciser qu’il faut passer le mur avec un saut de chat, alors que d’autres passements sont possibles). La consigne peut aller dans le sens de la coordination spontanée (convergence). Dans ce cas, elle permet de renforcer l’attracteur, de maintenir la coordination souhaitée face à l’instabilité (p.ex. pour continuer à faire un saut de chat même à faible vitesse). Elle peut au contraire s’opposer à la coordination spontanée (compétition). Dans ce cas, elle peut servir à déstabiliser la coordination naturelle et rendre plus attractive le mode de coordination à acquérir<sup class="footnote-ref"><a href="#fn18" id="fnref18">[18]</a></sup>.</p>
+<h2 id="conclusion" tabindex="-1">Conclusion <a class="header-anchor" href="#conclusion">#</a></h2>
+<p>Résumons. Les théories dynamiques invitent à concevoir le comportement moteur comme émergeant en fonction des contraintes de la tâche, de l’organisme et de l’environnement. On peut modéliser la coordination par un paysage d’attracteurs, le comportement étant « attiré » dans certaines directions en fonction des contraintes. Pour modifier la coordination, on peut transformer la situation en changeant certaines de ces contraintes. En modifiant les contraintes internes, l’apprentissage transforme également le paysage d’attracteurs. Cette perspective permet de défocaliser l’apprentissage et l’enseignement de la tendance à vouloir présenter des modèles idéaux de mouvements à reproduire. Le mouvement ne doit pas être trop guidé, l’exploration active et la variabilité du mouvement doivent avoir une place importante. Les consignes servent avant tout à définir des buts et des objectifs, ainsi qu’à focaliser l’attention sur des indices pertinents et tangibles dans l’environnement. Finalement, les approches dynamiques permettent de mettre l’accent sur la construction matérielle des situations d’apprentissage. Il s’agit de modifier l’environnement (ou dans le cas de la pratique en extérieur, sélectionner l’environnement) pour encourager l’exploration du mouvement, potentiellement en le canalisant dans la direction souhaitée. On peut ainsi faciliter le passage à la coordination que l’on souhaite acquérir, ou au contraire rendre plus difficile les coordination que l’on souhaite décourager, en transformant la situation.</p>
+<blockquote>
+<p>&quot;Toute chose change dans un environnement dynamique. Ce sont tes efforts pour rester ce que tu es qui te limitent.&quot;</p>
+<p>Le Marionnettiste au Major Kusanagi, Ghost in the Shell, 1995.</p>
+</blockquote>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Les approches écologiques, inspirées de la psychologie de Jambes Gibson, sont généralement regroupées avec les approches dynamiques, mais ne seront pas abordées ici. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Delignières Didier, « L’approche dynamique du comportement moteur », in: La Rue J. et Ripoll H. (éds), <em>Manuel de Psychologie du Sport</em>, vol. 1, Paris, Revue EPS, 2004, pp. 65‑80. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Bernstein N., <em>The co-ordination and regulation of movements</em>, Oxford, Pergamon Press, 1967. <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Delignières,« L’approche dynamique du comportement moteur », <em>art. cit.</em>, 2004. <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Sans compter que chaque muscle contient des unités motrices qui peuvent s’activer indépendamment les unes des autres, etc. <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>On pourrait effectuer un rapprochement entre attracteurs et affordances, afin de faire une synthèse des théories dynamiques et écologiques <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Delignières Didier, Teulier Caroline et Nourrit Déborah, « Approche dynamique de l’apprentissage des coordinations motrices: un point sur les recherches actuelles », <em>Revue EPS</em> (322), 2006, pp. 5‑12. <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>Bernstein N, « On dexterity and its development », in: Latash Mark L. et Turvey Michael T. (éds), <em>Dexterity and its development</em>, Mahwah, N.J, L. Erlbaum Associates, 1996. <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn9" class="footnote-item"><p>La variabilité du mouvement peut être définie ici comme l’écart à la moyenne sur un ensemble d’essais. P.ex. si on mesure la longueur de pas d’une course d’élan, les passeront parfois plus courts, parfois plus longs. Le phénomène pourrait être montré au niveau articulaire également : les angles articulaires à la cheville, genou et hanches ne seront pas identiques à chaque pas. C’est la variabilité du mouvement : un même résultat (courir) sera atteint avec différentes combinaisons de mouvements. <a href="#fnref9" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn10" class="footnote-item"><p>Montagne Gilles, « Le contrôle des mouvements finalisés en sport », <em>Bulletin de psychologie</em> Numéro 475 (1), 2005, pp. 7‑10. <a href="#fnref10" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn11" class="footnote-item"><p>Liu Dan et Todorov Emanuel, « Evidence for the Flexible Sensorimotor Strategies Predicted by Optimal Feedback Control », <em>Journal of Neuroscience</em> 27 (35), 2007, pp. 9354‑9368. <a href="#fnref11" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn12" class="footnote-item"><p>Hodges Nicola J. et Williams A. M. (éds), <em>Skill acquisition in sport: research, theory and practice</em>, London ; New York, Routledge, 2012. <a href="#fnref12" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn13" class="footnote-item"><p>Hodges Nicola J. et Williams A. M. (éds), <em>Skill acquisition in sport: research, theory and practice</em>, London ; New York, Routledge, 2012. <a href="#fnref13" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn14" class="footnote-item"><p>Hodges Nicola J. et Williams A. M. (éds), <em>Skill acquisition in sport: research, theory and practice</em>, London ; New York, Routledge, 2012. <a href="#fnref14" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn15" class="footnote-item"><p>Wulf Gabriele et Dufek Janet S., « Increased jump height with an external focus due to enhanced lower extremity joint kinetics », <em>Journal of Motor Behavior</em> 41 (5), 2009, pp. 401‑409 ; Wulf Gabriele, Dufek Janet S., Lozano Leonardo <em>et al.</em>, « Increased jump height and reduced EMG activity with an external focus », <em>Human Movement Science</em> 29 (3), 2010, pp. 440‑448. <a href="#fnref15" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn16" class="footnote-item"><p>Ong Nicole T., Bowcock Alison et Hodges Nicola J., « Manipulations to the Timing and Type of Instructions to Examine Motor Skill Performance Under Pressure », <em>Frontiers in Psychology</em> 1, 2010. <a href="#fnref16" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn17" class="footnote-item"><p>Delignières, Teulier et Nourrit, « Approche dynamique de l’apprentissage des coordinations motrices: un point sur les recherches actuelles », <em>art. cit.</em>,2006. <a href="#fnref17" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn18" class="footnote-item"><p>Delignières Didier, « A propos de la théorie des systèmes dynamiques: Quelques idées neuves sur l’apprentissage moteur », <em>Revue EPS</em> (274), 1998,pp. 61‑66. <a href="#fnref18" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+<nav class="pagination-inner" aria-label="Articles next and previous links">
+	<a href="/yanndaout/blog/psychologie-de-lattention-phenomenologie-et-feminisme/" data-direction="forwards" class="pagination-previous">
+		<span>← Psychologie de l&#39;attention, phénoménologie et féminisme </span>
+	  </a>
+	
+	<a href="/yanndaout/blog/lettre-ouverte-a-la-federation-suisse-de-gymnastique-stv-fsg/" data-direction="backwards" class="pagination-next">
+		<span>Lettre ouverte à la Fédération Suisse de Gymnastique (STV/FSG) →</span>
+	  </a>
+	
+</nav>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/blog/pour-une-conception-dynamique-du-controle-moteur/ -->
+	</body>
+</html>

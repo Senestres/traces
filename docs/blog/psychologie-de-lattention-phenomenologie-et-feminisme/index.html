@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Psychologie de l&#39;attention, phénoménologie et féminisme</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>Psychologie de l&#39;attention, phénoménologie et féminisme</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2019-03-22">22 mars 2019</time></li>
+	<li><a href="/yanndaout/tags/attention/" class="post-tag">attention</a>, </li>
+	<li><a href="/yanndaout/tags/entrainement/" class="post-tag">entrainement</a>, </li>
+	<li><a href="/yanndaout/tags/feminisme/" class="post-tag">féminisme</a>, </li>
+	<li><a href="/yanndaout/tags/parkour/" class="post-tag">parkour</a>, </li>
+	<li><a href="/yanndaout/tags/politique/" class="post-tag">politique</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p>Dans un <a href="http://tracesblog.net/pour-une-conception-dynamique-du-controle-moteur/">précèdent article</a>, j’ai mentionné que la focalisation interne (sur le corps, le mouvement, la technique) est généralement moins bénéfique pour l’apprentissage et la performance que la focalisation externe (sur les résultats de l’action ou des indices perceptibles dans l’environnement). L’effet n’est pas négligeable, et existe pour des paramètres aussi divers que l’endurance, la force, la consommation d’oxygène, la vitesse, la distance de saut ou la stabilité du mouvement face au stress<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Autrement dit, au lieu de dire à un.e pratiquant.e &quot;plies tes genoux à 90° en atterrissant&quot;, on devrait lui dire &quot;essaies de faire le moins de bruit possible&quot;.</p>
+<p>Cela peut paraître étonnant lorsque l’on est habitué aux conceptions traditionnelles du contrôle et de l’apprentissage moteur. Ces conceptions ont en effet tendance à mettre l’accent sur le fait d’améliorer les représentations internes du mouvement. Il faut que le/la pratiquant.e sache explicitement comment se positionner, quels mouvements faire, dans quel ordre, etc. Mais regarder ce phénomène au travers d’autres approches théoriques peut le faire sembler tout à fait naturel et évident. Dans la tradition phénoménologique, Merleau-Ponty établit notamment une distinction entre le mouvement « concret », celui qui nous permet d’agir habituellement dans le monde, et le mouvement « abstrait », qui représente la situation d’exception, lorsque l’on se focalise sur notre corps<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> :</p>
+<blockquote>
+<p>&quot;Si [je fais un signe de la main], mais sans viser aucun partenaire présent ou même imaginaire et comme « une suite de mouvements en soi » c'est-à-dire si j'exécute une « flexion » de l'avant-bras sur le bras avec « supination » du bras et « flexion » des doigts, mon corps, qui était tout à l'heure le véhicule du mouvement, en devient lui-même le but, son projet moteur ne vise plus quelqu'un dans le monde, il vise mon avant-bras, mon bras, mes doigts, et il les vise en tant qu'ils sont capables de rompre leur insertion dans le monde donné et de dessiner autour de moi une situation fictive, ou même en tant que, sans aucun partenaire fictif, je considère curieusement cette étrange machine à signifier et la fais fonctionner pour le plaisir.&quot; Merleau-Ponty Maurice, Phénoménologie de la perception, Paris, Gallimard, 2009, p. 141.</p>
+</blockquote>
+<p>La règle est qu'on utilise nos mouvement avec l'intention d’agir et d’avoir un effet dans le monde ; le mouvement qui prend le corps comme objet est l’exception, une fiction, voire pathologique dans certains cas. Ce n’est alors pas si surprenant si la focalisation interne nous pose quelques problèmes lorsqu’il nous faut agir dans notre environnement.</p>
+<p>J’aimerais maintenant montrer que la focalisation de l’attention n’est pas un simple outil pédagogique ou un moyen d’optimiser la performance. Une fois que l’on a mis en relation la littérature sur la focalisation de l’attention et la littérature phénoménologique, des nouvelles pistes s’offrent à nous. L’essai « Throwing like a Girl » de Iris Marion Young permet notamment de considérer la question sous un angle politique. Cet essai aborde en effet des considérations très proches de la distinction entre focalisation externe et interne. La proximité est telle que je suis surpris que Young ne soit pas (à ma connaissance) citée dans la littérature sur la focalisation de l’attention<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>.</p>
+<p>Dans ce texte, Iris Marion Young s’intéresse aux différences de mouvement entre les hommes et les femmes. Elle ne cherche pas à généraliser, mais note que dans sa (notre) société, il y a bien des tendances marquées. Les femmes ont ainsi tendance à prendre moins d’espace, à restreindre leurs mouvements, à ne pas engager leur corps entier dans leurs mouvements. Ces différences quant à la manière dont elles utilisent leur corps ne reposent pas sur une différence de morphologie ou de force brute. Young estime qu’un des problèmes est que leurs intentions sont toujours partagées entre le but à atteindre et le corps qui doit accomplir le mouvement :</p>
+<blockquote>
+<p>&quot;Nous faisons souvent l’expérience de nos corps comme un encombrement fragile, plutôt que le media au travers duquel atteindre nos buts. Nous nous sentons comme si notre attention devait être dirigée sur le corps pour être sûres qu’il fera ce qu’on veut qu’il fasse, plutôt que de payer attention à ce que l’on veut faire à travers nos corps.&quot; Young Iris Marion, « Throwing like a Girl: A Phenomenology of Feminine Body Comportment Motility and Spatiality », <em>Human Studies</em> 3 (2), 1980, p. 144.</p>
+</blockquote>
+<p>On semble maintenant revenir à la question de la focalisation : à cause de la fragilité et faiblesse présumée de leurs corps, peut-être aussi parce que le corps féminin est esthétisé voire sexualisé jusque dans l’effort, les femmes auraient tendance à porter trop d’attention à leur corps, et pas suffisamment sur les conséquences tangibles de leurs actions. On en revient également à ce que Bourdieu dit lorsqu’il affirme que l’expérience féminine est celle du « corps-pour-autrui » et « d’être-perçu »<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>. Navré d’amener Bourdieu dans des questions féministes, mais ma foi il est au moins pertinent ici en tant que disciple de Merleau-Ponty. Cette focalisation interne aura pour conséquence immédiate que les mouvements seront moins efficaces, moins fluides. Les gestes seront plus retenus. L’engagement et la prise de risque seront minimisés<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>.</p>
+<p>Evidemment, une telle expérience n’est pas celle de toutes les femmes. Elle n’épargne pas non plus nécessairement des membres d’autres catégories de la population. Cela dit, il s’agit tendanciellement d’un problème féminin. Ainsi, les sports stéréotypiquement féminins sont souvent des activités qui se centrent sur le corps, plutôt que sur ses actions dans l’environnement<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>: gymnastique, danse, patinage artistique, natation synchronisée… On peut voir dans ces pratiques des instances de socialisation à une focalisation interne.</p>
+<p>L’enjeu ne se joue pas uniquement au niveau des structures sociétales que le volontarisme semble peu à même de bousculer aisément. Il se joue également en situation, dans les interactions, là où chacun.e peut avoir un impact. Chaque fois que notre égo ou notre image de soi sont engagées dans la situation, on reporte notre attention sur soi. En rappelant les femmes à leur fragilité ou leur faiblesse, ainsi qu'en les objectifiant, on ramène constamment leur attention sur leur corps. Ce faisant, on risque de contribuer à renforcer les stéréotypes, diminuer leur confiance en soi, et stabiliser des hiérarchies.</p>
+<p>Les situations d’anxiété favorisent le retour à une focalisation interne, même chez des athlètes de haut niveau, et déstabilisent la performance. Se voir rappeler d’une manière ou d’une autre que l’on est membre d'un groupe auquel des stéréotypes négatifs sont associés suffit à faire penser à ces stéréotypes. Être une femme dans un monde d’homme, se sentir en situation d’infériorité numérique, ou tout simplement entendre un commentaire peut suffire à rendre ces stéréotypes saillants. Or, se souvenir d’un stéréotype nous concernant peut augmenter notre anxiété, simplement à cause de l’envie de ne pas le confirmer : c’est ce qui est appelé la menace du stéréotype<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>. De telles menaces risquent de ramener l’attention sur le corps, de diminuer la performance, venant ensuite creuser les écarts et renforcer les stéréotypes.</p>
+<p>Pour conclure, on peut suggérer quelques pistes, évidemment exploratoires et non-exhaustives, pour atténuer le problème, au niveau local. Au travers des consignes ou feedbacks et commentaires, on essayera de focaliser les apprenant.e.s sur les conséquences de leurs actions, sur des évènements ou objets tangibles dans l’environnement, plutôt que sur leur corps et leur technique. Qu’importe le degré de véracité que l’on attribue à des stéréotypes comme « les femmes ont moins de force que les hommes », on évitera de les mentionner, ou alors dans le but de les discuter et les déconstruire. On évitera également de diviser les pratiquant.e.s en groupes qui risquent de rendre le genre particulièrement saillant, et par là de ramener les stéréotypes dans leurs têtes. A contrario, dans une pratique « masculine » comme le parkour, un entrainement féminin non-mixte bien pensé peut être positif. Cela peut éviter que les femmes se retrouvent isolées dans un groupe essentiellement composé d’hommes, n’aient pas de modèles contre-stéréotypiques, ou soient constamment confrontées à leur sentiment d’inadéquation. Les situations de minorité numérique associées à l’existence de stéréotypes négatifs limitent l’équité des situations de « mixité »<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup>.</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Hodges Nicola J. et Williams A. M. (éds), <em>Skill acquisition in sport: research, theory and practice</em>, London ; New York, Routledge, 2012 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>Il en va probablement de même pour la tradition psychologique avant l’avènement des théories cognitives. La théorie idéo-motrice de William James (<em>The Principles of Psychology</em>, 1890) insiste ainsi sur le fait que généralement la simple évocation de d’un but nous engage dans la suite de mouvements qui nous permet de l’atteindre. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>Evidemment, si quelqu’un découvre un texte établissant ce lien, merci de me le transmettre ! <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>Bourdieu Pierre, <em>La domination masculine</em>, Paris, Éd. Points, 2014. <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>On sait notamment que certaines techniques corporelles nécessitent, pour être rapides et efficaces, de se mettre volontairement en déséquilibre. P.ex. en escalade, les débutants vont avant tout chercher à assurer leur stabilité, tandis que les experts vont profiter de modes de coordination bien plus avantageux en termes de performance, quitte à assurer leur stabilité de manière dynamique ou à la mettre en second plan. <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>A ce titre, il est plutôt étonnant que Young fasse le choix volontaire et explicite de ne pas traiter de ce genre d’activité dans son essai. <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn7" class="footnote-item"><p>Steele C. M., « A threat in the air. How stereotypes shape intellectual identity and performance », <em>The American Psychologist</em> 52 (6), 1997, pp. 613‑629. <a href="#fnref7" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn8" class="footnote-item"><p>Rederdorff S. et Audebert Olivier, <em>L’égalité des chances: les effets de la mixité à l’école sur l’estime de soi et les performances scolaires.</em>, Paris: Armand Colin., 2004 ; Sekaquaptewa Denise et Thompson Mischa, « The differential effects of solo status on members of high-and low-status groups », <em>Personality and Social Psychology Bulletin</em> 28 (5), 2002, pp. 694‑707. <a href="#fnref8" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+<nav class="pagination-inner" aria-label="Articles next and previous links">
+	<a href="/yanndaout/blog/lutilisation-spectaculaire-du-parkour/" data-direction="forwards" class="pagination-previous">
+		<span>← La mise en spectacle du parkour </span>
+	  </a>
+	
+	<a href="/yanndaout/blog/pour-une-conception-dynamique-du-controle-moteur/" data-direction="backwards" class="pagination-next">
+		<span>Pour une conception dynamique du contrôle moteur →</span>
+	  </a>
+	
+</nav>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/blog/psychologie-de-lattention-phenomenologie-et-feminisme/ -->
+	</body>
+</html>

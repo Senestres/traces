@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Parkour : l’art de subvertir le rapport à l’espace public</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>Parkour : l’art de subvertir le rapport à l’espace public</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2008-10-03">03 octobre 2008</time></li>
+	<li><a href="/yanndaout/tags/archive/" class="post-tag">archive</a>, </li>
+	<li><a href="/yanndaout/tags/archive/" class="post-tag">archive</a>, </li>
+	<li><a href="/yanndaout/tags/espace-public/" class="post-tag">espace-public</a>, </li>
+	<li><a href="/yanndaout/tags/parkour-literally/" class="post-tag">parkour-literally</a>, </li>
+	<li><a href="/yanndaout/tags/subversion/" class="post-tag">subversion</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<blockquote>
+<p>« Pas plus que la démocratie, l’espace public n’est quelque chose de naturel et qui va de soi. » Hugues Bazin</p>
+</blockquote>
+<p><strong>Prologue : Au cœur de l’exercice définitionnel</strong></p>
+<p><strong>Parkour</strong> (ou « <strong>art du déplacement</strong> ») : <em>pratique sportive consistant à se déplacer d’un point A à un point B, et ce en recherchant avant tout l’efficacité dans le franchissement des obstacles. Cette efficacité combine la rapidité, l’économie d’énergie et la prudence. Le Parkour se pratique aussi bien en milieu naturel qu’en milieu urbain, c’est ensuite au traceur</em>(<strong>1</strong>) <em>d’imaginer le chemin qu’il va suivre, quels obstacles il va franchir et cela en fonction de ses capacités.</em></p>
+<p>Telle est la définition que l’encyclopédie en ligne Wikipédia donne du Parkour. Le terme ne figure à ce jour dans aucun dictionnaire, bien que la pratique qu’il désigne existe vraisemblablement depuis une vingtaine d’années. Et si l’exercice définitionnel n’a jamais cessé de faire débat au sein de la communauté des traceurs, les « puristes » n’admettront aucune extension à une telle définition, principalement, semble-t-il, par souci de fidélité envers la philosophie à l’origine de cette pratique (aspect philosophique hélas exclu de la définition ci-dessus, qui ne fait état que d’une « pratique sportive », quand il s’agit, à mon sens, davantage d’une pratique philosophique, où il est fait un usage qu’on pourrait considérer comme « sportif » du corps humain). Toutefois, je ne me considère, bien que pratiquant, pas comme « puriste » (je n’en ai pas la légitimité), et ai par conséquent moins à l’esprit le souci d’être fidèle, que celui d’être attentif, moins celui de dire que de questionner, d’observer, et tenter d’analyser les effets que produit la pratique du Parkour, dans l’environnement urbain notamment. Je veux bien, pour ma part, m’en tenir à la définition évoquée ci-dessus, d’autant que c’est la seule définition écrite facilement accessible à ce jour. De toutes façons, comme je viens de le préciser, mon projet consiste moins à (re-)définir le Parkour, qu’à en questionner les effets.</p>
+<p>Il semble qu’il y ait deux catégories d’effets. D’abord, il y a les effets prédictibles, qu’ils soient souhaités ou non (surprise des passants, regard des gens s’attardant, sentiment de peur éprouvé par ceux auxquels cette pratique est étrangère, ou, au contraire, stimulation, envie d’en faire autant, tentative de récupération marchande du phénomène par des entreprises…). Ceux-ci, bien qu’ils ne puissent être assimilés à la pratique elle-même, semblent y être inhérents, et en découler naturellement. Ensuite, il y a les effets non prédictibles mais constatés (colère des passants ou des résidents des abords, prise en main et gestion de la situation par les autorités locales (Mairie, etc…), chasse aux pratiquants…), ces derniers étant loin d’être sans intérêt du point de vue d’une étude sociologique du Parkour.</p>
+<p>Quelle que soit la finalité originelle du Parkour – fût-ce se déplacer d’un point A à un point B de la manière la plus rapide et la plus efficiente possible, en franchissant les obstacles qui se trouvent sur notre passage -, force est de constater que les effets qu’il provoque sont loin de se limiter à cette finalité supposée, et qu’il affecte l’espace public dont il fait son terrain de jeu et/ou d’entraînement.</p>
+<p><strong>I. Un acte politique</strong></p>
+<p>Pratiquer le Parkour apparaît dès lors comme un acte politique, bien que certains pratiquants s’en défendent (principalement par le fait d’une acception erronée du terme « politique »), comme si la politique était le mal absolu, et peut-être moins encore le <em>mal</em> qu’il faut combattre, que le <em>mal</em> qu’il ne faut pas faire. Ainsi, si personne ne faisait de politique le monde irait beaucoup mieux, semble-t-il. Hélas, réduire la politique aux échéances électorales et à l’appareil d’état ainsi qu’aux relations mutuelles des divers états n’est pas seulement réducteur, mais fondamentalement faux. La politique, du grec <em>polis</em> (« cité »), se trouve en l’occurrence moins dans le prestige de l’Elysée, du Palais du Luxembourg, et du Palais Bourbon, que dans l’espace public qu’est la rue. La politique n’est ni un bulletin de vote dans une urne, ni un siège à l’Assemblée, c’est « la structure et le fonctionnement, méthodique, théorique, et pratique, d’une communauté, d’une société »(<strong>2</strong>) ou, selon les mots d’Henri Laborit, biologiste, « une science de l’organisation des structures sociales »(<strong>3</strong>).</p>
+<p>Selon cette acception, l’espace public est certainement le lieu le plus politique qui soit (nous entendons par espace public, « l’ensemble des espaces de passage et de rassemblement qui sont à l’usage de tous »(<strong>4</strong>).</p>
+<p>La rue est le principal lieu de passage et de croisement des uns et des autres, et a l’avantage sur les transports en commun d’être gratuit et sans restriction d’accès. C’est donc, pourrait-on dire, l’espace public par excellence. Or, pour quelle raison majeure les individus traversent-ils cet espace ? On peut affirmer sans crainte de se tromper qu’ils l’empruntent principalement pour aller d’un endroit à un autre. Le déplacement se trouve par conséquent être l’activité la plus commune  et la plus communément observée à l’intérieur de cet espace. Il s’y pratique par différents modes opératoires, parmi lesquels l’individu sélectionne selon des critères tels que la praticité, la rapidité, le coût, la longueur du trajet à effectuer, etc…Il choisira, selon les cas, la marche, à pied, la voiture, les transports en commun (train, métro, bus, tramway), ou le vélo, chaque mode ayant ses codes établis, ses règles fixées, ses normes à respecter. Il y a la chaussée, les trottoirs, les feux, les passages cloutés, les « stop », les passages obligatoires, ceux interdits…Tout cela laisse pour ainsi dire bien peu de place à la créativité. Certes, il y a bien quelques enfants qui, ici et là, imaginent que les briques rouges sont des coulées de lave, les grises des îlots où s’en mettre à l’abri, et sautent inlassablement de l’une à l’autre, grimpent, courent, s’inventent des défis qu’ils relèvent au fur et à mesure qu’ils avancent, et les parents qui derrière crient, grondent, leur promettent la fessée, ou la leur mettent, qui les reprennent constamment et souvent pensent bien faire…</p>
+<p>Pour le reste, tout est semblable, uniformisé, les gens avancent aux mêmes rythmes, selon les mêmes codes, en observant les mêmes règles, et tous s’arrêtent ensemble, repartent ensemble, et se ressemblent.</p>
+<p>On voit mal, dans ces conditions particulières, comment l’on pourrait prétendre, autrement que par mauvaise foi, que le Parkour ne s’inscrit pas dans cet espace comme un acte profondément politique. Au diable les codes, les règles, les normes, les habitudes, des animaux humains envahissent l’espace public, qui l’utilisent à leur manière, en dehors des voies tracées, des routes communes, suivant leurs propres règles, leurs propres codes, et tracent des chemins qui semblaient ne pas exister l’instant d’avant. Parfois pieds et torse nus, ils avancent à quatre pattes en équilibre sur une barre, sautent d’un muret à une barrière, escaladent un mur qui fait plus de deux fois leur taille en moins de temps qu’il n’en faut pour le dire, courent, s’accrochent, roulent…Ils vont et viennent là où personne jamais ne va, sans quoi ils y vont comme personne jamais n’y va. Comme les enfants, ils courent, sautent, et grimpent ; comme les chats, ils s’agrippent, se hissent, filent et se faufilent…Mais ils ne sont ni des enfants ni des chats.</p>
+<p>Ils respectent « la loi » certes, mais ils violent les codes qui régissaient jusque là le déplacement dans l’espace public, en défient les règles, bousculent les habitudes, et, sortant des sentiers battus, et des passages obligatoires, ils inventent leurs propres passages et dessinent leurs propres routes au fil de leurs enjambées. Imaginant en permanence aussi bien de nouveaux obstacles, que de nouvelles façons de les franchir, de nouveaux endroits où aller, que de nouvelles façons d’y accéder, ils ne font pas que détourner l’usage des choses publiques, mais créent en sus de nouveaux espaces, évolutifs et infinis, à l’intérieur de l’espace public.</p>
+<p>Evolutifs, parce que le pratiquant affûte son regard au fur et à mesure qu’il progresse dans l’espace urbain, où il relève de nouveaux défis qu’il se lance lui-même par pur esprit de créativité et goût de la performance technique, et où il décèle sans cesse de nouveaux obstacles potentiels, aux possibilités de franchissement multiples – possibilités de franchissement qui d’ailleurs n’ont de limites que son imagination -, mettant ainsi au point de nouveaux itinéraires, renouvelables à l’infini, et dont les repères se trouvent sans cesse déplacés et redéfinis par le traceur.</p>
+<p>Infinis, parce que n’ayant pas de contours figés, circonscrits ; ils sont illimités, du fait de leurs perspectives d’évolution au gré de l’imagination du traceur. L’espace ainsi créé n’est pas un espace fini, il est modifiable à souhait, et constamment remodelé par ceux qui daignent s’y atteler.</p>
+<p>Le Parkour n’a donc, pour résumer, pas uniquement vocation à faire un nouvel usage, créatif et imaginatif, de l’espace public, mais permet la création, à l’intérieur de cet espace, de nouveaux espaces d’expression, et de création artistique, de nouveaux espaces publics, dont les caractéristiques communes sont les manières peu communes de s’y déplacer qui s’y pratiquent. Contrairement à l’espace originel où naissent ces extensions spatiales, qui lui est normatif au possible, et où la conformité à la norme en vigueur est de rigueur.</p>
+<p>Ces espaces étant éphémères et modifiables, – mobiles même pourrait-on dire -, leurs contours sont flous et indéfinis, et ils s’imbriquent dans l’espace dans lequel ils prennent naissance de telle sorte qu’on ne distingue pas les premiers du second, et les traceurs évoluent dans l’espace urbain en y chevauchant en permanence deux espaces qui se confondent.</p>
+<p>De cette manière, le commun des utilisateurs de l’espace public primaire, ignorant la pluralité des espaces, ne voient les traceurs évoluer que dans <em>leur</em> espace. Or, cela pose des problèmes multiples.</p>
+<p><strong>II. Face à la marchandisation des espaces</strong></p>
+<p>D’une part, l’espace public tend de plus en plus à être privatisé, de sorte qu’il se transforme peu à peu en une multitude d’espaces privés, juxtaposés, qui n’ont de commun – au sens de partagé – que les frontières qui les séparent les uns des autres.</p>
+<p>L’espace qui, par exemple, se trouve devant la porte ou la vitrine d’un commerce quelconque se voit réquisitionné par celui-ci, au nom du domaine privé ; n’y évolue pas et ne s’y arrête pas qui veut, et les indésirables en seront chassés dans l’instant par le commerçant, qui s’en considèrera – et proclamera – propriétaire, soit parce que, par leur position dans l’espace, ils « empêchent les clients de regarder la vitrine », soit parce qu’ils les « empêchent d’accéder facilement à l’intérieur du magasin », soit tout simplement parce qu’ils les indisposent, ou, pire, qu’ils risquent de les indisposer (l’exclusion de l’espace en question est bien plus souvent préventive que consécutive à la plainte d’un client).</p>
+<p>Outre les commerçants, l’immense majorité des individus, conditionnés en cela par le libéralisme ambiant, se comportent dans la rue comme si la trajectoire qu’ils empruntaient dans l’espace leur était potentiellement réservée. Ils ne peuvent donc admettre le fait qu’un autre la croise sans considérer que l’autre n’a pas fait attention, et, qu’en l’occurrence, il « aurait pu faire attention».Il leur vient rarement à l’esprit que, l’espace étant public, d’autres qu’eux empruntent des parties communes à leur trajectoire, et qu’il est bien plus probable que ce soit cela – au-delà de l’éventuel manque d’attention – qui explique que leurs parcours se croisent de la sorte.</p>
+<p>Mais cette tendance au sentiment de propriété se cristallise dans les lieux publics contigus à des lieux privés, comme si les seconds débordaient sur les premiers de telle sorte qu’ils les annexent implicitement. Ainsi en va-t-il des commerces s’appropriant une partie plus ou moins grande de l’espace public en contact avec leur devanture, mais également des résidents qui eux s’approprient la partie de l’espace public – là aussi de manière plus ou moins étendue selon les cas, cela va parfois loin -, contiguë à leur pas de porte, à leur hall d’immeuble, aux escaliers qui y conduisent, aux murets qui délimitent leur jardin, etc…- et ils en chassent impitoyablement les « intrus », et autres indésirables -.Autrement dit, les propriétaires privés – ou parfois même les locataires – se sont octroyés, bien au-delà de leur lieu de résidence, au beau milieu de l’espace public, le pouvoir de gérer une partie dudit espace, décidant, selon des critères qu’eux seuls connaissent – et qu’eux seuls valident par conséquent -, ceux qui y sont tolérés de ceux qui en seront chassés. Sous peine d’ « appeler la police ». A cela on peut ajouter que nombre de lieux publics (écoles, mairie, centres sociaux, …) adoptent désormais ce type de comportement, et exercent sur l’espace public environnant le même contrôle que les commerçants ou les propriétaires privés.</p>
+<p>Ce phénomène va croissant, et le privé – ou à défaut le privatisé -, gagne, dans l’espace, du terrain sur le public. Comme celle du désert, son avancée va bon train, d’autant qu’aucun outil n’est pour l’instant mis à la disposition du public pour défendre son territoire. Car il s’agit bien de « luttes d’espaces », ou luttes <em>pour</em> l’espace, dont l’enjeu est d’en déposséder l’autre afin de le posséder soi. En somme, rien de nouveau dans la famille des mammifères – dont l’humain fait partie-.</p>
+<p>D’autre part, l’espace public, qui comme toute chose traverse l’ère du capitalisme, et de sa course au profit, devient majoritairement un espace « marchand » (l’espace ne sert qu’à acheter et/ou à vendre) et est lui-même en proie à une constante marchandisation (l’espace lui-même est transformé en marchandise).Il faut bien distinguer le premier phénomène du second, car ce sont deux choses différentes, bien qu’elles aillent de pair.</p>
+<p>« <em>Mars 2005, dans le métro parisien le regard est arrêté par un graffiti au feutre sur une affiche publicitaire murale : « Publicité, espace public, profit privé, libérez nos murs ! », « et nos esprits » rajoute un autre intervenant dans un feutre d’une autre couleur. Des personnes s’arrêtent et ne regardent pas la pub, mais le graffiti avec un sourire approbateur.</em> »(<strong>5</strong>)</p>
+<p>De fait, l’espace public, qui, au départ, a pour vocation « d’être le forum où s’expose un problème qui interroge la collectivité », d’être un lieu d’expression et d’échanges entre les individus, se voit transformé en une gigantesque vitrine marchande, où la publicité commerciale a pris la place de la public-ité(<strong>6</strong>) originelle, celle dont le rôle était de « créer l’espace de l’agir politique », où « l’information-communication dans l’espace public comme support de connaissance et de débat est réduite à une communication d’entreprise à des fins marchandes », où il ne « peut s’[…]exercer aucune pratique du jugement »(<strong>7</strong>).</p>
+<p>Puisque l’espace est un lieu stratégique (notamment le lieu de stratégies qui consistent à en prendre le contrôle), il n’est pas surprenant que l’entreprise capitaliste cherche constamment à se l’approprier de la sorte. Ce qui pourrait, en revanche, davantage surprendre, c’est le manque de ferveur avec lequel le public défend l’espace qui était sien, la nonchalance, à l’allure presque fataliste, avec laquelle il s’en laisse déposséder, et peut-être aussi le cruel manque d’inventivité du peu de moyens mis en œuvre pour lutter. De tout cela, il résulte que l’espace fait de plus en plus de place au marchand, et de moins en moins à ce qui ne l’est pas. Lorsqu’il n’est pas occupé par des commerces ou, comme on l’a vu précédemment, annexé par ceux-ci – c’est-à-dire lorsqu’il ne sert pas à acheter ou à vendre -, il sert essentiellement de lieu transitoire aux individus se rendant dans un espace commercial ou bien, à défaut, se rendant au travail afin de gagner de l’argent qui pourra ensuite être dépensé dans l’un de ces lieux.</p>
+<p>Par ailleurs, l’espace, lorsqu’on l’aborde comme une chose physique, ne peut échapper lui-même à la volonté des uns de vendre tout ce qu’ils voient, et devient de ce fait l’objet de processus de marchandisation constants, de mises à prix, de recherches du profit, d’élévation des droits d’entrée…L’espace, auparavant public, aujourd’hui se monnaye, se vend, s’achète. Il coûte cher, et « prendre de l’<em>espace</em> », qu’on ne nous aurait pas octroyé via une transaction commerciale – réelle, ou symbolique-, peut aussi coûter très cher en termes de représailles.</p>
+<p><strong>III. Rapport changeant à l’espace public</strong></p>
+<p>L’intérêt du Parkour, au vu d’une telle situation, est que ceux qui le pratiquent se saisissent d’une partie, toujours changeante, de l’espace public, pour laquelle ils ne demandent aucune permission et n’avertissent personne ; ils s’en saisissent spontanément, et en disposent et l’utilisent comme si tout cela était naturel ou allant de soi (il est certes vrai que cela <em>devrait</em> aller de soi…).Mais au-delà du fait qu’ils s’en saisissent sans en demander l’autorisation, ils ne paieront ensuite jamais pour cet espace qu’ils utilisent comme  – et quand – bon leur semble. Ils ne tiendront pas compte des processus de marchandisation incessants dont cet espace fait l’objet, et feront tout simplement comme s’ils n’existaient pas, comme si les règles, aussi bien celles définissant l’accès à l’espace ainsi que le prix dont on doit s’acquitter pour en disposer que celles en réglementant l’utilisation, comme si toutes ces règles restaient à inventer. Sur la place publique. En situation.</p>
+<p>De plus, ils utilisent cet espace, acquis par des voies peu communes, d’une manière pas plus commune, et n’en font, dans tous les cas de figure, aucun usage commercial, remettant, de fait, en cause les dispositions inhérentes à la réglementation marchande des espaces. Ils ne payent pas pour l’utiliser ; ils ne l’utilisent pas pour le vendre – ni pour y vendre autre chose – ; ils n’y produisent rien – en tous cas rien dont on peut espérer tirer un profit commercial – ; ils n’y travaillent pas et n’y recherchent pas de travail ; ils n’y font pas transiter de l’argent. L’espace occupé est occupé <em>gratuitement</em>, et cela dans les trois acceptions du terme : il est occupé par des individus qui n’ont pas payé pour en disposer ; les individus qui l’occupent y font ce qu’ils y font de manière gratuite, pour rien, sans rétribution ; et pour finir, ils le font sans raison, sans fondement, sans motif apparent, excluant ainsi de cette pratique toute finalité à vocation utilitariste. Et si la vue des pratiquants indispose un certain nombre d’individus qui, dans l’espace public, y sont à un moment ou à un autre, confrontés, c’est en grande partie parce que le Parkour instaure ce rapport non-marchand et gratuit à l’espace.</p>
+<p><strong>IV. Finalité théorique du Parkour</strong></p>
+<p>En effet, il me semble utile de discerner la finalité théorique du Parkour, avancée par ceux qui en sont à l’origine, David Belle notamment, de la façon dont il est pratiqué. En d’autres termes, discerner ce à quoi pourrait un jour servir l’entraînement, de ce en quoi il consiste.</p>
+<p>Il se trouve que, si le but recherché par la pratique qui selon les mots de David Belle est « une méthode d’entraînement, de préparation physique aux obstacles », semble être de prévenir, par un entraînement complet et rigoureux aux franchissements d’obstacles, et par le développement d’une capacité à l’adaptation à des environnements divers et variés (milieux urbain comme naturel, de jour comme de nuit, par temps sec comme par temps pluvieux, mais aussi sous la neige, dans le désert, par des conditions de chaud ou de froid extrêmes, parfois pieds et torse nus, etc…) la plus exhaustive possible, – de prévenir donc – tout cas de figure dans lequel une telle préparation physique et mentale pourrait se montrer utile ( nécessité de fuir, personne en danger à secourir, urgence du déplacement effectué…), et permettre à celui qui la pratique de faire face à n’importe quelle situation où il serait requis de se déplacer de manière rapide, efficace et sécurisée, il n’en demeure pas moins que l’entraînement ne consiste précisément pas à faire face à de telles éventualités, mais à en préparer la venue. Or, puisque l’urgence reste, dès lors, du domaine de l’imaginaire – comme pour les enfants qui imaginent que les briques sont des coulées de lave -, on a, par conséquent, droit à l’erreur, dans la mesure où rien ne nous met effectivement en fuite, où nul n’encourt un grave danger, attendant qu’on le secoure de toute urgence – et où les briques ne sont pas des coulées de lave -.Ainsi, le traceur s’entraînant fait « comme si ».Il invente des schémas complexes répondant à la vitale nécessité de fictions que lui-même imagine. En des termes plus concrets, il invente des chemins, dont il invente la nécessité de les emprunter, par rapport à une situation qui <em>pourrait advenir</em>, autrement dit elle aussi inventée. On peut alors affirmer, si la <em>conjecture</em> est conforme à la définition que Kant en donne, à savoir qu’elle est « un exercice concédé à l’imagination, accompagnée de la raison, pour le délassement et la santé de l’esprit », que le traceur, continuellement, forme des conjectures. Juste pour voir comment on ferait <em>si</em>…Il soumet le monde à des déformations dans le but de changer le regard qu’il porte dessus. Par ce biais, refusant l’évidence, il questionne l’espace et les structures qui le forment, et il remet en question l’usage à en faire, la vocation de telles structures (un muret, une barrière, une bordure, un mur, un banc, une poubelle…), et, outre cela, l’unicité de leur utilité, suggérant, par les variations d’utilisation qu’il leur fait subir, une possible pluralité des usages. Et, le moins que l’on puisse dire – il n’y a pour cela qu’à observer les réactions des individus alors rencontrés -, c’est que cela – l’idée que les usages d’une même chose puissent être multiples d’une part, et qu’ils puissent être différents de l’usage que l’on en fait habituellement d’autre part – ne va pas de soi. Les « Ce n’est pas fait pour ça ! » fusent de toutes parts.</p>
+<p><strong>V. L’art du voyage</strong></p>
+<p>Dans cette situation – celle où le traceur s’entraîne -, les déplacements, qui ne répondent à aucun besoin concret et immédiat de se déplacer, se suffisent à eux-mêmes. Le pratiquant se déplace pour se déplacer, pour être en mouvement ; il ne se déplace en réalité pas pour aller d’un endroit à un autre. Et s’il s’avère qu’il va d’un endroit à un autre – puisqu’il se déplace tout de même -, il ne le fait pour rien d’autre que pour le faire. Aucune raison que le commun des passants considèrerait comme valable ne le lui commande. A l’endroit où il va, il n’a rien de particulier à faire, que d’en repartir, pour se rendre à un nouvel endroit. Le déplacement passe alors du statut de <em>moyen</em> à celui de <em>fin</em> <em>en soi</em>. Il n’est plus le moyen d’atteindre un but, mais le but lui-même. Une telle façon de procéder est vécue comme une insulte à l’utilitarisme ambiant. Il ne faudra donc pas s’étonner que l’utilitarisme ambiant le lui rende en l’insultant en retour (je fais ici référence aux propos régulièrement tenus aux traceurs s’entraînant dans l’espace public).Que certains se déplacent ainsi par jeu n’amuse pas tout le monde. Parce qu’en jouant ainsi – cela n’empêcha pas, au contraire ! -, on ne remet pas seulement en cause la normalisation des modes de déplacement qui sont communément rencontrés à l’intérieur de l’espace public, ainsi que les voies leur étant affectées ; mais on remet en cause les rapports que l’on entretient à l’espace public, et non point seulement l’usage qu’on en fait, mais également la fonction qu’on lui attribue ; on remet en cause la privatisation et la marchandisation dont il fait l’objet ; on en remet en cause le prix, ainsi que le fait qu’il en ait un ; on remet en cause les règles qui y sont en vigueur, ainsi que les codes qui le régissent ; on remet en cause l’unicité de l’espace, ainsi que l’impossibilité d’évoluer simultanément dans deux espaces différents (ou dans deux dimensions différentes de l’espace) ; on remet en cause l’usage à faire des structures constitutives de l’espace public, mais également la vocation à caractère unique de l’usage qu’on pourrait en faire ; on remet en cause la manière d’utiliser le corps comme outil de déplacement ; on remet en cause le rapport à son corps, à sa structure biologique…Et cette liste, pour sûr, n’est pas exhaustive. Jouer n’est donc certes pas si anodin, et le Parkour apparaît dès lors, au-delà d’un moyen de se déplacer, comme un outil de réappropriation et de questionnement de l’espace public, d’une richesse et d’une puissance rares.</p>
+<p><strong>NOTES:</strong></p>
+<p><strong>1</strong>. Traceur : pratiquant du Parkour</p>
+<p><strong>2</strong>. Entrée « politique » du dictionnaire en ligne Wiktionnaire.</p>
+<p><strong>3</strong>. Henri Laborit, « Eloge de la Fuite », p.67, collection Folio Essais.</p>
+<p><strong>4</strong>. Entrée « espace public » de l’encyclopédie en ligne Wikipédia.</p>
+<p><strong>5</strong>. Hugues Bazin [2005], L’art d’intervenir dans l’espace public, www.recherche-action.fr</p>
+<p><strong>6</strong>. Publicité : [Du latin médiéval <em><a href="https://web.archive.org/web/20160304194108/http://fr.wiktionary.org/w/index.php?title=publicitatem&amp;action=edit">publicitatem</a></em> composé de « <em><a href="https://web.archive.org/web/20160304194108/http://fr.wiktionary.org/wiki/public">public</a></em> » et du suffixe <em>« <a href="https://web.archive.org/web/20160304194108/http://fr.wiktionary.org/wiki/-it%C3%A9">-ité</a></em> » qui indique un état; étymologiquement ce mot signifie « état de ce qui est public »] qualité de ce qui est rendu public. (<em>source</em> : encyclopédie en ligne Wikipédia)</p>
+<p><strong>7</strong>. Hugues Bazin [2005], op. cit.</p>
+
+</article>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/archive/parkour-lart-de-subvertir-le-rapport-a-lespace-public/ -->
+	</body>
+</html>

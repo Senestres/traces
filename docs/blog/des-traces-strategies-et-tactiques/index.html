@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Des traces: stratégies et tactiques</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>Des traces: stratégies et tactiques</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2018-04-08">08 avril 2018</time></li>
+	<li><a href="/yanndaout/tags/affordances/" class="post-tag">affordances</a>, </li>
+	<li><a href="/yanndaout/tags/anarchisme/" class="post-tag">anarchisme</a>, </li>
+	<li><a href="/yanndaout/tags/urbanisme/" class="post-tag">urbanisme</a>, </li>
+	<li><a href="/yanndaout/tags/tactique/" class="post-tag">tactique</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p>Dans cet article, j’utiliserai un cas concret de gestion de l’espace, afin de montrer en quoi l’espace est l’enjeu de luttes : gestion, mise en ordre, stabilisation ou contestation de cet ordre, renégociation, détournement, adaptation...</p>
+<p>En sortant du métro pour se rendre à l’Université de Lausanne, on peut se retrouver face à un chemin faisant une jolie boucle en apparence inutile.</p>
+<p><img src="images/1-1024x685.jpg" alt=""></p>
+<p>Evidemment, les utilisateurs ont pris l’habitude d’aller au plus court, traçant des raccourcis dans l’herbe, qui ont fini par être presque aussi marqués que le chemin officiel. Ces trajectoires alternatives en viennent ainsi à se stabiliser, devenant préférentielles. Les utilisateurs suivent ainsi un tracé de moins d’un mètre de large.</p>
+<p><img src="images/2-1024x685.jpg" alt=""></p>
+<p>Au début de l’automne 2016, un grillage a été posé tout le long de la station pour obliger les utilisateurs à prendre le contournement. Une tentative pour imposer un certain ordre et déstabiliser l’usage « illégitime » qui était fait de cet espace. Selon le service des bâtiments de l’UNIL, il s’agit d’éviter que l’herbe soit abîmée et de faciliter l’entretien des espaces verts.</p>
+<p><img src="images/3-1024x685.jpg" alt=""></p>
+<p>Le grillage a été très rapidement découpé, de manière sommaire, probablement suite à un désaccord entre l’université et les Transports Lausannois (TL). Un des raccourcis a été temporairement aménagé, avec des copeaux et deux barrières.</p>
+<p><img src="images/4-1024x685.jpg" alt=""></p>
+<p>Un panneau métallique est placé devant un des raccourcis. Peut-être n’est-ce pas volontaire, mais de fait son emplacement masque le raccourci et conduit le flux de piétons sur la boucle « légitime ». Le raccourci, devenu moins visible, est retiré des « affordances », de l’ensemble des actions offertes ou suggérées par l’environnement. Le fait de passer tout droit n’est plus une action « disponible ». Il devient plus évident de suivre le chemin officiel, le raccourci n’étant parfois même plus perçu.</p>
+<p>Cela dit, le chemin n’est pas complètement invisible, et le panneau n’est pas compliqué à contourner. L’ironie, d’ailleurs, c’est que le panneau indique d’aller tout droit. Un nouveau raccourci s’est donc progressivement stabilisé, simplement décalé sur les côtés du panneau, la trajectoire est à nouveau bien visible, parcourue par de nombreux piétons.</p>
+<p><img src="images/5-1024x685.jpg" alt=""></p>
+<p>Puisqu’une période d’observation « sur le terrain » a été annoncée avant de reprendre les travaux, on aurait pu s’attendre à ce que l’on prenne acte des chemins qui sont <em>de facto</em> les plus employés. Il n’y a pas besoin d’observer longtemps : les chemins préférentiels sont inscrits matériellement dans l’espace, tracés au fil du temps par le piétinement de l’herbe. Il aurait été facile de les légitimer, de les officialiser et de les inscrire dans la durée, avec du gravier ou du béton. Mais en décembre de cette année, la station a été grillagée à nouveau. La terre des chemins alternatifs a été retournée pour éviter le passage et faire repousser l’herbe. Le choix a été fait de supprimer les chemins <em>de facto</em>, et de forcer les utilisateurs à emprunter un chemin officiel, <em>de jure</em>. La tentative est un échec relatif, puisque le raccourci central est aujourd’hui plus marqué que jamais.</p>
+<p>On voit donc ici des institutions (l’université et les TL) qui ont le pouvoir d’organiser un espace, y imposer un certain ordre et encadrer le mouvement qui s’y produit. C’est ce que l’on peut appeler des « stratégies », au sens de Michel de Certeau (2010). Chacune tente avec ses moyens de définir et stabiliser des trajectoires préférentielles, à l’aide de moyens matériels et symboliques : chemins, grillages, barrières, panneaux fléchés, mise en visibilité ou au contraire invisibilisation de certains éléments de l’environnement. Des prises à l’action sont ainsi ajoutées ou retirée (Bessy &amp; Chateauraynaud, 1995). Face à cela, il y a les utilisateurs, « braconniers », se trouvant sur des terres qui ne leur appartiennent pas, confrontés à ces stratégies qui ne sont pas les leurs. Ce n’est pas pour autant qu’il suivent toujours docilement le schéma qui leur est imposé : bien au contraire, ils élaborent des « tactiques », passant parfois juste à côté des trajectoires légitimes, avec un petit décalage qui suffit à rendre les stratégies des institutions caduques, ou du moins à leur imposer la nécessité d’une adaptation.</p>
+<p>La référence à l’anarchisme ne peut pas être évitée ici : tandis que le pouvoir craint un « désordre » anarchique, qui l’empêche de gérer l’espace de manière normative, en tant qu’utilisateur on fait au contraire le constat d’un anarchisme différent : « l’ordre, sans le pouvoir »<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Quelques personnes coupent certes à travers l’herbe, mais il n’y a pas de multitude de trajectoire aléatoires. La quasi-totalité des piétons empruntent la même, et un ordre émerge, se stabilisant de lui-même et finissant, on l’a vu, par être matériellement inscrit dans l’espace.</p>
+<p>L’exemple est intéressant de par sa temporalité : il s’est déroulé, et se déroule encore, sous nos yeux. Ailleurs, ces processus sont rendus invisibles parce qu’ils sont terminés, les trajectoires ayant finit par se stabiliser (éventuellement dans le béton). Même si l’on admet que ces processus ne sont jamais terminés « pour toujours », il reste que leur temporalité est trop longue pour être appréhendés aussi simplement que dans le cas montré ci-dessus. L’exemple permet donc de voir le processus constant de renégociation de l’espace, avec des retournements de situation, des stabilisations soudainement interrompues, puis reprises ou abandonnées, etc. Différentes logiques s’affrontent, que l’on peut résumer ici en une opposition top-down VS bottom-up ; <em>de jure</em> VS <em>de facto</em> ; stratégie VS tactique ; <em>design</em> VS <em>user-experience</em> ; ordre imposé VS ordre émergent...</p>
+<p>La solution stratégique des gestionnaires ne s’est pas stabilisée. Les utilisateurs prennent un raccourci, et vont continuer à s’adapter, empruntant de nouvelles trajectoires, (dé)stabilisant d’autres chemins. Qu’on le veuille ou non, les utilisateurs n’en font qu’à leur tête. Aucun décideur ayant une visée normative ne peut prendre en compte toutes les possibilités, les réactions, les déviances, etc. Dans ce jeu entre chat et souris, on peut alors se poser la question de ce qui devient nécessaire pour imposer la visée normative. Dans le cas qui nous occupe il s’agit pour l’instant d’un grillage. Dans d’autres situations, la mise en ordre de l’espace repose sur des normes intériorisées et partagées, un panneau « interdit », des fils barbelés, un mur, une loi, des amendes, la présence policière, les armes, la violence.</p>
+<p>Mise à jour du 27.03.19:</p>
+<p>Au final, ils se sont décidés à bétonner le &quot;raccourci&quot; (voir ci-dessous à gauche). Peut-être par dépit, ayant constaté que leurs &quot;stratégies&quot; n'avaient pas éliminé les &quot;tactiques&quot; ? D'où l'importance pour l'urbanisme d'aller voir sur place comment les espaces sont utilisés, plutôt que de se concentrer sur des plans bien jolis en vue du ciel, qui produiront des espaces peu fonctionnels. De plus, les détournements continuent, puisque l'on voit que les travaux ont fait émerger un nouveau passage officieux. Et même du côté d'un des chemins officiels, une bonne partie des passant.e.s ne prennent pas les escaliers, aux marches irrégulières (photo de droite). Peut-être que le chemin est tout simplement trop étroit pour le nombre de personnes qui sortent du métro en même temps.</p>
+<p><img src="images/44701875_529014084190287_5187703195098415104_n-225x300.jpg" alt=""><img src="images/56119767_366345774213786_3804887003263139840_n-225x300.jpg" alt=""></p>
+<p>Bibliographie : Bessy, C., &amp; Chateauraynaud, F. (1995). Experts et faussaires : <em>Pour une sociologie de la perception,</em> Paris, Métailié. Certeau M. (2010), L’invention du quotidien : <em>1. Arts de faire</em>, Paris, Gallimard.</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Attribué à Pierre-Joseph Proudon, mais probablement jamais dit <em>verbatim</em>. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+<nav class="pagination-inner" aria-label="Articles next and previous links">
+	<a href="/yanndaout/blog/manifeste-pour-que-le-parkour-reste-une-alternative/" data-direction="forwards" class="pagination-previous">
+		<span>← Manifeste pour que le parkour reste une alternative </span>
+	  </a>
+	
+	<a href="/yanndaout/blog/la-video-comme-methode-dentrainement/" data-direction="backwards" class="pagination-next">
+		<span>La vidéo comme méthode d’entrainement →</span>
+	  </a>
+	
+</nav>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/blog/des-traces-strategies-et-tactiques/ -->
+	</body>
+</html>

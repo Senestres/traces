@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Bibliographie et filmographie</title>
+		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
+		<link rel="alternate" href="/yanndaout/feed/feed.xml" type="application/atom+xml" title="Traces">
+		<link rel="alternate" href="/yanndaout/feed/feed.json" type="application/json" title="Traces">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #c0c0c0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: var(--accent);
+	--text-color-link-visited: #17050f;
+
+	--primary: black;
+	--accent: #47c1b9;
+	--reverse: white;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #c0c0c0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+	height: 100%;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+footer {
+	margin-top: auto;
+	padding: 1rem 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+/* 	display: flex;
+	align-items: center; */
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: 0.5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	padding: 1em;
+}
+.logo {
+	display: flex;
+	align-items: center;
+}
+.logo-img {
+	max-width: 20%;
+	height: auto;
+}
+.home-link {
+	font-weight: 700;
+	font-size: min(max(16px, 4vw), 5rem);
+	font-family: "Rubik Mono One", sans-serif;
+	text-decoration: none;
+	background-size: cover;
+	background-position: 0 0;
+	transition: all 0.3s ease;
+	background: url("/yanndaout/img/handprint.png") 100% 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+.home-link:hover {
+	-webkit-text-fill-color: #5b728a54;
+	animation: animatedOne 100s linear infinite;
+}
+@keyframes animatedOne {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.menu {
+	font-size: large;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: 0.25em;
+	padding-right: 0.5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: 0.1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: var(--text-color-link-visited);
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* Tag links */
+.tag-links {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+}
+
+.tag-links-tag {
+	margin-bottom: 0.6rem;
+}
+
+.tag-links-tag a {
+	padding: 0.3rem;
+	margin: 0.1rem;
+	background-color: var(--text-color);
+	color: var(--reverse);
+	transition: background-color 200ms, color 200ms, transform 200ms;
+	text-decoration: none;
+	border-radius: 0.2rem;
+	&:visited {
+		color: var(--reverse);
+	}
+	&:hover,
+	&:focus {
+		background-color: var(--accent);
+		color: var(--text-color);
+		transform: scale(1.9);
+	}
+}
+.sidebar.tag-links-tag a:hover {
+	color: var(--text-color);
+}
+
+/* All tags list */
+.all-tags-list {
+	columns: 20rem;
+	column-gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+
+.all-tags-link a {
+	color: var(--textColor);
+	&:hover,
+	&:visited,
+	&:focus {
+		color: var(--accent);
+	}
+}
+
+.all-tags-post-count {
+	color: var(--accent);
+	font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination-inner {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.pagination-next {
+	margin-left: auto;
+}
+
+/* Social icons*/
+
+nav ul,
+ul.socials {
+	padding: 0;
+}
+.nav-icon:hover path {
+	fill: var(--accent);
+}
+
+svg.nav-icon {
+	width: 100%;
+	height: 30px;
+}
+
+/* Sidebar */
+.two-columns {
+	display: grid;
+	gap: 1rem 2rem;
+	position: relative;
+	margin: 0 auto;
+	@media (min-width: 68em) {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+.sidebar {
+	position: sticky;
+	margin: auto;
+}
+.two-columns .content {
+	margin-left: 0;
+}
+/* Content */
+.content {
+	max-width: 90ch;
+	margin: 0 auto;
+}
+
+.container-tag-list {
+	max-width: 110rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			
+		<div class="logo">
+			<img src="/yanndaout/img/handprintround-xs.png" class="logo-img">
+			<a href="/yanndaout/" class="home-link">TRACES</a>
+		</div>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="menu">
+					<li class="nav-item"><a href="/yanndaout/">Accueil</a></li>
+					<li class="nav-item"><a href="/yanndaout/tags/">Sujets</a></li>
+					<li class="nav-item"><a href="/yanndaout/about/">A propos</a></li>
+				
+				</ul>
+			</nav>
+      <ul class="socials">
+		<li class="nav-item">
+			<a href="/yanndaout/search/" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+	    <li class="nav-item">
+			<a href="https://github.com/Senestres" rel="me">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 100 100"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg>
+			</a>
+		</li>
+		<li class="nav-item">
+			<a href="/yanndaout/feed/feed.xml" rel="me">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#24292f" viewBox="0 0 24 24" class="nav-icon">
+					<path fill-rule="evenodd" d="M3.75 4.5a.75.75 0 01.75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75v-.75C18 11.708 12.292 6 5.25 6H4.5a.75.75 0 01-.75-.75V4.5zm0 6.75a.75.75 0 01.75-.75h.75a8.25 8.25 0 018.25 8.25v.75a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-.75a6 6 0 00-6-6H4.5a.75.75 0 01-.75-.75v-.75zm0 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd"></path>
+				  </svg>
+			</a>
+		</li>
+      </ul>
+
+
+		</header>
+
+		<main id="skip">
+			
+
+<div class="content">
+<h1>Bibliographie et filmographie</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2013-09-17">17 septembre 2013</time></li>
+	<li><a href="/yanndaout/tags/archive/" class="post-tag">archive</a>, </li>
+	<li><a href="/yanndaout/tags/archive/" class="post-tag">archive</a>, </li>
+	<li><a href="/yanndaout/tags/bibliographie/" class="post-tag">bibliographie</a>, </li>
+	<li><a href="/yanndaout/tags/filmographie/" class="post-tag">filmographie</a>, </li>
+	<li><a href="/yanndaout/tags/parkour-literally/" class="post-tag">parkour-literally</a></li>
+</ul>
+
+<article data-pagefind-body="">
+<p><strong>Qu’est-ce-que le parkour?</strong> Le parkour est né il y a une vingtaine d’années à Lisses, en banlieue parisienne, fondé par David Belle, inspiré par son père, Raymond Belle. Le mot “parkour”, dérivé de “parcours”, désigne en réalité deux choses bien distinctes: premièrement, un moyen de locomotion basé sur le principe d’efficience et ne faisant usage que du corps humain ainsi que des structures et objets se trouvant sur sa route (finalité de la pratique); deuxièmement, une méthode d’entraînement, incluant des exercices techniques, physiques, et mentaux destinés à rendre possible l’usage de ce moyen de locomotion (moyen pour atteindre cette finalité). Ces deux dimensions sont évidemment intrinsèquement liées puisque l’une est la condition rendant possible l’autre. Aussi sont-elles désignées par le même vocable: <em>parkour</em>. L’efficience, maître mot du parkour, se définit comme l’optimisation des moyens mis en oeuvre pour parvenir à un résultat; autrement dit, c’est la capacité de produire le maximum de résultats avec le minimum d’effort, de dépense. L’efficience recouvre donc plusieurs dimensions : vitesse, sécurité, économie d’énergie, capacité d’adaptation, fluidité.</p>
+<p><strong>1) LITTERATURE</strong></p>
+<p><strong>Littérature d’idées:</strong></p>
+<p>D. BELLE, <em>Parkour</em>, Editions Intervista, 2009</p>
+<p>G. HEBERT, <em>L’Éducation physique ou l’entraînement complet par la méthode naturelle</em>, 1912</p>
+<p>G. HEBERT, <em>L’Éducation physique, virile et morale par la méthode naturelle</em>, 4 volumes, 1936-1946</p>
+<p><strong>Articles en ligne:</strong></p>
+<p>En français:</p>
+<p>COLLECTIF, archives du site Parkour.NET, 2012, [disponible en ligne], URL = &lt;<a href="http://tracesblog.net/auteur/archivestraces/">http://tracesblog.net/auteur/archivestraces/</a>&gt;</p>
+<p>COLLECTIF, « Manifeste contre l’organisation de compétitions dans le parkour », 2013, [disponible en ligne], URL = &lt;<a href="http://tracesblog.net/manifeste-contre-lorganisation-de-comp%C3%A9titions-de-parkour/">http://tracesblog.net/manifeste-contre-lorganisation-de-compétitions-de-parkour/</a>&gt;</p>
+<p>N. BORNAZ, « Parkour, l’art de subvertir le rapport à l’espace public », 2008, [disponible en ligne], URL = &lt;<a href="http://tracesblog.net/parkour-lart-de-subvertir-le-rapport-a-lespace-public/">http://tracesblog.net/parkour-lart-de-subvertir-le-rapport-a-lespace-public/</a>&gt;</p>
+<p>N. BORNAZ, « Fiche-expérimentation: pratiques créatives des espaces », 2010, [disponible en ligne], URL = &lt;<a href="http://tracesblog.net/fiche-experimentation-pratiques-creatives-des-espaces/">http://tracesblog.net/fiche-experimentation-pratiques-creatives-des-espaces/</a>&gt;</p>
+<p>N. BORNAZ, « 5 bonnes raisons de ne jamais participer à aucune compétition de parkour ou de freerunning », 2011, [disponible en ligne], URL = &lt;<a href="http://tracesblog.net/5-bonnes-raisons-de-ne-jamais-participer-a-aucune-comp%C3%A9tition-de-parkour-ou-de-freerunning/">http://tracesblog.net/5-bonnes-raisons-de-ne-jamais-participer-a-aucune-compétition-de-parkour-ou-de-freerunning/</a>&gt;</p>
+<p>N. BORNAZ, « De l’absurdité des parkour-parks », 2011, [disponible en ligne], URL = &lt;<a href="http://tracesblog.net/de-labsurdite-des-parkour-parks/">http://tracesblog.net/de-labsurdite-des-parkour-parks/</a>&gt;</p>
+<p>N. BORNAZ, « Parkour-parks ou parkour: il faut choisir », 2013, [disponible en ligne], URL = &lt;<a href="http://tracesblog.net/parkour-parks-ou-parkour-il-faut-choisir/">http://tracesblog.net/parkour-parks-ou-parkour-il-faut-choisir/</a>&gt;</p>
+<p>En anglais:</p>
+<p>C. ROWAT, « Dilution », 2007, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://blane-parkour.blogspot.fr/2007/04/dilution.html">http://blane-parkour.blogspot.fr/2007/04/dilution.html</a>&gt;</p>
+<p>C. ROWAT, « The Descent », 2007, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://blane-parkour.blogspot.fr/2007/06/descent.html">http://blane-parkour.blogspot.fr/2007/06/descent.html</a>&gt;</p>
+<p>C. ROWAT, « When worlds collide », 2007, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://blane-parkour.blogspot.fr/2007/11/when-worlds-collide.html">http://blane-parkour.blogspot.fr/2007/11/when-worlds-collide.html</a>&gt;</p>
+<p>C. ROWAT, « Common denominators », 2008, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://blane-parkour.blogspot.fr/2008/11/common-denominators.html">http://blane-parkour.blogspot.fr/2008/11/common-denominators.html</a>&gt;</p>
+<p>C. ROWAT, « The inner game of parkour », 2008, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://blane-parkour.blogspot.fr/2008/01/inner-game-of-parkour.html">http://blane-parkour.blogspot.fr/2008/01/inner-game-of-parkour.html</a>&gt;</p>
+<p>C. ROWAT, « Moderation », 2008, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://blane-parkour.blogspot.fr/2008/07/moderation.html">http://blane-parkour.blogspot.fr/2008/07/moderation.html</a>&gt;</p>
+<p>C. ROWAT, « A call to arms », 2013, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://blane-parkour.blogspot.fr/2012/11/a-call-to-arms.html">http://blane-parkour.blogspot.fr/2012/11/a-call-to-arms.html</a>&gt;</p>
+<p>D. EDWARDES, « In or out: the dangers of moving indoors », 2013, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://www.parkourgenerations.com/article/or-out-dangers-moving-indoors">http://www.parkourgenerations.com/article/or-out-dangers-moving-indoors</a>&gt;</p>
+<p>D. EDWARDES, « Parkour vision », 2013, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://www.parkourgenerations.com/article/parkour-vision">http://www.parkourgenerations.com/article/parkour-vision</a>&gt;</p>
+<p>D. EDWARDES, « The space between », 2013, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://www.parkourgenerations.com/article/space-between">http://www.parkourgenerations.com/article/space-between</a>&gt;</p>
+<p>D. EDWARDES, « Being strong – being useful? », 2013, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://www.parkourgenerations.com/article/being-strong-being-useful">http://www.parkourgenerations.com/article/being-strong-being-useful</a>&gt;</p>
+<p>N. BROWN, « The art of displacement », 2013, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://www.parkourgenerations.com/article/art-displacement">http://www.parkourgenerations.com/article/art-displacement</a>&gt;</p>
+<p>T. COUETDIC, « A word about parkour », 2007, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://thomadventures.blogspot.fr/2007/04/word-about-parkour.html">http://thomadventures.blogspot.fr/2007/04/word-about-parkour.html</a>&gt;</p>
+<p>T. COUETDIC, « Memories of an early parkour experience », 2007, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://thomadventures.blogspot.fr/2007/05/memories-of-early-parkour-experiences.html">http://thomadventures.blogspot.fr/2007/05/memories-of-early-parkour-experiences.html</a>&gt;</p>
+<p>T. COUETDIC, « Learning to learn », 2010, [disponible en ligne], URL = &lt;<a href="https://web.archive.org/web/20150308072048/http://thomadventures.blogspot.fr/2010/03/learning-to-learn.html">http://thomadventures.blogspot.fr/2010/03/learning-to-learn.html</a>&gt;</p>
+<p><strong>2) VIDEOS</strong></p>
+<p><strong>Films documentaires:</strong></p>
+<p><em>Le singe est de retour</em>, Julie Angel, 2006</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/q4mZf80fOhQ">http://youtu.be/q4mZf80fOhQ</a></p>
+<p><em>Parkour Journeys</em>, Catsnake Studios, 2006</p>
+<p>Partie 1: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/HIodHmkIt6Q">http://youtu.be/HIodHmkIt6Q</a></p>
+<p>Partie 2: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/UAm23JdYkOY">http://youtu.be/UAm23JdYkOY</a></p>
+<p>Partie 3: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/JC1srccXeJw">http://youtu.be/JC1srccXeJw</a></p>
+<p>Partie 4: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/Ssk2q_N4JSw">http://youtu.be/Ssk2q_N4JSw</a></p>
+<p>Partie 5: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/OkQQERAiJJE">http://youtu.be/OkQQERAiJJE</a></p>
+<p>Partie 6: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/bWzLsVMTfas">http://youtu.be/bWzLsVMTfas</a></p>
+<p>Partie 7: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/_W330nUYXdg">http://youtu.be/_W330nUYXdg</a></p>
+<p><em>Parkour – the nature of challenge</em>, Paul Maunder, 2009</p>
+<p>Partie 1: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/Poph6Jmc688">http://youtu.be/Poph6Jmc688</a></p>
+<p>Partie 2: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/NYi8r5bUuo4">http://youtu.be/NYi8r5bUuo4</a></p>
+<p>Partie 3: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/0_l_F_RFdBc">http://youtu.be/0_l_F_RFdBc</a></p>
+<p>Partie 4: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/TNYltTLYKhU">http://youtu.be/TNYltTLYKhU</a></p>
+<p><em>Pilgrimage</em>, TK17, 2011</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/LMQ8xr3RTNU">http://youtu.be/LMQ8xr3RTNU</a></p>
+<p><em>PKVM Episode 1</em>, Jason Matten &amp; Ben Roper, 2010</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/bbJbduNfKGY">http://youtu.be/bbJbduNfKGY</a></p>
+<p><em>Sommes-nous faits pour courir?</em>, Niobe Thompson, 2012</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/ze524hvTRLs">http://youtu.be/ze524hvTRLs</a></p>
+<p><em>The path of leath resistance</em>, Paul Maunder, 2011</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/bJJl7S9Z4PQ">http://youtu.be/bJJl7S9Z4PQ</a></p>
+<p><strong>Films (fictions):</strong></p>
+<p><em>Babylon A.D.</em>, Mathieu Kassovitz, 2008</p>
+<p><em>Banlieue 13</em>, Pierre Morel, 2004</p>
+<p><em>Banlieue 13 Ultimatum</em>, Patrick Alessandrin, 2009</p>
+<p><em>Casino Royale</em>, Martin Campbell, 2006</p>
+<p><em>Les fils du vent</em>, Julien Seri, 2003</p>
+<p><em>Les rivières pourpres 2: les anges de l’apocalypse</em>, Olivier Dahan, 2004</p>
+<p><em>Par effraction</em>, Anthony Minghella, 2006</p>
+<p><em>Prince of Persia: les sables du temps</em>, Mike Newell, 2010</p>
+<p><em>Taken</em>, Pierre Morel, 2008</p>
+<p><em>Taxi 2</em>, Krawczyk, 2000</p>
+<p><em>Yamakasi: les samouraïs des temps modernes</em>, Ariel Zeitoun, 2001</p>
+<p><strong>Interviews:</strong></p>
+<p><em>Choose not to fall</em>, Daniel Ilabaca, 2009 <a href="https://web.archive.org/web/20150308072048/http://youtu.be/oLhASYkOT68">http://youtu.be/oLhASYkOT68</a></p>
+<p><em>David Belle interviewé par Sébastien Foucan</em>, David Belle, date inconnue</p>
+<p>partie 1: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/ijDdrtI2aJI">http://youtu.be/ijDdrtI2aJI</a></p>
+<p>partie 2: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/Gdyp5l9cNGs">http://youtu.be/Gdyp5l9cNGs</a></p>
+<p><em>Je saute de toit en toit</em>, David Belle, 2009</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/r1UPZf1zd0c">http://youtu.be/r1UPZf1zd0c</a></p>
+<p><em>Le monde est un terrain de jeux</em>, David Belle, 2009</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/XWneBIz6ATg">http://youtu.be/XWneBIz6ATg</a></p>
+<p><em>Le parkour</em>, David Belle, 2006</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/DN6_b6dLbVY">http://youtu.be/DN6_b6dLbVY</a></p>
+<p><em>Making-of Banlieue 13</em>, extrait (interview David Belle), David Belle, 2005</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/cXTldQKLRh4">http://youtu.be/cXTldQKLRh4</a></p>
+<p><em>Motivational training</em>, David Belle, 2011</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/-jpkM97k9xg">http://youtu.be/-jpkM97k9xg</a></p>
+<p><em>Parkour de David Belle</em>, David Belle interviewé par M. KASSOVITZ, 2008</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/rlWNR2pU624">http://youtu.be/rlWNR2pU624</a></p>
+<p><em>Retour à la racine</em>, Sébastien Foucan, 2010</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/67oSCD_Sybk">http://youtu.be/67oSCD_Sybk</a></p>
+<p><em>Simplesmente Parkour</em>, David Belle, date inconnue</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/mEbJBJDS9vk">http://youtu.be/mEbJBJDS9vk</a></p>
+<p><strong>Reportages télévisuels:</strong></p>
+<p>France 2, 1997</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://www.youtube.com/watch?v=jv_F0qoFd50">http://www.youtube.com/watch?v=jv_F0qoFd50</a></p>
+<p>Stade 2, 2000</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/gqo2YotK8C8">http://youtu.be/gqo2YotK8C8</a></p>
+<p>TF1, Rediffusion du 08/04/2001</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/PvZJtdxGKI8">http://youtu.be/PvZJtdxGKI8</a></p>
+<p><strong>Vidéos de parkour:</strong></p>
+<p><em>Parkour, literally.</em>, L’1consolable, 2010</p>
+<p>Part 1: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/SMppD-bUNWo">http://youtu.be/SMppD-bUNWo</a></p>
+<p>Part 2: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/spGDbyxDu4k">http://youtu.be/spGDbyxDu4k</a></p>
+<p>Part 3: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/xpLCoZKnIq4">http://youtu.be/xpLCoZKnIq4</a></p>
+<p><em>Parkour, literally. (part 4)</em>, Benoît Yin, 2012</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/aLOedRHrUrE">http://youtu.be/aLOedRHrUrE</a></p>
+<p><em>May movement tell them what words cannot say</em>, L’1consolable, 2012</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/3dkA8qje7kY">http://youtu.be/3dkA8qje7kY</a></p>
+<p><em>Spots are everywhere</em>, L’1consolable, 2012</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/LHfWldORz0A">http://youtu.be/LHfWldORz0A</a></p>
+<p><em>Dances with walls</em>, L’1consolable, 2009</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/P_Coukois18">http://youtu.be/P_Coukois18</a></p>
+<p><em>Go</em>, TK17 Studios, 2010</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/vzFFscHc5yM">http://youtu.be/vzFFscHc5yM</a></p>
+<p><em>Rage-Froobling</em>, Teige Matthews-Palmer, 2008</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/ci6VFNSZt8I">http://youtu.be/ci6VFNSZt8I</a></p>
+<p><em>Sproinking the envirohurdles</em>, Teige Matthews-Palmer, 2008</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/x7ECPoCwDZA">http://youtu.be/x7ECPoCwDZA</a></p>
+<p><em>Alley quickie</em>, Teige Matthews-Palmer, 2008</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/uZPs2niywYk">http://youtu.be/uZPs2niywYk</a></p>
+<p><em>Furyary</em>, Teige Matthews-Palmer, 2009</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/oO47AU24eLU">http://youtu.be/oO47AU24eLU</a></p>
+<p><em>Winter BR</em>, Joao Gabriel Onii, 2008</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/HovLGr7Uvt8">http://youtu.be/HovLGr7Uvt8</a></p>
+<p><em>Other ways</em>, Joao Gabriel Onii, 2009</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/EDkcEGb3DxI">http://youtu.be/EDkcEGb3DxI</a></p>
+<p><em>Zakti</em>, Joao Gabriel Onii, 2009</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/9wLdDNFJsSU">http://youtu.be/9wLdDNFJsSU</a></p>
+<p><em>Ancestry</em>, Joao Gabriel Onii, 2010</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/lYREr1EMVNU">http://youtu.be/lYREr1EMVNU</a></p>
+<p><em>GFR Ämpäri!</em>, Joonas Purastie, 2009</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/XBFnxaMTcpA">http://youtu.be/XBFnxaMTcpA</a></p>
+<p><em>19 years in the making</em>, Joonas Purastie, 2009</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/ZuK3k7qq0zA">http://youtu.be/ZuK3k7qq0zA</a></p>
+<p><em>My fuffy clouds of mindset</em>, Joonas Purastie, 2011</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/P32GLyghVEQ">http://youtu.be/P32GLyghVEQ</a></p>
+<p><em>Squid people</em>, Joonas Purastie, 2012</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/icdEdT5Aebw">http://youtu.be/icdEdT5Aebw</a></p>
+<p><em>Do it</em>, Tunc Leech Uysaler, 2012 / 2013</p>
+<p>Episode 1 “Slip’n Slide”: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/Tx23QSKeH9w">http://youtu.be/Tx23QSKeH9w</a></p>
+<p>Episode 2 “The circus”: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/apZ-uEezBG0">http://youtu.be/apZ-uEezBG0</a></p>
+<p>Episode 3 “Rindenmulchsand”: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/WBMrnti7A4o">http://youtu.be/WBMrnti7A4o</a></p>
+<p>Episode 4 “New bike please”: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/UZgd_P2uLHI">http://youtu.be/UZgd_P2uLHI</a></p>
+<p>Episode 5 “Schloegen”: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/o1Hn_zVGMwA">http://youtu.be/o1Hn_zVGMwA</a></p>
+<p>Episode 6 “X-House-Ted”: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/q7Ui_yZ8SaU">http://youtu.be/q7Ui_yZ8SaU</a></p>
+<p>Episode 7 “Wasser”: <a href="https://web.archive.org/web/20150308072048/http://youtu.be/t1r5A3iwAbk">http://youtu.be/t1r5A3iwAbk</a></p>
+<p><em>Paca Parkour Potes sur Paris</em>, Akmao “Le Cambodgien Volant”, 2012</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/A-fsXZhuQx4">http://youtu.be/A-fsXZhuQx4</a></p>
+<p><em>2 runs, no 3run</em>, Anthony Denis, 2012</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/O_y0p3FHxCQ">http://youtu.be/O_y0p3FHxCQ</a></p>
+<p><em>When I was bored in London</em>, Florian “Monkeyman”, 2012</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/r7XddHqU6Qo">http://youtu.be/r7XddHqU6Qo</a></p>
+<p><em>Run hard</em>, Florian “Monkeyman”, 2011</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/diVbGh0k0Jo">http://youtu.be/diVbGh0k0Jo</a></p>
+<p><em>Run harder</em>, Florian “Monkeyman”, 2012</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/Hh7QxwuPywg">http://youtu.be/Hh7QxwuPywg</a></p>
+<p><em>WIP – Episode to be continued</em>, Florian “Monkeyman”, 2013</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/DANrt7_qNYM">http://youtu.be/DANrt7_qNYM</a></p>
+<p><em>Günther kann nicht filmen</em>, Florian “Monkeyman”, 2012</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/Fm4JM2j7wLg">http://youtu.be/Fm4JM2j7wLg</a></p>
+<p><em>Origins</em>, Chris Rowat, 2008</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/5QSegpGxucM">http://youtu.be/5QSegpGxucM</a></p>
+<p><em>Chão Quente</em>, Duddu Rocha, 2012</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://youtu.be/pwVyzCBijOU">http://youtu.be/pwVyzCBijOU</a></p>
+<p><strong>3) SITES WEB</strong></p>
+<p><em>Parkour Linz Blog</em>, COLLECTIF</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://www.parkourlinz.at/blog/">http://www.parkourlinz.at/blog/</a></p>
+<p><em>Power is nothing without control</em>, blog de C. ROWAT</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://blane-parkour.blogspot.fr/">http://blane-parkour.blogspot.fr/</a></p>
+<p><em>Thomadventures</em>, blog de T. COUETDIC</p>
+<p><a href="https://web.archive.org/web/20150308072048/http://thomadventures.blogspot.fr/">http://thomadventures.blogspot.fr/</a></p>
+
+</article>
+
+</div>
+
+		</main>
+
+		<footer><small>Traces 2023 - Yann Daout - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 Deed</a></small></footer>
+
+		<!-- Current page: /yanndaout/archive/parkour-literally-bibliographie/ -->
+	</body>
+</html>
