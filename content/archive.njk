@@ -1,0 +1,32 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Archive
+  order: 6
+pagination:
+  data: collections.archive
+  size: 6
+  reverse: true
+permalink: 'archive{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber }}{% endif %}/index.html'
+paginationPrevText: '← Précédent '
+paginationNextText: 'Suivant →'
+paginationAnchor: '#post-list'
+---
+{% set postslist = pagination.items %}
+
+  {% include "postslist.njk" %}
+{# Only renders this section if there are links to render #}
+{% if pagination.href.next or pagination.href.previous %}
+      <nav class="pagination-inner" aria-label="Pagination links">
+        {% if pagination.href.previous %}
+          <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards" class="pagination-previous">
+            <span>{{ paginationPrevText if paginationPrevText else "Précédent" }}</span>
+          </a>
+        {% endif %}
+        {% if pagination.href.next %}
+          <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards" class="pagination-next">
+            <span>{{ paginationNextText if paginationNextText else "Suivant" }}</span>
+          </a>
+        {% endif %}
+      </nav>
+{% endif %}

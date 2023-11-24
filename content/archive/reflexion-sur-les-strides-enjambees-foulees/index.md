@@ -10,6 +10,7 @@ tags:
   - "impact"
   - "sprint"
   - "stride"
+author: "Samuel Ultima"
 ---
 
 \[embed\]https://youtu.be/ZHmA8YEEGyU\[/embed\]

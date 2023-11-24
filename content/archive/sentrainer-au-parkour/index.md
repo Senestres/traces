@@ -9,6 +9,7 @@ tags:
   - "entrainement"
   - "parkour"
 coverImage: "23592135_10212567202987939_1319501541595724713_o.jpg"
+author: "parkour.net"
 ---
 
 # **S'entraîner au Parkour c'est quoi ?**

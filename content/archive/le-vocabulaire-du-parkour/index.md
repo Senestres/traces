@@ -10,6 +10,7 @@ tags:
   - "lexique"
   - "parkour-net"
   - "technique"
+author: "parkour.net"
 ---
 
 Le Parkour, comme toute discipline, utilise pour chacun de ses mouvements une appellation bien spécifique. Il ne s’agit ici en aucune façon de se marginaliser ou même de se donner un style, c’est un moyen très naturel pour tout pratiquant de se rattacher à une même base commune afin de simplifier les conversations. Imaginez deux secondes la boxe sans son uppercut, le basket sans son dunk, le foot sans sa roulette marseillaise… Que faudrait-il mettre à la place ? Un coup de poing ascendant à la pointe du menton adverse, un joueur qui saute ballon en mains et qui le dépose dans le cercle s’y accrochant au passage le temps d’une pause victorieuse... Ca n’aurait plus aucun sens.

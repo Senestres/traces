@@ -9,6 +9,7 @@ tags:
   - "parkour-literally"
   - "parkour-park"
 coverImage: "cropped-IMG_44131.jpg"
+author: "parkour-literally"
 ---
 
 Cette démonstration aura l’avantage de se contenter de peu de mots dans la mesure où les arguments qui la motivent relèvent davantage du bon sens que d’un quelconque débat intellectuel.

@@ -9,6 +9,7 @@ tags:
   - "feminin"
   - "parkour-net"
   - "traceuse"
+author: "parkour.net"
 ---
 
 Le Parkour est l'art d'aller de l'avant: une discipline dont l'idéal est la recherche de la vitesse et de l'efficacité durant le franchissement d'obstacles pour aller d'un point A à un point B. Il n'y a pas de manque d'inspiration de la part des traceurs d'élite de part et d'autre du monde, particulièrement chez le fondateur David Belle. Pourtant, le nombre de pratiquantes de la discipline, bien qu'en augmentation, reste relativement bas. Ce court article a pour but de couvrir quelques un des problèmes auxquels les femmes pourront être confrontées en commençant le Parkour et donne quelques conseils pour les Traceuses.

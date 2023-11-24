@@ -11,6 +11,7 @@ tags:
   - "preparation-physique"
   - "renforcement"
   - "tutoriel"
+author: "parkour.net"
 ---
 
 **Table des matières:**

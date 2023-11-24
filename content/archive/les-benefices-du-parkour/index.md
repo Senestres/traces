@@ -8,6 +8,7 @@ tags:
   - "archive"
   - "entrainement"
   - "parkour-net"
+author: "parkour.net"
 ---
 
 Le **bénéfice** le **plus** évident de la pratique du **Parkour** est qu'**il augmente votre capacité à vous déplacer entre différents lieux**. C'est l'essence même du **Parkour**, le déplacement utile d'un endroit à un autre. **Vous devenez conscient de chemins reliant un lieu et un autre que vous n'auriez jamais vu avant**, et **votre capacité à utiliser ces chemins augmente plus vous vous entraînez**. Cela peut aussi avoir des applications pour le self défense car votre capacité à mettre rapidement de la distance entre vous et un attaquant va vous mettre hors de danger dans de nombreux cas.

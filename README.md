@@ -13,11 +13,12 @@ npm start
 ```
 
 <h1>To do</h1>
-Vérifier l'importation de Traces
-    ajouter des caption, modifier les [caption]
-    changer les footnotes en #_ftn1 etc.
-    ajouter les images aux posts
+Filtrer les 10+ tags les plus utilisés
+Cacher les tags sur mobile
 
-Importer les articles de Parkour Lausanne
-Ajouter une page pour les archives
+Développer la page "about"
+
 (Add pagination to tag pages.)
+
+Filtrer les archives par auteur
+Retirer les tags des archives

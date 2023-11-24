@@ -197,11 +197,6 @@
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/archive/nouvel-album-de-l1consolable/</loc>
-		<lastmod>2016-10-14</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://senestres.github.io/traces/archive/pour-une-promotion-du-parkour-feminin/</loc>
 		<lastmod>2017-01-04</lastmod>
 	</url>
@@ -387,12 +382,12 @@
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/entrainement/</loc>
+		<loc>https://senestres.github.io/traces/tags/archive/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/enseignement/</loc>
+		<loc>https://senestres.github.io/traces/tags/entrainement/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -402,12 +397,7 @@
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/news/</loc>
-		<lastmod>2023-11-17</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://senestres.github.io/traces/tags/archive/</loc>
+		<loc>https://senestres.github.io/traces/tags/enseignement/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -418,16 +408,6 @@
 	
 	<url>
 		<loc>https://senestres.github.io/traces/tags/parkour-literally/</loc>
-		<lastmod>2023-11-17</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://senestres.github.io/traces/tags/parkour-net/</loc>
-		<lastmod>2023-11-17</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://senestres.github.io/traces/tags/tuto/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -452,7 +432,12 @@
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/parkour-park/</loc>
+		<loc>https://senestres.github.io/traces/tags/parkour-net/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/traces/tags/tuto/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -467,7 +452,7 @@
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/ethique/</loc>
+		<loc>https://senestres.github.io/traces/tags/parkour-park/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -478,6 +463,21 @@
 	
 	<url>
 		<loc>https://senestres.github.io/traces/tags/dilution/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/traces/tags/ethique/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/traces/tags/creativite/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/traces/tags/espace-public/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -507,12 +507,12 @@
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/creativite/</loc>
+		<loc>https://senestres.github.io/traces/tags/definition/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/espace-public/</loc>
+		<loc>https://senestres.github.io/traces/tags/freerunning/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -527,12 +527,7 @@
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/definition/</loc>
-		<lastmod>2023-11-17</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://senestres.github.io/traces/tags/freerunning/</loc>
+		<loc>https://senestres.github.io/traces/tags/news/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -682,11 +677,6 @@
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/edito/</loc>
-		<lastmod>2023-11-17</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://senestres.github.io/traces/tags/bibliographie/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
@@ -703,6 +693,11 @@
 	
 	<url>
 		<loc>https://senestres.github.io/traces/tags/semiologie/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/traces/tags/edito/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -732,22 +727,22 @@
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/saut-de-chat/</loc>
-		<lastmod>2023-11-17</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://senestres.github.io/traces/tags/saut-de-bras/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/saut-de-fond/</loc>
+		<loc>https://senestres.github.io/traces/tags/saut-de-chat/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://senestres.github.io/traces/tags/saut-de-detente/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/traces/tags/saut-de-fond/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -782,6 +777,21 @@
 	</url>
 	
 	<url>
+		<loc>https://senestres.github.io/traces/tags/apprentissage/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/traces/tags/pedagogie/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/traces/tags/valeurs/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://senestres.github.io/traces/tags/affordances/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
@@ -798,21 +808,6 @@
 	
 	<url>
 		<loc>https://senestres.github.io/traces/tags/tactique/</loc>
-		<lastmod>2023-11-17</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://senestres.github.io/traces/tags/apprentissage/</loc>
-		<lastmod>2023-11-17</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://senestres.github.io/traces/tags/pedagogie/</loc>
-		<lastmod>2023-11-17</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://senestres.github.io/traces/tags/valeurs/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -867,16 +862,6 @@
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/feedback/</loc>
-		<lastmod>2023-11-17</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://senestres.github.io/traces/tags/motivation/</loc>
-		<lastmod>2023-11-17</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://senestres.github.io/traces/tags/organisations-internationales/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
@@ -887,7 +872,12 @@
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/fsg/</loc>
+		<loc>https://senestres.github.io/traces/tags/feedback/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/traces/tags/motivation/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -897,12 +887,7 @@
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/alternative/</loc>
-		<lastmod>2023-11-17</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://senestres.github.io/traces/tags/organisation/</loc>
+		<loc>https://senestres.github.io/traces/tags/fsg/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -922,17 +907,12 @@
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/traduction/</loc>
+		<loc>https://senestres.github.io/traces/tags/alternative/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://senestres.github.io/traces/tags/sport/</loc>
-		<lastmod>2023-11-17</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://senestres.github.io/traces/tags/stoicisme/</loc>
+		<loc>https://senestres.github.io/traces/tags/organisation/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -952,17 +932,32 @@
 	</url>
 	
 	<url>
+		<loc>https://senestres.github.io/traces/tags/traduction/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/traces/tags/sport/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/traces/tags/stoicisme/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/traces/tags/controle-moteur/</loc>
+		<lastmod>2023-11-17</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://senestres.github.io/traces/tags/attention/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://senestres.github.io/traces/tags/politique/</loc>
-		<lastmod>2023-11-17</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://senestres.github.io/traces/tags/controle-moteur/</loc>
 		<lastmod>2023-11-17</lastmod>
 	</url>
 	
@@ -974,5 +969,10 @@
 	<url>
 		<loc>https://senestres.github.io/traces/blog/Traces%20v2/</loc>
 		<lastmod>2023-11-20</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://senestres.github.io/traces/archive/</loc>
+		<lastmod>2023-11-24</lastmod>
 	</url>
 </urlset>

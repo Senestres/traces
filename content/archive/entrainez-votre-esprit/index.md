@@ -8,6 +8,7 @@ tags:
   - "archive"
   - "entrainement"
   - "parkour-net"
+author: "parkour.net"
 ---
 
 **Le problème avec le Parkour est qu'il ne consiste pas seulement à apprendre de nouvelles façons de penser, il est aussi nécessaire d'en oublier certaines.**

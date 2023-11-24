@@ -9,6 +9,7 @@ tags:
   - "definition"
   - "entrainement"
   - "parkour-net"
+author: "parkour.net"
 ---
 
 **I\] Au fait, qu'est-ce que le Parkour ?** Pour reprendre la définition dans l'article correspondant: Le Parkour répond à une fonction première de l'être humain : se déplacer. C'est un art qui sollicite un véritable esprit de combattant et propose de l'action pure à ses pratiquants.

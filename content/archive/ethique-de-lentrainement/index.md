@@ -10,6 +10,7 @@ tags:
   - "entrainement"
   - "éthique"
   - "parkour-net"
+author: "parkour.net"
 ---
 
 Cet article a pour but de d’être un guide d'entraînement simplifié applicable en tout lieu.

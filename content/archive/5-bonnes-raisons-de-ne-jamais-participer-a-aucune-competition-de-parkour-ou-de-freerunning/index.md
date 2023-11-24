@@ -10,6 +10,7 @@ tags:
   - "compétition"
   - "parkour-literally"
 coverImage: "cropped-IMG_44131.jpg"
+author: "parkour-literally"
 ---
 
 > « Le parkour est une discipline non-compétitive. » (Hebertiste and TK17)

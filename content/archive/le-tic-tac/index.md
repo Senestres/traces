@@ -10,6 +10,7 @@ tags:
   - "technique"
   - "tic-tac"
   - "tutoriel"
+author: "parkour.net"
 ---
 
 **Table des matières**

@@ -1,9 +1,9 @@
 ---
 title: "Pour une promotion du parkour féminin"
-author: "Yann Daout"
 date: "2017-01-04"
 categories: 
   - "articles"
+author: "Leonie Brodmann"
 ---
 
 Le parkour est une discipline ouverte à tous types de pratiquant.e.s. L’entrainement est adaptable pour les enfants comme adultes, femmes comme hommes. En effet, il s’agit d’un entrainement qui a pour but une amélioration personnelle physique comme mentale. Mais le parkour, pour un non-initié, est souvent perçu comme un sport extrême, comportant des risques et demandant une condition physique hors du commun. Cette image est intimidante pour les novices, n’osant pas forcément s’exposer à de tels risques, ou ne voulant pas se voir échouer par manque de condition physique. Ceci est particulièrement un obstacle à la pratique féminine, et c'est un constat dans la plupart des régions du monde que les femmes sont quasi-absentes du parkour. Or pour une femme, la pratique du parkour a de réels impacts sur soi, ainsi que sur la discipline et la place de la femme dans la société. Nous verrons ici quels sont les obstacles majeurs à la pratique féminine du parkour, pourquoi il semble nécessaire de faire la promotion du parkour féminin, puis quelles solutions peuvent être mises en place pour faciliter l’initiation des femmes à cette discipline. Je cite ici des exemples d’associations qui travaillent activement à la promotion du parkour féminin, à Londres et à Lausanne car ce sont ceux que j’ai pu rencontrer dans ma pratique personnelle.
@@ -55,34 +55,13 @@ Il ne reste plus qu’à encourager tout traceur, groupe ou association à faire
 ## Notes
 
 [^1]: Angel Julie, « [Turning up and taking part](http://www.see-do.com/participation/) »
-
 [^2]: Beecroft Brianne, « [5 ways to support female athletes](https://parkouredu.org/5-ways-to-support-female-parkour-athletes/) »
-
 [^3]: Fiona B, « [Who’s city? Our city!](https://glasgowparkourgirls.wordpress.com/2013/09/11/whose-city-our-city/) »
-
 [^4]: Ibid.
-
 [^5]: Ibid.
-
 [^6]: Angel Julie, « [Manhood parkour, a quick response to parkour, masculinity and the city, by Jeffrey L. Kidder](http://julieangel.com/quickresponse/) », 2013.
-
 [^7]: Angel Julie, « [Turning up and taking part](http://www.see-do.com/participation/) »
-
 [^8]: Ibid.
-
 [^9]: Fiona B, « [Why no boys? (sometimes)](https://glasgowparkourgirls.wordpress.com/2014/01/11/why-no-boys/) »
-
 [^10]: Ibid.
-
 [^11]: Henry Max, « [6 things parkour girls wish guys would stop doing](https://maxhenryparkour.wordpress.com/2014/11/11/6-things-parkour-girls-wish-guys-would-stop-doing/) »
-
-## Bibliographie
-
-- Angel Julie, « [Manhood parkour, a quick response to parkour, masculinity and the city, by Jeffrey L. Kidder](http://julieangel.com/quickresponse/) », 6 Juin 2013. Consulté le 27.10.2016.
-- Angel Julie, « [Turning up and taking part](http://www.see-do.com/participation/) ». Consulté le 27.10.2016.
-- Beecroft, Brianne, « [5 ways to support female athletes](https://parkouredu.org/5-ways-to-support-female-parkour-athletes/) », 25 octobre 2016. Consulté le 27.10.2016.
-- Fiona B, « [Who’s city? Our city!](https://glasgowparkourgirls.wordpress.com/2013/09/11/whose-city-our-city/) », 11 septembre 2013. Consulté le 1.11.2016.
-- Fiona B, « [Why no boys? (sometimes)](https://glasgowparkourgirls.wordpress.com/2014/01/11/why-no-boys/) », 11 janvier 2014. Consulté le 31.10.2016.
-- Henry Max, « [6 things parkour girls wish guys would stop doing](https://maxhenryparkour.wordpress.com/2014/11/11/6-things-parkour-girls-wish-guys-would-stop-doing/) », 11 novembre 2014. Consulté le 31.10.2016.
-- Robinson Tara, « [Expectations…  by Tara Robinson](http://www.see-do.com/expectations-tara-robinson/) ». Consulté le 31.10.2016.
-- [She can trace](http://shecantrace.com/). Consulté le 20.12.2016.

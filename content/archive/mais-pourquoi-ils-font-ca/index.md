@@ -19,6 +19,7 @@ tags:
   - "raisons"
   - "stupide"
 coverImage: "calvin_and_hobbes_001-1024x1024-2-e1506809502778.jpg"
+author: "David Pagnon"
 ---
 
 ### **Introduction**

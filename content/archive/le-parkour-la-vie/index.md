@@ -17,6 +17,7 @@ tags:
   - "philosophie"
   - "vie"
 coverImage: "challenges-ahead-900-x-500-900x407.png"
+author: "David Pagnon"
 ---
 
 Bien que l'activité soit en plein boom, le terme de "**parkour**" (ou de "traceur", le pratiquant de parkour) ne parle pas encore à tout le monde. Wikipédia parle d'une "activité physique qui vise à un déplacement libre et efficace dans tous types d'environnements, et en particulier hors des voies de passage préétablies". La fédération de parkour décrit une "activité physique consistant à se déplacer efficacement grâce à ses seules capacités motrices, dans différents types d'environnements". On entend souvent que c'est "l'art de se déplacer d'un point A à un point B de la manière la plus efficace possible". Souvent, le stéréotype classique se représente des "jeunes casse-cous qui grimpent, courent et sautent partout, en particulier en faisant des saltos d'immeuble en immeuble".
@@ -37,7 +38,7 @@ Ces quelques lignes le laissent bien augurer, le parkour vient avec des valeurs.
 
 Alors effectivement, au delà de ces considérations générales, en pratique le parkour reste une discipline bien particulière, qui propose des techniques spécifiques de franchissement d’obstacles. Elle emprunte à beaucoup de disciplines : l'athlétisme pour la course et les sauts, l'escalade pour les parties de grimpe, la gymnastique pour les repères du corps dans l'espace, les arts martiaux pour le contrôle dans la puissance et pour les valeurs, et j'en passe.
 
-\[caption id="attachment\_224" align="aligncenter" width="300"\]![Saut de bras en miroir dans un parc de Grenoble, avec Thomas. Photo par Pierre Chauffour.](images/Saut-symétrique-Pierre-Chauffour-300x200.jpg) Le parkour emprunte, mais apporte également beaucoup aux autres disciplines. Ici, à la photo artistique, par Pierre Chauffour.\[/caption\]
+\[caption id="attachment\_224" align="aligncenter" width="300"\]![Saut de bras en miroir dans un parc de Grenoble, avec Thomas. Photo par Pierre Chauffour.](images/Saut-symetrique-Pierre-Chauffour-300x200.jpg) Le parkour emprunte, mais apporte également beaucoup aux autres disciplines. Ici, à la photo artistique, par Pierre Chauffour.\[/caption\]
 
 Le parkour emprunte, mais il peut également beaucoup apporter ; et ce autant dans les domaines du sport, que des sciences, de l'éducation populaire, de la santé et de l'art. Le sport pour le côté physique et complet, les sciences pour les motricités spécifiques, l'éducation populaire pour les valeurs et pour la pratique à moindre coût dans tous types d'environnement, la santé pour le bien-être physique et psychologique, et l'art pour l'aspect visuel et encore novateur.
 

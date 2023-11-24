@@ -8,6 +8,7 @@ tags:
   - "press"
   - "recherche"
 coverImage: "Capture.png"
+author: "David Pagnon"
 ---
 
 ![](images/Capture.png)

@@ -11,6 +11,7 @@ tags:
   - "technique"
   - "tutoriel"
 coverImage: "tile_back.jpg"
+author: "parkour.net"
 ---
 
 **Table des matières**

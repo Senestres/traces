@@ -9,6 +9,7 @@ tags:
   - "blane"
   - "dilution"
   - "parkour-net"
+author: "parkour.net"
 ---
 
 **Dilution: a - Procédé visant à rendre plus faible ou moins concentré b - Un état dilué ou affaibli c - Une substance diluée**

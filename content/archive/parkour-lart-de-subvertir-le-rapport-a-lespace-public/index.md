@@ -12,6 +12,7 @@ tags:
   - "parkour-literally"
   - "subversion"
 coverImage: "cropped-IMG_44131.jpg"
+author: "parkour-literally"
 ---
 
 > « Pas plus que la démocratie, l’espace public n’est quelque chose de naturel et qui va de soi. » Hugues Bazin

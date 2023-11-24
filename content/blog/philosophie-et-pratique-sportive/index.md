@@ -10,7 +10,7 @@ tags:
   - "philosophie"
   - "sport"
   - "stoicisme"
-coverImage: "1280px-Damgymnastik._Gymnastiska_centralinstitutet_Hamngatan_19_Norrmalm_Stockholm_-_Nordiska_Museet_-_NMA.0034300.jpg"
+coverImage: "gymnastika.jpg"
 ---
 
 \[caption id="attachment\_2897" align="alignright" width="144"\]![Fresque des jeunes boxeurs, Akrotiri](images/Young_boxers_fresco_Akrotiri_Greece-176x300.jpg) Fresque des jeunes boxeurs, Akrotiri, v. 1500 av. JC\[/caption\]
@@ -19,7 +19,7 @@ A la suite de Pierre Hadot et de Michel Foucault, la philosophie antique peut ê
 
 Dans le langage courant, le mot sport est utilisé de manière peu spécifique, regroupant les jeux antiques et modernes, les pratiques physiques, qu’elles soient hygiéniques, compétitives, ludiques ou d’entrainement. Ceci a pour conséquence que le terme recouvre de multiples modalités et finalités de pratique et qu’il implique donc des rapports à soi et à notre corps fort divers. La gymnastique destinée à l’entrainement des militaires n’est pas le vélo en salle de fitness, qui n’est pas le football joué par des enfants dans la rue, lui-même n’étant pas celui pratiqué par les professionnels. Pourtant toute activité physique n’est pas du sport : une dépense énergétique similaire à une pratique sportive légère peut être faite en jardinant. Nager pour sauver un enfant de la noyade ou courir après son bus ne sont habituellement pas considérés comme des pratiques sportives même si les gestes effectués sont identiques à des gestes sportifs. Et on ne peut non plus affirmer que tout sport est une activité physique puisque le bridge comme les échecs sont reconnus comme sports par le Comité International Olympique. On voit à quel point le terme est nébuleux puisque ces exemples ont tendance à s’opposer au sens commun : lorsque l’on demande à quelqu’un s’il est sportif, on ne s’attend pas à ce qu’il réponde qu’il joue régulièrement aux cartes.
 
-\[caption id="" align="alignnone" width="782"\]![](images/1280px-Damgymnastik._Gymnastiska_centralinstitutet%2C_Hamngatan_19%2C_Norrmalm%2C_Stockholm_-_Nordiska_Museet_-_NMA.0034300.jpg) La gymnastique est-elle un sport ?\[/caption\]
+\[caption id="" align="alignnone" width="782"\]![](images/gymnastika.jpg) La gymnastique est-elle un sport ?\[/caption\]
 
 Ceci invite à la prudence lorsque l’on parle de sport, et cela pour deux raisons. Premièrement parce que l’on a tendance à penser le sport comme un phénomène universel et plus ou moins uniforme, et à assimiler les pratiques physiques de l’antiquité à notre expérience contemporaine du sport. Or le terme même de sport (dérivé de _desport_, « plaisir, divertissement »[^2] date du 19ème siècle, et c’est donc rétrospectivement qu’on l’applique aux pratiques antiques. Réunir des pratiques aussi distantes dans le temps dans une même catégorie peut masquer leurs profondes différences, peut-être au risque de tomber dans l’anachronisme. Ainsi de nombreux historiens et sociologues[^3] considèrent qu’il n’y a pas de continuité directe entre les jeux antiques et les sports modernes.
 

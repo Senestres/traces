@@ -11,6 +11,7 @@ tags:
   - "espace-public"
   - "parkour-literally"
 coverImage: "cropped-IMG_44131.jpg"
+author: "parkour-literally"
 ---
 
 **Outillage conceptuel:**

@@ -10,6 +10,7 @@ tags:
   - "parkour-net"
   - "saut-de-chat"
   - "tutoriel"
+author: "parkour.net"
 ---
 
 **Table des matières**

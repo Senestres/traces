@@ -9,6 +9,7 @@ tags:
   - "parkour-literally"
   - "parkour-park"
 coverImage: "cropped-IMG_44131.jpg"
+author: "parkour-literally"
 ---
 
 >  **«** Entre la nature et nous, que dis-je ? entre nous et notre propre conscience, un voile s’interpose, voile épais pour le commun des hommes, voile léger, presque transparent, pour l’artiste et le poète », Henri Bergson, Le Rire.

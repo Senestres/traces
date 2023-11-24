@@ -10,6 +10,7 @@ tags:
   - "courbatures"
   - "entrainement"
   - "parkour-net"
+author: "parkour.net"
 ---
 
 **Courbatures** Non les muscles n'explosent pas, ils subissent des micro-déchirements de leurs fibres, ce qui va occasionner une adaptation, les fibres vont soit augmenter en nombre, mais généralement elles vont surtout augmenter de volume (pas forcément beaucoup, cela dépend du type d'effort et du métabolisme de la personne).

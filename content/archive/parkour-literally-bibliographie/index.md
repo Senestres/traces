@@ -9,6 +9,7 @@ tags:
   - "filmographie"
   - "parkour-literally"
 coverImage: "cropped-IMG_44131.jpg"
+author: "parkour-literally"
 ---
 
 **Qu’est-ce-que le parkour?** Le parkour est né il y a une vingtaine d’années à Lisses, en banlieue parisienne, fondé par David Belle, inspiré par son père, Raymond Belle. Le mot “parkour”, dérivé de “parcours”, désigne en réalité deux choses bien distinctes: premièrement, un moyen de locomotion basé sur le principe d’efficience et ne faisant usage que du corps humain ainsi que des structures et objets se trouvant sur sa route (finalité de la pratique); deuxièmement, une méthode d’entraînement, incluant des exercices techniques, physiques, et mentaux destinés à rendre possible l’usage de ce moyen de locomotion (moyen pour atteindre cette finalité). Ces deux dimensions sont évidemment intrinsèquement liées puisque l’une est la condition rendant possible l’autre. Aussi sont-elles désignées par le même vocable: _parkour_. L’efficience, maître mot du parkour, se définit comme l’optimisation des moyens mis en oeuvre pour parvenir à un résultat; autrement dit, c’est la capacité de produire le maximum de résultats avec le minimum d’effort, de dépense. L’efficience recouvre donc plusieurs dimensions : vitesse, sécurité, économie d’énergie, capacité d’adaptation, fluidité.

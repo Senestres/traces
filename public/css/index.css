@@ -413,6 +413,10 @@ svg.nav-icon {
 	max-width: 90ch;
 	margin: 0 auto;
 }
+.content img {
+	max-width: 100%;
+	height: auto;
+}
 
 .container-tag-list {
 	max-width: 110rem;

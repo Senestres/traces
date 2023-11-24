@@ -7,3 +7,5 @@ eleventyNavigation:
 # About
 
 J'écris les choses pour ne plus avoir à les penser.
+
+Les archives de Traces sont disponibles [ici](/archive/page/0/) 

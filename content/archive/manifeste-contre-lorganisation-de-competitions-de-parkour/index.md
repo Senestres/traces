@@ -10,6 +10,7 @@ tags:
   - "manifeste"
   - "parkour-literally"
 coverImage: "cropped-IMG_44131.jpg"
+author: "parkour-literally"
 ---
 
 **Nous, traceuses et traceurs de France et d’ailleurs, nous opposons le plus fermement du monde à l’organisation de championnats et compétitions de parkour.**

@@ -9,6 +9,7 @@ tags:
   - "definition"
   - "freerunning"
   - "parkour-net"
+author: "parkour.net"
 ---
 
 ### Introduction

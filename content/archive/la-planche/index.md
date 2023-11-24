@@ -12,6 +12,7 @@ tags:
   - "planche"
   - "technique"
   - "tutoriel"
+author: "parkour.net"
 ---
 
 **Table des matières**

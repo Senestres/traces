@@ -2,6 +2,7 @@ const { DateTime } = require("luxon");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownIt = require("markdown-it");
 const markdownItFootnote = require('markdown-it-footnote');
+const markdownItEleventyImg = require("markdown-it-eleventy-img");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -91,6 +92,7 @@ module.exports = function(eleventyConfig) {
 	});
 
 	// Customize Markdown library settings:
+	const path = require("path"); // not sure how this works, but it does
 	eleventyConfig.amendLibrary("md", mdLib => {
 		mdLib.use(markdownItAnchor, {
 			permalink: markdownItAnchor.permalink.ariaHidden({
@@ -103,6 +105,20 @@ module.exports = function(eleventyConfig) {
 			slugify: eleventyConfig.getFilter("slugify")
 		});
 		mdLib.use(markdownItFootnote); 	// add markdown footnotes
+		mdLib.use(markdownItEleventyImg, { 	//add markdown image
+			resolvePath: (filepath, env) => path.join(path.dirname(env.page.inputPath), filepath),
+			html: true,
+			breaks: true,
+			linkify: true,
+			globalAttributes: {
+				sizes: "100vw"
+			},
+			imgOptions: {
+			widths: [800, "auto"],
+			outputDir: "docs/img/", // this doesn't keep the folder structure so needs path change
+			urlPath: "/img/", 		// path change mentionned above
+		},
+		}); 
 	});
 
 	// add excerpt

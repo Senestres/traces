@@ -9,6 +9,7 @@ tags:
   - "archive"
   - "parkour-net"
   - "tuto"
+author: "parkour.net"
 ---
 
 Si naît en vous l’envie de débuter la pratique du Parkour alors prenez le temps de la réflexion : soyez sûr de votre décision et comprenez bien ce qui vous attends avant de vous précipiter dans des sauts irréfléchis.

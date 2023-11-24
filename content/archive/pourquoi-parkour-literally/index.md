@@ -9,6 +9,7 @@ tags:
   - "edito"
   - "parkour-literally"
 coverImage: "cropped-IMG_44131.jpg"
+author: "parkour-literally"
 ---
 
 En 25 ans, le parkour s’est propagé partout. Mais n’importe comment.
