@@ -16,9 +16,9 @@ jobs:
       - name: Sync Files
         uses: SamKirkland/web-deploy@v1           
         with:
-          target-server: ${{ secrets.FTP_SERVER }}
-          remote-user: ${{ secrets.FTP_USER }}
-          private-ssh-key: ${{ secrets.SSH_KEY }}
+          ftp-server: ${{ secrets.FTP_SERVER }}
+          ftp-username: ${{ secrets.FTP_USER }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
           source-path: docs/
           destination-path: sites/tracesblog/
 
