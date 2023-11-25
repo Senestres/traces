@@ -16,11 +16,11 @@ jobs:
       - name: Sync Files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4           
         with:
-          ftp-server: ${{ secrets.FTP_SERVER }}
-          ftp-username: ${{ secrets.FTP_USER }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
-          source-path: docs/
-          destination-path: sites/tracesblog/
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: docs/
+          server-dir: sites/tracesblog/
 
       
 
