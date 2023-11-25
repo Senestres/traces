@@ -1,5 +1,5 @@
 module.exports = {
-	title: "Traces",
+	title: "Traces blog",
 	url: "https://senestres.github.io/traces/",
 	language: "fr",
 	description: "Un site sur le corps, la culture et l'apprentissage",

@@ -1,24 +1,24 @@
-name: Build Eleventy
-
 on: [push]
 
 jobs:
   build:
+    name: Build Eleventy
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: SFTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-              
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: docs/
-          server-dir: sites/traces/
+      - name: Build
+        run: npm run build
 
+      - name: Sync Files
+        uses: SamKirkland/web-deploy@v1           
+        with:
+          target-server: ${{ secrets.FTP_SERVER }}
+          remote-user: ${{ secrets.FTP_USER }}
+          private-ssh-key: ${{ secrets.SSH_KEY }}
+          source-path: docs/
+          destination-path: sites/tracesblog/
 
       
 
