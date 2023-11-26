@@ -1,9 +1,20 @@
 <div class="sidebar">
-<ul class="tag-links">
+
+  <input type="checkbox" id="tag-links-toggle" class="tag-links-toggle" />
+  <label for="tag-links-toggle" class="switch">
+    Tags
+  </label>
+
+  
+<ul class="tag-links" id="tag-links">
   {% for tag in collections.posts | getAllTags | filterTagList %}
+  {% if loop.index0 < 25 %}
     {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
     <li class="tag-links-tag"><a href="{{ tagUrl }}">{{ tag }}</a>
     </li>
+  {% endif %}
   {% endfor %}
+  <div style="margin-left: 1rem"><a href="/tags/">tous les tags</a></div>
   </ul>
+
 </div>

@@ -5,8 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Tagged “subversion”</title>
 		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
-		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Traces">
-		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Traces">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Traces blog">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Traces blog">
 		
 		<style>.postlist { counter-reset: start-from 2 }
 * { box-sizing: border-box; }
@@ -23,6 +23,7 @@
 :root {
 	--color-gray-20: #e0e0e0;
 	--color-gray-50: #c0c0c0;
+	--color-gray-70: #5f5f5f;
 	--color-gray-90: #333;
 
 	--background-color: #fff;
@@ -233,8 +234,7 @@ header {
 /* Posts list */
 .postlist {
 	list-style: none;
-	padding: 0;
-	padding-left: 1.5rem;
+	padding: 1rem;
 }
 .postlist-item {
 	display: flex;
@@ -246,7 +246,6 @@ header {
 .postlist-item:before {
 	display: inline-block;
 	pointer-events: none;
-	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
 	line-height: 100%;
 	text-align: right;
 	margin-left: -1.5rem;
@@ -260,14 +259,9 @@ header {
 	word-spacing: -0.5px;
 }
 .postlist-link {
-	font-size: 1.1875em; /* 19px /16 */
+	font-size: 1.5rem;
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
-	padding-left: 0.25em;
-	padding-right: 0.5em;
-	text-underline-position: from-font;
-	text-underline-offset: 0;
-	text-decoration-thickness: 1px;
 }
 .postlist-item-active .postlist-link {
 	font-weight: bold;
@@ -293,6 +287,7 @@ header {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	margin-bottom: 1rem;
 }
 .post-metadata time {
 	margin-right: 1em;
@@ -328,6 +323,7 @@ h2 + .header-anchor {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 0;
+	font-weight: 200;
 }
 
 .tag-links-tag {
@@ -354,6 +350,24 @@ h2 + .header-anchor {
 }
 .sidebar.tag-links-tag a:hover {
 	color: var(--text-color);
+}
+input, label
+	{
+	display: none;
+}
+@media (max-width: 68rem) {
+	input, label
+	{
+	cursor: pointer;
+	display: inline-block;
+	font-size: large;
+	color: var(--color-gray-70)
+	}
+	input:not(:checked) ~ .tag-links, .toggle-close { display: none;}
+	input:checked ~ .toggle-open { 	display: none;}
+	input + label:after { content: "+"; }
+	input:checked + label:after { content: "-"; }
+	.tag-links-toggle { display: none; } 
 }
 
 /* All tags list */
@@ -408,14 +422,13 @@ svg.nav-icon {
 	display: grid;
 	gap: 1rem 2rem;
 	position: relative;
-	margin: 0 auto;
-	@media (min-width: 68em) {
+/* 	margin: 0 auto; */
+	@media (min-width: 68rem) {
 		grid-template-columns: 1fr 2fr;
 	}
 }
 .sidebar {
-	position: sticky;
-	margin: auto;
+	padding: 1rem 1rem 0 1rem;
 }
 .two-columns .content {
 	margin-left: 0;
@@ -485,221 +498,224 @@ svg.nav-icon {
 		<main id="skip">
 			    <div class="two-columns">
         <div class="sidebar">
-<ul class="tag-links">
+
+  <input type="checkbox" id="tag-links-toggle" class="tag-links-toggle" />
+  <label for="tag-links-toggle" class="switch">
+    Tags
+  </label>
+
+  
+<ul class="tag-links" id="tag-links">
+  
   
     
     <li class="tag-links-tag"><a href="/tags/philosophie/">philosophie</a>
     </li>
   
+  
+  
     
     <li class="tag-links-tag"><a href="/tags/entrainement/">entrainement</a>
     </li>
+  
+  
   
     
     <li class="tag-links-tag"><a href="/tags/enseignement/">enseignement</a>
     </li>
   
+  
+  
     
     <li class="tag-links-tag"><a href="/tags/histoire/">histoire</a>
     </li>
+  
+  
   
     
     <li class="tag-links-tag"><a href="/tags/urbanisme/">urbanisme</a>
     </li>
   
+  
+  
     
     <li class="tag-links-tag"><a href="/tags/institutions-internationales/">institutions internationales</a>
     </li>
+  
+  
   
     
     <li class="tag-links-tag"><a href="/tags/fig/">FIG</a>
     </li>
   
+  
+  
     
     <li class="tag-links-tag"><a href="/tags/news/">news</a>
     </li>
+  
+  
   
     
     <li class="tag-links-tag"><a href="/tags/sport/">sport</a>
     </li>
   
+  
+  
     
     <li class="tag-links-tag"><a href="/tags/stoicisme/">stoicisme</a>
     </li>
+  
+  
   
     
     <li class="tag-links-tag"><a href="/tags/apprentissage/">apprentissage</a>
     </li>
   
+  
+  
     
     <li class="tag-links-tag"><a href="/tags/competition/">compétition</a>
     </li>
+  
+  
   
     
     <li class="tag-links-tag"><a href="/tags/ethique/">éthique</a>
     </li>
   
+  
+  
     
     <li class="tag-links-tag"><a href="/tags/parkour/">parkour</a>
     </li>
+  
+  
   
     
     <li class="tag-links-tag"><a href="/tags/pedagogie/">pedagogie</a>
     </li>
   
+  
+  
     
     <li class="tag-links-tag"><a href="/tags/valeurs/">valeurs</a>
     </li>
+  
+  
   
     
     <li class="tag-links-tag"><a href="/tags/ama/">ama</a>
     </li>
   
+  
+  
     
     <li class="tag-links-tag"><a href="/tags/dopage/">dopage</a>
     </li>
+  
+  
   
     
     <li class="tag-links-tag"><a href="/tags/genetique/">génétique</a>
     </li>
   
+  
+  
     
     <li class="tag-links-tag"><a href="/tags/precarite/">précarité</a>
     </li>
+  
+  
   
     
     <li class="tag-links-tag"><a href="/tags/wada/">wada</a>
     </li>
   
+  
+  
     
     <li class="tag-links-tag"><a href="/tags/creativite/">créativité</a>
     </li>
+  
+  
   
     
     <li class="tag-links-tag"><a href="/tags/feedback/">feedback</a>
     </li>
   
+  
+  
     
     <li class="tag-links-tag"><a href="/tags/motivation/">motivation</a>
     </li>
+  
+  
   
     
     <li class="tag-links-tag"><a href="/tags/affordances/">affordances</a>
     </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/anarchisme/">anarchisme</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/tactique/">tactique</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/alternative/">alternative</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/manifeste/">manifeste</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/organisation/">organisation</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/traduction/">traduction</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/communaute/">communauté</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/conflit/">conflit</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/critique/">critique</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/fsg/">FSG</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/controle-moteur/">contrôle-moteur</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/attention/">attention</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/feminisme/">féminisme</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/politique/">politique</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/cio/">cio</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/publicite/">publicité</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/spectacle/">spectacle</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/contraintes/">contraintes</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/psychologie-ecologique/">psychologie écologique</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/enquete/">enquête</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/organisations-internationales/">organisations-internationales</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/anthropologie/">anthropologie</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/ordalie/">ordalie</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/psychologie/">psychologie</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/risque/">risque</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/homosociabilite/">homosociabilité</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/humour/">humour</a>
-    </li>
   
-    
-    <li class="tag-links-tag"><a href="/tags/masculinite/">masculinité</a>
-    </li>
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div style="margin-left: 1rem"><a href="/tags/">tous les tags</a></div>
   </ul>
+
 </div>
         <div class="content">
             <h1>Posts avec “subversion”</h1>

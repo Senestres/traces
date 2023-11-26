@@ -5,8 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Philosophie et pratique sportive</title>
 		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
-		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Traces">
-		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Traces">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Traces blog">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Traces blog">
 		
 		<style>/**
  * okaidia theme for JavaScript, CSS and HTML
@@ -190,6 +190,7 @@ pre[class*="language-diff-"] {
 :root {
 	--color-gray-20: #e0e0e0;
 	--color-gray-50: #c0c0c0;
+	--color-gray-70: #5f5f5f;
 	--color-gray-90: #333;
 
 	--background-color: #fff;
@@ -400,8 +401,7 @@ header {
 /* Posts list */
 .postlist {
 	list-style: none;
-	padding: 0;
-	padding-left: 1.5rem;
+	padding: 1rem;
 }
 .postlist-item {
 	display: flex;
@@ -413,7 +413,6 @@ header {
 .postlist-item:before {
 	display: inline-block;
 	pointer-events: none;
-	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
 	line-height: 100%;
 	text-align: right;
 	margin-left: -1.5rem;
@@ -427,14 +426,9 @@ header {
 	word-spacing: -0.5px;
 }
 .postlist-link {
-	font-size: 1.1875em; /* 19px /16 */
+	font-size: 1.5rem;
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
-	padding-left: 0.25em;
-	padding-right: 0.5em;
-	text-underline-position: from-font;
-	text-underline-offset: 0;
-	text-decoration-thickness: 1px;
 }
 .postlist-item-active .postlist-link {
 	font-weight: bold;
@@ -460,6 +454,7 @@ header {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	margin-bottom: 1rem;
 }
 .post-metadata time {
 	margin-right: 1em;
@@ -495,6 +490,7 @@ h2 + .header-anchor {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 0;
+	font-weight: 200;
 }
 
 .tag-links-tag {
@@ -521,6 +517,24 @@ h2 + .header-anchor {
 }
 .sidebar.tag-links-tag a:hover {
 	color: var(--text-color);
+}
+input, label
+	{
+	display: none;
+}
+@media (max-width: 68rem) {
+	input, label
+	{
+	cursor: pointer;
+	display: inline-block;
+	font-size: large;
+	color: var(--color-gray-70)
+	}
+	input:not(:checked) ~ .tag-links, .toggle-close { display: none;}
+	input:checked ~ .toggle-open { 	display: none;}
+	input + label:after { content: "+"; }
+	input:checked + label:after { content: "-"; }
+	.tag-links-toggle { display: none; } 
 }
 
 /* All tags list */
@@ -575,14 +589,13 @@ svg.nav-icon {
 	display: grid;
 	gap: 1rem 2rem;
 	position: relative;
-	margin: 0 auto;
-	@media (min-width: 68em) {
+/* 	margin: 0 auto; */
+	@media (min-width: 68rem) {
 		grid-template-columns: 1fr 2fr;
 	}
 }
 .sidebar {
-	position: sticky;
-	margin: auto;
+	padding: 1rem 1rem 0 1rem;
 }
 .two-columns .content {
 	margin-left: 0;
@@ -664,17 +677,17 @@ svg.nav-icon {
 </ul>
 
 <article data-pagefind-body>
-<p>[caption id=&quot;attachment_2897&quot; align=&quot;alignright&quot; width=&quot;144&quot;]<picture><source type="image/webp" srcset="/img/mF9bucRojP-176.webp 176w" sizes="100vw"><img alt="Fresque des jeunes boxeurs, Akrotiri" src="/img/mF9bucRojP-176.jpeg" width="176" height="300"></picture> Fresque des jeunes boxeurs, Akrotiri, v. 1500 av. JC[/caption]</p>
 <p>A la suite de Pierre Hadot et de Michel Foucault, la philosophie antique peut être conçue comme <a href="https://biospraktikos.hypotheses.org/tag/exercices-spirituels">exercice spirituel</a>, c’est-à-dire comme une “discipline dont l’enjeu est de transformer la manière de vivre, d’appréhender le monde”<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. Il s’agissait indissociablement d’un discours et d’une mise en œuvre pratique, y compris corporelle. Or le discours et la pratique, l’intellect et le corps sont aujourd’hui le plus souvent séparés et même régulièrement montés en opposition. Dans le milieu scolaire par exemple, le sport est souvent perçu comme une perte de temps, limitant les activités intellectuelles. On argumentera ici au contraire le besoin d’une unité. Or, il me semble que l’on peut s’inspirer de la philosophie antique pour penser une telle unité et concevoir un mode de vie philosophique (ou une philosophie comme art de vivre) adapté à notre époque. Comment doit-on alors y penser la place du sport ?</p>
+<p><picture><source type="image/webp" srcset="/img/mF9bucRojP-176.webp 176w" sizes="100vw"><img alt="Fresque des jeunes boxeurs, Akrotiri" title="Fresque des jeunes boxeurs, Akrotiri, v. 1500 av. JC" src="/img/mF9bucRojP-176.jpeg" width="176" height="300"></picture></p>
 <p>Dans le langage courant, le mot sport est utilisé de manière peu spécifique, regroupant les jeux antiques et modernes, les pratiques physiques, qu’elles soient hygiéniques, compétitives, ludiques ou d’entrainement. Ceci a pour conséquence que le terme recouvre de multiples modalités et finalités de pratique et qu’il implique donc des rapports à soi et à notre corps fort divers. La gymnastique destinée à l’entrainement des militaires n’est pas le vélo en salle de fitness, qui n’est pas le football joué par des enfants dans la rue, lui-même n’étant pas celui pratiqué par les professionnels. Pourtant toute activité physique n’est pas du sport : une dépense énergétique similaire à une pratique sportive légère peut être faite en jardinant. Nager pour sauver un enfant de la noyade ou courir après son bus ne sont habituellement pas considérés comme des pratiques sportives même si les gestes effectués sont identiques à des gestes sportifs. Et on ne peut non plus affirmer que tout sport est une activité physique puisque le bridge comme les échecs sont reconnus comme sports par le Comité International Olympique. On voit à quel point le terme est nébuleux puisque ces exemples ont tendance à s’opposer au sens commun : lorsque l’on demande à quelqu’un s’il est sportif, on ne s’attend pas à ce qu’il réponde qu’il joue régulièrement aux cartes.</p>
-<p>[caption id=&quot;&quot; align=&quot;alignnone&quot; width=&quot;782&quot;]<picture><source type="image/webp" srcset="/img/VYhWlilSnv-800.webp 800w, /img/VYhWlilSnv-1280.webp 1280w" sizes="100vw"><source type="image/jpeg" srcset="/img/VYhWlilSnv-800.jpeg 800w, /img/VYhWlilSnv-1280.jpeg 1280w" sizes="100vw"><img alt="" src="/img/VYhWlilSnv-800.jpeg" width="1280" height="945"></picture> La gymnastique est-elle un sport ?[/caption]</p>
-<p>Ceci invite à la prudence lorsque l’on parle de sport, et cela pour deux raisons. Premièrement parce que l’on a tendance à penser le sport comme un phénomène universel et plus ou moins uniforme, et à assimiler les pratiques physiques de l’antiquité à notre expérience contemporaine du sport. Or le terme même de sport (dérivé de <em>desport</em>, « plaisir, divertissement »<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> date du 19ème siècle, et c’est donc rétrospectivement qu’on l’applique aux pratiques antiques. Réunir des pratiques aussi distantes dans le temps dans une même catégorie peut masquer leurs profondes différences, peut-être au risque de tomber dans l’anachronisme. Ainsi de nombreux historiens et sociologues<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> considèrent qu’il n’y a pas de continuité directe entre les jeux antiques et les sports modernes.</p>
+<p><picture><source type="image/webp" srcset="/img/VYhWlilSnv-800.webp 800w, /img/VYhWlilSnv-1280.webp 1280w" sizes="100vw"><source type="image/jpeg" srcset="/img/VYhWlilSnv-800.jpeg 800w, /img/VYhWlilSnv-1280.jpeg 1280w" sizes="100vw"><img alt="Image de gymnastique" title="La gymnastique est-elle un sport ?" src="/img/VYhWlilSnv-800.jpeg" width="1280" height="945"></picture></p>
+<p>Ceci invite à la prudence lorsque l’on parle de sport, et cela pour deux raisons. Premièrement parce que l’on a tendance à penser le sport comme un phénomène universel et plus ou moins uniforme, et à assimiler les pratiques physiques de l’antiquité à notre expérience contemporaine du sport. Or le terme même de sport (dérivé de <em>desport</em>, « plaisir, divertissement »)<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> date du 19ème siècle, et c’est donc rétrospectivement qu’on l’applique aux pratiques antiques. Réunir des pratiques aussi distantes dans le temps dans une même catégorie peut masquer leurs profondes différences, peut-être au risque de tomber dans l’anachronisme. Ainsi de nombreux historiens et sociologues<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> considèrent qu’il n’y a pas de continuité directe entre les jeux antiques et les sports modernes.</p>
 <p>Parmi leurs différences, on peut relever que la vertu (<em>aretê</em>) guerrière n’est pas l’adresse sportive ; que les jeux antiques étaient extrêmement violents tandis que les sports modernes sont fortement régulés. Les notions de performance, de record ou d’égalité des chances entre les adversaires, fondamentales dans le sport moderne, ne peuvent pas être appliquées en tous temps et en tous lieux. Les jeux antiques étaient empreints de tradition religieuse (ils débutaient ainsi par des processions, prières et sacrifices), étaient calqués sur le calendrier des fêtes religieuses, et étaient dédiées aux dieux (les jeux Olympiques étant dédiés à Zeus). Ils servaient également à pacifier les rapports entre les Cités grecques, l’<em>agôn</em> des jeux se substituant aux guerres de la même manière qu’ils servaient aux nobles, leur permettant de montrer leur valeur autrement que par le combat, ou à maintenir un savoir-faire guerrier en temps de paix. Si les sports modernes ne sont pas totalement exempts de religion, de politique ni de considérations militaires<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>, on peut affirmer que le sport a une certaine autonomie, fonctionnant selon sa propre logique. Le sport a son propre calendrier de compétitions, sans lien avec les fêtes religieuses ; les pratiquants sont sélectionnés sur leur mérite sportif et non pas selon leur appartenance à la noblesse ; les lanceurs de javelot ne s’entrainent pas pour chasser ou tuer mais pour la compétition sportive. L’athlète des Olympiades antiques n’est donc pas celui des J.O. modernes.</p>
-<p>[caption id=&quot;attachment_617&quot; align=&quot;alignnone&quot; width=&quot;1024&quot;]<picture><source type="image/webp" srcset="/img/ANw743zQtA-800.webp 800w, /img/ANw743zQtA-1024.webp 1024w" sizes="100vw"><source type="image/jpeg" srcset="/img/ANw743zQtA-800.jpeg 800w, /img/ANw743zQtA-1024.jpeg 1024w" sizes="100vw"><img alt="" src="/img/ANw743zQtA-800.jpeg" width="1024" height="718"></picture> Mains du « pugiliste des Thermes », entourées de lanières de cuir dures et tranchantes.[/caption]</p>
+<p><picture><source type="image/webp" srcset="/img/ANw743zQtA-800.webp 800w, /img/ANw743zQtA-1024.webp 1024w" sizes="100vw"><source type="image/jpeg" srcset="/img/ANw743zQtA-800.jpeg 800w, /img/ANw743zQtA-1024.jpeg 1024w" sizes="100vw"><img alt="" title="Mains du « pugiliste des Thermes », entourées de lanières de cuir dures et tranchantes." src="/img/ANw743zQtA-800.jpeg" width="1024" height="718"></picture></p>
 <p>Deuxièmement, les différentes formes sportives ne sont pas totalement interchangeables, toutes n’ont pas les mêmes qualités (ou défauts). Par ailleurs on ne peut en juger sans prendre en compte le contexte ainsi que les pratiquants eux-mêmes. On parlera ci-dessous de sport en général et au sens large, mais une observation au cas par cas reste nécessaire. De même, il ne faut pas oublier que les qualités qu’on prête au sport ne lui sont pas exclusives : elles peuvent être présentes pour des activités physiques non sportives, ou des activités qui ne reposent pas essentiellement sur la dépense d’énergie. On abordera donc maintenant une liste non exhaustive d’éléments que le sport peut apporter au philosophe, en gardant à l’esprit que le sport est un moyen parmi d’autres, et non pas une fin en soi, <a href="https://biospraktikos.hypotheses.org/2822">comme le rappellent Platon, Aristote et les stoïciens</a>.</p>
 <p>Les apports du sport sont extrêmement variés. Il peut répondre au souci de soi (<em>epimeleia heautou</em>), qui exige de se maintenir en santé et d’avoir une certaine hygiène de vie. Il peut permettre de répondre au « connais-toi toi-même » (<em>gnothi seauton)</em> : connaitre le soi psychologique, soumis à l’épreuve en même temps que le corps, mais également au soi somatique, qui nécessite une expérience vécue plus que des connaissances théoriques seules. Le sport est une rencontre avec soi-même, avec nos limites mais également nos potentialités.</p>
 <p>Il peut également être vécu comme une méditation, permettant un certain rapport à soi, libérant la pensée et l’intellect. L’activité physique est ainsi recommandée à cet effet par Rousseau ou Nietzsche, ainsi que des philosophes contemporains tels que Jean-François Balaudé<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup> ou Frédéric Gros[^6]. Dans ce sens, l’activité physique ne devrait pas être opposée à l’activité intellectuelle. Il a été montré expérimentalement qu’ajouter des heures de sport à l’école permet d’améliorer les résultats scolaires des enfants, même lorsque cela demande de supprimer des heures aux autres disciplines<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>. On sait également que l’activité physique permet de préserver les fonctions cognitives chez les adultes<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup>.</p>
-<p>[caption id=&quot;&quot; align=&quot;alignleft&quot; width=&quot;207&quot;]<picture><source type="image/webp" srcset="/img/m4ViyfMa0P-800.webp 800w, /img/m4ViyfMa0P-3744.webp 3744w" sizes="100vw"><source type="image/jpeg" srcset="/img/m4ViyfMa0P-800.jpeg 800w, /img/m4ViyfMa0P-3744.jpeg 3744w" sizes="100vw"><img alt="" src="/img/m4ViyfMa0P-800.jpeg" width="3744" height="5616"></picture> Zénon de Citium, fondateur du stoïcisme.[/caption]</p>
+<p><picture><source type="image/webp" srcset="/img/m4ViyfMa0P-800.webp 800w, /img/m4ViyfMa0P-3744.webp 3744w" sizes="100vw"><source type="image/jpeg" srcset="/img/m4ViyfMa0P-800.jpeg 800w, /img/m4ViyfMa0P-3744.jpeg 3744w" sizes="100vw"><img alt="" title="Zénon de Citium, fondateur du stoïcisme." src="/img/m4ViyfMa0P-800.jpeg" width="3744" height="5616"></picture></p>
 <p>D’une certaine manière, le sport peut même répondre aux philosophes voulant se “libérer” de leur corps. La pratique sportive permet parfois d’entrer dans un état mental appelé en psychologie « expérience optimale », « zone », ou « <em>flow</em> » en anglais. Cet état est caractérisé par une concentration et une absorption totale dans l’activité, une unité ou harmonie sujet/objet, corps/esprit, avec un corps rendu « léger », ses besoins passant en arrière-plan. Le sport est également un moyen ou une technique pour se développer, se transformer ou se dépasser, autant physiquement que psychologiquement, le soi transformé pouvant ainsi devenir un moindre fardeau.</p>
 <p>Cela peut être mis au service de nombreux objectifs, dont l’<em>apatheia</em>, cet idéal du sage imperturbable :</p>
 <blockquote>
@@ -686,7 +699,7 @@ svg.nav-icon {
 <p>« Quel est donc celui que je veux voir vainqueur? Celui qui le sera. De cette façon celui qui vaincra sera toujours celui que j’aurai voulu. — Mais je veux, dis-tu, que la couronne soit à Sophron! Fais célébrer alors dans ta maison tous les jeux que tu voudras, et proclame le vainqueur aux jeux Néméens, aux Pythiens, aux Isthmiques et aux Olympiques. Mais en public pas d’empiétements : ne t’arroge pas ce qui appartient à tous. Sinon, supporte les injures; car, lorsque tu agis comme la multitude, tu te mets toi-même à son niveau. »[^11]</p>
 </blockquote>
 <p>Par ailleurs, de nombreux « excès » du sport (dopage, surentrainement, focalisation à outrance sur la performance…) sont sans doute mieux appréhendés comme des hyper-conformités à la logique sportive ou compétitive. Le sport n’est donc pas sans problèmes, et il convient de se pencher également sur ces activités physiques qui ne sont pas du sport <em>stricto-sensu</em>, ou qui gravitent aux marges du système sportif, parfois qualifiées de sports « alternatifs » ou de « post-sports ». Ces pratiques se proposent généralement de sortir du culte de la performance, et prônent des valeurs non compétitives, permettant de se centrer sur soi sans pour autant exclure la pratique en groupe. Elles substituent parfois la découverte, le soin ou le développement du corps (et de l’esprit) ainsi que le plaisir aux buts externes (temps, distances, scores…). Certaines revendiquent également un rapport plus étroit à la nature, se focalisant sur l’exploration de l’environnement, le « droit à la ville » ou l’utilisation des espaces verts plutôt que la création de lieux destinés spécifiquement au sport, et cela en partie en réaction au consumérisme sportif. Cela permet une pratique autonome, ne dépendant pas des horaires des clubs.</p>
-<p>[caption id=&quot;&quot; align=&quot;alignnone&quot; width=&quot;2048&quot;]<picture><source type="image/webp" srcset="/img/q0ULTHl7do-800.webp 800w, /img/q0ULTHl7do-2048.webp 2048w" sizes="100vw"><source type="image/jpeg" srcset="/img/q0ULTHl7do-800.jpeg 800w, /img/q0ULTHl7do-2048.jpeg 2048w" sizes="100vw"><img alt="" src="/img/q0ULTHl7do-800.jpeg" width="2048" height="1365"></picture> Le parkour... vous connaissez.[/caption]</p>
+<p><picture><source type="image/webp" srcset="/img/q0ULTHl7do-800.webp 800w, /img/q0ULTHl7do-2048.webp 2048w" sizes="100vw"><source type="image/jpeg" srcset="/img/q0ULTHl7do-800.jpeg 800w, /img/q0ULTHl7do-2048.jpeg 2048w" sizes="100vw"><img alt="" title="Le parkour... vous connaissez." src="/img/q0ULTHl7do-800.jpeg" width="2048" height="1365"></picture></p>
 <p>La diversité est aujourd’hui telle que chacun peut trouver une activité adaptée à ses désirs et besoins. Sans compter qu’éviter de prendre l’ascenseur peut être aussi bénéfique pour la santé que suer dans une salle de sport.</p>
 <p>Sources: Arrien, <a href="http://remacle.org/bloodwolf/philosophes/epictete/table.htm"><em>Les entretiens d’Epictète</em></a>, Traduction de V. Courdaveaux. Arrien, <em>Manuel d’Epictète</em>, Librairie générale française, 2000. Balaudé Jean-François, <a href="http://www.terraeco.net/Le-velo-prepare-a-la-reverie-et,49020.html">“Le vélo prépare à la rêverie et libère la pensée”</a>, <em>Terra eco</em>, 2013. Bancel Nicolas &amp; Gayman Jean-Marc, <em>Du guerrier à l’athlète : Eléments d’histoire des pratiques corporelles</em>, PUF, 2002. Csikszentmihalyi Mihaly, <em>Optimal Experience: Psychological Studies of Flow in Consciousness</em>, Cambridge University Press, 1992. Hamer M. &amp; Chida Y., <a href="http://journals.cambridge.org/action/displayAbstract?fromPage=online&amp;aid=2942856&amp;fileId=S0033291708003681">“Physical activity and risk of neurodegenerative disease: a systematic review of prospective evidence”</a>, <em>Psychological Medicine,</em> (39:1), 2009, p.3-11. Marc-Aurèle, <em><a href="https://fr.wikisource.org/wiki/Pens%C3%A9es_pour_moi-m%C3%AAme">Pensées pour moi-même</a></em>, Traduction de J. Barthélemy-Saint-Hilaire. Mauss Marcel, “Les techniques du corps”, in Andrieu, <em>Philosophie du corps</em>, Vrin, 2010. Pavie Xavier, <a href="https://www.cairn.info/revue-societes-2014-3-page-69.htm">“Le corps, matière d’exercices spirituels”</a>, <em>Sociétés</em>, 2014/3 (125). Pigliucci Massimo, <a href="https://howtobeastoic.wordpress.com/2015/10/15/what-would-a-stoic-do-on-entertainment/">“What would a stoic do ? on entertainement”</a>, <em>How to be a stoic</em>, 2015. Trudeau François, <a href="http://ijbnpa.biomedcentral.com/articles/10.1186/1479-5868-5-10">“Physical education, school physical activity, school sports and academic performance”</a>, <em>International Journal of Behavioral Nutrition and Physical Activity</em> 5:10, 2008. Truong Nicolas, <a href="http://www.lemonde.fr/idees/article/2011/06/24/frederic-gros-philosophe-la-marche-est-un-authentique-exercice-spirituel_1540510_3232.html">“La marche est un authentique exercice spirituel”</a>, Le Monde, 2011.</p>
 <p>Crédits photographiques: <a href="https://de.wikipedia.org/wiki/Sport_im_antiken_Griechenland#/media/File:Young_boxers_fresco,_Akrotiri,_Greece.jpg">Fresque des jeunes boxeurs</a>, par Yann Forget, Domaine Public; <a href="https://en.wikipedia.org/wiki/Gymnastics#/media/File:Damgymnastik._Gymnastiska_centralinstitutet,_Hamngatan_19,_Norrmalm,_Stockholm_-_Nordiska_Museet_-_NMA.0034300.jpg">Gymnastique</a>, anonyme, Domaine Public; <a href="https://fr.wikipedia.org/wiki/Pugiliste_des_Thermes#/media/File:Thermae_boxer_Massimo_Inv1055_n7.jpg">Pugiliste</a>, <a href="https://commons.wikimedia.org/wiki/User:Jastrow">Marie-Lan Nguyen</a>, <a href="https://creativecommons.org/licenses/by/2.5/">Licence CC BY</a>; <a href="https://commons.wikimedia.org/wiki/File:Zeno_of_Citium_-_Museo_archeologico_nazionale_di_Napoli.jpg">Zénon</a>, <a href="http://www.flickr.com/people/73542590@N00">Jeremy Weate</a>, <a href="https://creativecommons.org/licenses/by/2.0/deed.en">Licence CC BY</a>; Parkour, copyright Pablo Delpédro.</p>

@@ -5,8 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Mais pourquoi ils font ça ?!</title>
 		<meta name="description" content="Un site sur le corps, la culture et l&#39;apprentissage">
-		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Traces">
-		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Traces">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Traces blog">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Traces blog">
 		
 		<style>/**
  * okaidia theme for JavaScript, CSS and HTML
@@ -190,6 +190,7 @@ pre[class*="language-diff-"] {
 :root {
 	--color-gray-20: #e0e0e0;
 	--color-gray-50: #c0c0c0;
+	--color-gray-70: #5f5f5f;
 	--color-gray-90: #333;
 
 	--background-color: #fff;
@@ -400,8 +401,7 @@ header {
 /* Posts list */
 .postlist {
 	list-style: none;
-	padding: 0;
-	padding-left: 1.5rem;
+	padding: 1rem;
 }
 .postlist-item {
 	display: flex;
@@ -413,7 +413,6 @@ header {
 .postlist-item:before {
 	display: inline-block;
 	pointer-events: none;
-	/* 	content: "" counter(start-from, decimal-leading-zero) ". "; */
 	line-height: 100%;
 	text-align: right;
 	margin-left: -1.5rem;
@@ -427,14 +426,9 @@ header {
 	word-spacing: -0.5px;
 }
 .postlist-link {
-	font-size: 1.1875em; /* 19px /16 */
+	font-size: 1.5rem;
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
-	padding-left: 0.25em;
-	padding-right: 0.5em;
-	text-underline-position: from-font;
-	text-underline-offset: 0;
-	text-decoration-thickness: 1px;
 }
 .postlist-item-active .postlist-link {
 	font-weight: bold;
@@ -460,6 +454,7 @@ header {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	margin-bottom: 1rem;
 }
 .post-metadata time {
 	margin-right: 1em;
@@ -495,6 +490,7 @@ h2 + .header-anchor {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 0;
+	font-weight: 200;
 }
 
 .tag-links-tag {
@@ -521,6 +517,24 @@ h2 + .header-anchor {
 }
 .sidebar.tag-links-tag a:hover {
 	color: var(--text-color);
+}
+input, label
+	{
+	display: none;
+}
+@media (max-width: 68rem) {
+	input, label
+	{
+	cursor: pointer;
+	display: inline-block;
+	font-size: large;
+	color: var(--color-gray-70)
+	}
+	input:not(:checked) ~ .tag-links, .toggle-close { display: none;}
+	input:checked ~ .toggle-open { 	display: none;}
+	input + label:after { content: "+"; }
+	input:checked + label:after { content: "-"; }
+	.tag-links-toggle { display: none; } 
 }
 
 /* All tags list */
@@ -575,14 +589,13 @@ svg.nav-icon {
 	display: grid;
 	gap: 1rem 2rem;
 	position: relative;
-	margin: 0 auto;
-	@media (min-width: 68em) {
+/* 	margin: 0 auto; */
+	@media (min-width: 68rem) {
 		grid-template-columns: 1fr 2fr;
 	}
 }
 .sidebar {
-	position: sticky;
-	margin: auto;
+	padding: 1rem 1rem 0 1rem;
 }
 .two-columns .content {
 	margin-left: 0;
