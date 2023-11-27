@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+---
+{% set home = false %}
+
+<div class="two-columns">
+    {% include "sidebar.njk" %}
+    <div class="content">
+        {{ content | safe }}
+    </div>
+</div>
+
+

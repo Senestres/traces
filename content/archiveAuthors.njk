@@ -1,0 +1,13 @@
+---
+layout: layouts/postlisting.njk
+pagination:
+  data: authors
+  size: 1
+  alias: author
+eleventyComputed:
+  title: "{{ author.name }}"
+permalink: /archive/{{ author.name | slugify}}/
+---
+
+{% set postslist = collections.archive | authorFilter( author.name ) | reverse%}
+{% include "postslist.njk" %}

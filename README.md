@@ -13,12 +13,10 @@ npm start
 ```
 
 <h1>To do</h1>
-Filtrer les 10+ tags les plus utilisés
-Cacher les tags sur mobile
-
-Développer la page "about"
-
 (Add pagination to tag pages.)
 
-Filtrer les archives par auteur
-Retirer les tags des archives
+Filtrer les 10+ tags les plus utilisés
+
+Ordrer les tags par nb ou par alphabet sur la page des tags
+
+Add yt embed

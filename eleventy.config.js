@@ -43,13 +43,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(pluginBundle);
 
-/* 	eleventyConfig.addNunjucksFilter("date", function(date, format, locale) {
-		locale = "fr";
-		moment.locale(locale);
-		return moment(date).format(format);
-		var dt = DateTime.fromISO("2017-09-24", { locale: "fr" });
-	  }); */
-
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
@@ -69,7 +62,6 @@ module.exports = function(eleventyConfig) {
 		if( n < 0 ) {
 			return array.slice(n);
 		}
-
 		return array.slice(0, n);
 	});
 
@@ -88,12 +80,51 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-		return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+		return (tags || []).filter(tag => ["all", "nav", "post", "posts", "bySize", "archive"].indexOf(tag) === -1);
 	});
+
+	eleventyConfig.addFilter("getAllTags", collection => {
+		let tagSet = new Set();
+		for(let item of collection) {
+			(item.data.tags || []).forEach(tag => tagSet.add(tag));
+		}
+		return Array.from(tagSet);
+	});
+
+
+  // Sorted collection by n of posts; 
+  	eleventyConfig.addCollection('bySize', (collectionApi) => {
+	const filterTag = "posts"
+    const allPosts = collectionApi.getFilteredByTag(filterTag) 
+    const countPostsByTag = new Map()
+    allPosts.forEach((post) => {
+      const tags = post.data.tags || []
+      tags.forEach((tag) => {
+		if (tag !== filterTag) {
+			const count = countPostsByTag.get(tag) || 0
+			countPostsByTag.set(tag, count + 1)
+		}
+      })
+    })
+    return sortedArray = [...countPostsByTag].sort((a, b) => b[1] - a[1]) //needs to remove "posts" tag
+  	});
+
+	// Authors for archive
+	eleventyConfig.addFilter('authorFilter', function(collection, author) {
+	if (!author) {return collection}
+		const filtered = collection.filter(item => item.data.author == author)
+		return filtered;
+	  });
+
+	// Amend md library
+	eleventyConfig.setLibrary("md", markdownIt ({html: true,
+		breaks: true,
+		linkify: true}));
 
 	// Customize Markdown library settings:
 	const path = require("path"); // not sure how this works, but it does
 	eleventyConfig.amendLibrary("md", mdLib => {
+
 		mdLib.use(markdownItAnchor, {
 			permalink: markdownItAnchor.permalink.ariaHidden({
 				placement: "after",
@@ -104,20 +135,33 @@ module.exports = function(eleventyConfig) {
 			level: [1,2,3,4],
 			slugify: eleventyConfig.getFilter("slugify")
 		});
-		mdLib.use(markdownItFootnote); 	// add markdown footnotes
+
+		mdLib.use(markdownItFootnote); 		// add markdown footnotes
+
 		mdLib.use(markdownItEleventyImg, { 	//add markdown image
 			resolvePath: (filepath, env) => path.join(path.dirname(env.page.inputPath), filepath),
-			html: true,
-			breaks: true,
-			linkify: true,
 			globalAttributes: {
-				sizes: "100vw"
+				sizes: "100vw",
+				decoding: "async"
 			},
 			imgOptions: {
 			widths: [800, "auto"],
 			outputDir: "docs/img/", // this doesn't keep the folder structure so needs path change
 			urlPath: "/img/", 		// path change mentionned above
 		},
+		renderImage(image, attributes) {
+			const [ Image, options ] = image;
+			const [ src, attrs ] = attributes;
+		
+			Image(src, options);
+		
+			const metadata = Image.statsSync(src, options);
+			const imageMarkup = Image.generateHTML(metadata, attrs, {
+				whitespaceMode: "inline"
+			});
+		
+			return `<figure>${imageMarkup}${attrs.title ? `<figcaption>${attrs.title}</figcaption>` : ""}</figure>`;
+			}
 		}); 
 	});
 

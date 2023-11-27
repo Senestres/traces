@@ -5,16 +5,20 @@
     Tags
   </label>
 
-  
-<ul class="tag-links" id="tag-links">
-  {% for tag in collections.posts | getAllTags | filterTagList %}
-  {% if loop.index0 < 25 %}
-    {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-    <li class="tag-links-tag"><a href="{{ tagUrl }}">{{ tag }}</a>
-    </li>
-  {% endif %}
-  {% endfor %}
-  <div style="margin-left: 1rem"><a href="/tags/">tous les tags</a></div>
-  </ul>
+
+{% if home %}  {% set postsToShow = collections.posts %} {% endif %}
+{% if home == false %}  {% set postsToShow = collections.archive %} {% endif %}
+
+  <ul class="tag-links" id="tag-links">
+    {% for tag, count in collections.bySize | filterTagList %}
+    {% if loop.index0 < 25 %}
+      {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+      <li class="tag-links-tag"><a href="{{ tagUrl }}">{{ tag }}</a>
+      </li>
+    {% endif %}
+    {% endfor %}
+    <div style="margin-left: 1rem"><a href="/tags/">tous les tags</a></div>
+    </ul>
 
 </div>
+

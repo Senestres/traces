@@ -1,31 +1,28 @@
-on: [push]
+name: Build Eleventy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
-    name: Build Eleventy
+    name: Build and Deploy
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: 🛒 Checkout
+        uses: actions/checkout@v3
 
       - name: Build
         run: |
           npm install
           npm run build
 
-      - name: Sync Files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4           
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: docs/
-          server-dir: sites/tracesblog/
-
-      
-
-          
-          
-          
-          
-          
+      - name: 🔐 Create Key File
+        run: install -m 600 -D /dev/null ~/.ssh/id_ed25519
+      - name: 🔑 Populate Key
+        run: echo "${{ secrets.PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+      - name: 🚀 Upload
+        run: rsync --archive --stats -e 'ssh -o StrictHostKeyChecking=no' docs/ s902r_temp_1@s902r.ftp.infomaniak.com:~/sites/tracesblog/
