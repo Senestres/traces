@@ -25,4 +25,4 @@ jobs:
       - name: 🔑 Populate Key
         run: echo "${{ secrets.PRIVATE_KEY }}" > ~/.ssh/id_ed25519
       - name: 🚀 Upload
-        run: rsync --archive --stats -e 'ssh -o StrictHostKeyChecking=no' docs/ s902r_temp_1@s902r.ftp.infomaniak.com:~/sites/tracesblog/
+        run: rsync --archive --stats -e 'ssh -o StrictHostKeyChecking=no' docs/ s902r_admin@s902r.ftp.infomaniak.com:~/sites/tracesblog/
