@@ -2,8 +2,8 @@
 title: Note critique sur les bulles de filtre
 date: 2024-03-24
 tags:
-  - philosophie
-  - sciences sociales
+  - "internet"
+  - "sciences sociales"
 description: This is a post
 author: Yann Daout
 ---
@@ -15,7 +15,7 @@ Le concept est également séduisant parce qu'il prend place sur un fond de pani
 Je ne dis pas ici qu'il n'y a aucune raison de se soucier des usages que l'on peut faire d'internet. Mais lorsque les bulles de filtres sont évoquées, c'est généralement avec le message implicite ou explicite que les bulles de filtre sont effectives, qu'elles existent et sont répandues aujourd'hui. Si elles n'existent pas, c'est une mauvaise raison de s'indigner. Or, la recherche empirique incite à mettre en doute cet usage du concept.
 
 # ... mais mal étayé empiriquement
-A l'origine, le concept de bulle de filtre était plutôt centré sur les moteurs de recherche, le présupposé étant que deux utilisateurs d'un moteur de recherche verraient pour des mêmes mots clés des résultats drastiquement différents, l'enfermant ainsi dans une bulle assez étanche. Selon les données de différentes équipes de chercheurs, les différences sont en fait mineures et consistent essentiellement en des différences nationales [@bruns2021EchoChambersFilter]. Autrement dit, des individus de pays différents verront des résultats différents. La théorie semble falsifiée empiriquement pour ce qui est des moteurs de recherche.
+A l'origine, le concept de bulle de filtre était plutôt centré sur les moteurs de recherche, le présupposé étant que deux utilisateurs d'un moteur de recherche verraient pour des mêmes mots clés des résultats drastiquement différents, l'enfermant ainsi dans une bulle assez étanche. Selon les données de différentes équipes de chercheurs, les différences sont en fait mineures et consistent essentiellement en des différences nationales^[Bruns, A. (2021). Echo chambers? Filter bubbles? The misleading metaphors that obscure the real problem. In _Hate speech and polarization in participatory society_ (pp. 33–48). Routledge.]. Autrement dit, des individus de pays différents verront des résultats différents. La théorie semble falsifiée empiriquement pour ce qui est des moteurs de recherche.
 
 Pour ce qui est des réseaux sociaux, c'est plus difficile parce que le concept est plus difficile à appliquer. Après tout, sur la plupart des réseaux sociaux, les individus choisissent des communautés données et s'insèrent dans des réseaux de contacts spécifiques. Au sein de la communauté "Le golf n'existe pas", il y a peu de risques que je soit confronté à des affirmations de l'existence du golf. Mais la conclusion change complètement dès lors que mon usage de la plateforme dans son entier est considéré. Je compte malheureusement parmi mes contacts des gens qui croient encore en l'existence du golf, certains même pensent pratiquer ou avoir pratiqué ce "sport". Cela me met bien sûr en colère, mais je suis malgré moi souvent confronté à la supposée existence du golf. Plus sérieusement, des données suggèrent que les usagers des réseaux sociaux sont confrontés à une plus grande diversité de sources d'information que les non-utilisateurs ^[Fletcher, R., & Nielsen, R. K. (2018). Are people incidentally exposed to news on social media? A comparative analysis. _New Media & Society_, _20_(7), 2450–2468.]. Dans une revue de la littérature, Arguedas et al. estiment que l'usage de plateformes avec classement algorithmique "conduit les gens à des informations légèrement plus diversifiées - à l'opposé de ce que l'hypothèse de la bulle de filtre postule" ^[Arguedas, A. R., Robertson, C., Fletcher, R., & Nielsen, R. (2022). _Echo chambers, filter bubbles, and polarisation: A literature review_.]. Réfléchissons deux minutes. Si une personne écoutant les discours concernant les bulles de filtre en venait à se radicaliser et à abandonner tout usage des réseaux sociaux, il est possible qu'elle appauvrisse la diversité de ses sources d'information.
 
