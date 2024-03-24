@@ -11,7 +11,7 @@ tags:
 
 **Ce texte est une lettre ouvert en réaction au [reportage de Radio Chablais](https://www.radiochablais.ch/sports/actu-sportive/96393-gymnastique-le-parkour-en-quete-de-nouveaux-adeptes-ce-week-end-au-1er-vevey-trace) concernant un évènement compétitif organisé à Vevey en juillet 2023.**
 
-"Cher Monsieur Trachsel,
+« Cher Monsieur Trachsel,
 
 En qualité de président de l’Association Suisse de Parkour (SPKA), je vous contacte au sujet de votre sujet du 23 juillet concernant le Swiss Parkour Series.
 
@@ -37,4 +37,4 @@ La FSG doit donc brasser la Suisse entière pour parvenir à réunir suffisammen
 
 Cordialement,
 
-Yann Daout"
+Yann Daout »
