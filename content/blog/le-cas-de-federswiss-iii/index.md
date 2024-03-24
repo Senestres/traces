@@ -5,7 +5,7 @@ categories:
   - "politique"
   - "socio"
 tags: 
-  - "organisations-internationales"
+  - "institutions internationales"
   - "enquête"
 coverImage: "IPTC-1.jpg"
 ---
