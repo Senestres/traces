@@ -4,7 +4,8 @@ description: Lancement de la v2
 date: 2023-11-20
 tags:
   - news
-Auteur: Yann Daout
+author: Yann Daout
+permalink: "/{{ title | slugify }}/"
 ---
 _Traces_ a été lancé le 3 septembre 2017.  Pensé à l'origine comme un blog personnel, _Traces_ est devenu une plateforme collaborative durant sa conception. Les auteurs étaient réunis par une culture et pratique commune, celle du parkour, et armés de cette perspective particulière écrivaient sur des sujets divers. Mais ces dernières années le site est revenu implicitement à son intention d'origine: je suis le seul à publier semi-régulièrement.
 

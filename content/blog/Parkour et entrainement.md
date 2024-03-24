@@ -5,6 +5,7 @@ tags:
   - entrainement
 description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
 author: Yann Daout
+permalink: "/{{ title | slugify }}/"
 ---
 
 J’essaie de mettre régulièrement mes idées concernant le parkour à l’écrit. Pour me les clarifier, pour les fixer dans ma mémoire, pour me permettre d’en construire d’autres sur une base tangible, pour les partager. Malgré cela, elles restent la plupart du temps à l’état d’ébauches qui s’accumulent. Un jour, je vais bien finir par les ressortir en un ensemble cohérent mais en attendant, cet article ne sera pas bien différent des autres ébauches : je me suis simplement donné la peine de le taper à l’ordinateur. C’est pourquoi je ne prends pas la position de quelqu’un qui prêche un message murement réfléchi, mais plutôt celle de quelqu’un qui communique ses idées parcellées afin que les autres les complètent ou les critiquent. J’espère néanmoins que ces idées seront utiles à quelqu’un d’autre qu’à moi-même, et avec un peu de chance éveilleront-elles autant de réflexions que mon premier article l'a fait. J'ouvre la discussion, à vous de participer à l'effort de guerre !  

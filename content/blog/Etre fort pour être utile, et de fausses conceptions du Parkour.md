@@ -5,6 +5,7 @@ tags:
   - philosophie
 description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
 author: Yann Daout
+permalink: "/{{ title | slugify }}/"
 ---
 « Etre fort pour être utile », une phrase simple qui, pour beaucoup, résume le parkour. Malheureusement, je pense qu’elle n’a pas été comprise correctement, et qu’il s’ensuit une fausse conception très répandue, non seulement chez le public, qui de toute évidence n’a jamais pu comprendre le parkour (et on ne peut l’en vouloir !), mais également chez les pratiquants, qui eux devraient être à même de comprendre leur propre discipline. Surtout, les pratiquants me semblent avoir le **devoir** de comprendre, afin de ne pas perdre le sens de la discipline.  
 

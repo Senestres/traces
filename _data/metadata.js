@@ -1,5 +1,5 @@
 module.exports = {
-	title: "Traces blog",
+	title: "Traces",
 	url: "https://tracesblog.net/",
 	language: "fr",
 	description: "Un site sur le corps, la culture et l'apprentissage",
