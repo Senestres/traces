@@ -1,5 +1,5 @@
 ---
-title: "Parkour et gym: une relation heureuse ?"
+title: Parkour et gymnastique - une relation heureuse ?
 date: 2024-06-04
 tags:
   - FIG
