@@ -1,5 +1,5 @@
 ---
-title: Note critique sur les bulles de filtre
+title: Les bulles de filtre n'existent pas
 date: 2024-03-24
 tags:
   - "internet"
