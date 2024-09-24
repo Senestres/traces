@@ -1,5 +1,5 @@
 ---
-title: Lettre ouverte au Fond du sport vaudois
+title: Lettre ouverte au Fonds du sport vaudois
 date: 2024-09-24
 tags:
   - FIG
