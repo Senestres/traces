@@ -114,7 +114,7 @@ Le parkour-park n’est un potentiel terrain de jeux que pour celui qui manque d
 
 **1****.** C’est ainsi que la Fédération de Parkour (FPK) l’appelle dans l’article promotionnel qu’elle lui a consacré sur son site web: [http://www.fedeparkour.fr/index.php?option=com\_content&view=article&id=126:bondy&catid=36:newssite&Itemid=61](https://web.archive.org/web/20160229123406/http://www.fedeparkour.fr/index.php?option=com_content&view=article&id=126:bondy&catid=36:newssite&Itemid=61)
 
-**2.** Voir article qui précise la distinction entre parkour et freerunning ici : [http://tracesblog.net/freerunning-et-parkour/](http://tracesblog.net/freerunning-et-parkour/)
+**2.** Voir article qui précise la distinction entre parkour et freerunning ici : [https://traces.info/freerunning-et-parkour/](https://traces.info/freerunning-et-parkour/)
 
 **3.** Voir la présentation complète ici: [http://www.youtube.com/watch?v=pST2mC3oTTY](https://web.archive.org/web/20160229123406/http://www.youtube.com/watch?v=pST2mC3oTTY)
 
@@ -138,7 +138,7 @@ Le parkour-park n’est un potentiel terrain de jeux que pour celui qui manque d
 
 **13.** Jean-Maire Brohm, _Sociologie politique du sport_, P.U.N., 1992.
 
-**14.** [http://tracesblog.net/manifeste-contre-lorganisation-de-compétitions-de-parkour/](http://tracesblog.net/manifeste-contre-lorganisation-de-compétitions-de-parkour/)
+**14.** [https://traces.info/manifeste-contre-lorganisation-de-compétitions-de-parkour/](https://traces.info/manifeste-contre-lorganisation-de-compétitions-de-parkour/)
 
 Il me paraît utile de préciser que ce manifeste a été lu et approuvé par David Belle, fondateur du parkour, qui a déclaré publiquement s’y associer sans réserve.
 

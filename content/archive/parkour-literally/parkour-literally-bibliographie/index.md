@@ -23,19 +23,19 @@ G. HEBERT, _L’Éducation physique, virile et morale par la méthode naturelle_
 
 En français:
 
-COLLECTIF, archives du site Parkour.NET, 2012, \[disponible en ligne\], URL = <[http://tracesblog.net/auteur/archivestraces/](http://tracesblog.net/auteur/archivestraces/)\>
+COLLECTIF, archives du site Parkour.NET, 2012, \[disponible en ligne\], URL = <[https://traces.info/auteur/archivestraces/](https://traces.info/auteur/archivestraces/)\>
 
-COLLECTIF, « Manifeste contre l’organisation de compétitions dans le parkour », 2013, \[disponible en ligne\], URL = <[http://tracesblog.net/manifeste-contre-lorganisation-de-compétitions-de-parkour/](http://tracesblog.net/manifeste-contre-lorganisation-de-compétitions-de-parkour/)\>
+COLLECTIF, « Manifeste contre l’organisation de compétitions dans le parkour », 2013, \[disponible en ligne\], URL = <[https://traces.info/manifeste-contre-lorganisation-de-compétitions-de-parkour/](https://traces.info/manifeste-contre-lorganisation-de-compétitions-de-parkour/)\>
 
-N. BORNAZ, « Parkour, l’art de subvertir le rapport à l’espace public », 2008, \[disponible en ligne\], URL = <[http://tracesblog.net/parkour-lart-de-subvertir-le-rapport-a-lespace-public/](http://tracesblog.net/parkour-lart-de-subvertir-le-rapport-a-lespace-public/)\>
+N. BORNAZ, « Parkour, l’art de subvertir le rapport à l’espace public », 2008, \[disponible en ligne\], URL = <[https://traces.info/parkour-lart-de-subvertir-le-rapport-a-lespace-public/](https://traces.info/parkour-lart-de-subvertir-le-rapport-a-lespace-public/)\>
 
-N. BORNAZ, « Fiche-expérimentation: pratiques créatives des espaces », 2010, \[disponible en ligne\], URL = <[http://tracesblog.net/fiche-experimentation-pratiques-creatives-des-espaces/](http://tracesblog.net/fiche-experimentation-pratiques-creatives-des-espaces/)\>
+N. BORNAZ, « Fiche-expérimentation: pratiques créatives des espaces », 2010, \[disponible en ligne\], URL = <[https://traces.info/fiche-experimentation-pratiques-creatives-des-espaces/](https://traces.info/fiche-experimentation-pratiques-creatives-des-espaces/)\>
 
-N. BORNAZ, « 5 bonnes raisons de ne jamais participer à aucune compétition de parkour ou de freerunning », 2011, \[disponible en ligne\], URL = <[http://tracesblog.net/5-bonnes-raisons-de-ne-jamais-participer-a-aucune-compétition-de-parkour-ou-de-freerunning/](http://tracesblog.net/5-bonnes-raisons-de-ne-jamais-participer-a-aucune-compétition-de-parkour-ou-de-freerunning/)\>
+N. BORNAZ, « 5 bonnes raisons de ne jamais participer à aucune compétition de parkour ou de freerunning », 2011, \[disponible en ligne\], URL = <[https://traces.info/5-bonnes-raisons-de-ne-jamais-participer-a-aucune-compétition-de-parkour-ou-de-freerunning/](https://traces.info/5-bonnes-raisons-de-ne-jamais-participer-a-aucune-compétition-de-parkour-ou-de-freerunning/)\>
 
-N. BORNAZ, « De l’absurdité des parkour-parks », 2011, \[disponible en ligne\], URL = <[http://tracesblog.net/de-labsurdite-des-parkour-parks/](http://tracesblog.net/de-labsurdite-des-parkour-parks/)\>
+N. BORNAZ, « De l’absurdité des parkour-parks », 2011, \[disponible en ligne\], URL = <[https://traces.info/de-labsurdite-des-parkour-parks/](https://traces.info/de-labsurdite-des-parkour-parks/)\>
 
-N. BORNAZ, « Parkour-parks ou parkour: il faut choisir », 2013, \[disponible en ligne\], URL = <[http://tracesblog.net/parkour-parks-ou-parkour-il-faut-choisir/](http://tracesblog.net/parkour-parks-ou-parkour-il-faut-choisir/)\>
+N. BORNAZ, « Parkour-parks ou parkour: il faut choisir », 2013, \[disponible en ligne\], URL = <[https://traces.info/parkour-parks-ou-parkour-il-faut-choisir/](https://traces.info/parkour-parks-ou-parkour-il-faut-choisir/)\>
 
 En anglais:
 
