@@ -181,7 +181,7 @@ header {
 	background-size: cover;
 	background-position: 0 0;
 	transition: all 0.3s ease;
-	background: url("{{ '/img/handprint.png' | url }}") 100% 0;
+	background: url("{{ '/img/handprint.png' | htmlBaseUrl }}") 100% 0;
 	background-clip: text;
 	-webkit-background-clip: text;
 }
