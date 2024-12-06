@@ -4,7 +4,7 @@ import markdownItFootnote from 'markdown-it-footnote';
 import { DateTime } from "luxon";
 import markdownItEleventyImg from "markdown-it-eleventy-img";
 
-import pluginRss from "@11ty/eleventy-plugin-rss";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginBundle from "@11ty/eleventy-plugin-bundle";
 import pluginNavigation from "@11ty/eleventy-navigation";
@@ -13,6 +13,7 @@ import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import pluginDrafts from "./eleventy.config.drafts.js";
 import pluginImages from "./eleventy.config.images.js";
 import { execSync } from 'child_process';
+import metadata from "./_data/metadata.js";
 
 import path from "path"; // not sure how this works, but it does
 
@@ -35,7 +36,6 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginImages);
 
 	// Official plugins
-	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
 		preAttributes: { tabindex: 0 }
 	});
@@ -180,6 +180,17 @@ export default function (eleventyConfig) {
 		execSync(`npx pagefind --glob \"**/*.html\"`, { encoding: 'utf-8' })
 	})
 	
+	//RSS plugin
+	eleventyConfig.addPlugin(feedPlugin, {
+		type: "atom", // or "rss", "json"
+		outputPath: "/feed.xml",
+		collection: {
+			name: "posts", // iterate over `collections.posts`
+			limit: 10,     // 0 means no limit
+		},
+		metadata
+	});
+
 	// Features to make your build faster (when you need them)
 
 	// If your passthrough copy gets heavy and cumbersome, add this line
