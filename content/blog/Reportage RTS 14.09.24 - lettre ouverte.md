@@ -6,7 +6,7 @@ tags:
   - institutionnalisation
 description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
 author: Yann Daout
-permalink: "/{{ title | slugify }}/"
+
 ---
 A l'attention de D. Mahon et L. Duggan.
 
@@ -20,7 +20,7 @@ Votre affirmation est trompeuse, et je dois dire, personnellement blessante, pui
 
 Votre erreur est d'autant plus regrettable que ParkourExpo est un des membres et un des principaux soutiens de SPKA. Il aurait suffi de poser la question à n'importe lequel des responsables sur place pour éviter de propager de fausses informations. Par ailleurs, il y a aujourd'hui en Suisse un certain nombre de personnes qui ont une réelle expertise du parkour, que ce soit comme formateurs au sein de Jeunesse et Sport, par leur engagement au sein de la fédération, ou parce qu'ils ont rédigé des mémoires universitaires, voire publié dans des revues scientifiques. Ce ne sont pas les seuls interlocuteurs possibles. Mais ils mériteraient peut-être d'être interrogés de temps en temps si l'enjeu est de présenter des informations fiables, dans quel cas je me tiens à votre disposition pour vous aiguiller vers des personnes avec l'expertise pertinente.
 
-Votre reportage contribue à invisibiliser le travail de centaines de pratiquant.e.s passionné.e.s, qui depuis plus de deux décennies développent le parkour en Suisse, et se voient voler le fruit de leur travail par la plus grande association sportive de Suisse. Lorsque l'on donne de son temps bénévolement depuis des années, c'est extrêmement déprimant. C'est encore plus déprimant lorsque l'on voit les médias systématiquement légitimer cette appropriation. Et cela rend d'autant plus difficile certains des combats que nous avons encore à mener, notamment celui nous permettrait d'être admis au sein de Swiss Olympic. Je redirai donc ici ce que j'ai déjà dit à l'un de vos [collègues](https://traces.info/blog/reportage-radio-chablais-sur-vevey-trace-lettre-ouverte/) l'an passé: vous les journalistes avez un choix à faire, nous aider à développer et structurer le parkour, ou continuer à invisibiliser notre travail.
+Votre reportage contribue à invisibiliser le travail de centaines de pratiquant.e.s passionné.e.s, qui depuis plus de deux décennies développent le parkour en Suisse, et se voient voler le fruit de leur travail par la plus grande association sportive de Suisse. Lorsque l'on donne de son temps bénévolement depuis des années, c'est extrêmement déprimant. C'est encore plus déprimant lorsque l'on voit les médias systématiquement légitimer cette appropriation. Et cela rend d'autant plus difficile certains des combats que nous avons encore à mener, notamment celui nous permettrait d'être admis au sein de Swiss Olympic. Je redirai donc ici ce que j'ai déjà dit à l'un de vos [collègues](../reportage-radio-chablais-sur-vevey-trace-lettre-ouverte/) l'an passé: vous les journalistes avez un choix à faire, nous aider à développer et structurer le parkour, ou continuer à invisibiliser notre travail.
 
 Cordialement,
 Yann Daout

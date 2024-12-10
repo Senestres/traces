@@ -5,7 +5,7 @@ tags:
   - enseignement
 description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
 author: Yann Daout
-permalink: "/{{ title | slugify }}/"
+
 ---
 
 Ces dernières années, on a pu voir l’augmentation du nombre de « cours » ou entrainements de parkour en tous genres, dans le milieu associatif, scolaire, privé… néanmoins, la plupart des traceurs confirmés d’aujourd’hui, ayant commencé en général il y a plus de cinq ans, ont appris par eux-mêmes, seuls ou en petits groupes, en imitant des films ou des vidéos trouvées sur internet. Parmi eux, on trouve naturellement de ceux qui pensent qu’il est impossible d’enseigner le parkour. Et ils n’ont pas tout à fait tort (pour des raisons que j’aborderais plus loin). Mais il me semble qu’il y a une place pour l’enseignement[^1] qu’il ne faut pas négliger, en particulier au vu de l’essor extrêmement rapide de la discipline[^2]. J’aborderais dans cet article les idées, réflexions et questionnements que j’ai pu avoir sur le sujet. Cela peut vous intéresser en tant qu’enseignant (et pas seulement de parkour), mais également en tant que pratiquant. Si vous avez quelque chose à ajouter ou voulez me contredire, c’est avec plaisir, ma réflexion est loin d’être terminée, d’autant plus que je ne suis pas un spécialiste de la pédagogie.

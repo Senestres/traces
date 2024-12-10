@@ -6,7 +6,7 @@ tags:
   - institutionnalisation
 description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
 author: Yann Daout
-permalink: "/{{ title | slugify }}/"
+
 ---
 Je critique ici un article de De Bock et al. publié dans *Sport in Society*. L'article présente le cas de l'intégration du parkour dans la fédération flamande de gymnastique comme un cas exemplaire de cohabitation heureuse d'une fédération traditionnelle avec un sport alternatif. Comme je le montre dans ce qui suit, l'article présente d'importants défauts méthodologiques et théoriques. De plus, des évènements survenus après la récolte de donnée des chercheurs viennent invalider leurs conclusions. 
 # La (més)appropriation du parkour

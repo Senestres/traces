@@ -38,4 +38,4 @@ If most of these elements are absent, can we still talk of « parkour » ? If
 
 Yann Daout
 
-(This is a translation by Lucas Dassin of the [original french manifesto](/manifeste-pour-que-le-parkour-reste-une-alternative/))
+(This is a translation by Lucas Dassin of the [original french manifesto](../manifeste-pour-que-le-parkour-reste-une-alternative/))

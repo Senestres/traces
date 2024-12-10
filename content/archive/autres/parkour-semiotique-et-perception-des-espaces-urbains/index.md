@@ -48,7 +48,7 @@ Daout, Y. (2016, January 28). [_Parkour et environnement_](https://www.parkourla
 
 Eco, U. (1997). Function and sign: The semiotics of architecture. In N. Leach (Ed.), _Rethinking architecture: A reader in cultural theory_ (pp. 182-201). London, England: Routeledge.
 
-_L'1consolable,_ [_Fiche-exp__é__rimentation: Pratiques cr__é__atives des espaces_](/fiche-experimentation-pratiques-creatives-des-espaces)
+_L'1consolable,_ [_Fiche-exp__é__rimentation: Pratiques cr__é__atives des espaces_](archive/parkour-literally/fiche-experimentation-pratiques-creatives-des-espaces)
 
 Lamb, M. D. (2010). Negating the negation: The practice of parkour in the spectacular city. _Kaleidoscope_, 10, 91-105.
 

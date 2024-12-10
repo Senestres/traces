@@ -6,7 +6,7 @@ tags:
   - "sciences-sociales"
 description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
 author: Yann Daout
-permalink: "/{{ title | slugify }}/"
+
 ---
 Le concept de bulle de filtre est entré dans le language courant. L'idée derrière ce concept est que le contenu auquel nous avons accès sur internet est personnalisé en étant filtré par des algorithmes. Ce faisant, les algorithmes nous enferment dans des bulles ne contenant que ce qui correspond à notre personnalité (goûts, préférences, etc.). Un utilisateur d'extrême-gauche par exemple se verrait proposer un accès politiquement biaisé à l'information, mettant à distance toutes perspectives opposées à la sienne. Cette fragmentation informationnelle serait une cause de fragmentation politique et sociale. Si c'est vrai, c'est grave. Mais encore faudrait-il que ce soit vrai. Le concept de bulle de filtres a selon moi deux problèmes. Le premier est qu'il n'est pas étayé empiriquement, et donc semble globalement faux. C'est là peut-être plus une raison de se réjouir qu'un problème. Le second est qu'il masque d'autres mécanismes sociaux réellement à l'oeuvre non seulement sur les réseaux sociaux, mais également dans notre consommation de médias traditionnels. Le concept de bulle de filtre me semble donc trompeur et nuisible à une bonne compréhension du monde social, du moins tel qu'il est utilisé dans le language courant.
 

@@ -23,20 +23,19 @@ G. HEBERT, _L’Éducation physique, virile et morale par la méthode naturelle_
 
 En français:
 
-COLLECTIF, archives du site Parkour.NET, 2012, \[disponible en ligne\], URL = <[https://traces.info/auteur/archivestraces/](https://traces.info/auteur/archivestraces/)\>
+COLLECTIF, archives du site Parkour.NET, 2012
 
-COLLECTIF, « Manifeste contre l’organisation de compétitions dans le parkour », 2013, \[disponible en ligne\], URL = <[https://traces.info/manifeste-contre-lorganisation-de-compétitions-de-parkour/](https://traces.info/manifeste-contre-lorganisation-de-compétitions-de-parkour/)\>
+COLLECTIF, « Manifeste contre l’organisation de compétitions dans le parkour », 2013
 
-N. BORNAZ, « Parkour, l’art de subvertir le rapport à l’espace public », 2008, \[disponible en ligne\], URL = <[https://traces.info/parkour-lart-de-subvertir-le-rapport-a-lespace-public/](https://traces.info/parkour-lart-de-subvertir-le-rapport-a-lespace-public/)\>
+N. BORNAZ, « Parkour, l’art de subvertir le rapport à l’espace public », 2008
 
-N. BORNAZ, « Fiche-expérimentation: pratiques créatives des espaces », 2010, \[disponible en ligne\], URL = <[https://traces.info/fiche-experimentation-pratiques-creatives-des-espaces/](https://traces.info/fiche-experimentation-pratiques-creatives-des-espaces/)\>
+N. BORNAZ, « Fiche-expérimentation: pratiques créatives des espaces », 2010
 
-N. BORNAZ, « 5 bonnes raisons de ne jamais participer à aucune compétition de parkour ou de freerunning », 2011, \[disponible en ligne\], URL = <[https://traces.info/5-bonnes-raisons-de-ne-jamais-participer-a-aucune-compétition-de-parkour-ou-de-freerunning/](https://traces.info/5-bonnes-raisons-de-ne-jamais-participer-a-aucune-compétition-de-parkour-ou-de-freerunning/)\>
+N. BORNAZ, « 5 bonnes raisons de ne jamais participer à aucune compétition de parkour ou de freerunning » 2011
 
-N. BORNAZ, « De l’absurdité des parkour-parks », 2011, \[disponible en ligne\], URL = <[https://traces.info/de-labsurdite-des-parkour-parks/](https://traces.info/de-labsurdite-des-parkour-parks/)\>
+N. BORNAZ, « De l’absurdité des parkour-parks », 2011
 
-N. BORNAZ, « Parkour-parks ou parkour: il faut choisir », 2013, \[disponible en ligne\], URL = <[https://traces.info/parkour-parks-ou-parkour-il-faut-choisir/](https://traces.info/parkour-parks-ou-parkour-il-faut-choisir/)\>
-
+N. BORNAZ, « Parkour-parks ou parkour: il faut choisir », 2013
 En anglais:
 
 C. ROWAT, « Dilution », 2007, \[disponible en ligne\], URL = <[http://blane-parkour.blogspot.fr/2007/04/dilution.html](https://web.archive.org/web/20150308072048/http://blane-parkour.blogspot.fr/2007/04/dilution.html)\>

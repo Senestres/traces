@@ -5,7 +5,7 @@ tags:
   - entrainement
 description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
 author: Yann Daout
-permalink: "/{{ title | slugify }}/"
+
 ---
 
 Les gens ont un intérêt certain pour le parkour. Les questions fusent rapidement : qu’est-ce que c’est ? comment/quand/où vous entrainez-vous ? Et après avoir répondu à ces questions, l’échange se termine souvent sur un « j’aimerais bien en faire » ou « j’aurais bien aimé, dans ma jeunesse ». Alors, on propose : venez-nous rejoindre.
