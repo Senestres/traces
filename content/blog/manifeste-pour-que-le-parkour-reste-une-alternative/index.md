@@ -39,4 +39,4 @@ Si la plupart de ces éléments sont absents, peut-on encore parler de parkour 
 
 Yann Daout
 
-(Si vous souhaitez être signataires, commentez-ci dessous ou contactez-moi. Vous avez le droit de reproduire et modifier ce texte, saisissez-vous en ! La traduction anglais peut être [lue ici](/parkour-should-remain-an-alternative/))
+(Si vous souhaitez être signataires, commentez-ci dessous ou contactez-moi. Vous avez le droit de reproduire et modifier ce texte, saisissez-vous en ! La traduction anglais peut être [lue ici](../parkour-should-remain-an-alternative/))

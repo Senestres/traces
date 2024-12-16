@@ -39,9 +39,9 @@ David veut de l'authentique, "du vrai" comme il aime à le dire, mais cherche to
 
 On peut comprendre son désarroi lorsqu'il en parle à l'époque. Comment faire pour vivre de sa passion pour un sport encore à l'état d'ébauche, en partie pratiqué par des militaires sous la forme du "parcours du combattant", ou le "parcours SP" des sapeurs pompiers?
 
-La combinaison de ce que son père avait lui-même expérimenté lorsqu'il était enfant de troupe au Vietnam, l'entraînement de gymnaste, l'abstraction de la peur du danger, la concentration, la perspective d'arriver au but que l'on s'est fixé sans contrainte physique, se sentir vivant et libre, voilà une partie des ingrédients qui ont fait le "[Parkour](/le-parkour-definition)".
+La combinaison de ce que son père avait lui-même expérimenté lorsqu'il était enfant de troupe au Vietnam, l'entraînement de gymnaste, l'abstraction de la peur du danger, la concentration, la perspective d'arriver au but que l'on s'est fixé sans contrainte physique, se sentir vivant et libre, voilà une partie des ingrédients qui ont fait le "[Parkour](../le-parkour-definition)".
 
-Le "[Parkour](/le-parkour-definition)" n'a ni fédération, ni club ni championnat. Il n'y a pas de norme, pas d'argent, juste le désir de faire, sans règles, mais avec honnêteté et humilité. Et beaucoup de travail sur soi.
+Le "[Parkour](../le-parkour-definition)" n'a ni fédération, ni club ni championnat. Il n'y a pas de norme, pas d'argent, juste le désir de faire, sans règles, mais avec honnêteté et humilité. Et beaucoup de travail sur soi.
 
 David fait quelques vidéos de ce qu'il est capable de faire à ce moment-là. Montage artisanal, mise en musique, c'est ainsi que sont nées les premières images du "parkour ..." Il apparaît alors que les débouchés visuels sont évidents: Clips vidéos, Pubs, cinéma d'action, shows etc.
 

@@ -18,15 +18,15 @@ A l’ère numérique, où le savoir est plus simple d’accès, nombre d’entr
 
 **Rappel :**
 
-[Parkour](/le-parkour-definition) : l’art de se déplacer à travers son environnement aussi rapidement et efficacement que possible, utilisant seulement le corps humain et mis au point par David Belle
+[Parkour](../le-parkour-definition) : l’art de se déplacer à travers son environnement aussi rapidement et efficacement que possible, utilisant seulement le corps humain et mis au point par David Belle
 
-[Traceur / traceuse](/freerunning-et-parkour) : pratiquant(e) du Parkour
+[Traceur / traceuse](../freerunning-et-parkour) : pratiquant(e) du Parkour
 
-[L’Art du Déplacement](/freerunning-et-parkour) : appellation utilisée à l’origine par David Belle et les autres pratiquants pour définir leur entraînement avant que le terme « parkour » ne soit inventé. Sont inclus à la fois les mouvements efficaces et esthétiques. Quelques groupes ont gardé ce nom tels que les Yamakasi ou encore les Adrénaline.
+[L’Art du Déplacement](../freerunning-et-parkour) : appellation utilisée à l’origine par David Belle et les autres pratiquants pour définir leur entraînement avant que le terme « parkour » ne soit inventé. Sont inclus à la fois les mouvements efficaces et esthétiques. Quelques groupes ont gardé ce nom tels que les Yamakasi ou encore les Adrénaline.
 
-[Freerunning](/freerunning-et-parkour) : créé par Sébastien Foucan, il s’agit d’un dérivé du Parkour mettant l’accent sur la recherche d’un déplacement propre à chaque pratiquant alliant esthétique et fluidité. **Les mouvements du Parkour :** Notez que les anglophones ont tendance à créer plus de termes qu’il n’en existe à la base
+[Freerunning](../freerunning-et-parkour) : créé par Sébastien Foucan, il s’agit d’un dérivé du Parkour mettant l’accent sur la recherche d’un déplacement propre à chaque pratiquant alliant esthétique et fluidité. **Les mouvements du Parkour :** Notez que les anglophones ont tendance à créer plus de termes qu’il n’en existe à la base
 
-[La planche](/la-planche) : passer d'un état de suspension à un mur, une branche ou une barre, jusqu'à l'appui en effectuant une traction suivie d'une antépulsion _Muscle up_
+[La planche](../la-planche) : passer d'un état de suspension à un mur, une branche ou une barre, jusqu'à l'appui en effectuant une traction suivie d'une antépulsion _Muscle up_
 
 Le passe barrière / passement : franchir un obstacle à l’aide d’un saut suivi d’un appui des mains et d’un passement des jambes sur le côté _One-Two handed vault_ _Speed vault_ _Thief vault_ _Reverse vault_
 
@@ -34,21 +34,21 @@ Le passe muraille : technique de franchissement d'un mur d'une hauteur assez imp
 
 Le demi tour : c'est le moyen le plus simple pour se retrouver accroché de l'autre côté d'une barrière ou d'un muret en un seul mouvement _Turn vault_
 
-[Le saut de précision](/saut-de-precision) : saut technique, la plupart du temps à pieds joints, dont la réception se fait sur une petite surface (muret par exemple) et, généralement associé à un saut de détente _Precision jump_
+[Le saut de précision](../saut-de-precision) : saut technique, la plupart du temps à pieds joints, dont la réception se fait sur une petite surface (muret par exemple) et, généralement associé à un saut de détente _Precision jump_
 
-[Le saut de détente](/saut-de-detente) : saut réalisé avec ou sans élan pour franchir une certaine distance _Gap jump_
+[Le saut de détente](../saut-de-detente) : saut réalisé avec ou sans élan pour franchir une certaine distance _Gap jump_
 
-[Le saut de chat / le passement de chat](/saut-de-chat) : franchissement d'un obstacle en plongeant et en poussant sur les bras afin de passer ses jambes entre ses bras _Cat / Monkey / Kong vault_ _Dash vault_ _Kash vault_ _Lazy vault_
+[Le saut de chat / le passement de chat](../saut-de-chat) : franchissement d'un obstacle en plongeant et en poussant sur les bras afin de passer ses jambes entre ses bras _Cat / Monkey / Kong vault_ _Dash vault_ _Kash vault_ _Lazy vault_
 
-[Le saut de bras](/saut-de-bras) : saut sur un mur, ou autre prise, conclu par une réception avec les bras (et amorti par les jambes) _Arm jump_ _Cat jump_
+[Le saut de bras](../saut-de-bras) : saut sur un mur, ou autre prise, conclu par une réception avec les bras (et amorti par les jambes) _Arm jump_ _Cat jump_
 
-[Le saut de fond](/Saut-de-fond) : saut effectué d'une hauteur importante suivi généralement (et c'est même vivement recommandé pour les articulations) par une roulade _Jump from height_
+[Le saut de fond](../Saut-de-fond) : saut effectué d'une hauteur importante suivi généralement (et c'est même vivement recommandé pour les articulations) par une roulade _Jump from height_
 
-[La roulade](/la-roulade) : amortir sa chute en roulant au sol d'une épaule à la hanche du côté opposé _Pk roll_
+[La roulade](../la-roulade) : amortir sa chute en roulant au sol d'une épaule à la hanche du côté opposé _Pk roll_
 
-[Le lâché](/le-lache) : mouvement permettant de passer d’un point de suspension brachiale à un autre par le biais d’un balancement (également appelé gibbon) ou en lâchant le premier point pour atteindre le second en contrebas
+[Le lâché](../le-lache) : mouvement permettant de passer d’un point de suspension brachiale à un autre par le biais d’un balancement (également appelé gibbon) ou en lâchant le premier point pour atteindre le second en contrebas
 
-[Le Tic-Tac](/le-tic-tac) : C'est le fait de "rebondir" sur un mur ou autre pour passer un autre obstacle (mur, vide, barrière, etc...)
+[Le Tic-Tac](../le-tic-tac) : C'est le fait de "rebondir" sur un mur ou autre pour passer un autre obstacle (mur, vide, barrière, etc...)
 
 **Complément linguistique**
 

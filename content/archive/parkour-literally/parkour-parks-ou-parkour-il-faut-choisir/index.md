@@ -138,7 +138,7 @@ Le parkour-park n’est un potentiel terrain de jeux que pour celui qui manque d
 
 **13.** Jean-Maire Brohm, _Sociologie politique du sport_, P.U.N., 1992.
 
-**14.** [Manifeste contre l'organisation de compétitions de parkour](/archive/parkour-literally/manifeste-contre-lorganisation-de-competitions-de-parkour/)
+**14.** [Manifeste contre l'organisation de compétitions de parkour](../manifeste-contre-lorganisation-de-competitions-de-parkour/)
 
 Il me paraît utile de préciser que ce manifeste a été lu et approuvé par David Belle, fondateur du parkour, qui a déclaré publiquement s’y associer sans réserve.
 
