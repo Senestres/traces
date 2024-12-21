@@ -43,7 +43,7 @@
 		"markdown-it-anchor": "^9.2.0",
 		"markdown-it-eleventy-img": "^0.10.2",
 		"markdown-it-footnote": "^4.0.0",
-		"pagefind": "^1.2.0"
-	},
-	"type": "module"
+		"pagefind": "^1.2.0",
+		"eleventy-plugin-embed-everything": "^1.19.0"
+	}
 }

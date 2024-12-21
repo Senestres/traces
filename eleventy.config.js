@@ -3,13 +3,12 @@ import markdownIt from "markdown-it";
 import markdownItFootnote from 'markdown-it-footnote';
 import { DateTime } from "luxon";
 import markdownItEleventyImg from "markdown-it-eleventy-img";
-
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginBundle from "@11ty/eleventy-plugin-bundle";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
-
+import embedEverything from "eleventy-plugin-embed-everything";
 import pluginDrafts from "./eleventy.config.drafts.js";
 import pluginImages from "./eleventy.config.images.js";
 import { execSync } from 'child_process';
@@ -166,6 +165,9 @@ export default function (eleventyConfig) {
 			}
 		}); 
 	});
+
+	// add yt embedd
+	eleventyConfig.addPlugin(embedEverything);
 
 	// add excerpt
 	// use with <p>{{ post.templateContent | excerpt }}</p>
