@@ -45,5 +45,6 @@
 		"markdown-it-footnote": "^4.0.0",
 		"pagefind": "^1.2.0",
 		"eleventy-plugin-embed-everything": "^1.19.0"
-	}
+	},
+	"type": "module"
 }
