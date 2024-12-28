@@ -172,7 +172,8 @@ export default function (eleventyConfig) {
 	// add excerpt
 	// use with <p>{{ post.templateContent | excerpt }}</p>
 	eleventyConfig.addFilter("excerpt", (post) => {
-		const content = post.replace(/(<([^>]+)>)|#|&quot;/gi, "");
+		var content = post.replace(/(<([^>]+)>)|#/gi, "");
+		content = content.replace(/&quot;/gi, "'");
 		return content.substr(0, content.lastIndexOf(" ", 250)) + "...";
 	  });
 
