@@ -180,7 +180,7 @@ header>div {
 }
 .home-link {
 	font-weight: 700;
-	font-size: min(max(16px, 4vw), 5rem);
+	font-size: min(max(16px, 5vw), 5rem);
 	font-family: "Rubik Mono One", sans-serif;
 	text-decoration: none;
 	background-size: cover;
