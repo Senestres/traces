@@ -3,7 +3,7 @@ title: "FIG-Gate: un résumé"
 author: "Yann Daout"
 date: "2017-05-25"
 tags: 
-  - "institutions internationales"
+  - "institutions-internationales"
   - "FIG"
 coverImage: "fig.jpg"
 ---
