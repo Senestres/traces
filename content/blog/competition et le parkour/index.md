@@ -11,7 +11,7 @@ tags:
   - "compétition"
   - "éthique"
   - "parkour"
-  - "pedagogie"
+  - "pédagogie"
   - "valeurs"
 ---
 
