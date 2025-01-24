@@ -3,7 +3,7 @@ export default {
 	url: "https://traces.info/",
 	base: "https://traces.info/",
 	language: "fr",
-	description: "Traces est un site sur le corps, la culture et l'apprentissage, écrit par Yann Daout",
+	description: "Traces est un site sur le corps, la culture et l'apprentissage",
 	author: {
 		name: "Yann Daout",
 		email: "",
