@@ -393,7 +393,7 @@ input, label
 /* Social icons*/
 
 nav ul,
-ul.socials {
+ul.nav-socials {
 	padding: 0;
 }
 .nav-icon:hover path {
