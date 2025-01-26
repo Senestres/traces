@@ -443,10 +443,10 @@ svg.nav-icon {
 	padding: 0 1rem;
 }
 
-
 article img {
 	height: auto;
-
+	margin: auto;
+	display: block
 }
 
 article figcaption {
