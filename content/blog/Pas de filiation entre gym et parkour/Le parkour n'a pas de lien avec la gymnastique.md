@@ -19,7 +19,7 @@ Quelle est donc ce nouveau mythe ? En résumé, l'idée est que les premiers pra
 
 Si on en reste là, on peut se dire que c'est une preuve d'une filiation entre la gymnastique et le parkour. Mais il s'agit d'une sélection d'un extrait qui, pour le dire poliment, est assez infidèle à ce qu'était la gymnastique amorosienne. 
 
-![Karamazov disant "Aucun lien, je suis fils unique" dans la Cité de la peur](/aucunlien.jpg)
+![Karamazov disant "Aucun lien, je suis fils unique" dans la Cité de la peur](aucunlien.jpg)
 
 # Picorage historique
 Le problème le plus évident est que la gymnastique amorosienne contenait également la lutte, les jeux de balle, l'escrime, l'équitation, le tir, le chant, ou encore "Nager nu ou habillé, avec ou sans fardeaux, et surtout avec des armes à feu". La gymnastique n'était pas le sport que l'on connait actuellement, mais une rationalisation de diverses pratiques et techniques corporelles qui existaient déjà. On imagine assez mal défendre la position selon laquelle la gymnastique, la natation et le tir ont une filiation commune. Et la FIG a beau jalouser le succès du football, elle ne s'amuse pas pour autant à le placer sous sa gouvernance. On ne considère pas ces pratiques comme de la gymnastique, tout simplement parce que la gymnastique contemporaine n'a pas grand chose à voir avec la gymnastique amorosienne. Etablir une filiation sur cette base a autant de sens que de dire que le parkour a été inventé par Ougabouga III, premier hominidé à avoir sauté par-dessus un ravin en 7mio. av. J.-C.

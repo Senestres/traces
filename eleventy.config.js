@@ -9,8 +9,7 @@ import pluginBundle from "@11ty/eleventy-plugin-bundle";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import embedEverything from "eleventy-plugin-embed-everything";
-import pluginDrafts from "./eleventy.config.drafts.js";
-import pluginImages from "./eleventy.config.images.js";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { execSync } from 'child_process';
 import metadata from "./_data/metadata.js";
 
@@ -30,10 +29,6 @@ export default function (eleventyConfig) {
 	// Watch content images for the image pipeline.
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
 
-	// App plugins
-	eleventyConfig.addPlugin(pluginDrafts);
-	eleventyConfig.addPlugin(pluginImages);
-
 	// Official plugins
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
 		preAttributes: { tabindex: 0 }
@@ -41,6 +36,18 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(pluginBundle);
+	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+		// can ignore by adding eleventy:ignore to img attributes
+		formats: ["webp", "auto"],
+		widths: [400, 800, "auto"],
+		htmlOptions: {
+			imgAttributes: {
+				loading: "lazy",
+				decoding: "async",
+				sizes: '100vw',
+			},
+		},
+	});
 
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
@@ -89,7 +96,6 @@ export default function (eleventyConfig) {
 		}
 		return Array.from(tagSet);
 	});
-
 
   // Sorted collection by n of posts; 
   	eleventyConfig.addCollection('bySize', (collectionApi) => {
@@ -143,7 +149,8 @@ export default function (eleventyConfig) {
 			resolvePath: (filepath, env) => path.join(path.dirname(env.page.inputPath), filepath),
 			globalAttributes: {
 				sizes: "100vw",
-				decoding: "async"
+				decoding: "async",
+				"eleventy:ignore": "",
 			},
 			imgOptions: {
 			widths: [800, "auto"],
