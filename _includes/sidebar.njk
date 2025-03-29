@@ -1,7 +1,7 @@
 <div class="sidebar">
 
-  <input type="checkbox" id="tag-links-toggle" class="tag-links-toggle" />
-  <label for="tag-links-toggle" class="switch">
+  <input type="checkbox" id="tags-toggle" class="tags-toggle" />
+  <label for="tags-toggle" class="switch">
     Tags
   </label>
 
@@ -9,15 +9,15 @@
 {% if home %}  {% set postsToShow = collections.posts %} {% endif %}
 {% if home == false %}  {% set postsToShow = collections.archive %} {% endif %}
 
-  <ul class="tag-links" id="tag-links">
+  <ul class="tags" id="tags">
     {% for tag, count in collections.bySize | filterTagList %}
     {% if loop.index0 < 25 %}
       {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-      <li class="tag-links-tag"><a href="{{ tagUrl }}">{{ tag }}</a>
+      <li><a href="{{ tagUrl }}" class="tag">#{{ tag }}</a>
       </li>
     {% endif %}
     {% endfor %}
-    <div style="margin-left: 1rem"><a href="/tags/">tous les tags</a></div>
+    <div style="margin-left: 1rem;"><a href="/tags/" style="vertical-align: middle;">tous les tags</a></div>
     </ul>
 
 </div>

@@ -1,7 +1,7 @@
-<ul class="tag-links">
+<ul class="tags">
   {% for tag in collections.all | getAllTags | filterTagList %}
     {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-    <li class="tag-links-tag"><a href="{{ tagUrl }}">{{ tag }}</a>
+    <li class="tag"><a href="{{ tagUrl }}">{{ tag }}</a>
     </li>
   {% endfor %}
   </ul>
