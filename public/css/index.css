@@ -57,6 +57,7 @@ body {
 	color: var(--text-color);
 	background-color: var(--background-color);
 	height: 100%;
+	max-width: 2200px;
 }
 html {
 	overflow-y: scroll;
@@ -400,16 +401,14 @@ svg.nav-icon {
 	position: relative;
 /* 	margin: 0 auto; */
 	@media (min-width: 68rem) {
-		grid-template-columns: 1fr 2fr;
+		grid-template-columns: 1fr 2fr 1fr;
 	}
 }
 .sidebar {
 	padding: 1rem 1rem 0 1rem;
 	max-width: 90ch;
 }
-.two-columns .content {
-	margin-left: 0;
-}
+
 /* Content */
 .content {
 	max-width: 90ch;
