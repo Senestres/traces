@@ -1,0 +1,69 @@
+---
+title: Combien a-t-on de sens ?
+date: 2025-09-23
+tags:
+  - philosophie
+  - perception
+description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
+author: Yann Daout
+---
+
+Dans son livre Neuromania, le neurobiologiste Albert Moukheiber s'attaque à une idée reçue: nous n'aurions pas cinq sens, mais neuf. C'est, dit-il par ailleurs, un de ses chevaux de bataille. Moi, mon cheval de bataille, c'est les neurobiologistes qui remettent en question l'arbitraire du sens commun pour le remplacer par... leurs propres distinctions tout aussi arbitraires. A-t-on bien neuf sens plutôt que cinq ?
+
+# Les 9 sens
+Voyons en détail ce qu'en dit Moukheiber:
+
+>"On nous apprend très tôt que nous possédons cinq sens : la vision, l’ouïe, l’odorat, le goût et le toucher. Mais cette liste est incomplète ! En vérité, nous en comptons neuf. Un sens est un système de la perception qui comprend un organe récepteur spécifique et produit des informations sur notre corps ou le monde extérieur."^[Moukheiber, A. (2024). _Neuromania-Le vrai du faux sur votre cerveau_. Allary.]
+
+Commençons par noter que Moukheiber fait ici deux choses. 
+
+1) Il produit un décompte précis des sens, s'élevant à 9.
+2) Il élargit *extensionnellement* la perception, au-delà des cinq sens "classiques".
+
+Autrement dit, il ne fait pas que produire un décompte différent des sens, il prend en considération de nouveaux phénomènes qui n'étaient (apparemment) pas couverts par le précédent décompte. En particulier, il estime qu'aux cinq sens "classiques", il faudrait ajouter les quatre suivants:
+
+- Nociception: stimulation de nos capteurs de dégâts
+- Proprioception: situation du corps dans l'espace
+- Thermoception: détection de la chaleur et du froid
+- Intéroception: ressentir le corps de l'intérieur (il donne l'exemple de la faim et de l'emballement du cœur)
+
+Les deux questions (décompte et extension) peuvent être traitées séparément. On peut être d'accord sur le constat que la classification classique ne tient pas compte de certains phénomènes, mais ne pas être d'accord sur le décompte de *neuf*. Et à l'inverse, on pourrait se refuser à ajouter de nouveaux phénomènes, mais proposer que, disons, le "toucher" devrait être considéré comme trois sens différents. Dans ce cas, la classification classique recouvre les bons phénomènes, mais c'est le décompte de 5 qui est erroné.
+
+Dans ce contexte, la définition d'un *sens* proposée par Moukheiber doit servir une double fonction:
+
+1) Définir l'ensemble des phénomènes perceptifs (distinguer ce qui est un sens et ce qui n'en est pas un).
+2) Permettre de discriminer les sens entre eux pour les compter.
+
+Notons finalement que dans cette définition la perception concerne le monde comme l'intérieur du corps, et que les sens ont un organe récepteur spécifique.
+
+# (Re)définir la perception
+D'où vient la classification classique ? Impossible d'en faire ici la généalogie précise, mais elle est répandue au moins depuis Aristote (IVe siècle av. J.-C.). Elle est relativement intuitive, et Moukheiber ne la remet pas en question fondamentalement: il se contente d'y faire des ajouts. Ce qu'on peut se demander, c'est pourquoi elle est si prégnante, alors qu'elle semble oublier bon nombre de phénomènes perceptifs ?
+Un début de réponse, c'est que la classification classique s'intéresse à la perception du monde, des objets externes. Les 4 ajouts sont plutôt centrés sur le corps, ou a minima sur le rapport du corps à l'environnement externe. L'ajout de la thermoception est questionnable, puisqu'elle est souvent inclue dans le toucher (notamment chez Aristote)^[On peut d'ailleurs noter qu'il y a plusieurs types de récepteurs impliqués dans la thermoception. Doit-on considérer que la thermoception représente en fait plusieurs sens ?].
+La distinction entre interne et externe n'est pas nette: le toucher peut nous renseigner sur notre propre corps, et la douleur peut nous renseigner sur un danger externe. Mais cette distinction n'est pas complètement arbitraire non plus. Quand on parcourt la littérature philosophique, on tombe d'ailleurs assez régulièrement sur des affirmations du genre que la "vraie" perception est relative à des objets externes. Est-ce que cela justifie de dire que les systèmes relatifs au corps ne sont pas des "sens" ou ne relèvent pas de la perception ? Peut-être pas. Mais cela peut justifier de ne pas considérer comme trivial de les mettre dans le même sac.
+Pour l'exemple, prenons le philosophe de la biologie Kim Sterelny: 
+
+>"Cependant, il existe des différences importantes entre la perception et le contrôle interne. Les organismes ne vivent pas dans un monde où les intérêts évolutifs sont identiques, où chaque agent est sélectionné pour envoyer aux autres des signaux aussi honnêtes et univoques que possible. Mais les organismes sont des communautés de parties coopératives et coadaptées. On peut donc s'attendre à ce que l'environnement interne évolue vers la transparence. [...] Avec le temps, on peut s'attendre à ce que [les signaux internes] soient modifiés pour devenir plus propres et moins bruyants, et à ce que les systèmes de surveillance internes deviennent plus efficaces pour les capter et les utiliser afin de déclencher les réponses appropriées."^[Sterelny, K. (2003). _Thought in a hostile world: the evolution of human cognition_. Blackwell.]
+
+Peu importe le propos général de Sterelny, ce qui nous intéresse c'est qu'il y a selon lui une différence non arbitraire entre la perception du monde externe et le contrôle interne de l'organisme. Les signaux à l'intérieur du corps ont co-évolué avec les récepteurs pour un maximum de transparence. La diminution du glucose sanguin est un signal qui ne ment pas. Mais l'environnement externe est différent: les animaux cherchent à se dissimuler, les plantes signalent qu'elles sont toxiques alors qu'elles ne le sont pas et vice-versa, etc. 
+Il y a donc des raisons non-arbitraires, ici fondées sur la théorie de l'évolution, de mettre la perception de l'environnement externe, et la détection des signaux internes dans des sacs différents. Il existe d'autres raisons non arbitraires de faire de telles distinctions: par exemple la vue nous donne des objets intentionnels assez clairs (la tasse devant moi), alors que ce n'est pas évident que ce soit le cas de la douleur. J'ai mal, mais à quoi est dû cette douleur ? Dit autrement, la douleur ne semble pas "représenter" un objet, contrairement à la vue. On peut débattre de ces exemples, et éventuellement rejeter que cela nécessite de faire une distinction entre perception et contrôle interne. Mais cela ne semble pas évident que la distinction soit inutile, et peut-être qu'il faut admettre que les classifications les plus utiles dépendent du contexte: le spécialiste de la théorie de l'évolution a peut-être besoin d'une autre classification que le sens commun *et vice-versa*.
+Bref, la définition de la perception proposée par Moukheiber est peut-être une *redéfinition*, qu'il ne défend pas vraiment, et que nous ne sommes pas obligés d'accepter.
+
+# Compter les sens
+Mettons que l'on accepte son *extension* du concept de perception. Il y a un ensemble de systèmes qui, grosso modo, nous permettent de détecter des informations dans le monde ou dans notre corps, et tout cela mérite d'être mis dans le sac "perception". Maintenant, qu'est-ce qui nous pousse à admettre qu'il y a *neuf* sens différents ? Moukheiber, comme la plupart des scientifiques, n'est pas très explicite. Si l'on se réfère à sa définition, un sens se distingue d'un autre par l'existence d'"un organe récepteur spécifique".
+Je vois deux manière de comprendre cela: soit il s'agit d'un organe au sens anatomique (les yeux, le nez, la langue, la peau); soit il s'agit d'un type de récepteur au sens neurobiologique. La première me semble *prima facie* complètement inapplicable à sa catégorisation: je ne vois par exemple pas quel serait l'organe spécifique de l'*intéroception* qui serait commun à la faim et aux battements du cœur. Je pars donc du principe qu'il veut dire la seconde.
+Le problème c'est que, comme disent les anglophones, *it begs the question*. On ne peut pas (trivialement) distinguer les sens via les récepteurs, parce que les récepteurs sont eux-mêmes en question.
+
+Prenons l'exemple du goût. L'expérience du goût provient non pas d'un seul type de récepteurs, mais de plusieurs. On ne connait pas encore tous les mécanismes, mais ce qui est certain c'est que les récepteurs gustatifs détectent différents types de molécules, et avec des mécanismes différents. Si un sens est défini par un organe récepteur spécifique, il y a un problème. Pourquoi a-t-on envie de dire qu'on a *un* sens du goût ? Pourquoi regroupe-t-on différents types de récepteurs sous un seul sens ? Notez que la localisation des récepteurs ne sera pas ici d'une grande aide. On trouve bien des récepteurs gustatifs sur la langue; mais le fait est qu'on en trouve partout dans la bouche, dans la gorge, dans le système digestif, dans les poumons, dans les testicules^[Li, F. (2013). Taste perception: from the tongue to the testis. _Molecular Human Reproduction_, _19_(6), 349–360.]...
+
+Par ailleurs, notre expérience du goût provient aussi, entre autres, de récepteurs tactiles et olfactifs. On peut être tenté d'affirmer qu'il s'agit d'illusions: ce qu'on croit être le goût, est en fait partiellement du toucher et de l'olfaction. Et pourtant, on ne confond généralement pas les goûts et les odeurs: quand on renifle dans notre environnement, on n'a pas l'impression que les odeurs sont dans notre bouche; et inversement les arômes du café dans notre bouche ne sont pas traités comme étant localisés dans l'environnement externe. Bref pour parler en neurobiologiste, notre cerveau traite différemment l'olfaction orthonasale (quand on renifle) et rétronasale (à l'arrière de la bouche). Il semble que l'olfaction rétronasale active le cortex gustatif, contrairement à l'olfaction orthonasale^[Blankenship, M. L., Grigorova, M., Katz, D. B., & Maier, J. X. (2019). Retronasal odor perception requires taste cortex but orthonasal does not. _Current Biology : CB_, _29_(1), 62-69.e3. [https://doi.org/10.1016/j.cub.2018.11.011](https://doi.org/10.1016/j.cub.2018.11.011)]. Faudrait-il dire qu'il y a deux sens olfactifs ? Ou qu'une partie de l'olfaction fait partie du goût ? Ou qu'il n'y a pas de distinction claire entre ces sens ?
+
+Celui qui veut utiliser les récepteurs comme critère pour distinguer les sens marche sur la tête. Comme le suggère la philosophe Vivian Mizrahi, ce sont le sens commun et notre expérience vécue qui guident l'approche scientifique, et pas le contraire: 
+
+>"En fait, c'est parce que les goûts sont localisés dans la bouche lors des expériences perceptives que les scientifiques cherchent des récepteurs gustatifs dans la bouche. De même, parce que l'on sait que renifler est nécessaire pour sentir, les récepteurs olfactifs sont cherchés dans le nez."^[Mizrahi, V. (2017). Just a Matter of Taste. _Review of Philosophy and Psychology_, _8_(2), 411–431.]
+
+Tout cela peut paraitre bien théorique ou philosophique. Mais c'est un problème sérieux pour la position que défend Moukheiber. Prenez l'intéroception. Quel est l'organe récepteur spécifique de l'intéroception ? Est-ce qu'il y a un seul type de récepteur qui peut détecter entre autres la faim et l'emballement du cœur ? Vraisemblablement pas. L'intéroception ne semble pas pouvoir être distinguée de cette manière là.
+Maintenant, prenez le "sens" par lequel on ressent le besoin de respirer. Il y a bien un système de ce genre, qui fournit une information sur notre corps, et correspond donc à la définition proposée par Moukheiber. Faut-il compter cela comme un sens, et sinon, pourquoi pas ? Est-ce que cela fait partie de l'intéroception ? Il n'est pour moi pas évident qu'il s'agit du même genre de sens que celui par lequel je sens les battements de mon cœur. L'intéroception ressemble un peu à la poubelle "autres déchets", dans laquelle on met ce qui ne rentre pas dans les autres catégories. Ou faut-il ajouter un dixième sens ? Notez que cela ouvre la porte à la prolifération, car il y a de nombreuses choses que nous percevons, de nombreux stimuli auxquels nous sommes sensibles, et bien plus de neuf types de récepteurs spécifiques. Le dénombrement proposé par Moukheiber me semble soit arbitraire soit faux.
+
+# Conclusion
+Ce que je voulais montrer ici, c'est simplement qu'en critiquant l'arbitraire du sens commun, on aboutit facilement à une de ces deux positions: soit une classification tout aussi arbitraire; soit une prolifération des classifications. Je trouve hilarant de voir des scientifiques critiquer des distinctions arbitraires pour immédiatement y substituer leur propre arbitraire. Va-t-on voir dans cinquante ans des scientifiques s'insurger contre le "mythe des neuf sens" ?
+Maintenant, c'était aussi l'occasion de montrer que la question du nombre de sens est une vraie question philosophique, assez intéressante et rarement abordée explicitement^[On trouve des discussions et débuts de réponse notamment chez J. Gibson, H. P. Grice et plus récemment Matthew Nudds]. Puis-je donner une réponse définitive et défendable en deux phrases ? Absolument pas. Mais un bon point de départ me semble être celui proposé par James Gibson^[Gibson, J. J. (1966). _The senses considered as perceptual systems_. Houghton Mifflin.]. Les "sens" proposés par Moukheiber sont, pour reprendre le terme qu'il utilise lui-même, des *systèmes* perceptifs, qui coupent à travers la catégorisation des récepteurs. Un système perceptif n'est pas lié à un récepteur particulier; et un même type de récepteur peut être utilisé par deux systèmes perceptifs différents.
