@@ -8,5 +8,7 @@ export default {
 		name: "Yann Daout",
 		email: "",
 		url: "https://traces.info/about/"
-	}
+	},
+	robots: "/robots.txt",
+	sitemap: "/sitemap.xml"
 }

@@ -15,6 +15,7 @@ layout: layouts/home.njk
 eleventyComputed:
   title: Tagged “{{ tag }}”
 permalink: /tags/{{ tag | slugify }}/
+excludeFromSitemap: true
 ---
 <h1>Posts avec “{{ tag }}”</h1>
 
