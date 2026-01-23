@@ -13,7 +13,7 @@ Dans une série de quatre articles, je fais le tour de la question: "qu'est-ce q
 1) [Le parkour, empiriquement](../le-parkour-empiriquement)
 2) [Le parkour comme pratique en tour par tour](../le-parkour-comme-pratique-organisee-en-tour-par-tour/)
 3) [Définir le parkour](../definir-le-parkour)
-4) [L'ontologie du parkour](l-ontologie-du-parkour)
+4) [L'ontologie du parkour](../l-ontologie-du-parkour)
 
 Ci-dessous, un petit résumé absolument pas exhaustif.
 # 1 Description empirique
@@ -32,7 +32,7 @@ Je montre que ces discours servent à légitimer le parkour et à lui donner un 
 
 # 3 Métaphysique
 Qu'est-ce que le parkour si on monte en abstraction ? Est-ce qu'on peut vraiment parler comme d'une *chose* ou entité ? Si oui, quel type d'entité ?
-En utilisant des outils de l'ontologie sociale, je suggère le parkour doit être mis dans la boite des *pratiques sociales*. Selon la conception que je défend, le parkour est [composé de toutes les activités concrètes réalisées dans le but intentionnel de réaliser un certain type d'action](l-ontologie-du-parkour).
+En utilisant des outils de l'ontologie sociale, je suggère le parkour doit être mis dans la boite des *pratiques sociales*. Selon la conception que je défend, le parkour est [composé de toutes les activités concrètes réalisées dans le but intentionnel de réaliser un certain type d'action](../l-ontologie-du-parkour).
 Sur le chemin, je discute une certaine conception des pratiques sociales qui les réduit aux actions de groupe. Je suggère que pour traiter de pratiques comme le parkour qui reposent sur des types d'action socialement construits mais dont les occurrences peuvent être réalisées par un individu seul, il parait utile d'utiliser une conception des pratiques sociales qui n'est pas basée sur les actions de groupe.
 Je montre aussi que cette montée en abstraction est assez utile pour avoir un cadre conceptuel avec lequel discuter de questions comme celle du changement de la pratique au fil du temps.
 
