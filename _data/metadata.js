@@ -4,6 +4,7 @@ export default {
 	base: "https://traces.info",
 	language: "fr",
 	description: "Traces est un site sur le corps, la culture et l'apprentissage",
+	subtitle: "Traces est un site sur le corps, la culture et l'apprentissage",
 	author: {
 		name: "Yann Daout",
 		email: "",
