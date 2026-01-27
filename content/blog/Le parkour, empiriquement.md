@@ -4,7 +4,7 @@ date: 2026-01-23
 tags:
   - sociologie
   - parkour
-description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
+description: Traces est un site sur le corps, la culture et l'apprentissage
 author: Yann Daout
 ---
 Faire une description empirique du parkour revient à observer ce que font les traceurs quand ils disent faire du parkour^[Je me fonde ici sur des observations systématiques effectuées dans le cadre de mon mémoire. Une telle observation est nécessairement circonstancielle et non-exhaustive: c'est une description du parkour à un moment donné, dans un espace donné. Il n'est pas impossible d'observer d'autres pratiques ailleurs et à d'autres moments.]. Pour focaliser la discussion, je vais m'intéresser seulement à la pratique en extérieur.

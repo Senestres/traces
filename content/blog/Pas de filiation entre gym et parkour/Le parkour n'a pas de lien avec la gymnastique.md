@@ -5,7 +5,7 @@ tags:
   - appropriation-culturelle
   - histoire
   - FIG
-description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
+description: Traces est un site sur le corps, la culture et l'apprentissage
 author: Yann Daout
 ---
 Toutes les disciplines sportives ont leur mythologie. Le rugby par exemple, inventé lorsque William Webb Ellis a pris le ballon de football dans ses mains pour l'amener jusqu'au but adverse. La capoeira, lutte déguisée en danse pour échapper au regard des esclavagistes. Pour le parkour, cela a longtemps été quelque chose comme ça: un groupe de jeunes inspirés par la Méthode Naturelle de George Hébert, qui se lance des défis dans l'environnement urbain de la banlieue parisienne. Un conflit scinde la discipline en deux: David Belle choisit la voie de l'utilité, et Sébastien Foucan choisit la voie de la créativité. C'est évidemment une simplification, une sélection voire une infidélité aux faits. Un mythe construit pour les besoins du présent.

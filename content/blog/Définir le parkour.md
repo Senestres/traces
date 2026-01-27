@@ -4,7 +4,7 @@ date: 2026-01-23
 tags:
   - philosophie
   - langage
-description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
+description: Traces est un site sur le corps, la culture et l'apprentissage
 author: Yann Daout
 ---
 Parlons de ce que font les traceurs quand ils mobilisent des définitions du parkour. C'est une pratique notoirement difficile à définir. Il y a un pluralisme, voire des visions contradictoires de ce qu'est le parkour. Il y a également des tensions entre ce qui est *dit* du parkour, et comment il est *pratiqué* concrètement. Je montre ici que ces discours ne servent pas seulement à décrire la pratique, mais ont une fonction de légitimation et une fonction normative qui est partiellement constitutive de la pratique.

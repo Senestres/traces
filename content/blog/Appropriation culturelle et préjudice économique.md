@@ -4,7 +4,7 @@ date: 2024-12-28 12:30:00
 tags:
   - appropriation-culturelle
   - exploitation
-description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
+description: Traces est un site sur le corps, la culture et l'apprentissage
 author: Yann Daout
 ---
 Un des préjudices potentiels d'une appropriation culturelle est l'exploitation économique. Le tort moral est le plus évident lorsqu'il y a exclusion d'opportunités économiques: par l'appropriation, un groupe dominant empêche un groupe marginalisé de profiter économiquement de son produit. Mais ce préjudice est notoirement difficile à établir. Il y a peut-être des difficultés conceptuelles liées à l'analyse contrefactuelle (que se serait-il passé si il n'y avait pas eu d'appropriation ?), mais mettons cela de côté. Il y a surtout des questions empiriques difficiles: il faut des données économiques pour montrer qui profite et qui est lésé. Il ne suffit pas de démontrer que certains profitent, il faut pouvoir montrer que l'exploitation économique n'est pas mutuellement bénéfique.

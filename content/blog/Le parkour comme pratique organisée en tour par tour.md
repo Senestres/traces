@@ -4,7 +4,7 @@ date: 2026-01-23
 tags:
   - langage
   - ethnomethodologie
-description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
+description: Traces est un site sur le corps, la culture et l'apprentissage
 author: Yann Daout
 ---
 Toute pratique sociale se déroule sur un arrière-plan, un ensemble d'éléments nécessaires à l'organisation de la pratique qui sont "vus mais pas remarqués". Ainsi le parkour est généralement une activité organisée en tour par tour, et pourtant à ma connaissance cela n'est discuté nulle part. Ce n'est ni mentionné par les pratiquants, ni analysé dans la littérature académique. Je vous propose donc d'analyser ce que vous avez peut-être vu, mais pas forcément remarqué.

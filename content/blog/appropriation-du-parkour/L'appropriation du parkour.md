@@ -5,7 +5,7 @@ tags:
   - FIG
   - appropriation-culturelle
   - justice-épistémique
-description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
+description: Traces est un site sur le corps, la culture et l'apprentissage
 author: Yann Daout
 ---
 Lorsque la Fédération Internationale de Gymnastique (FIG) s'est approprié le parkour en 2017, certains ont demandé quel était le tort. Est-ce quelqu'un sera vraiment lésé ? Après tout, "*je* pourrai toujours faire du parkour". Et puis, qui a le droit de dire ce que le parkour doit être ou ne pas être ? Qu'est-ce qui fait qu'un traceur peut se sentir propriétaire de sa discipline ? Même si le terme était à peu près inutilisé en 2017, l'enjeu central est celui de l'*appropriation culturelle*^[Une des seules occurences se trouve dans Puddle, D., & Wheaton, B. (2023). The Attempted Grobalization of Parkour by the Fédération Internationale de Gymnastique. _The International Journal of the History of Sport_, _40_(6–7), 556–581.]. Mobiliser ce concept de manière adéquate permet de répondre aux interrogations légitimes des agnostiques et d'affaiblir la rhétorique des défenseurs de l'appropriation, ce que je me propose de faire ici. Dans le même temps, c'est l'occasion de mobiliser un exemple concret pour mieux comprendre ce concept disputé.

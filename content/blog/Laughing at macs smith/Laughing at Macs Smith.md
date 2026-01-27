@@ -4,7 +4,7 @@ date: 2024-06-05
 tags:
   - histoire
   - sciences-sociales
-description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
+description: Traces est un site sur le corps, la culture et l'apprentissage
 author: Yann Daout
 ---
 L'article *Parkour Fails and Hébertisme: Laughing at the New Man*^[Smith, M. (2023). Parkour Fails and Hébertisme: Laughing at the New Man. _Contemporary French and Francophone Studies_, _27_(1), 74–82.] est un de meilleurs exemples de surinterprétation en sciences sociales. Disons le tout de suite, cet article est catastrophique. Prenons cette catastrophe avec légèreté et rigolons un coup. Au passage, peut-être apprendrons-nous quelque chose sur le parkour et sur la méthodologie en sciences sociales.

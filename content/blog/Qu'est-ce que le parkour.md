@@ -5,10 +5,10 @@ tags:
   - parkour
   - philosophie
   - langage
-description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
+description: Traces est un site sur le corps, la culture et l'apprentissage
 author: Yann Daout
 ---
-Dans une série de quatre articles, je fais le tour de la question: "qu'est-ce que le parkour ?" La question se pose, évidemment, parce qu'il existe différentes conceptions de cette pratique, qui sont parfois en tension les unes avec les autres. La définition du parkour a pu faire débat dans le passé, et il n'est pas clair que cette question soit tranchée. Mais plutôt que d'énumérer des définitions du parkour ou de proposer la mienne, le but est ici de faire le tour des manières de se poser la question et des types de réponses qui peuvent y être données. L'enjeu est *méta*, donc.
+Dans une série de quatre articles, *je fais* le tour de la question: "qu'est-ce que le parkour ?" La question se pose, évidemment, parce qu'il existe différentes conceptions de cette pratique, qui sont parfois en tension les unes avec les autres. <!-- more --> La définition du parkour a pu faire débat dans le passé, et il n'est pas clair que cette question soit tranchée. Mais plutôt que d'énumérer des définitions du parkour ou de proposer la mienne, le but est ici de faire le tour des manières de se poser la question et des types de réponses qui peuvent y être données. L'enjeu est *méta*, donc.
 
 1) [Le parkour, empiriquement](../le-parkour-empiriquement)
 2) [Le parkour comme pratique en tour par tour](../le-parkour-comme-pratique-organisee-en-tour-par-tour/)
@@ -16,6 +16,7 @@ Dans une série de quatre articles, je fais le tour de la question: "qu'est-ce q
 4) [L'ontologie du parkour](../l-ontologie-du-parkour)
 
 Ci-dessous, un petit résumé absolument pas exhaustif.
+
 # 1 Description empirique
  [Une première approche](../le-parkour-empiriquement) consisterait à être purement descriptifs. Le parkour, c'est ce que les traceurs font quand ils disent faire du parkour. Il suffit donc d'aller voir ce qu'ils font ! Facile.
 Le fait est que cela a des résultats déroutants. Le parkour, ça consiste en grande partie à discuter, à s'observer mutuellement et à attendre son tour. Beaucoup d'immobilité donc ! Est-ce que c'est vraiment ça ?

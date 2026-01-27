@@ -6,13 +6,13 @@
 		<meta name="generator" content="{{ eleventy.generator }}">
 		<link rel="canonical" href="{{ page.url | htmlBaseUrl(metadata.url) }}">
 		<title>{{ title or metadata.title }}</title>
-		<meta name="description" content="{{ description or metadata.description }}">
+		<meta name="description" content="{{ page.excerpt or description or metadata.description }}">
 		<meta name="author" content="{{author or metadata.author.name}}">
 		<link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 
 		<meta property="og:url" content="{{ page.url | htmlBaseUrl(metadata.url) }}">
 		<meta property="og:title" content="{{ title or metadata.title }}">
-		<meta property="og:description" content="{{ description or metadata.description }}">
+		<meta property="og:description" content="{{ page.exerpt or description or metadata.description }}">
 		<meta property="og:image" content="{{ "/img/logo-socials.png" | htmlBaseUrl(metadata.url) }}">
 		<meta property="og:type" content="blog">
 

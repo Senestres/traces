@@ -184,6 +184,13 @@ export default function (eleventyConfig) {
 		return content.substr(0, content.lastIndexOf(" ", 250)) + "...";
 	  });
 
+	// add manual excerpt
+	eleventyConfig.setFrontMatterParsingOptions({
+		excerpt: true,
+		// Optional, default is "---"
+		excerpt_separator: '<!-- more -->'
+	});
+
 	// add search
 	// if it crashes, do pagefind command after your Eleventy site build script has finished instead of in the after event.
 	eleventyConfig.on('eleventy.after', () => {

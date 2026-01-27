@@ -4,7 +4,7 @@ date: 2024-12-28 13:59:00
 tags:
   - appropriation-culturelle
   - justice-épistémique
-description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
+description: Traces est un site sur le corps, la culture et l'apprentissage
 author: Yann Daout
 ---
 La thèse que je veux défendre ici est que le système sportif international est structurellement propice aux appropriations culturelles et amplifie les éventuels préjudices causés par ces appropriations. Ce n'est pas simplement qu'il y a des appropriations dans le domaine du sport comme dans n'importe quel autre domaine culturel: il y a un problème spécifiquement sportif^[Ce qui ne signifie pas que le problème dans le domaine du sport ait un poids moral particulièrement important par rapport à d'autres domaines. Les appropriations sont certainement plus graves lorsqu'elles touchent au sacré ou sont adossées à un système raciste ou colonialiste, mais ce n'est pas mon objet que de les hiérarchiser ni même comparer.]. Vu sous un autre angle, le concept d'appropriation culturelle résiste mieux à certaines objections dans le domaine du sport que dans d'autres domaines culturels.

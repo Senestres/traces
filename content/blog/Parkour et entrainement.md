@@ -3,7 +3,7 @@ title: Parkour et entrainement
 date: 2013-11-20
 tags:
   - entrainement
-description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
+description: Traces est un site sur le corps, la culture et l'apprentissage
 author: Yann Daout
 
 ---

@@ -4,7 +4,7 @@ date: 2024-12-28 12:20:00
 tags:
   - sciences-sociales
   - institutionnalisation
-description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
+description: Traces est un site sur le corps, la culture et l'apprentissage
 author: Yann Daout
 ---
 Un discours répandu qui m'a toujours énervé, est celui selon laquelle les pratiquants de sports dits "alternatifs" seraient épris de liberté au point d'être incapables de s'organiser. C'est une vision paternaliste assez méprisable, qui de plus passe généralement complètement à côté des faits. Pourtant, elle est très présente, implicitement ou explicitement, chez des représentants des institutions sportives comme dans le cadrage médiatique. Cela vaut la peine qu'on s'y intéresse.

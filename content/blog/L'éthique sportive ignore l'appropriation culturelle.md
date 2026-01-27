@@ -4,7 +4,7 @@ date: 2024-12-28 12:59:00
 tags:
   - appropriation-culturelle
   - éthique
-description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
+description: Traces est un site sur le corps, la culture et l'apprentissage
 author: Yann Daout
 ---
 L'éthique et la bonne gouvernance dans le sport sont des thèmes qui reviennent régulièrement dans l'actualité, généralement après un des scandales dévoilé au sujet d'une organisation sportive. Pour répondre aux préoccupations légitimes du public, les organisations promulguent diverses chartes, statuts, standards, recommandations ou prescriptions. Appelons ça des standards éthiques.

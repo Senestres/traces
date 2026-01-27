@@ -5,7 +5,7 @@ tags:
   - philosophie
   - perception
   - substitution-sensorielle
-description: Traces est un blog à la croisée de la philosophie, des sciences sociales, des sciences du sport et des sciences de l'éducation.
+description: Traces est un site sur le corps, la culture et l'apprentissage
 author: Yann Daout
 ---
 Dans une [discussion](https://youtu.be/hVQIrVPkEM8?si=IBy4d3tlXrPPUsjA&t=1521) récente avec le philosophe Peter Godfrey-Smith, Alex O'Connor mentionne la question de la localisation du Soi (appelons ça égolocalisation). Il *semble* que nous nous localisons à l'intérieur de notre crâne, probablement parce que nos yeux et oreilles y sont situées. Dans ce cas, que se passe-t-il si l'on passe du temps avec un casque de réalité virtuelle relié à une caméra placée sur la ceinture ? Aucun des deux ne sait si l'expérience a déjà été réalisée. Mais Godfrey-Smith mentionne les expériences de substitution sensorielle tactile-visuelle (TVSS), où des stimuli visuels sont convertis en stimuli tactiles sur la peau. Les sujets de ces expériences ont-ils une différente expérience de la localisation du Soi ? Difficile d'y répondre en pensant à haute voix et dans le courant d'une discussion. J'ai essayé de trouver la réponse dans la littérature, tout en clarifiant une petite confusion au sujet de la TVSS.
