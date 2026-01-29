@@ -49,6 +49,9 @@ export default function (eleventyConfig) {
 		},
 	});
 
+	// Shortcodes
+	eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
