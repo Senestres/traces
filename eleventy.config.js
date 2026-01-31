@@ -1,7 +1,6 @@
 import markdownItAnchor from "markdown-it-anchor";
 import markdownIt from "markdown-it";
 import markdownItFootnote from 'markdown-it-footnote';
-import { DateTime } from "luxon";
 import markdownItEleventyImg from "markdown-it-eleventy-img";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
@@ -12,6 +11,8 @@ import embedEverything from "eleventy-plugin-embed-everything";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { execSync } from 'child_process';
 import metadata from "./_data/metadata.js";
+
+import pluginFilters from "./_config/filters.js";
 
 import path from "path"; // not sure how this works, but it does
 
@@ -53,52 +54,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
 	// Filters
-	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
-		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).setLocale("fr").toFormat(format || "dd LLLL yyyy");
-	});
-
-	eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-		// dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
-	});
-
-	// Get the first `n` elements of a collection.
-	eleventyConfig.addFilter("head", (array, n) => {
-		if(!Array.isArray(array) || array.length === 0) {
-			return [];
-		}
-		if( n < 0 ) {
-			return array.slice(n);
-		}
-		return array.slice(0, n);
-	});
-
-	// Return the smallest number argument
-	eleventyConfig.addFilter("min", (...numbers) => {
-		return Math.min.apply(null, numbers);
-	});
-
-	// Return all the tags used in a collection
-	eleventyConfig.addFilter("getAllTags", collection => {
-		let tagSet = new Set();
-		for(let item of collection) {
-			(item.data.tags || []).forEach(tag => tagSet.add(tag));
-		}
-		return Array.from(tagSet);
-	});
-
-	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-		return (tags || []).filter(tag => ["all", "nav", "post", "posts", "bySize", "archive"].indexOf(tag) === -1);
-	});
-
-	eleventyConfig.addFilter("getAllTags", collection => {
-		let tagSet = new Set();
-		for(let item of collection) {
-			(item.data.tags || []).forEach(tag => tagSet.add(tag));
-		}
-		return Array.from(tagSet);
-	});
+	eleventyConfig.addPlugin(pluginFilters);
 
   // Sorted collection by n of posts; 
   	eleventyConfig.addCollection('bySize', (collectionApi) => {
@@ -118,12 +74,6 @@ export default function (eleventyConfig) {
     return sortedArray 
   	});
 
-	// Authors for archive
-	eleventyConfig.addFilter('authorFilter', function(collection, author) {
-	if (!author) {return collection}
-		const filtered = collection.filter(item => item.data.author == author)
-		return filtered;
-	  });
 
 	// Amend md library
 	eleventyConfig.setLibrary("md", markdownIt ({html: true,
@@ -178,14 +128,6 @@ export default function (eleventyConfig) {
 
 	// add yt embedd
 	eleventyConfig.addPlugin(embedEverything);
-
-	// add excerpt
-	// use with <p>{{ post.templateContent | excerpt }}</p>
-	eleventyConfig.addFilter("excerpt", (post) => {
-		var content = post.replace(/(<([^>]+)>)|#/gi, "");
-		content = content.replace(/&quot;/gi, "'");
-		return content.substr(0, content.lastIndexOf(" ", 250)) + "...";
-	  });
 
 	// add manual excerpt
 	eleventyConfig.setFrontMatterParsingOptions({
