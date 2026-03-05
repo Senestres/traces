@@ -45,7 +45,7 @@ export default function (eleventyConfig) {
 			imgAttributes: {
 				loading: "lazy",
 				decoding: "async",
-				sizes: '100vw',
+				sizes: "auto, (width <= 620px) 100vw, 75vw",
 			},
 		},
 	});
@@ -101,15 +101,16 @@ export default function (eleventyConfig) {
 		mdLib.use(markdownItEleventyImg, { 	//add markdown image
 			resolvePath: (filepath, env) => path.join(path.dirname(env.page.inputPath), filepath),
 			globalAttributes: {
-				sizes: "100vw",
+				sizes: "auto, (width <= 620px) 100vw, 75vw",
 				decoding: "async",
 				"eleventy:ignore": "",
 			},
 			imgOptions: {
 			widths: [800, "auto"],
-			outputDir: "docs/img/", // this doesn't keep the folder structure so needs path change
+			outputDir: "_site/img/", // this doesn't keep the folder structure so needs path change
 			urlPath: "/img/", 		// path change mentionned above
 		},
+
 		renderImage(image, attributes) {
 			const [ Image, options ] = image;
 			const [ src, attrs ] = attributes;
@@ -182,7 +183,7 @@ export default function (eleventyConfig) {
 			input: "content",          // default: "."
 			includes: "../_includes",  // default: "_includes"
 			data: "../_data",          // default: "_data"
-			output: "docs"
+			output: "_site"
 		},
 
 		// -----------------------------------------------------------------

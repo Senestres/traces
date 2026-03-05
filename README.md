@@ -1,6 +1,6 @@
 Run Eleventy
 
-Generate a production-ready build to the `docs` folder:
+Generate a production-ready build to the `_site` folder:
 
 ```
 npm run build

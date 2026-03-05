@@ -1,4 +1,4 @@
 {
-    "site": "docs",
+    "site": "_site",
     "output_subdir": "pagefind"
 }
