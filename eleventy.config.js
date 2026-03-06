@@ -77,8 +77,7 @@ export default function (eleventyConfig) {
 			html: true,
 			breaks: true,
 			linkify: true
-		}
-		)
+		})
 		.use(markdownItFootnote) 		// add markdown footnotes
 		.use(markdownItAnchor, {
 			permalink: markdownItAnchor.permalink.ariaHidden({

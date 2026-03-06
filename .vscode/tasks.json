@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "npm run build",
+      "dependsOn": "Install"
+    },
+    {
+      "label": "Deploy",
+      "type": "shell",
+      "command": "rclone sync ./_site infomaniak:sites/traces/ --exclude '.htaccess' --stats 1s --progress", //--size-only or --checksum should avoid regenerating all the thumbnails ?
+      "dependsOn": "Build",
+      "problemMatcher": []
+    }
+  ]
+}
