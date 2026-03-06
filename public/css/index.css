@@ -219,9 +219,9 @@ header {
 .logo-img {
 	width: 1.2em;
 	min-width: 50px;
+	transition: font-size 0.2s ease, width 0.2s ease, height 0.2s ease;
 }
 .home-link {
-/* 	font-size: clamp(2rem, 6vw, 5rem); */
 	font-weight: 700;
 	font-family: "Rubik Mono One", sans-serif;
 	text-decoration: none;
