@@ -27,12 +27,13 @@
 		<style>{% getBundle "css" %}</style>
 	</head>
 	<body>
-		<a href="#skip" class="visually-hidden">Skip to main content</a>
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
 		<header>
 			{% include "header.njk" %}
 		</header>
 
-		<main id="skip">
+		<main id="main">
 			{{ content | safe }}
 		</main>
 
