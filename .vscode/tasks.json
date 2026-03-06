@@ -2,13 +2,13 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Build ⚒️",
+      "label": "Build",
       "type": "shell",
       "command": "echo ⚒️ Building... && npm run build",
       "dependsOn": "Install"
     },
     {
-      "label": "Deploy 🚀",
+      "label": "Deploy",
       "type": "shell",
       "command": "echo 🚀 Deploying... && rclone sync ./_site infomaniak:sites/traces/ --exclude '.htaccess' --stats 1s --progress && echo 🌈 Finished!", //--size-only or --checksum should avoid regenerating all the thumbnails ?
       "dependsOn": "Build",
