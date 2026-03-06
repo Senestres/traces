@@ -1,15 +1,15 @@
-import { DateTime } from "luxon";
+// add this when supported by eleventy
+/* import { parse } from "@11ty/parse-date-strings"; */
 
 export default function(eleventyConfig) {
 
-	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
-		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).setLocale("fr").toFormat(format || "dd LLLL yyyy");
+	eleventyConfig.addFilter("readableDate", (dateObj, lang) => {
+		const locale = "fr"
+		return dateObj.toLocaleDateString(locale, {year: "numeric", month: "long", day: "numeric"})
 	});
 
-	eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-		// dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+	eleventyConfig.addFilter("htmlDateString", (dateObj, lang) => {
+		return dateObj.toLocaleDateString("fr")
 	});
 
 	// Get the first `n` elements of a collection.

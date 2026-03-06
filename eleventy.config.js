@@ -1,7 +1,5 @@
 import markdownItAnchor from "markdown-it-anchor";
-import markdownIt from "markdown-it";
 import markdownItFootnote from 'markdown-it-footnote';
-import markdownItEleventyImg from "markdown-it-eleventy-img";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginBundle from "@11ty/eleventy-plugin-bundle";
@@ -23,9 +21,6 @@ export default function (eleventyConfig) {
 		"./public/": "/",
 		"./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css"
 	});
-
-	// Run Eleventy when these files change:
-	// https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
 
 	// Watch content images for the image pipeline.
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
@@ -76,16 +71,16 @@ export default function (eleventyConfig) {
 
 
 	// Amend md library
-	eleventyConfig.setLibrary("md", markdownIt ({html: true,
-		breaks: true,
-		linkify: true}));
-
-	// Customize Markdown library settings:
-	//const path = require("path"); 
-
-	eleventyConfig.amendLibrary("md", mdLib => {
-
-		mdLib.use(markdownItAnchor, {
+	eleventyConfig.amendLibrary("md", (mdLib) => {
+		mdLib.set(
+			{
+			html: true,
+			breaks: true,
+			linkify: true
+		}
+		)
+		.use(markdownItFootnote) 		// add markdown footnotes
+		.use(markdownItAnchor, {
 			permalink: markdownItAnchor.permalink.ariaHidden({
 				placement: "after",
 				class: "header-anchor",
@@ -94,37 +89,29 @@ export default function (eleventyConfig) {
 			}),
 			level: [1,2,3,4],
 			slugify: eleventyConfig.getFilter("slugify")
-		});
-
-		mdLib.use(markdownItFootnote); 		// add markdown footnotes
-
-		mdLib.use(markdownItEleventyImg, { 	//add markdown image
-			resolvePath: (filepath, env) => path.join(path.dirname(env.page.inputPath), filepath),
-			globalAttributes: {
-				sizes: "auto, (width <= 620px) 100vw, 75vw",
-				decoding: "async",
-				"eleventy:ignore": "",
-			},
-			imgOptions: {
-			widths: [800, "auto"],
-			outputDir: "_site/img/", // this doesn't keep the folder structure so needs path change
-			urlPath: "/img/", 		// path change mentionned above
-		},
-
-		renderImage(image, attributes) {
-			const [ Image, options ] = image;
-			const [ src, attrs ] = attributes;
+		})
 		
-			Image(src, options);
-		
-			const metadata = Image.statsSync(src, options);
-			const imageMarkup = Image.generateHTML(metadata, attrs, {
-				whitespaceMode: "inline"
-			});
-		
-			return `<figure>${imageMarkup}${attrs.title ? `<figcaption>${attrs.title}</figcaption>` : ""}</figure>`;
-			}
-		}); 
+		// amend library to change md images to figures
+		.use(md => {
+			md.renderer.rules.image = (tokens, idx) => {
+			const token = tokens[idx];
+			const src = token.attrGet('src');
+			const alt = token.content || '';
+			const caption = token.attrGet('title');
+
+			// Collect attributes
+			const attributes = token.attrs || [];
+/* 			const hasEleventyWidths = attributes.some(([key]) => key === 'eleventy:widths');
+			if (!hasEleventyWidths) {
+				attributes.push(['eleventy:widths', '650,960,1400']);
+			} */
+
+			const attributesString = attributes.map(([key, value]) => `${key}="${value}"`).join(' ');
+			const imgTag = `<img src="${src}" alt="${alt}" ${attributesString}>`;
+			return caption ? `<figure>${imgTag}<figcaption>${caption}</figcaption></figure>` : imgTag;
+			};
+		})
+
 	});
 
 	// add yt embedd
@@ -154,10 +141,7 @@ export default function (eleventyConfig) {
 		metadata
 	});
 
-	// Features to make your build faster (when you need them)
-
 	// If your passthrough copy gets heavy and cumbersome, add this line
-	// to emulate the file copy on the dev server. Learn more:
 	// https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
 
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
@@ -186,16 +170,9 @@ export default function (eleventyConfig) {
 			output: "_site"
 		},
 
-		// -----------------------------------------------------------------
-		// Optional items:
-		// -----------------------------------------------------------------
-
 		// If your site deploys to a subdirectory, change `pathPrefix`.
 		// Read more: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
 
-		// When paired with the HTML <base> plugin https://www.11ty.dev/docs/plugins/html-base/
-		// it will transform any absolute URLs in your HTML to include this
-		// folder name and does **not** affect where things go in the output folder.
-		pathPrefix: "",
+		/* pathPrefix: "", */
 	};
 };
