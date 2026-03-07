@@ -213,7 +213,7 @@ header {
 	align-items: center;
 	font-size: clamp(2rem, 5vw, 5rem);
 }
-.logo picture{
+.logo picture {
 	line-height: 0;
 }
 .logo-img {
@@ -258,7 +258,7 @@ header {
 }
 .nav-item {
 	display: inline-block;
-	margin-right: 1em;
+	margin: 0 0.5em;
 }
 .nav-item a[href]:not(:hover) {
 	text-decoration: none;
