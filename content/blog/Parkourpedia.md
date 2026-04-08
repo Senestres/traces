@@ -1,5 +1,5 @@
 ---
-title: Parkourpedia
+title: Parkourpedia 🦉
 date: 2026-03-13
 tags:
   - parkour
@@ -7,8 +7,8 @@ description: Traces est un site sur le corps, la culture et l'apprentissage.
 author: Yann Daout
 ---
 
-<!-- more -->
 Depuis le temps, on devrait avoir de bonnes ressources publiquement accessibles pour apprendre et enseigner le parkour. Pourtant, ce n'est pas le cas. J'ai donc créé [Parkourpedia](https://parkourpedia.ch) pour combler cette lacune.
+<!-- more -->
 
 # Il n'y a pas de bonnes ressources francophones
 Il n'y a à ma connaissance même pas un répertoire publiquement accessible de mouvements en français, langue d'origine du parkour^[Au début des années 2000, des pratiquants du monde entier faisaient de grands efforts pour retrouver les noms des techniques en français et y faire référence lorsqu'ils proposaient leurs traductions, tutoriaux, etc.]. Plus précisément, les ressources accessibles sont peu exhaustives, se contentant généralement des "bases" du parkour, comme si une version stéréotypée du parkour de 2010 était figée dans le temps. Un risque évident est celui de la réification. A force, on a l'impression que le parkour *est* cette liste de techniques. C'est d'autant plus dommage si cette liste est une version limitée et dépassée de ce que pourrait être le parkour, ou qu'elle représente mal ce que font en fait les pratiquants contemporains. Imaginez ce que de telles ressources risquent de devenir entre les mains d'enseignants d'éducation physique qui n'ont pas d'autre expérience du parkour.
