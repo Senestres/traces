@@ -9,7 +9,7 @@ categories:
   - "socio"
 tags: 
   - "contraintes"
-  - "psychologie écologique"
+  - "psychologie-écologique"
   - "enseignement"
   - "enseignement"
 ---

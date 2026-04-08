@@ -25,6 +25,11 @@
 		{#- Add CSS to the bundle and render Inlinded #}
 		{%- css %}{% include "public/css/index.css" %}{% endcss %}
 		<style>{% getBundle "css" %}</style>
+
+		{#- Add pagefind #}
+		<link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+		<script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+
 	</head>
 	<body>
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
