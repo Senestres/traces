@@ -8,7 +8,7 @@
       "dependsOn": "Install"
     },
     {
-      "label": "Deploy",
+      "label": "Deploy 🚀",
       "type": "shell",
       "command": "echo 🚀 Deploying... && rclone sync ./_site infomaniak:sites/traces/ --exclude '.*' --stats 1s --progress && echo 🌈 Finished!", //--size-only or --checksum should avoid regenerating all the thumbnails ?
       "dependsOn": "Build",
