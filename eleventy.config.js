@@ -126,7 +126,7 @@ export default function (eleventyConfig) {
 	// add search
 	// if it crashes, do pagefind command after your Eleventy site build script has finished instead of in the after event.
 	eleventyConfig.on('eleventy.after', () => {
-		execSync(`npx pagefind --glob \"**/*.html\"`, { encoding: 'utf-8' })
+		execSync(`npx pagefind --site _site`)
 	})
 	
 	//RSS plugin
